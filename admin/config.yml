@@ -3,9 +3,9 @@
 
 backend:
   name: github
-  repo: YOUR-GITHUB-USERNAME/YOUR-REPO-NAME   # ⚠️ EDIT THIS
+  repo: KUBSchoolComms/ideate   # ⚠️ EDIT THIS
   branch: main
-  base_url: https://YOUR-OAUTH-WORKER-URL     # ⚠️ EDIT THIS — see /oauth-proxy
+  base_url: https://543e3884.ideate-cms-auth.pages.dev     # ⚠️ EDIT THIS — see /oauth-proxy
   auth_endpoint: auth
 
 # Gives every edit a draft → in review → ready pipeline as a GitHub pull
