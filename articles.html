@@ -1,0 +1,25 @@
+---
+layout: default
+title: "All Research"
+permalink: /articles/
+---
+<div class="wrap archive-header">
+  <div class="eyebrow" style="--topic-color:var(--ku-blue)"><span class="dot"></span>All research</div>
+  <h1>Every story, newest first</h1>
+  <p>The full archive of Ideate research coverage, across every topic.</p>
+</div>
+
+{% assign all_articles = site.articles | sort: 'date' | reverse %}
+<div class="wrap stream">
+  {% for a in all_articles %}
+  {% assign a_topic = site.data.topics | where: 'slug', a.topic | first %}
+  <div class="stream-row">
+    <div>
+      <div class="eyebrow" style="--topic-color:var(--topic-{{ a.topic }}); margin-bottom:4px;"><span class="dot"></span>{{ a_topic.name }}</div>
+      <a href="{{ a.url | relative_url }}" class="card-link"><h3>{{ a.title }}</h3></a>
+      <p class="dek">{{ a.dek }} <span style="color:var(--ku-gray-mid)">— {{ a.byline }}</span></p>
+    </div>
+    <span class="stream-date">{{ a.date | date: "%b %-d, %Y" }}</span>
+  </div>
+  {% endfor %}
+</div>

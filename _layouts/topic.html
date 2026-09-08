@@ -1,0 +1,27 @@
+---
+layout: default
+---
+{% assign topic_data = site.data.topics | where: 'slug', page.topic | first %}
+
+<div class="wrap archive-header">
+  <div class="eyebrow" style="--topic-color:var(--topic-{{ page.topic }})"><span class="dot"></span>Topic</div>
+  <h1>{{ topic_data.name }}</h1>
+  <p>{{ topic_data.description }}</p>
+</div>
+
+{% assign articles = site.articles | where: 'topic', page.topic | sort: 'date' | reverse %}
+<div class="wrap stream">
+  {% for a in articles %}
+  <div class="stream-row">
+    <div>
+      <a href="{{ a.url | relative_url }}" class="card-link"><h3>{{ a.title }}</h3></a>
+      <p class="dek">{{ a.dek }} <span style="color:var(--ku-gray-mid)">— {{ a.byline }}</span></p>
+    </div>
+    <span class="stream-date">{{ a.date | date: "%b %-d, %Y" }}</span>
+  </div>
+  {% else %}
+  <p style="padding:32px 0; color:var(--ku-gray-mid); font-size:15px;">
+    No articles tagged {{ topic_data.name }} yet — check back soon.
+  </p>
+  {% endfor %}
+</div>

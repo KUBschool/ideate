@@ -1,0 +1,16 @@
+{% assign article = include.article %}
+{% assign topic_data = site.data.topics | where: 'slug', article.topic | first %}
+<article class="card" data-topic="{{ article.topic }}">
+  <a href="{{ article.url | relative_url }}" class="card-link">
+    <div class="img-placeholder" style="--tint:var(--ku-{{ article.image_tint | default: 'steam' }})"><span>Photo placeholder</span></div>
+  </a>
+  <div class="eyebrow" style="--topic-color:var(--topic-{{ article.topic }})">
+    <span class="dot"></span>
+    <a href="{{ '/topics/' | append: article.topic | append: '/' | relative_url }}">{{ topic_data.name }}</a>
+  </div>
+  <a href="{{ article.url | relative_url }}" class="card-link"><h3>{{ article.title }}</h3></a>
+  <p class="dek">{{ article.dek }}</p>
+  <div class="card-meta">
+    <span>{{ article.byline }}</span><span>·</span><span>{{ article.date | date: "%b %-d, %Y" }}</span>
+  </div>
+</article>

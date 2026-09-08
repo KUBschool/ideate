@@ -1,0 +1,9 @@
+{% assign a = site.data.announcement %}
+{% if a.enabled %}
+<div class="announce">
+  <div class="wrap">
+    <span class="dot"></span>
+    <span>{{ a.text }} <a href="{{ a.link }}">{{ a.link_text | default: "Read more" }}</a></span>
+  </div>
+</div>
+{% endif %}

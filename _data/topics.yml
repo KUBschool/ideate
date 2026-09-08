@@ -1,0 +1,35 @@
+# Every topic pill, archive page, and eyebrow color pulls from this one file.
+# To add a topic: add an entry here, add a matching --topic-<slug> CSS
+# variable in assets/css/style.css, and add topics/<slug>.html (copy any
+# existing file in that folder and change the front matter). See DEPLOY.md.
+
+- slug: accounting
+  name: Accounting
+  description: "Research on auditing, financial reporting, and the systems that keep businesses honest."
+- slug: finance
+  name: Finance
+  description: "Research on banking, capital markets, corporate finance, and how financial decisions get made under uncertainty."
+- slug: supply-chain
+  name: Supply Chain
+  description: "Research on logistics, operations, and how goods and services actually move."
+- slug: marketing
+  name: Marketing
+  description: "Research on consumer behavior, branding, and how organizations earn and keep customers."
+- slug: information-systems
+  name: Information Systems
+  description: "Research on how organizations use — and are exposed by — their information systems."
+- slug: analytics
+  name: Analytics
+  description: "Research applying data and quantitative methods to real operational and business problems."
+- slug: entrepreneurship
+  name: Entrepreneurship
+  description: "Research on founders, funding, and how new ventures actually get built."
+- slug: business-law
+  name: Business Law
+  description: "Research on the legal and regulatory environment businesses operate in."
+- slug: ai
+  name: AI
+  description: "Research on artificial intelligence's effect on work, teams, and organizations."
+- slug: policy
+  name: Policy
+  description: "Research on public policy, regulation, and their effects on business and communities."

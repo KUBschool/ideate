@@ -1,0 +1,10 @@
+{% assign active_topic = page.topic | default: 'all' %}
+<nav class="topic-nav" aria-label="Browse by topic">
+  <div class="wrap">
+    <a href="{{ '/' | relative_url }}" class="topic-pill{% if active_topic == 'all' %} active{% endif %}">All</a>
+    {% for topic in site.data.topics %}
+    <a href="{{ '/topics/' | append: topic.slug | append: '/' | relative_url }}"
+       class="topic-pill{% if active_topic == topic.slug %} active{% endif %}">{{ topic.name }}</a>
+    {% endfor %}
+  </div>
+</nav>

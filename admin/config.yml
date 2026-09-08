@@ -1,0 +1,89 @@
+# Decap CMS config for Ideate.
+# Everything marked "⚠️ EDIT THIS" below needs your real values — see DEPLOY.md.
+
+backend:
+  name: github
+  repo: YOUR-GITHUB-USERNAME/YOUR-REPO-NAME   # ⚠️ EDIT THIS
+  branch: main
+  base_url: https://YOUR-OAUTH-WORKER-URL     # ⚠️ EDIT THIS — see /oauth-proxy
+  auth_endpoint: auth
+
+# Gives every edit a draft → in review → ready pipeline as a GitHub pull
+# request, instead of writing straight to main. Good default for a small
+# editorial team; turn off later if it ever feels like overhead.
+publish_mode: editorial_workflow
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "articles"
+    label: "Articles"
+    label_singular: "Article"
+    folder: "_articles"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: title
+    summary: "{{topic}} · {{title}}"
+    sortable_fields: ["date", "title", "topic"]
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Dek / subhead", name: "dek", widget: "text", hint: "One or two sentences. Shown on cards and at the top of the article."}
+      - label: "Topic"
+        name: "topic"
+        widget: "select"
+        options:
+          - {label: "Accounting", value: "accounting"}
+          - {label: "Finance", value: "finance"}
+          - {label: "Supply Chain", value: "supply-chain"}
+          - {label: "Marketing", value: "marketing"}
+          - {label: "Information Systems", value: "information-systems"}
+          - {label: "Analytics", value: "analytics"}
+          - {label: "Entrepreneurship", value: "entrepreneurship"}
+          - {label: "Business Law", value: "business-law"}
+          - {label: "AI", value: "ai"}
+          - {label: "Policy", value: "policy"}
+      - label: "Faculty"
+        name: "faculty"
+        widget: "list"
+        allow_add: true
+        default: []
+        hint: "Tag the faculty involved — each becomes a linked chip pointing to their business.ku.edu profile."
+        fields:
+          - {label: "Name", name: "name", widget: "string"}
+          - {label: "Profile URL", name: "url", widget: "string", hint: "e.g. https://business.ku.edu/people/jane-doe"}
+      - {label: "Byline (display text)", name: "byline", widget: "string", hint: "What shows in the meta line — usually the lead faculty name, or a department name for staff-written pieces."}
+      - {label: "Publish date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, picker_utc: true}
+      - {label: "Read time (minutes)", name: "read_time", widget: "number", default: 5, value_type: "int"}
+      - {label: "Image tint", name: "image_tint", widget: "select", options: ["steam", "limestone"], default: "steam", hint: "Placeholder art tint until a real photo is uploaded — see the docx/pptx-style image swap note in DEPLOY.md."}
+      - {label: "Feature on homepage", name: "featured", widget: "boolean", default: false, hint: "Only one article should be featured at a time — the newest featured one wins if more than one is flagged."}
+      - {label: "Source URL", name: "source_url", widget: "string", required: false, hint: "If adapted from another article (e.g. business.ku.edu/news), link back to it here."}
+      - label: "Research at a glance"
+        name: "answer_box"
+        widget: "text"
+        required: false
+        hint: "40–60 word answer-first summary — states the finding immediately. This is the GEO-friendly block; see the Story Editor prototype for how an AI-assisted draft of this gets generated and then edited before it's saved here."
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - label: "Just Announced Banner"
+        name: "announcement"
+        file: "_data/announcement.yml"
+        fields:
+          - {label: "Enabled", name: "enabled", widget: "boolean", default: true}
+          - {label: "Text", name: "text", widget: "text"}
+          - {label: "Link URL", name: "link", widget: "string"}
+          - {label: "Link text", name: "link_text", widget: "string", default: "Read more"}
+      - label: "Faculty & School Recognition"
+        name: "awards"
+        file: "_data/awards.yml"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "Kicker", name: "kicker", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}

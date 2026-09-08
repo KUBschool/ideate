@@ -1,0 +1,123 @@
+---
+layout: default
+title: "Home"
+---
+
+{% include announce.html %}
+
+{% assign sorted = site.articles | sort: 'date' | reverse %}
+{% assign featured_list = sorted | where: 'featured', true %}
+{% if featured_list.size > 0 %}
+  {% assign feature = featured_list | first %}
+{% else %}
+  {% assign feature = sorted | first %}
+{% endif %}
+{% assign rest = sorted | where_exp: 'a', 'a.url != feature.url' %}
+{% assign hero_list = rest | slice: 0, 3 %}
+{% assign grid_list = rest | slice: 3, 6 %}
+{% assign feature_topic = site.data.topics | where: 'slug', feature.topic | first %}
+
+<section class="hero-section">
+  <div class="wrap hero-grid">
+    <article class="hero-feature">
+      <a href="{{ feature.url | relative_url }}">
+        <div class="img-placeholder hero-art" style="--tint:var(--ku-{{ feature.image_tint | default: 'steam' }})"><span>Photo placeholder</span></div>
+      </a>
+      <div class="eyebrow" style="--topic-color:var(--topic-{{ feature.topic }})">
+        <span class="dot"></span>
+        <a href="{{ '/topics/' | append: feature.topic | append: '/' | relative_url }}">{{ feature_topic.name }}</a>
+      </div>
+      <a href="{{ feature.url | relative_url }}">
+        <h1>{{ feature.title }}</h1>
+      </a>
+      <p class="dek">{{ feature.dek }}</p>
+      <div class="byline">By Ideate Staff · {{ feature.date | date: "%B %-d, %Y" }} · {{ feature.read_time | default: 5 }} min read</div>
+      {% if feature.faculty and feature.faculty.size > 0 %}
+      <div class="faculty-chips">
+        {% for f in feature.faculty %}
+        <a href="{{ f.url }}" class="faculty-chip"><span class="avatar"></span>{{ f.name }}</a>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </article>
+
+    <div class="hero-list">
+      {% for a in hero_list %}
+      {% assign a_topic = site.data.topics | where: 'slug', a.topic | first %}
+      <div class="hero-list-item">
+        <div class="eyebrow" style="--topic-color:var(--topic-{{ a.topic }})"><span class="dot"></span>{{ a_topic.name }}</div>
+        <a href="{{ a.url | relative_url }}"><h3>{{ a.title }}</h3></a>
+        <p class="dek">{{ a.dek }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="latest">
+  <div class="section-head">
+    <h2>Recent research</h2>
+    <a href="{{ '/articles/' | relative_url }}" class="view-all">View all research →</a>
+  </div>
+  <div class="card-grid">
+    {% for a in grid_list %}
+      {% include card.html article=a %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="stub-section">
+  <div class="wrap">
+    <div class="section-head" style="border-bottom-color:#c9c7bf;">
+      <h2>More from Ideate</h2>
+    </div>
+    <div class="stub-grid">
+      <div class="stub-card" data-section="podcasts">
+        <div class="kicker">Podcast · {% if site.sections.podcasts %}Now live{% else %}Launching soon{% endif %}</div>
+        <h3>Ideate: The Conversation</h3>
+        <p>Faculty unpack their research in conversation with business leaders. Flip <code>sections.podcasts</code> in <code>_config.yml</code> once episodes are ready — no template changes needed.</p>
+      </div>
+      <div class="stub-card" data-section="webinars">
+        <div class="kicker">Webinar · {% if site.sections.webinars %}Now live{% else %}Launching soon{% endif %}</div>
+        <h3>Ideate Live</h3>
+        <p>Faculty-led briefings on the research shaping their fields, open to alumni and industry partners.</p>
+      </div>
+      <div class="stub-card" data-section="video">
+        <div class="kicker">Video · {% if site.sections.video %}Now live{% else %}Launching soon{% endif %}</div>
+        <h3>Research in 5 minutes</h3>
+        <p>Short video explainers pairing one finding with the faculty member behind it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="awards-section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Faculty &amp; school recognition</h2>
+      <a href="https://business.ku.edu/news" class="view-all">View all news →</a>
+    </div>
+    <div class="awards-grid">
+      {% for item in site.data.awards.items %}
+      <div class="award-item">
+        <div class="kicker">{{ item.kicker }}</div>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="newsletter-section" id="newsletter">
+  <div class="wrap newsletter-grid">
+    <div>
+      <h2>Ideate in your inbox</h2>
+      <p>Get faculty research and school news in the newsletter formerly known as our print magazine — now reimagined as Ideate.</p>
+    </div>
+    <form class="newsletter-form" onsubmit="return false;">
+      <input type="email" placeholder="you@example.com" aria-label="Email address">
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</section>

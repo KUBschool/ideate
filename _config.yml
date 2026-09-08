@@ -1,0 +1,61 @@
+# ─────────────────────────────────────────────────────────────────
+# Ideate — KU School of Business research site
+# Jekyll config. See DEPLOY.md before pushing this live.
+# ─────────────────────────────────────────────────────────────────
+
+title: "Ideate"
+tagline: "KU Business insights that elevate business"
+description: >-
+  Ideate is the research magazine of the University of Kansas School of
+  Business — faculty research on accounting, finance, marketing, analytics,
+  entrepreneurship, and more.
+
+# If you deploy to a custom domain (e.g. research.business.ku.edu) or as a
+# user/org root site (username.github.io), leave baseurl blank and set url
+# to that domain.
+#
+# If you deploy as a PROJECT page instead (username.github.io/repo-name),
+# set baseurl to "/repo-name" — every link and asset in this site uses the
+# `relative_url` filter, so that one change is all you need.
+url: "https://research.business.ku.edu"
+baseurl: ""
+
+# ── Content types you can switch on as they're ready. Flip to true and the
+#    nav link + homepage section activate automatically — no template edits. ──
+sections:
+  podcasts: false
+  webinars: false
+  video: false
+
+# ── Collections ──
+collections:
+  articles:
+    output: true
+    permalink: /articles/:slug/
+
+defaults:
+  - scope:
+      path: ""
+      type: "articles"
+    values:
+      layout: "article"
+  - scope:
+      path: "topics"
+    values:
+      layout: "topic"
+
+# ── Build settings ──
+markdown: kramdown
+permalink: pretty
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - DEPLOY.md
+  - oauth-proxy
+  - README.md
+  - node_modules
