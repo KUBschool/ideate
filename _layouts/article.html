@@ -12,8 +12,9 @@ layout: default
   "datePublished": "{{ page.date | date_to_xmlschema }}",
   "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
   "author": [
-    {% for f in page.faculty %}
-    { "@type": "Person", "name": {{ f.name | jsonify }}, "url": {{ f.url | jsonify }} }{% unless forloop.last %},{% endunless %}
+    {% for slug in page.faculty %}
+    {% assign f = site.faculty | where: 'slug', slug | first %}
+    { "@type": "Person", "name": {{ f.name | jsonify }}, "url": "{{ site.url }}{{ f.url | relative_url }}"{% if f.profile_url %}, "sameAs": [{{ f.profile_url | jsonify }}]{% endif %} }{% unless forloop.last %},{% endunless %}
     {% endfor %}
   ],
   "publisher": {
@@ -68,8 +69,9 @@ layout: default
     <div class="sidebar-block">
       <h4>Faculty</h4>
       <div class="faculty-chips">
-        {% for f in page.faculty %}
-        <a href="{{ f.url }}" class="faculty-chip"><span class="avatar"></span>{{ f.name }}</a>
+        {% for slug in page.faculty %}
+        {% assign f = site.faculty | where: 'slug', slug | first %}
+        <a href="{{ f.url | relative_url }}" class="faculty-chip"><span class="avatar"></span>{{ f.name }}</a>
         {% endfor %}
       </div>
     </div>

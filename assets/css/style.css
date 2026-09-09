@@ -95,6 +95,7 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 }
 .img-placeholder.hero-art{ aspect-ratio: 4 / 3; }
 .img-placeholder.wide{ aspect-ratio: 21 / 9; }
+.img-placeholder.portrait{ aspect-ratio: 3 / 4; }
 
 /* ---------- real uploaded photos — same box shapes as the placeholders ---------- */
 .photo{
@@ -107,6 +108,25 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 }
 .photo.hero-art{ aspect-ratio: 4 / 3; }
 .photo.wide{ aspect-ratio: 21 / 9; }
+.photo.portrait{ aspect-ratio: 3 / 4; }
+
+/* ---------- faculty profile page ---------- */
+.faculty-header{
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 32px;
+  padding: 44px 0 40px;
+  align-items: start;
+}
+.faculty-photo-wrap{ width: 200px; }
+.faculty-header-text h1{ font-size: 32px; margin-bottom: 8px; }
+.faculty-header-text .dek{ font-family: var(--font-sans); font-size: 16px; color: #565650; margin-bottom: 4px; }
+.faculty-topics{ display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.faculty-topics .topic-pill{ cursor: pointer; }
+@media (max-width: 620px){
+  .faculty-header{ grid-template-columns: 1fr; }
+  .faculty-photo-wrap{ width: 160px; }
+}
 
 /* ---------- header ---------- */
 .parent-bar{

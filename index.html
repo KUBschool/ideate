@@ -38,8 +38,9 @@ title: "Home"
       <div class="byline">By Ideate Staff · {{ feature.date | date: "%B %-d, %Y" }} · {{ feature.read_time | default: 5 }} min read</div>
       {% if feature.faculty and feature.faculty.size > 0 %}
       <div class="faculty-chips">
-        {% for f in feature.faculty %}
-        <a href="{{ f.url }}" class="faculty-chip"><span class="avatar"></span>{{ f.name }}</a>
+        {% for slug in feature.faculty %}
+        {% assign f = site.faculty | where: 'slug', slug | first %}
+        <a href="{{ f.url | relative_url }}" class="faculty-chip"><span class="avatar"></span>{{ f.name }}</a>
         {% endfor %}
       </div>
       {% endif %}
