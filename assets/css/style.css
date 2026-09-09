@@ -96,6 +96,18 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 .img-placeholder.hero-art{ aspect-ratio: 4 / 3; }
 .img-placeholder.wide{ aspect-ratio: 21 / 9; }
 
+/* ---------- real uploaded photos — same box shapes as the placeholders ---------- */
+.photo{
+  width: 100%;
+  display: block;
+  border-radius: var(--radius);
+  overflow: hidden;
+  object-fit: cover;
+  aspect-ratio: 16 / 10;
+}
+.photo.hero-art{ aspect-ratio: 4 / 3; }
+.photo.wide{ aspect-ratio: 21 / 9; }
+
 /* ---------- header ---------- */
 .parent-bar{
   background: var(--ku-night);

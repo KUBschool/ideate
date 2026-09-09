@@ -42,7 +42,11 @@ layout: default
 </div>
 
 <div class="wrap">
-  <div class="img-placeholder wide" style="--tint:var(--ku-{{ page.image_tint | default: 'steam' }}); margin-bottom:32px;"><span>Photo placeholder</span></div>
+  {% if page.image %}
+    <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title }}" class="photo wide" style="margin-bottom:32px;">
+  {% else %}
+    <div class="img-placeholder wide" style="--tint:var(--ku-{{ page.image_tint | default: 'steam' }}); margin-bottom:32px;"><span>Photo placeholder</span></div>
+  {% endif %}
 </div>
 
 <div class="wrap article-body">

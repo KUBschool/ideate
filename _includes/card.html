@@ -2,7 +2,11 @@
 {% assign topic_data = site.data.topics | where: 'slug', article.topic | first %}
 <article class="card" data-topic="{{ article.topic }}">
   <a href="{{ article.url | relative_url }}" class="card-link">
-    <div class="img-placeholder" style="--tint:var(--ku-{{ article.image_tint | default: 'steam' }})"><span>Photo placeholder</span></div>
+    {% if article.image %}
+      <img src="{{ article.image | relative_url }}" alt="{{ article.image_alt | default: article.title }}" class="photo">
+    {% else %}
+      <div class="img-placeholder" style="--tint:var(--ku-{{ article.image_tint | default: 'steam' }})"><span>Photo placeholder</span></div>
+    {% endif %}
   </a>
   <div class="eyebrow" style="--topic-color:var(--topic-{{ article.topic }})">
     <span class="dot"></span>

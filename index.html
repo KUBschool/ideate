@@ -21,7 +21,11 @@ title: "Home"
   <div class="wrap hero-grid">
     <article class="hero-feature">
       <a href="{{ feature.url | relative_url }}">
-        <div class="img-placeholder hero-art" style="--tint:var(--ku-{{ feature.image_tint | default: 'steam' }})"><span>Photo placeholder</span></div>
+        {% if feature.image %}
+          <img src="{{ feature.image | relative_url }}" alt="{{ feature.image_alt | default: feature.title }}" class="photo hero-art">
+        {% else %}
+          <div class="img-placeholder hero-art" style="--tint:var(--ku-{{ feature.image_tint | default: 'steam' }})"><span>Photo placeholder</span></div>
+        {% endif %}
       </a>
       <div class="eyebrow" style="--topic-color:var(--topic-{{ feature.topic }})">
         <span class="dot"></span>

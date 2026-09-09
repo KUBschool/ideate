@@ -18,7 +18,7 @@ description: >-
 # set baseurl to "/repo-name" — every link and asset in this site uses the
 # `relative_url` filter, so that one change is all you need.
 url: "https://research.business.ku.edu"
-baseurl: "/ideate"
+baseurl: ""
 
 # ── Content types you can switch on as they're ready. Flip to true and the
 #    nav link + homepage section activate automatically — no template edits. ──

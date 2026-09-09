@@ -3,9 +3,9 @@
 
 backend:
   name: github
-  repo: KUBSchool/ideate   # ⚠️ EDIT THIS
+  repo: YOUR-GITHUB-USERNAME/YOUR-REPO-NAME   # ⚠️ EDIT THIS
   branch: main
-  base_url: https://ideate-auth.bschoolweb.workers.dev     # ⚠️ EDIT THIS — see /oauth-proxy
+  base_url: https://YOUR-OAUTH-WORKER-URL     # ⚠️ EDIT THIS — see /oauth-proxy
   auth_endpoint: auth
 
 # Gives every edit a draft → in review → ready pipeline as a GitHub pull
@@ -55,7 +55,17 @@ collections:
       - {label: "Byline (display text)", name: "byline", widget: "string", hint: "What shows in the meta line — usually the lead faculty name, or a department name for staff-written pieces."}
       - {label: "Publish date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, picker_utc: true}
       - {label: "Read time (minutes)", name: "read_time", widget: "number", default: 5, value_type: "int"}
-      - {label: "Image tint", name: "image_tint", widget: "select", options: ["steam", "limestone"], default: "steam", hint: "Placeholder art tint until a real photo is uploaded — see the docx/pptx-style image swap note in DEPLOY.md."}
+      - label: "Photo"
+        name: "image"
+        widget: "image"
+        required: false
+        hint: "Upload a photo for this article — used on its card, its own page, and the homepage if it's the featured story. Landscape orientation works best; it gets cropped to fit a few different box shapes."
+      - label: "Photo alt text"
+        name: "image_alt"
+        widget: "string"
+        required: false
+        hint: "Describe the photo for screen readers and for AI/search crawlers. Fill this in whenever you upload a photo."
+      - {label: "Image tint (only used if no photo is uploaded)", name: "image_tint", widget: "select", options: ["steam", "limestone"], default: "steam"}
       - {label: "Feature on homepage", name: "featured", widget: "boolean", default: false, hint: "Only one article should be featured at a time — the newest featured one wins if more than one is flagged."}
       - {label: "Source URL", name: "source_url", widget: "string", required: false, hint: "If adapted from another article (e.g. business.ku.edu/news), link back to it here."}
       - label: "Research at a glance"
