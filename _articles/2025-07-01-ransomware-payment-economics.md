@@ -1,20 +1,21 @@
 ---
-title: "Paying the ransom can make the next attack more likely"
-dek: "A microeconomic model of ransomware \"extortionality\" finds that payouts create costs that spill over to other future victims."
+title: Paying the ransom can make the next attack more likely
+dek: A microeconomic model of ransomware "extortionality" finds that payouts
+  create costs that spill over to other future victims.
 topic: information-systems
 faculty:
   - name: Debabrata Dey
     url: https://business.ku.edu/people/debabrata-dey
-byline: "Debabrata Dey"
+byline: Debabrata Dey
 date: 2025-07-01
 read_time: 5
+image: /assets/uploads/1903719_aw_business-school-stock-739.jpg
 image_tint: limestone
 featured: false
-answer_box: >-
-  A microeconomic model of ransomware finds that when corporate victims pay
-  attackers, it doesn't just resolve their own incident — it strengthens
-  attackers' incentives and resources for future attacks, effectively
-  imposing a cost on victims who haven't been targeted yet.
+answer_box: A microeconomic model of ransomware finds that when corporate
+  victims pay attackers, it doesn't just resolve their own incident — it
+  strengthens attackers' incentives and resources for future attacks,
+  effectively imposing a cost on victims who haven't been targeted yet.
 ---
 
 The advice on ransomware has always split two ways: pay to make the immediate problem go away, or refuse on principle and absorb the damage. New research models the economics underneath that choice and finds the "just pay it" instinct carries costs that extend well past the paying company.
