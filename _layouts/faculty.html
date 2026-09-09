@@ -1,0 +1,66 @@
+---
+layout: default
+---
+{% assign my_articles = site.articles | where_exp: 'a', 'a.faculty contains page.slug' | sort: 'date' | reverse %}
+{% assign my_topic_slugs = my_articles | map: 'topic' | uniq %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": {{ page.name | jsonify }},
+  "jobTitle": {{ page.title | jsonify }},
+  "url": "{{ site.url }}{{ page.url | relative_url }}",
+  "worksFor": {
+    "@type": "CollegeOrUniversity",
+    "name": "University of Kansas School of Business"
+  }
+  {% if page.profile_url %}, "sameAs": [{{ page.profile_url | jsonify }}]{% endif %}
+}
+</script>
+
+<div class="wrap faculty-header">
+  <div class="faculty-photo-wrap">
+    {% if page.photo %}
+      <img
+        src="{% if page.photo contains '://' %}{{ page.photo }}{% else %}{{ page.photo | relative_url }}{% endif %}"
+        alt="{{ page.name }}"
+        class="photo portrait">
+    {% else %}
+      <div class="img-placeholder portrait" style="--tint:var(--ku-steam)"><span>Photo placeholder</span></div>
+    {% endif %}
+  </div>
+  <div class="faculty-header-text">
+    <div class="eyebrow" style="--topic-color:var(--ku-blue)"><span class="dot"></span>Faculty</div>
+    <h1>{{ page.name }}</h1>
+    <p class="dek">{{ page.title }}{% if page.academic_area %} &middot; {{ page.academic_area }} academic area{% endif %}</p>
+
+    {% if my_topic_slugs.size > 0 %}
+    <div class="faculty-topics">
+      {% for slug in my_topic_slugs %}
+        {% assign t = site.data.topics | where: 'slug', slug | first %}
+        <a href="{{ '/topics/' | append: slug | append: '/' | relative_url }}" class="topic-pill">{{ t.name }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if page.profile_url %}
+    <a href="{{ page.profile_url }}" class="view-all" style="display:inline-block; margin-top:14px;">View full KU Business profile &rarr;</a>
+    {% endif %}
+  </div>
+</div>
+
+<section class="wrap" style="padding-bottom:56px;">
+  <div class="section-head">
+    <h2>Research on Ideate</h2>
+  </div>
+  {% if my_articles.size > 0 %}
+  <div class="card-grid">
+    {% for a in my_articles %}
+      {% include card.html article=a %}
+    {% endfor %}
+  </div>
+  {% else %}
+  <p style="color:var(--ku-gray-mid); font-size:15px;">No articles tagged to {{ page.name }} yet.</p>
+  {% endif %}
+</section>
