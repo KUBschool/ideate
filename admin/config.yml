@@ -5,7 +5,7 @@ backend:
   name: github
   repo: KUBSchool/ideate   # ⚠️ EDIT THIS
   branch: main
-  base_url: https://543e3884.ideate-cms-auth.pages.dev     # ⚠️ EDIT THIS — see /oauth-proxy
+  base_url: https://ideate-auth.bschoolweb.workers.dev     # ⚠️ EDIT THIS — see /oauth-proxy
   auth_endpoint: auth
 
 # Gives every edit a draft → in review → ready pipeline as a GitHub pull
