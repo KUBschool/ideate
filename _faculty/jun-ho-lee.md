@@ -1,5 +1,5 @@
 ---
-name: "Jun Ho Lee"
+full_name: "Jun Ho Lee"
 title: "Assistant Professor"
 academic_area: "Management and Entrepreneurship"
 profile_url: "https://business.ku.edu/people/jun-ho-lee"

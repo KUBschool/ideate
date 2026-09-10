@@ -1,5 +1,5 @@
 ---
-name: "Gjergji Cici"
+full_name: "Gjergji Cici"
 title: "Koch Professor in Business Economics"
 academic_area: "Finance"
 profile_url: "https://business.ku.edu/people/gjergji-cici"

@@ -10,7 +10,7 @@ description: "Browse KU School of Business faculty and their research featured o
   <p>Faculty whose research has been featured on Ideate. Each profile links to their full KU Business listing.</p>
 </div>
 
-{% assign faculty_sorted = site.faculty | sort: 'name' %}
+{% assign faculty_sorted = site.faculty | sort: 'full_name' %}
 {% assign areas = faculty_sorted | map: 'academic_area' | uniq | sort %}
 
 <div class="wrap" style="padding: 8px 0 56px;">

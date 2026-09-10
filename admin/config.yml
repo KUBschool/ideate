@@ -48,8 +48,8 @@ collections:
         widget: "relation"
         collection: "faculty"
         multiple: true
-        search_fields: ["name"]
-        display_fields: ["name"]
+        search_fields: ["full_name"]
+        display_fields: ["full_name"]
         value_field: "{{slug}}"
         required: false
         hint: "Pick from the Faculty collection. Not listed yet? Add them under Faculty first, then come back and tag them here."
@@ -89,10 +89,10 @@ collections:
     folder: "_faculty"
     create: true
     slug: "{{slug}}"
-    identifier_field: "name"
-    summary: "{{name}} — {{title}}"
+    identifier_field: "full_name"
+    summary: "{{full_name}} — {{title}}"
     fields:
-      - {label: "Full name", name: "name", widget: "string", hint: "As it appears on their business.ku.edu profile."}
+      - {label: "Full name", name: "full_name", widget: "string", hint: "As it appears on their business.ku.edu profile."}
       - {label: "Title", name: "title", widget: "string", hint: "Copy exactly from their business.ku.edu listing."}
       - {label: "Academic area", name: "academic_area", widget: "string", required: false}
       - {label: "KU Business profile URL", name: "profile_url", widget: "string", hint: "e.g. https://business.ku.edu/people/jane-doe"}

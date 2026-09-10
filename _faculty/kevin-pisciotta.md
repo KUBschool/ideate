@@ -1,5 +1,5 @@
 ---
-name: "Kevin Pisciotta"
+full_name: "Kevin Pisciotta"
 title: "Associate Professor"
 academic_area: "Finance"
 profile_url: "https://business.ku.edu/people/kevin-pisciotta"

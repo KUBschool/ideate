@@ -1,5 +1,5 @@
 ---
-name: "Mazhar Arikan"
+full_name: "Mazhar Arikan"
 title: "Associate Professor, Anderson Family Fellow"
 academic_area: "Analytics, Information, Operations"
 profile_url: "https://business.ku.edu/people/mazhar-arikan"

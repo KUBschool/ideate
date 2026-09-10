@@ -1,5 +1,5 @@
 ---
-name: "Chan Li"
+full_name: "Chan Li"
 title: "C.A. Scupin Professor, Koch Professor in Business Economics"
 academic_area: "Accounting"
 profile_url: "https://business.ku.edu/people/chan-li"

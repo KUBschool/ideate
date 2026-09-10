@@ -3,11 +3,11 @@
   {% if f.photo %}
     <img
       src="{% if f.photo contains '://' %}{{ f.photo }}{% else %}{{ f.photo | relative_url }}{% endif %}"
-      alt="{{ f.name }}"
+      alt="{{ f.full_name }}"
       class="photo portrait">
   {% else %}
     <div class="img-placeholder portrait" style="--tint:var(--ku-steam)"><span>Photo placeholder</span></div>
   {% endif %}
-  <h3>{{ f.name }}</h3>
+  <h3>{{ f.full_name }}</h3>
   <p>{{ f.title }}</p>
 </a>

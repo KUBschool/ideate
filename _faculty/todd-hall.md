@@ -1,5 +1,5 @@
 ---
-name: "Todd Hall"
+full_name: "Todd Hall"
 title: "Assistant Professor"
 academic_area: "Management and Entrepreneurship"
 profile_url: "https://business.ku.edu/people/todd-hall"

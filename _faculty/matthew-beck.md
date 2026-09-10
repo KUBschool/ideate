@@ -1,5 +1,5 @@
 ---
-name: "Matthew Beck"
+full_name: "Matthew Beck"
 title: "Associate Professor"
 academic_area: "Accounting"
 profile_url: "https://business.ku.edu/people/matthew-beck"

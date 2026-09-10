@@ -8,7 +8,7 @@ layout: default
 {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": {{ page.name | jsonify }},
+  "name": {{ page.full_name | jsonify }},
   "jobTitle": {{ page.title | jsonify }},
   "url": "{{ site.url }}{{ page.url | relative_url }}",
   "worksFor": {
@@ -24,7 +24,7 @@ layout: default
     {% if page.photo %}
       <img
         src="{% if page.photo contains '://' %}{{ page.photo }}{% else %}{{ page.photo | relative_url }}{% endif %}"
-        alt="{{ page.name }}"
+        alt="{{ page.full_name }}"
         class="photo portrait">
     {% else %}
       <div class="img-placeholder portrait" style="--tint:var(--ku-steam)"><span>Photo placeholder</span></div>
@@ -32,7 +32,7 @@ layout: default
   </div>
   <div class="faculty-header-text">
     <div class="eyebrow" style="--topic-color:var(--ku-blue)"><span class="dot"></span>Faculty</div>
-    <h1>{{ page.name }}</h1>
+    <h1>{{ page.full_name }}</h1>
     <p class="dek">{{ page.title }}{% if page.academic_area %} &middot; {{ page.academic_area }} academic area{% endif %}</p>
 
     {% if my_topic_slugs.size > 0 %}
@@ -61,6 +61,6 @@ layout: default
     {% endfor %}
   </div>
   {% else %}
-  <p style="color:var(--ku-gray-mid); font-size:15px;">No articles tagged to {{ page.name }} yet.</p>
+  <p style="color:var(--ku-gray-mid); font-size:15px;">No articles tagged to {{ page.full_name }} yet.</p>
   {% endif %}
 </section>

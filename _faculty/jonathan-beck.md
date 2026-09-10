@@ -1,5 +1,5 @@
 ---
-name: "Jonathan Beck"
+full_name: "Jonathan Beck"
 title: "Assistant Professor"
 academic_area: "Marketing and Business Law"
 profile_url: "https://business.ku.edu/people/jonathan-beck"

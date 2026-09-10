@@ -41,7 +41,7 @@ title: "Home"
       <div class="faculty-chips">
         {% for slug in feature.faculty %}
         {% assign f = site.faculty | where: 'slug', slug | first %}
-        <a href="{{ f.url | relative_url }}" class="faculty-chip"><span class="avatar"></span>{{ f.name }}</a>
+        <a href="{{ f.url | relative_url }}" class="faculty-chip"><span class="avatar"></span>{{ f.full_name }}</a>
         {% endfor %}
       </div>
       {% endif %}

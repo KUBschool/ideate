@@ -1,5 +1,5 @@
 ---
-name: "Debabrata \"Deb\" Dey"
+full_name: "Debabrata \"Deb\" Dey"
 title: "Davis Area Director, Analytics, Information, Operations; Ronald G. Harper Professor of Artificial Intelligence and Information Systems"
 academic_area: "Analytics, Information, Operations"
 profile_url: "https://business.ku.edu/people/debabrata-dey"

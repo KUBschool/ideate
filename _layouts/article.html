@@ -14,7 +14,7 @@ layout: default
   "author": [
     {% for slug in page.faculty %}
     {% assign f = site.faculty | where: 'slug', slug | first %}
-    { "@type": "Person", "name": {{ f.name | jsonify }}, "url": "{{ site.url }}{{ f.url | relative_url }}"{% if f.profile_url %}, "sameAs": [{{ f.profile_url | jsonify }}]{% endif %} }{% unless forloop.last %},{% endunless %}
+    { "@type": "Person", "name": {{ f.full_name | jsonify }}, "url": "{{ site.url }}{{ f.url | relative_url }}"{% if f.profile_url %}, "sameAs": [{{ f.profile_url | jsonify }}]{% endif %} }{% unless forloop.last %},{% endunless %}
     {% endfor %}
   ],
   "publisher": {
@@ -73,7 +73,7 @@ layout: default
       <div class="faculty-chips">
         {% for slug in page.faculty %}
         {% assign f = site.faculty | where: 'slug', slug | first %}
-        <a href="{{ f.url | relative_url }}" class="faculty-chip"><span class="avatar"></span>{{ f.name }}</a>
+        <a href="{{ f.url | relative_url }}" class="faculty-chip"><span class="avatar"></span>{{ f.full_name }}</a>
         {% endfor %}
       </div>
     </div>

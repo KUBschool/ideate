@@ -1,5 +1,5 @@
 ---
-name: "Sara Reed"
+full_name: "Sara Reed"
 title: "Assistant Professor"
 academic_area: "Analytics, Information, Operations"
 profile_url: "https://business.ku.edu/people/sara-reed"

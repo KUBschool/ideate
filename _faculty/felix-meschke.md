@@ -1,5 +1,5 @@
 ---
-name: "Felix Meschke"
+full_name: "Felix Meschke"
 title: "Associate Professor, Director of the Davis Center for Figure Sense"
 academic_area: "Finance"
 profile_url: "https://business.ku.edu/people/felix-meschke"

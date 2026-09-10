@@ -1,5 +1,5 @@
 ---
-name: "Angel Tengulov"
+full_name: "Angel Tengulov"
 title: "Assistant Professor"
 academic_area: "Finance"
 profile_url: "https://business.ku.edu/people/angel-tengulov"

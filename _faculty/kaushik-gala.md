@@ -1,5 +1,5 @@
 ---
-name: "Kaushik Gala"
+full_name: "Kaushik Gala"
 title: "Assistant Professor"
 academic_area: "Management and Entrepreneurship"
 profile_url: "https://business.ku.edu/people/kaushik-gala"
