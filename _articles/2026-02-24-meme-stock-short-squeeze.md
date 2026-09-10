@@ -2,9 +2,7 @@
 title: "How social media turned GameStop into a billion-dollar short squeeze"
 dek: "New research traces how discussion on Reddit, StockTwits and X fueled the 2021 \"meme stock\" run on GameStop and AMC — and what it revealed about market oversight."
 topic: finance
-faculty:
-  - name: Angel Tengulov
-    url: https://business.ku.edu/people/angel-tengulov
+faculty: [angel-tengulov]
 byline: "Angel Tengulov"
 date: 2026-02-24
 read_time: 5

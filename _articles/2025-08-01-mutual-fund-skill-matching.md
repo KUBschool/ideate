@@ -2,9 +2,7 @@
 title: "Matching skills to roles pays off inside mutual fund firms"
 dek: "Firms that fit employees' skills to the right jobs within the mutual fund industry see significantly stronger risk-adjusted performance, new research finds."
 topic: finance
-faculty:
-  - name: Gjergji Cici
-    url: https://business.ku.edu/people/gjergji-cici
+faculty: [gjergji-cici]
 byline: "Gjergji Cici"
 date: 2025-08-01
 read_time: 4

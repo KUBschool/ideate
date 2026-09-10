@@ -3,11 +3,7 @@ title: "Risky business: Financial distress experience and audit quality"
 dek: A look at how specialized audit experience improves judgments while
   reducing costs.
 topic: accounting
-faculty:
-  - name: Matthew Beck
-    url: https://business.ku.edu/people/matthew-beck
-  - name: Chan Li
-    url: https://business.ku.edu/people/chan-li
+faculty: [matthew-beck, chan-li]
 byline: Beck, M., Constance, P., & Li, C.
 date: 2025-07-01
 read_time: 5

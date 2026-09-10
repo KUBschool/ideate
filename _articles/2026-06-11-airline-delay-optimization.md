@@ -2,9 +2,7 @@
 title: "Small itinerary tweaks could cut airline delays without hurting efficiency"
 dek: "Combining passenger-level and flight-level data could let airlines make modest adjustments that meaningfully improve the travel experience."
 topic: analytics
-faculty:
-  - name: Mazhar Arikan
-    url: https://business.ku.edu/people/mazhar-arikan
+faculty: [mazhar-arikan]
 byline: "Mazhar Arikan"
 date: 2026-06-11
 read_time: 4

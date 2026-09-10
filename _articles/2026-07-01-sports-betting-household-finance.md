@@ -2,9 +2,7 @@
 title: "What sports betting does to household budgets during big events"
 dek: "Bank-transaction data tracking spending, saving and credit use shows how events like the World Cup can reshape everyday financial decisions."
 topic: finance
-faculty:
-  - name: Kevin Pisciotta
-    url: https://business.ku.edu/people/kevin-pisciotta
+faculty: [kevin-pisciotta]
 byline: "Kevin Pisciotta & Justin Balthrop"
 date: 2026-07-01
 read_time: 4

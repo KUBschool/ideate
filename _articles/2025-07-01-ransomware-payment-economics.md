@@ -3,9 +3,7 @@ title: Paying the ransom can make the next attack more likely
 dek: A microeconomic model of ransomware "extortionality" finds that payouts
   create costs that spill over to other future victims.
 topic: information-systems
-faculty:
-  - name: Debabrata Dey
-    url: https://business.ku.edu/people/debabrata-dey
+faculty: [debabrata-dey]
 byline: Debabrata Dey
 date: 2025-07-01
 read_time: 5

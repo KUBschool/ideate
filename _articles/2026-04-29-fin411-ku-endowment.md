@@ -2,9 +2,7 @@
 title: "An honors class puts KU Endowment's equity bet to the test"
 dek: "A FIN 411 class partnered with KU Endowment to stress-test a simple question: with markets richly valued, is an all-in equity allocation still the right call?"
 topic: finance
-faculty:
-  - name: Felix Meschke
-    url: https://business.ku.edu/people/felix-meschke
+faculty: [felix-meschke]
 byline: "Felix Meschke's honors class"
 date: 2026-04-29
 read_time: 3

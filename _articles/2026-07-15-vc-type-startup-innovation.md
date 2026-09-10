@@ -2,9 +2,7 @@
 title: "Not all venture capital is the same kind of fuel for a startup"
 dek: "Independent VCs and corporate VCs push portfolio startups toward different — and rarely better-or-worse — innovation outcomes."
 topic: entrepreneurship
-faculty:
-  - name: Kaushik Gala
-    url: https://business.ku.edu/people/kaushik-gala
+faculty: [kaushik-gala]
 byline: "Kaushik Gala"
 date: 2026-07-15
 read_time: 5

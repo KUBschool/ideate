@@ -2,9 +2,7 @@
 title: "Curb space is the quiet bottleneck in last-mile delivery"
 dek: "As online ordering keeps growing, parking and curb time are shaping delivery costs as much as routing does — especially around major events."
 topic: supply-chain
-faculty:
-  - name: Sara Reed
-    url: https://business.ku.edu/people/sara-reed
+faculty: [sara-reed]
 byline: "Sara Reed"
 date: 2026-06-05
 read_time: 4

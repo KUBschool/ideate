@@ -2,9 +2,7 @@
 title: "AI co-workers might be making teams trust each other more, not less"
 dek: "A new KU study finds that when teammates can point to an AI-backed recommendation, they trust each other's judgment faster — especially on teams that just met."
 topic: ai
-faculty:
-  - name: Todd Hall
-    url: https://business.ku.edu/people/todd-hall
+faculty: [todd-hall]
 byline: "Todd Hall"
 date: 2026-02-02
 read_time: 6

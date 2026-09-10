@@ -2,9 +2,7 @@
 title: "Watching a server get treated badly makes customers tip more"
 dek: "Across four studies, witnessing incivility toward service workers reliably produced bigger tips — not confrontation."
 topic: marketing
-faculty:
-  - name: Jonathan Beck
-    url: https://business.ku.edu/people/jonathan-beck
+faculty: [jonathan-beck]
 byline: "Jonathan Beck"
 date: 2026-02-19
 read_time: 5

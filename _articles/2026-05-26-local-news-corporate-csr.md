@@ -2,9 +2,7 @@
 title: "As local newsrooms shrink, so does corporate accountability"
 dek: "Fewer local reporters covering a company means less outside scrutiny — and research finds that measurably weakens firms' CSR commitments."
 topic: policy
-faculty:
-  - name: Jun Ho Lee
-    url: https://business.ku.edu/people/jun-ho-lee
+faculty: [jun-ho-lee]
 byline: "Jun Ho Lee"
 date: 2026-05-26
 read_time: 5
