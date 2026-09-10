@@ -15,7 +15,10 @@ permalink: /articles/
   {% assign a_topic = site.data.topics | where: 'slug', a.topic | first %}
   <div class="stream-row">
     <div>
-      <div class="eyebrow" style="--topic-color:var(--topic-{{ a.topic }}); margin-bottom:4px;"><span class="dot"></span>{{ a_topic.name }}</div>
+      <div class="eyebrow" style="--topic-color:var(--topic-{{ a.topic }}); margin-bottom:4px;">
+        <span class="dot"></span>{{ a_topic.name }}
+        {% include status-badge.html status=a.status %}
+      </div>
       <a href="{{ a.url | relative_url }}" class="card-link"><h3>{{ a.title }}</h3></a>
       <p class="dek">{{ a.dek }} <span style="color:var(--ku-gray-mid)">— {{ a.byline }}</span></p>
     </div>

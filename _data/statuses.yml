@@ -1,0 +1,12 @@
+# Article-level status tags — separate from topics. These describe where a
+# piece of research stands in the publication process, not what it's about.
+# To add another status later (e.g. "Working Paper," "Award Winner"): add an
+# entry here, add the matching option in admin/config.yml's Status field,
+# and it'll render automatically anywhere status-badge.html is used.
+
+- slug: forthcoming
+  name: Forthcoming
+  description: >-
+    Research faculty are presenting or discussing publicly — often at
+    academic conferences — that hasn't yet been accepted for final
+    publication by a journal.

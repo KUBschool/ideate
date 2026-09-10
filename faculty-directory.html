@@ -1,0 +1,28 @@
+---
+layout: default
+title: "Faculty"
+permalink: /faculty/
+description: "Browse KU School of Business faculty and their research featured on Ideate."
+---
+<div class="wrap archive-header">
+  <div class="eyebrow" style="--topic-color:var(--ku-blue)"><span class="dot"></span>People</div>
+  <h1>Faculty</h1>
+  <p>Faculty whose research has been featured on Ideate. Each profile links to their full KU Business listing.</p>
+</div>
+
+{% assign faculty_sorted = site.faculty | sort: 'name' %}
+{% assign areas = faculty_sorted | map: 'academic_area' | uniq | sort %}
+
+<div class="wrap" style="padding: 8px 0 56px;">
+  {% for area in areas %}
+    {% assign area_faculty = faculty_sorted | where: 'academic_area', area %}
+    <div class="section-head" style="margin-top:36px;">
+      <h2>{{ area | default: "Other" }}</h2>
+    </div>
+    <div class="faculty-grid">
+      {% for f in area_faculty %}
+        {% include faculty-card.html person=f %}
+      {% endfor %}
+    </div>
+  {% endfor %}
+</div>

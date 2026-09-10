@@ -30,6 +30,7 @@ title: "Home"
       <div class="eyebrow" style="--topic-color:var(--topic-{{ feature.topic }})">
         <span class="dot"></span>
         <a href="{{ '/topics/' | append: feature.topic | append: '/' | relative_url }}">{{ feature_topic.name }}</a>
+        {% include status-badge.html status=feature.status %}
       </div>
       <a href="{{ feature.url | relative_url }}">
         <h1>{{ feature.title }}</h1>

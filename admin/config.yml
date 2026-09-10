@@ -74,6 +74,13 @@ collections:
         widget: "text"
         required: false
         hint: "40–60 word answer-first summary — states the finding immediately. This is the GEO-friendly block; see the Story Editor prototype for how an AI-assisted draft of this gets generated and then edited before it's saved here."
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options:
+          - {label: "Forthcoming", value: "forthcoming"}
+        required: false
+        hint: "Leave blank for normal published research. Use Forthcoming for research being discussed publicly, e.g. at a conference, before a journal has formally accepted it."
       - {label: "Body", name: "body", widget: "markdown"}
 
   - name: "faculty"

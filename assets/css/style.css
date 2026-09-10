@@ -128,6 +128,31 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   .faculty-photo-wrap{ width: 160px; }
 }
 
+/* ---------- faculty directory grid ---------- */
+.faculty-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px 22px;
+}
+.faculty-dir-card{ display: block; }
+.faculty-dir-card .photo,
+.faculty-dir-card .img-placeholder{ margin-bottom: 10px; }
+.faculty-dir-card h3{
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ku-night);
+  margin: 0 0 2px;
+}
+.faculty-dir-card p{ font-size: 13px; color: var(--ku-gray-mid); margin: 0; line-height: 1.4; }
+.faculty-dir-card:hover h3{ color: var(--ku-blue); }
+@media (max-width: 900px){
+  .faculty-grid{ grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 620px){
+  .faculty-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+
 /* ---------- header ---------- */
 .parent-bar{
   background: var(--ku-night);
@@ -263,6 +288,20 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 }
 .eyebrow a{ color: inherit; }
 .eyebrow a:hover{ color: var(--ku-blue); }
+
+.status-badge{
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .01em;
+  color: var(--ku-wheat);
+  border: 1px solid var(--ku-wheat);
+  border-radius: 20px;
+  padding: 1px 9px;
+  margin-left: 4px;
+  cursor: default;
+}
 
 /* ---------- hero (2-column) ---------- */
 .hero-section{ padding: 40px 0 48px; }

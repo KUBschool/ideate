@@ -16,6 +16,7 @@ layout: default
     <div>
       <a href="{{ a.url | relative_url }}" class="card-link"><h3>{{ a.title }}</h3></a>
       <p class="dek">{{ a.dek }} <span style="color:var(--ku-gray-mid)">— {{ a.byline }}</span></p>
+      {% include status-badge.html status=a.status %}
     </div>
     <span class="stream-date">{{ a.date | date: "%b %-d, %Y" }}</span>
   </div>

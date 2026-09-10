@@ -11,6 +11,7 @@
   <div class="eyebrow" style="--topic-color:var(--topic-{{ article.topic }})">
     <span class="dot"></span>
     <a href="{{ '/topics/' | append: article.topic | append: '/' | relative_url }}">{{ topic_data.name }}</a>
+    {% include status-badge.html status=article.status %}
   </div>
   <a href="{{ article.url | relative_url }}" class="card-link"><h3>{{ article.title }}</h3></a>
   <p class="dek">{{ article.dek }}</p>
