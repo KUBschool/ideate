@@ -2,6 +2,11 @@
 layout: default
 ---
 {% assign topic_data = site.data.topics | where: 'slug', page.topic | first %}
+{% assign articles = site.articles | where: 'topic', page.topic | sort: 'date' | reverse %}
+{% assign feature = articles | first %}
+{% assign rest = articles | slice: 1, 999 %}
+{% assign hero_list = rest | slice: 0, 3 %}
+{% assign remaining = rest | slice: 3, 999 %}
 
 <div class="wrap archive-header">
   <div class="eyebrow" style="--topic-color:var(--topic-{{ page.topic }})"><span class="dot"></span>Topic</div>
@@ -9,20 +14,80 @@ layout: default
   <p>{{ topic_data.description }}</p>
 </div>
 
-{% assign articles = site.articles | where: 'topic', page.topic | sort: 'date' | reverse %}
-<div class="wrap stream">
-  {% for a in articles %}
-  <div class="stream-row">
-    <div>
-      <a href="{{ a.url | relative_url }}" class="card-link"><h3>{{ a.title }}</h3></a>
-      <p class="dek">{{ a.dek }} <span style="color:var(--ku-gray-mid)">— {{ a.byline }}</span></p>
-      {% include status-badge.html status=a.status %}
+{% assign show_sidebar = false %}
+{% if topic_data.callout or hero_list.size > 0 %}{% assign show_sidebar = true %}{% endif %}
+
+{% if feature %}
+<section class="hero-section">
+  <div class="wrap hero-grid{% unless show_sidebar %} hero-grid-solo{% endunless %}">
+    <article class="hero-feature">
+      <a href="{{ feature.url | relative_url }}">
+        {% if feature.image %}
+          <img src="{% if feature.image contains '://' %}{{ feature.image }}{% else %}{{ feature.image | relative_url }}{% endif %}" alt="{{ feature.image_alt | default: feature.title }}" class="photo hero-art">
+        {% else %}
+          <div class="img-placeholder hero-art" style="--tint:var(--ku-{{ feature.image_tint | default: 'steam' }})"><span>Photo placeholder</span></div>
+        {% endif %}
+      </a>
+      <div class="eyebrow" style="--topic-color:var(--topic-{{ feature.topic }})">
+        <span class="dot"></span>{{ topic_data.name }}
+        {% include status-badge.html status=feature.status %}
+      </div>
+      <a href="{{ feature.url | relative_url }}"><h1>{{ feature.title }}</h1></a>
+      <p class="dek">{{ feature.dek }}</p>
+      <div class="byline">By Ideate Staff &middot; {{ feature.date | date: "%B %-d, %Y" }} &middot; {{ feature.read_time | default: 5 }} min read</div>
+      {% if feature.faculty and feature.faculty.size > 0 %}
+      <div class="faculty-chips">
+        {% for slug in feature.faculty %}
+          {% assign f = site.faculty | where: 'slug', slug | first %}
+          <a href="{{ f.url | relative_url }}" class="faculty-chip"><span class="avatar"></span>{{ f.full_name }}</a>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </article>
+
+    {% if show_sidebar %}
+    <div class="hero-list">
+      {% if topic_data.callout %}
+        <div class="topic-callout">
+          <h3>{{ topic_data.callout.title }}</h3>
+          {% for stat in topic_data.callout.stats %}
+          <div class="stat-row">
+            <span class="stat-value">{{ stat.value }}</span>
+            <span class="stat-label">{{ stat.label }}</span>
+          </div>
+          {% endfor %}
+          {% if topic_data.callout.note %}<p class="note">{{ topic_data.callout.note }}</p>{% endif %}
+        </div>
+      {% else %}
+        {% for a in hero_list %}
+        {% assign a_topic = site.data.topics | where: 'slug', a.topic | first %}
+        <div class="hero-list-item">
+          <div class="eyebrow" style="--topic-color:var(--topic-{{ a.topic }})"><span class="dot"></span>{{ a_topic.name }}</div>
+          <a href="{{ a.url | relative_url }}"><h3>{{ a.title }}</h3></a>
+          <p class="dek">{{ a.dek }}</p>
+        </div>
+        {% endfor %}
+      {% endif %}
     </div>
-    <span class="stream-date">{{ a.date | date: "%b %-d, %Y" }}</span>
+    {% endif %}
   </div>
-  {% else %}
-  <p style="padding:32px 0; color:var(--ku-gray-mid); font-size:15px;">
-    No articles tagged {{ topic_data.name }} yet — check back soon.
-  </p>
-  {% endfor %}
+</section>
+
+{% if remaining.size > 0 %}
+<section class="wrap" style="padding-bottom:56px;">
+  <div class="section-head">
+    <h2>More in {{ topic_data.name }}</h2>
+  </div>
+  <div class="card-grid">
+    {% for a in remaining %}
+      {% include card.html article=a %}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{% else %}
+<div class="wrap" style="padding:48px 0;">
+  <p style="color:var(--ku-gray-mid); font-size:15px;">No articles tagged {{ topic_data.name }} yet — check back soon.</p>
 </div>
+{% endif %}

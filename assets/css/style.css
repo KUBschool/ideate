@@ -123,6 +123,42 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 .faculty-header-text .dek{ font-family: var(--font-sans); font-size: 16px; color: #565650; margin-bottom: 4px; }
 .faculty-topics{ display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
 .faculty-topics .topic-pill{ cursor: pointer; }
+
+/* ---------- topic-page stats callout (right column alternative to recent stories) ---------- */
+.topic-callout{
+  border-left: 3px solid var(--ku-blue);
+  padding-left: 24px;
+}
+.topic-callout h3{
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .01em;
+  color: var(--ku-gray-mid);
+  margin: 0 0 18px;
+}
+.topic-callout .stat-row{
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.topic-callout .stat-value{
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--ku-blue);
+  white-space: nowrap;
+}
+.topic-callout .stat-label{ font-size: 13px; color: var(--ku-gray-mid); line-height: 1.4; }
+.topic-callout .note{
+  font-size: 13px;
+  color: #565650;
+  line-height: 1.5;
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid #e7e7e2;
+}
 @media (max-width: 620px){
   .faculty-header{ grid-template-columns: 1fr; }
   .faculty-photo-wrap{ width: 160px; }
@@ -309,6 +345,10 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   gap: 48px;
+}
+.hero-grid.hero-grid-solo{
+  grid-template-columns: 1fr;
+  max-width: 760px;
 }
 .hero-feature h1{
   font-size: 34px;

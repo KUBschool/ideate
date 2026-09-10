@@ -6,6 +6,12 @@
 - slug: accounting
   name: Accounting
   description: "Research on auditing, financial reporting, and the systems that keep businesses honest."
+  callout:
+    title: "Accounting at KU Business"
+    stats:
+      - {value: "No. 1", label: "Global ranking, audit archival research (BYU, 2025)"}
+      - {value: "No. 2", label: "Global ranking, auditing publications overall"}
+    note: "KU accounting faculty have sustained this ranking year over year — see the full story in Faculty & school recognition on the homepage."
 - slug: finance
   name: Finance
   description: "Research on banking, capital markets, corporate finance, and how financial decisions get made under uncertainty."
