@@ -30,6 +30,9 @@
 - slug: entrepreneurship
   name: Entrepreneurship
   description: "Research on founders, funding, and how new ventures actually get built."
+- slug: management
+  name: Management
+  description: "Research on leadership, organizational behavior, and how people and teams are managed at work."
 - slug: business-law
   name: Business Law
   description: "Research on the legal and regulatory environment businesses operate in."

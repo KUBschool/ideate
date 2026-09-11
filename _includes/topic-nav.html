@@ -1,8 +1,10 @@
-{% assign active_topic = page.topic | default: 'all' %}
+{% assign active_topic = page.nav_active | default: page.topic | default: 'all' %}
+{% assign sorted_topics = site.data.topics | sort_natural: 'name' %}
 <nav class="topic-nav" aria-label="Browse by topic">
   <div class="wrap">
     <a href="{{ '/' | relative_url }}" class="topic-pill{% if active_topic == 'all' %} active{% endif %}">All</a>
-    {% for topic in site.data.topics %}
+    <a href="{{ '/forthcoming/' | relative_url }}" class="topic-pill pill-forthcoming{% if active_topic == 'forthcoming' %} active{% endif %}">Forthcoming</a>
+    {% for topic in sorted_topics %}
     <a href="{{ '/topics/' | append: topic.slug | append: '/' | relative_url }}"
        class="topic-pill{% if active_topic == topic.slug %} active{% endif %}">{{ topic.name }}</a>
     {% endfor %}

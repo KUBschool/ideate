@@ -37,6 +37,7 @@
   --topic-information-systems:   var(--ku-lake);
   --topic-analytics:             #3f9dc4; /* Sky, darkened for use as text/dot on white */
   --topic-entrepreneurship:      var(--ku-wheat);
+  --topic-management:            #6b7280; /* slate — every named KU accent is already claimed by another topic */
   --topic-business-law:          var(--ku-brick);
   --topic-ai:                    #5f6f8c; /* Fog, darkened */
   --topic-policy:                var(--ku-fire);
@@ -283,6 +284,17 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 .topic-pill.active{
   background: var(--ku-blue);
   border-color: var(--ku-blue);
+  color: var(--white);
+}
+.topic-pill.pill-forthcoming{
+  border-color: var(--ku-wheat);
+  color: #8a6100;
+  font-weight: 600;
+}
+.topic-pill.pill-forthcoming:hover{ border-color: #c98600; }
+.topic-pill.pill-forthcoming.active{
+  background: var(--ku-wheat);
+  border-color: var(--ku-wheat);
   color: var(--white);
 }
 
