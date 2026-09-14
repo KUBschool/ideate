@@ -7,6 +7,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 {% seo %}
 <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+{% assign accent = site.data.header.accent_color | default: 'blue' %}
+{% unless accent == 'blue' %}
+<style>
+  /* Site-wide accent color, set under Site Settings -> Header in the CMS.
+     Re-points the one variable used for buttons/links/active nav states —
+     never touches the per-topic tag colors, which live in style.css. */
+  :root { --ku-blue: var(--ku-{{ accent }}); }
+</style>
+{% endunless %}
 </head>
 <body>
 

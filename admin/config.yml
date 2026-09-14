@@ -102,6 +102,52 @@ collections:
   - name: "settings"
     label: "Site Settings"
     files:
+      - label: "Header"
+        name: "header"
+        file: "_data/header.yml"
+        fields:
+          - {label: "Logo", name: "logo", widget: "image", required: false, hint: "Upload a logo, or leave blank to keep the text wordmark (Ideate.)."}
+          - label: "Accent color"
+            name: "accent_color"
+            widget: "select"
+            options:
+              - {label: "Kansas Blue (default)", value: "blue"}
+              - {label: "Crimson", value: "crimson"}
+              - {label: "Night", value: "night"}
+            default: "blue"
+            hint: "Controls buttons, links, and active nav states sitewide. Does not affect topic tag colors."
+      - label: "Footer"
+        name: "footer"
+        file: "_data/footer.yml"
+        fields:
+          - {label: "Logo", name: "logo", widget: "image", required: false, hint: "This shows on the dark footer background — upload a light/white version if your logo has dark text. Leave blank to keep the text wordmark."}
+          - {label: "About text", name: "about_text", widget: "text"}
+          - label: "Social links"
+            name: "social_links"
+            widget: "list"
+            fields:
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "URL", name: "url", widget: "string"}
+          - label: "Columns"
+            name: "columns"
+            widget: "list"
+            hint: "Each column is a heading plus its own list of links."
+            fields:
+              - {label: "Heading", name: "heading", widget: "string"}
+              - label: "Links"
+                name: "links"
+                widget: "list"
+                fields:
+                  - {label: "Label", name: "label", widget: "string"}
+                  - {label: "URL", name: "url", widget: "string", hint: "Full https:// URL, a mailto: link, or a site-relative path like /about/."}
+          - {label: "Address", name: "address", widget: "string"}
+          - label: "Legal links"
+            name: "legal_links"
+            widget: "list"
+            hint: "The small links in the very bottom bar (Accessibility, Website support, etc.)."
+            fields:
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "URL", name: "url", widget: "string"}
       - label: "Just Announced Banner"
         name: "announcement"
         file: "_data/announcement.yml"

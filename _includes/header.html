@@ -8,7 +8,13 @@
 <header class="site-header">
   <div class="wrap">
     <div>
-      <a href="{{ '/' | relative_url }}" class="wordmark">{{ site.title }}<span class="dot">.</span></a>
+      {% if site.data.header.logo %}
+        <a href="{{ '/' | relative_url }}">
+          <img src="{% if site.data.header.logo contains '://' %}{{ site.data.header.logo }}{% else %}{{ site.data.header.logo | relative_url }}{% endif %}" alt="{{ site.title }}" class="site-logo">
+        </a>
+      {% else %}
+        <a href="{{ '/' | relative_url }}" class="wordmark">{{ site.title }}<span class="dot">.</span></a>
+      {% endif %}
       <span class="tagline">{{ site.tagline }}</span>
     </div>
     <nav class="primary-nav">

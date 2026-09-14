@@ -1,47 +1,40 @@
+{% assign fdata = site.data.footer %}
 <footer class="site-footer">
   <div class="wrap footer-top">
     <div class="footer-brand">
-      <span class="wordmark">{{ site.title }}<span class="dot">.</span></span>
-      <p>The research magazine of the University of Kansas School of Business. {{ site.tagline }}.</p>
+      {% if fdata.logo %}
+        <img src="{% if fdata.logo contains '://' %}{{ fdata.logo }}{% else %}{{ fdata.logo | relative_url }}{% endif %}" alt="{{ site.title }}" class="site-logo footer-logo">
+      {% else %}
+        <span class="wordmark">{{ site.title }}<span class="dot">.</span></span>
+      {% endif %}
+      <p>{{ fdata.about_text }}</p>
+      {% if fdata.social_links and fdata.social_links.size > 0 %}
       <div class="footer-social">
-        <a href="https://www.facebook.com/KUbschool/">Facebook</a>
-        <a href="https://www.instagram.com/kubschool/">Instagram</a>
-        <a href="https://www.youtube.com/user/KUBusiness">YouTube</a>
-        <a href="https://www.linkedin.com/school/the-ku-school-of-business/">LinkedIn</a>
+        {% for s in fdata.social_links %}
+        <a href="{{ s.url }}">{{ s.label }}</a>
+        {% endfor %}
       </div>
+      {% endif %}
     </div>
+
+    {% for col in fdata.columns %}
     <div class="footer-col">
-      <h4>Ideate</h4>
+      <h4>{{ col.heading }}</h4>
       <ul>
-        <li><a href="{{ '/about/' | relative_url }}">About Ideate</a></li>
-        <li><a href="mailto:bschoolinfo@ku.edu?subject=Story%20tip%20for%20Ideate">Submit a story tip</a></li>
-        <li><a href="{{ '/#newsletter' | relative_url }}">Subscribe</a></li>
-        <li><a href="mailto:bschoolinfo@ku.edu">Contact editors</a></li>
+        {% for link in col.links %}
+        <li><a href="{% if link.url == '#' or link.url contains '://' or link.url contains 'mailto:' %}{{ link.url }}{% else %}{{ link.url | relative_url }}{% endif %}">{{ link.label }}</a></li>
+        {% endfor %}
       </ul>
     </div>
-    <div class="footer-col">
-      <h4>Research</h4>
-      <ul>
-        <li><a href="{{ '/' | relative_url }}">Browse by topic</a></li>
-        <li><a href="https://business.ku.edu/people/faculty">Faculty directory</a></li>
-        <li><a href="#">Podcasts &amp; webinars</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>KU School of Business</h4>
-      <ul>
-        <li><a href="https://business.ku.edu">business.ku.edu</a></li>
-        <li><a href="https://business.ku.edu/graduate-programs">Programs</a></li>
-        <li><a href="http://www.kuendowment.org">Give to KU Business</a></li>
-      </ul>
-    </div>
+    {% endfor %}
   </div>
+
   <div class="wrap footer-bottom">
-    <span>© {{ 'now' | date: "%Y" }} The University of Kansas · Capitol Federal Hall, 1654 Naismith Drive, Lawrence, KS 66045</span>
+    <span>&copy; {{ 'now' | date: "%Y" }} The University of Kansas &middot; {{ fdata.address }}</span>
     <span>
-      <a href="https://accessibility.ku.edu">Accessibility</a> &nbsp;·&nbsp;
-      <a href="https://cms.ku.edu">Website support</a> &nbsp;·&nbsp;
-      <a href="https://ku.edu">The University of Kansas</a>
+      {% for link in fdata.legal_links %}
+      <a href="{{ link.url }}">{{ link.label }}</a>{% unless forloop.last %} &nbsp;&middot;&nbsp; {% endunless %}
+      {% endfor %}
     </span>
   </div>
 </footer>

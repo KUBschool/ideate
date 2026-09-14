@@ -228,6 +228,8 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   letter-spacing: -0.01em;
 }
 .wordmark .dot{ color: var(--ku-crimson); }
+.site-logo{ max-height: 40px; width: auto; display: block; }
+.footer-logo{ max-height: 32px; margin-bottom: 12px; }
 .tagline{
   display: block;
   font-family: var(--font-sans);
