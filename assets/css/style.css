@@ -228,8 +228,8 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   letter-spacing: -0.01em;
 }
 .wordmark .dot{ color: var(--ku-crimson); }
-.site-logo{ max-height: 40px; width: auto; display: block; }
-.footer-logo{ max-height: 32px; margin-bottom: 12px; }
+.site-logo{ max-width: 500px; max-height: 300px; width: auto; height: auto; display: block; }
+.footer-logo{ max-width: 400px; max-height: 250px; width: auto; height: auto; margin-bottom: 12px; }
 .tagline{
   display: block;
   font-family: var(--font-sans);
@@ -619,14 +619,12 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 .article-header .eyebrow{ font-size: 14px; }
 .article-header h1{
   font-size: 40px;
-  max-width: 20ch;
   margin-bottom: 16px;
 }
 .article-header .dek{
   font-family: var(--font-serif);
   font-size: 19px;
   color: #4a4a45;
-  max-width: 60ch;
   margin-bottom: 18px;
 }
 .article-meta{
