@@ -75,7 +75,7 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 .img-placeholder{
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   background:
     linear-gradient(135deg, rgba(255,255,255,.5) 25%, transparent 25%) 0 0/16px 16px,
     linear-gradient(315deg, rgba(255,255,255,.5) 25%, transparent 25%) 0 0/16px 16px,
@@ -105,7 +105,7 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   border-radius: var(--radius);
   overflow: hidden;
   object-fit: cover;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
 }
 .photo.hero-art{ aspect-ratio: 4 / 3; }
 .photo.wide{ aspect-ratio: 21 / 9; }
@@ -228,7 +228,7 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   letter-spacing: -0.01em;
 }
 .wordmark .dot{ color: var(--ku-crimson); }
-.site-logo{ max-width: 500px; max-height: 200px; width: auto; height: auto; display: block; }
+.site-logo{ max-width: 425px; max-height: 200px; width: auto; height: auto; display: block; }
 .footer-logo{ max-width: 300px; max-height: 200px; width: auto; height: auto; margin-bottom: 12px; }
 .tagline{
   display: block;
