@@ -5,7 +5,6 @@ topic: finance
 faculty: [gjergji-cici]
 byline: "Gjergji Cici"
 date: 2025-08-01
-read_time: 4
 image_tint: limestone
 featured: false
 answer_box: >-

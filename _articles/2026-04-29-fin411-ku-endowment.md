@@ -5,7 +5,6 @@ topic: finance
 faculty: [felix-meschke]
 byline: "Felix Meschke's honors class"
 date: 2026-04-29
-read_time: 3
 image_tint: steam
 featured: false
 answer_box: >-

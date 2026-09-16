@@ -510,27 +510,71 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 }
 .newsletter-grid h2{ color: var(--white); font-size: 24px; margin-bottom: 8px; }
 .newsletter-grid p{ color: #b9cbdb; font-size: 14.5px; margin: 0; max-width: 46ch; }
-.newsletter-form{ display: flex; gap: 10px; }
-.newsletter-form input{
-  font-family: var(--font-sans);
-  font-size: 14px;
-  padding: 11px 14px;
-  border-radius: var(--radius);
-  border: none;
-  width: 240px;
-}
-.newsletter-form button{
+.btn-newsletter-cta{
   font-family: var(--font-sans);
   font-weight: 600;
-  font-size: 14px;
-  padding: 11px 18px;
+  font-size: 14.5px;
+  padding: 13px 24px;
   border-radius: var(--radius);
-  border: none;
   background: var(--ku-crimson);
   color: var(--white);
+  white-space: nowrap;
+}
+.btn-newsletter-cta:hover{ background: #c40009; }
+
+/* ---------- subscribe page form ---------- */
+.subscribe-form .field{ margin-bottom: 22px; }
+.subscribe-form label:not(.checkbox-row){
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ku-gray-mid);
+  margin-bottom: 6px;
+}
+.subscribe-form input[type="text"],
+.subscribe-form input[type="email"]{
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  padding: 11px 13px;
+  border: 1px solid #d9d9d2;
+  border-radius: var(--radius);
+}
+.subscribe-form input[type="text"]:focus,
+.subscribe-form input[type="email"]:focus{ outline: 2px solid var(--ku-blue); outline-offset: 1px; border-color: var(--ku-blue); }
+.subscribe-form fieldset{ border: none; padding: 0; margin: 0; }
+.subscribe-form legend{
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ku-gray-mid);
+  margin-bottom: 10px;
+  padding: 0;
+}
+.checkbox-row{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  color: var(--ku-gray-text);
+  padding: 9px 0;
   cursor: pointer;
 }
-.newsletter-form button:hover{ background: #c40009; }
+.checkbox-row input[type="checkbox"]{ width: 17px; height: 17px; accent-color: var(--ku-blue); cursor: pointer; }
+.btn-primary-large{
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 15.5px;
+  padding: 13px 28px;
+  border-radius: var(--radius);
+  border: none;
+  background: var(--ku-blue);
+  color: var(--white);
+  cursor: pointer;
+  margin-top: 6px;
+}
+.btn-primary-large:hover{ background: var(--ku-night); }
+.form-note{ font-size: 12.5px; color: var(--ku-gray-mid); margin-top: 16px; line-height: 1.5; }
+.form-note a{ color: var(--ku-blue); }
 
 /* ---------- footer ---------- */
 .site-footer{ background: var(--ku-night); color: #cfe0ee; padding: 44px 0 0; }

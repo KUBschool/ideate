@@ -5,7 +5,6 @@ topic: marketing
 faculty: [jonathan-beck]
 byline: "Jonathan Beck"
 date: 2026-02-19
-read_time: 5
 image_tint: steam
 featured: false
 answer_box: >-

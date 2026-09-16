@@ -36,7 +36,7 @@ title: "Home"
         <h1>{{ feature.title }}</h1>
       </a>
       <p class="dek">{{ feature.dek }}</p>
-      <div class="byline">By Ideate Staff · {{ feature.date | date: "%B %-d, %Y" }} · {{ feature.read_time | default: 5 }} min read</div>
+      <div class="byline">By Ideate Staff · {{ feature.date | date: "%B %-d, %Y" }} · {% include read-time.html article=feature %} min read</div>
       {% if feature.faculty and feature.faculty.size > 0 %}
       <div class="faculty-chips">
         {% for slug in feature.faculty %}
@@ -121,9 +121,6 @@ title: "Home"
       <h2>Ideate in your inbox</h2>
       <p>Get faculty research and school news in the newsletter formerly known as our print magazine — now reimagined as Ideate.</p>
     </div>
-    <form class="newsletter-form" onsubmit="return false;">
-      <input type="email" placeholder="you@example.com" aria-label="Email address">
-      <button type="submit">Subscribe</button>
-    </form>
+    <a href="{{ '/subscribe/' | relative_url }}" class="btn-newsletter-cta">Subscribe</a>
   </div>
 </section>

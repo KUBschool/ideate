@@ -1,0 +1,51 @@
+---
+layout: default
+title: "Subscribe"
+permalink: /subscribe/
+description: "Subscribe to Ideate for KU Business research, faculty news, podcasts, webinars, and school updates."
+---
+<div class="wrap archive-header">
+  <div class="eyebrow" style="--topic-color:var(--ku-blue)"><span class="dot"></span>Subscribe</div>
+  <h1>Get Ideate in your inbox</h1>
+  <p>Tell us what you'd like to hear about — you'll only get the updates you actually select.</p>
+</div>
+
+<div class="wrap" style="max-width:600px; padding-bottom:64px;">
+
+  <!--
+    ⚠️ EDIT THIS before going live: replace YOUR_FORM_ID below with your
+    real Formspree endpoint. Sign up free at formspree.io, create a form,
+    and link bschoolcomms@ku.edu as the notification email (Formspree will
+    send a one-time verification link to that inbox — someone with access
+    to it needs to click that link once). See SUBSCRIBE-SETUP.md for the
+    full walkthrough.
+  -->
+  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="subscribe-form">
+
+    <!-- Formspree behavior settings — safe to leave as-is -->
+    <input type="hidden" name="_subject" value="New Ideate subscriber">
+    <input type="hidden" name="_next" value="{{ '/subscribed/' | absolute_url }}">
+    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+    <div class="field">
+      <label for="sub-name">Name</label>
+      <input type="text" id="sub-name" name="Full Name" required>
+    </div>
+
+    <div class="field">
+      <label for="sub-email">Email</label>
+      <input type="email" id="sub-email" name="email" required>
+    </div>
+
+    <fieldset class="field">
+      <legend>What would you like to hear about?</legend>
+      <label class="checkbox-row"><input type="checkbox" name="Updates[]" value="New articles"> New articles</label>
+      <label class="checkbox-row"><input type="checkbox" name="Updates[]" value="New podcast episodes"> New podcast episodes</label>
+      <label class="checkbox-row"><input type="checkbox" name="Updates[]" value="New webinars"> New webinars</label>
+      <label class="checkbox-row"><input type="checkbox" name="Updates[]" value="School of Business updates"> School of Business updates</label>
+    </fieldset>
+
+    <button type="submit" class="btn-primary-large">Subscribe</button>
+    <p class="form-note">We'll only use this to send what you selected above. Unsubscribe anytime by emailing <a href="mailto:bschoolcomms@ku.edu">bschoolcomms@ku.edu</a>.</p>
+  </form>
+</div>

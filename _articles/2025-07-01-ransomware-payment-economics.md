@@ -6,7 +6,6 @@ topic: information-systems
 faculty: [debabrata-dey]
 byline: Debabrata Dey
 date: 2025-07-01
-read_time: 5
 image: /assets/uploads/1903719_aw_business-school-stock-739.jpg
 image_tint: limestone
 featured: false

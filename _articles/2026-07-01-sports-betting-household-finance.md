@@ -5,7 +5,6 @@ topic: finance
 faculty: [kevin-pisciotta]
 byline: "Kevin Pisciotta & Justin Balthrop"
 date: 2026-07-01
-read_time: 4
 image_tint: steam
 featured: false
 answer_box: >-

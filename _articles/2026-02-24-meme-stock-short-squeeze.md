@@ -5,7 +5,6 @@ topic: finance
 faculty: [angel-tengulov]
 byline: "Angel Tengulov"
 date: 2026-02-24
-read_time: 5
 image_tint: limestone
 featured: false
 source_url: "https://business.ku.edu/news/article/social-media-discussions-fueled-meme-stock-events-and-significant-short-squeezes-research-finds"

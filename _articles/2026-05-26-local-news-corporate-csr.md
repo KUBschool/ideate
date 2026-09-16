@@ -5,7 +5,6 @@ topic: policy
 faculty: [jun-ho-lee]
 byline: "Jun Ho Lee"
 date: 2026-05-26
-read_time: 5
 image_tint: steam
 featured: false
 answer_box: >-

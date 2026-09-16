@@ -5,7 +5,6 @@ topic: ai
 faculty: [todd-hall]
 byline: "Todd Hall"
 date: 2026-02-02
-read_time: 6
 image_tint: steam
 featured: true
 source_url: "https://business.ku.edu/news/article/human-ai-interactions-stimulate-coordination-between-co-workers-and-improve-team-performance-study-finds"

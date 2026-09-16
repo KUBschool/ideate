@@ -40,7 +40,7 @@ layout: default
     <span>By Ideate Staff</span>
     <span>·</span>
     <span>{{ page.date | date: "%B %-d, %Y" }}</span>
-    {% if page.read_time %}<span>·</span><span>{{ page.read_time }} min read</span>{% endif %}
+    <span>·</span><span>{% include read-time.html article=page %} min read</span>
   </div>
 </div>
 

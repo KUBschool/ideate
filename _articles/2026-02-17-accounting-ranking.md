@@ -5,7 +5,6 @@ topic: accounting
 faculty: []
 byline: "KU Accounting faculty"
 date: 2026-02-17
-read_time: 3
 image_tint: steam
 featured: false
 answer_box: >-

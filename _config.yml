@@ -64,6 +64,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - DEPLOY.md
+  - SUBSCRIBE-SETUP.md
   - oauth-proxy
   - README.md
   - node_modules

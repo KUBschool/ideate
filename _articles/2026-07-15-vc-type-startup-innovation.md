@@ -5,7 +5,6 @@ topic: entrepreneurship
 faculty: [kaushik-gala]
 byline: "Kaushik Gala"
 date: 2026-07-15
-read_time: 5
 image_tint: limestone
 featured: false
 answer_box: >-

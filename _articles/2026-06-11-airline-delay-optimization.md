@@ -5,7 +5,6 @@ topic: analytics
 faculty: [mazhar-arikan]
 byline: "Mazhar Arikan"
 date: 2026-06-11
-read_time: 4
 image_tint: steam
 featured: false
 answer_box: >-

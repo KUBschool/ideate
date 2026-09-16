@@ -6,7 +6,6 @@ topic: accounting
 faculty: [matthew-beck, chan-li]
 byline: Beck, M., Constance, P., & Li, C.
 date: 2025-07-01
-read_time: 5
 image_tint: steam
 featured: false
 source_url: https://publications.aaahq.org/ajpt/article-abstract/44/1/1/12599/Risky-Business-The-Impact-of-Experience-in?redirectedFrom=fulltext

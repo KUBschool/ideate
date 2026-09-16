@@ -19,7 +19,7 @@ columns:
     links:
       - {label: "About Ideate", url: "/about/"}
       - {label: "Submit a story tip", url: "mailto:bschoolinfo@ku.edu?subject=Story%20tip%20for%20Ideate"}
-      - {label: "Subscribe", url: "/#newsletter"}
+      - {label: "Subscribe", url: "/subscribe/"}
       - {label: "Contact editors", url: "mailto:bschoolinfo@ku.edu"}
   - heading: "Research"
     links:

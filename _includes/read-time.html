@@ -1,0 +1,10 @@
+{%- comment -%}
+  Usage: {% include read-time.html article=some_article %}
+  Outputs just the number of minutes — wrap it with " min read" wherever used.
+  Based on 200 words per minute, a commonly cited average adult silent
+  reading speed for general prose. Always rounds up (a 4.1-minute read
+  shows as "5 min read") and never shows less than 1 minute.
+{%- endcomment -%}
+{%- assign rt_words = include.article.content | strip_html | number_of_words -%}
+{%- assign rt_minutes = rt_words | divided_by: 200.0 | ceil -%}
+{%- if rt_minutes < 1 -%}1{%- else -%}{{ rt_minutes }}{%- endif -%}

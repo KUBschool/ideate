@@ -5,7 +5,6 @@ topic: supply-chain
 faculty: [sara-reed]
 byline: "Sara Reed"
 date: 2026-06-05
-read_time: 4
 image_tint: limestone
 featured: false
 answer_box: >-

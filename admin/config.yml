@@ -56,7 +56,6 @@ collections:
         hint: "Pick from the Faculty collection. Not listed yet? Add them under Faculty first, then come back and tag them here."
       - {label: "Byline (display text)", name: "byline", widget: "string", hint: "What shows in the meta line — usually the lead faculty name, or a department name for staff-written pieces."}
       - {label: "Publish date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, picker_utc: true}
-      - {label: "Read time (minutes)", name: "read_time", widget: "number", default: 5, value_type: "int"}
       - label: "Photo"
         name: "image"
         widget: "image"

@@ -34,7 +34,7 @@ layout: default
       </div>
       <a href="{{ feature.url | relative_url }}"><h1>{{ feature.title }}</h1></a>
       <p class="dek">{{ feature.dek }}</p>
-      <div class="byline">By Ideate Staff &middot; {{ feature.date | date: "%B %-d, %Y" }} &middot; {{ feature.read_time | default: 5 }} min read</div>
+      <div class="byline">By Ideate Staff &middot; {{ feature.date | date: "%B %-d, %Y" }} &middot; {% include read-time.html article=feature %} min read</div>
       {% if feature.faculty and feature.faculty.size > 0 %}
       <div class="faculty-chips">
         {% for slug in feature.faculty %}
