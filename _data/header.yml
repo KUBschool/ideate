@@ -1,2 +1,7 @@
-logo: /assets/uploads/ideate-wordmark.png
-accent_color: blue
+# Controlled from Decap CMS under Site Settings -> Header.
+# Leave logo blank to keep the text wordmark ("Ideate.").
+logo: ""
+# One of: blue, crimson, night — controls buttons, active nav states, and
+# links sitewide. Does NOT affect topic tag colors (those come from
+# _data/topics.yml / the --topic-* variables in style.css).
+accent_color: "blue"
