@@ -1,40 +1,47 @@
-# Controlled from Decap CMS under Site Settings -> Footer.
-# Leave logo blank to keep the text wordmark ("Ideate.").
-logo: ""
-
-about_text: "The research magazine of the University of Kansas School of Business. KU Business insights that elevate business."
-
+logo: /assets/uploads/ideate-x-kubus-wordmark.png
+about_text: The research magazine of the University of Kansas School of
+  Business. KU Business insights that elevate business.
 social_links:
-  - label: "Facebook"
-    url: "https://www.facebook.com/KUbschool/"
-  - label: "Instagram"
-    url: "https://www.instagram.com/kubschool/"
-  - label: "YouTube"
-    url: "https://www.youtube.com/user/KUBusiness"
-  - label: "LinkedIn"
-    url: "https://www.linkedin.com/school/the-ku-school-of-business/"
-
+  - label: Facebook
+    url: https://www.facebook.com/KUbschool/
+  - label: Instagram
+    url: https://www.instagram.com/kubschool/
+  - label: YouTube
+    url: https://www.youtube.com/user/KUBusiness
+  - label: LinkedIn
+    url: https://www.linkedin.com/school/the-ku-school-of-business/
 columns:
-  - heading: "Ideate"
+  - heading: Ideate
     links:
-      - {label: "About Ideate", url: "/about/"}
-      - {label: "Submit a story tip", url: "mailto:bschoolinfo@ku.edu?subject=Story%20tip%20for%20Ideate"}
-      - {label: "Subscribe", url: "/subscribe/"}
-      - {label: "Contact editors", url: "mailto:bschoolinfo@ku.edu"}
-  - heading: "Research"
+      - label: About Ideate
+        url: /about/
+      - label: Submit a story tip
+        url: mailto:bschoolinfo@ku.edu?subject=Story%20tip%20for%20Ideate
+      - label: Subscribe
+        url: /subscribe/
+      - label: Contact editors
+        url: mailto:bschoolinfo@ku.edu
+  - heading: Research
     links:
-      - {label: "Browse by topic", url: "/"}
-      - {label: "Faculty directory", url: "https://business.ku.edu/people/faculty"}
-      - {label: "Podcasts & webinars", url: "#"}
-  - heading: "KU School of Business"
+      - label: Browse by topic
+        url: /
+      - label: Faculty directory
+        url: https://business.ku.edu/people/faculty
+      - label: Podcasts & webinars
+        url: "#"
+  - heading: KU School of Business
     links:
-      - {label: "business.ku.edu", url: "https://business.ku.edu"}
-      - {label: "Programs", url: "https://business.ku.edu/graduate-programs"}
-      - {label: "Give to KU Business", url: "http://www.kuendowment.org"}
-
-address: "Capitol Federal Hall, 1654 Naismith Drive, Lawrence, KS 66045"
-
+      - label: business.ku.edu
+        url: https://business.ku.edu
+      - label: Programs
+        url: https://business.ku.edu/graduate-programs
+      - label: Support KU Business
+        url: http://www.kuendowment.org
+address: Capitol Federal Hall, 1654 Naismith Drive, Lawrence, KS 66045
 legal_links:
-  - {label: "Accessibility", url: "https://accessibility.ku.edu"}
-  - {label: "Website support", url: "https://cms.ku.edu"}
-  - {label: "The University of Kansas", url: "https://ku.edu"}
+  - label: Accessibility
+    url: https://accessibility.ku.edu
+  - label: Website support
+    url: https://cms.ku.edu
+  - label: The University of Kansas
+    url: https://ku.edu
