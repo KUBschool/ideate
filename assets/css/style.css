@@ -731,9 +731,7 @@ blockquote{
 .site-logo{ transition: max-height 0.2s ease, max-width 0.2s ease; }
 .wordmark{ transition: font-size 0.2s ease; }
 .tagline{
-  max-height: 20px;
-  overflow: hidden;
-  transition: opacity 0.15s ease, max-height 0.2s ease, margin-top 0.2s ease;
+  transition: opacity 0.15s ease;
 }
 .site-header.is-scrolled{
   background: var(--ku-night);
@@ -755,8 +753,6 @@ blockquote{
 .site-header.is-scrolled .primary-nav a:hover{ color: var(--ku-sky); }
 .site-header.is-scrolled .tagline{
   opacity: 0;
-  max-height: 0;
-  margin-top: 0;
 }
 
 /* Logo crossfade — only visible once logo_scrolled is set in _data/header.yml */
