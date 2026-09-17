@@ -743,7 +743,7 @@ blockquote{
   padding-bottom: 10px;
 }
 .site-header.is-scrolled .site-logo{
-  max-height: 75px;   /* the size you asked for */
+  max-height: 60px;   /* the size you asked for */
 }
 .site-header.is-scrolled .wordmark{
   font-size: 20px;    /* shrinks the text wordmark too, if no image logo is set */
