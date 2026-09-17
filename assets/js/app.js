@@ -43,4 +43,124 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', onScroll, { passive: true });
     applyScrollState(); // handles a page that loads already scrolled down
   }
+
+  // Header search — expand/collapse the icon into an input, and search a
+  // JSON index built at Jekyll build time (/search.json — see that file
+  // for how it's generated). Fully client-side: no external service, no
+  // server call at search time, works entirely within GitHub Pages.
+  const searchWrap = document.getElementById('nav-search');
+  const searchToggle = document.getElementById('nav-search-toggle');
+  const searchInput = document.getElementById('nav-search-input');
+  const searchResults = document.getElementById('nav-search-results');
+
+  if (searchWrap && searchToggle && searchInput && searchResults) {
+    let searchIndex = null;
+    let indexPromise = null;
+
+    function loadIndex() {
+      if (!indexPromise) {
+        indexPromise = fetch(searchWrap.dataset.indexUrl)
+          .then((res) => res.json())
+          .then((data) => { searchIndex = data; return data; })
+          .catch(() => { searchIndex = []; return []; });
+      }
+      return indexPromise;
+    }
+
+    function clearResults() {
+      searchResults.innerHTML = '';
+      searchResults.classList.remove('has-results');
+    }
+
+    function renderEmpty() {
+      searchResults.innerHTML = '';
+      const p = document.createElement('p');
+      p.className = 'nav-search-empty';
+      p.textContent = 'No results found.';
+      searchResults.appendChild(p);
+      searchResults.classList.add('has-results');
+    }
+
+    function renderResults(items) {
+      searchResults.innerHTML = '';
+      items.slice(0, 8).forEach((item) => {
+        const a = document.createElement('a');
+        a.href = item.url;
+        a.className = 'nav-search-result';
+
+        const type = document.createElement('span');
+        type.className = 'result-type';
+        type.textContent = item.topic;
+
+        const title = document.createElement('div');
+        title.className = 'result-title';
+        title.textContent = item.title;
+
+        const dek = document.createElement('div');
+        dek.className = 'result-dek';
+        dek.textContent = item.dek;
+
+        a.appendChild(type);
+        a.appendChild(title);
+        a.appendChild(dek);
+        searchResults.appendChild(a);
+      });
+      searchResults.classList.add('has-results');
+    }
+
+    function runSearch(query) {
+      const q = query.trim().toLowerCase();
+      if (!q) { clearResults(); return; }
+      if (!searchIndex) { return; } // still loading; input event will fire again on next keystroke anyway
+
+      const matches = searchIndex.filter((item) => {
+        return (
+          (item.title && item.title.toLowerCase().includes(q)) ||
+          (item.dek && item.dek.toLowerCase().includes(q)) ||
+          (item.topic && item.topic.toLowerCase().includes(q)) ||
+          (item.byline && item.byline.toLowerCase().includes(q))
+        );
+      });
+
+      if (matches.length === 0) {
+        renderEmpty();
+      } else {
+        renderResults(matches);
+      }
+    }
+
+    function openSearch() {
+      searchWrap.classList.add('is-open');
+      searchToggle.setAttribute('aria-expanded', 'true');
+      loadIndex();
+      window.setTimeout(() => searchInput.focus(), 50);
+    }
+
+    function closeSearch() {
+      searchWrap.classList.remove('is-open');
+      searchToggle.setAttribute('aria-expanded', 'false');
+      searchInput.value = '';
+      clearResults();
+    }
+
+    searchToggle.addEventListener('click', () => {
+      if (searchWrap.classList.contains('is-open')) {
+        closeSearch();
+      } else {
+        openSearch();
+      }
+    });
+
+    searchInput.addEventListener('input', (e) => runSearch(e.target.value));
+
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeSearch();
+    });
+
+    document.addEventListener('click', (e) => {
+      if (searchWrap.classList.contains('is-open') && !searchWrap.contains(e.target)) {
+        closeSearch();
+      }
+    });
+  }
 });

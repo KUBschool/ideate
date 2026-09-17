@@ -33,6 +33,18 @@
       {% endif %}
 
       <a href="{{ '/about/' | relative_url }}">About</a>
+
+      <div class="nav-search" id="nav-search" data-index-url="{{ '/search.json' | relative_url }}">
+        <button type="button" class="nav-search-toggle" id="nav-search-toggle" aria-label="Search" aria-expanded="false" aria-controls="nav-search-input">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            <line x1="15.3" y1="15.3" x2="20" y2="20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <input type="text" id="nav-search-input" class="nav-search-input" placeholder="Search Ideate…" aria-label="Search Ideate" autocomplete="off">
+        <div id="nav-search-results" class="nav-search-results"></div>
+      </div>
+
       <a href="{{ '/subscribe/' | relative_url }}" class="btn-subscribe">Subscribe</a>
     </nav>
   </div>
