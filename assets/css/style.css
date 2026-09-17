@@ -576,6 +576,11 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 .form-note{ font-size: 12.5px; color: var(--ku-gray-mid); margin-top: 16px; line-height: 1.5; }
 .form-note a{ color: var(--ku-blue); }
 
+.wrap iframe[title="Ideate subscription form"]{
+  border: 1px solid #e2e0da;
+  border-radius: var(--radius);
+}
+
 /* ---------- footer ---------- */
 .site-footer{ background: var(--ku-night); color: #cfe0ee; padding: 44px 0 0; }
 .footer-top{

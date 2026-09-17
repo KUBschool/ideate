@@ -13,39 +13,26 @@ description: "Subscribe to Ideate for KU Business research, faculty news, podcas
 <div class="wrap" style="max-width:600px; padding-bottom:64px;">
 
   <!--
-    ⚠️ EDIT THIS before going live: replace YOUR_FORM_ID below with your
-    real Formspree endpoint. Sign up free at formspree.io, create a form,
-    and link bschoolcomms@ku.edu as the notification email (Formspree will
-    send a one-time verification link to that inbox — someone with access
-    to it needs to click that link once). See SUBSCRIBE-SETUP.md for the
-    full walkthrough.
+    Subscription form, embedded from Qualtrics (KU's licensed survey
+    platform) rather than a third-party form service — no separate
+    account, no Cloudflare piece, and responses land directly in
+    Qualtrics's own response table with native CSV export and
+    notification-email support. See SUBSCRIBE-SETUP.md for how to manage
+    this survey and pull subscriber data for Emma.
+
+    height is a fixed value since this is a plain anonymous-link embed —
+    if the survey grows past what fits here, or the goal is a seamless
+    fit with no inner scrollbar, Qualtrics's "Website / App Feedback"
+    project type has a Responsive Dialog option that auto-resizes the
+    embed to the content. See the note in SUBSCRIBE-SETUP.md.
   -->
-  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="subscribe-form">
+  <iframe
+    src="https://kusurvey.ca1.qualtrics.com/jfe/form/SV_2nxphXnVFte5i6i"
+    title="Ideate subscription form"
+    width="100%"
+    height="700"
+    style="border:0; display:block;">
+  </iframe>
 
-    <!-- Formspree behavior settings — safe to leave as-is -->
-    <input type="hidden" name="_subject" value="New Ideate subscriber">
-    <input type="hidden" name="_next" value="{{ '/subscribed/' | absolute_url }}">
-    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-
-    <div class="field">
-      <label for="sub-name">Name</label>
-      <input type="text" id="sub-name" name="Full Name" required>
-    </div>
-
-    <div class="field">
-      <label for="sub-email">Email</label>
-      <input type="email" id="sub-email" name="email" required>
-    </div>
-
-    <fieldset class="field">
-      <legend>What would you like to hear about?</legend>
-      <label class="checkbox-row"><input type="checkbox" name="Updates[]" value="New articles"> New articles</label>
-      <label class="checkbox-row"><input type="checkbox" name="Updates[]" value="New podcast episodes"> New podcast episodes</label>
-      <label class="checkbox-row"><input type="checkbox" name="Updates[]" value="New webinars"> New webinars</label>
-      <label class="checkbox-row"><input type="checkbox" name="Updates[]" value="School of Business updates"> School of Business updates</label>
-    </fieldset>
-
-    <button type="submit" class="btn-primary-large">Subscribe</button>
-    <p class="form-note">We'll only use this to send what you selected above. Unsubscribe anytime by emailing <a href="mailto:bschoolcomms@ku.edu">bschoolcomms@ku.edu</a>.</p>
-  </form>
+  <p class="form-note">Trouble seeing the form? <a href="https://kusurvey.ca1.qualtrics.com/jfe/form/SV_2nxphXnVFte5i6i" target="_blank" rel="noopener">Open it in a new tab instead →</a></p>
 </div>

@@ -1,81 +1,72 @@
 # Setting up the Subscribe page
 
-The `/subscribe/` page collects name, email, and update preferences, and
-needs to send that to **bschoolcomms@ku.edu** as an email you can copy
-into Emma. GitHub Pages can't send email on its own — it only serves
-static files — so this uses **Formspree**, a hosted service built for
-exactly this (a real HTML form on a static site, emailed to you, no
-backend code to write or host). It's the same category of tool an
-official Cloudflare Pages tutorial recommends for this scenario.
+The `/subscribe/` page embeds a Qualtrics survey (KU's licensed survey
+platform) directly in the page via an iframe, rather than routing through
+a third-party form service. That means:
 
-## 1. Create a Formspree account and form
+- No separate account to manage (Formspree is no longer used here).
+- No Cloudflare piece for this feature specifically.
+- Every submission lands directly in Qualtrics's own response table,
+  with native CSV/Excel export and optional notification emails —
+  Qualtrics already does what a custom "Subscribers" admin panel and
+  export button would have had to be built to do.
 
-1. Go to [formspree.io](https://formspree.io) and sign up (free).
-2. Create a new form (call it something like "Ideate Subscribe").
-3. In that form's settings, add **bschoolcomms@ku.edu** as a notification
-   email. Formspree will send a one-time verification link to that
-   inbox — someone with access to it needs to open the email and click
-   the link once. Until that happens, submissions won't be delivered
-   there.
-4. Copy the form's endpoint URL — it looks like
-   `https://formspree.io/f/abcdwxyz`.
-
-## 2. Connect it to the site
-
-Open `subscribe.html` and replace this line:
-
-```html
-<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="subscribe-form">
-```
-
-with your real endpoint:
-
-```html
-<form action="https://formspree.io/f/abcdwxyz" method="POST" class="subscribe-form">
-```
-
-That's the only edit required. Commit and push — the next time GitHub
-Pages rebuilds, the form is live.
-
-## 3. Test it
-
-Submit the form yourself with a real email address you can check. You
-should:
-- Land on the "You're all set" confirmation page (`/subscribed/`)
-- See an email arrive at bschoolcomms@ku.edu within a minute or two,
-  showing the name, email, and whichever update types were checked
-
-## What each submission looks like
-
-Formspree emails you the raw field values. With the field names used on
-this form, that reads as:
+## The current survey
 
 ```
-Full Name: Jane Doe
-email: jane@example.com
-Updates: New articles, School of Business updates
+https://kusurvey.ca1.qualtrics.com/jfe/form/SV_2nxphXnVFte5i6i
 ```
 
-That's the "new subscriber record" — copy the relevant fields into Emma
-when you do the manual import.
+This is the survey's **anonymous link** (found under the survey's
+Distributions tab in Qualtrics) — the correct link to use for an
+external embed like this. It's embedded in `subscribe.html` via a plain
+`<iframe>`.
 
-## Free plan limits, so there are no surprises
+## If you ever need to change the survey
 
-Formspree's free tier includes 50 submissions per month, unlimited
-forms, and 30 days of submission history — plenty for typical newsletter
-signup volume. If a promotion or event ever pushes you past that in a
-given month, Formspree emails you a warning at 50/75/90% of the limit
-before anything gets dropped, and upgrading is a plan change in their
-dashboard, not a code change here.
+If you rebuild the survey (rather than just editing questions within the
+existing one), Qualtrics will give it a new anonymous link. To swap it
+in, update **both** places it appears in `subscribe.html`: the iframe's
+`src` and the "Open it in a new tab instead" fallback link right below
+it. Editing questions on the *existing* survey — adding an update-type
+option, tweaking wording — doesn't change the link at all, so most
+day-to-day edits need no change here.
 
-## Spam protection
+## Getting subscriber data into Emma
 
-Two layers are already built into the form:
-- A hidden "honeypot" field (`_gotcha`) — invisible to real visitors,
-  but bots that blindly fill in every field trip it, and Formspree
-  silently discards those submissions.
-- Formspree's own built-in spam filtering on top of that.
+In Qualtrics: **Data & Analysis → Export & Import → Export Data → CSV**.
+That gives you every response — name, email, and whichever update types
+were checked — ready to import into Emma. You can also turn on
+**Survey Notifications** in Qualtrics (Survey → Notifications) to get an
+email at bschoolcomms@ku.edu for each new response, if you want both the
+running response table and the per-signup email.
 
-If spam still gets through in practice, Formspree's dashboard has
-additional filtering options (including reCAPTCHA) you can turn on
-without touching this site's code.
+## On the fixed height
+
+The iframe uses a fixed height (700px) rather than auto-resizing to the
+survey's content. That's the simplest reliable option for a plain
+anonymous-link embed, and it's fine as long as the survey stays roughly
+its current length (name, email, one multi-select question). If the
+survey grows substantially, or you want a perfectly seamless fit with no
+inner scrollbar, Qualtrics's **Website / App Feedback** project type has
+a "Responsive Dialog" option that auto-resizes the embed to match the
+content — a bigger setup step inside Qualtrics, but still no external
+dependency beyond Qualtrics itself. Worth revisiting if the current
+fixed height ever feels cramped or leaves obvious empty space.
+
+## One thing worth confirming with your Qualtrics admin
+
+Some university Qualtrics deployments restrict which external domains
+are allowed to embed a survey via iframe, as a clickjacking protection.
+If the embed ever shows blank instead of the survey, that's the first
+thing to check — confirm with whoever administers KU's Qualtrics license
+that this site's domain is allowed to frame surveys.
+
+## What happened to the old Formspree setup
+
+The `_subscribed/` "You're all set" confirmation page from the previous
+Formspree flow is no longer linked from anywhere — Qualtrics shows its
+own end-of-survey message inside the same iframe once someone submits,
+so there's no separate redirect happening. The page still exists in the
+repo; it's just unused now. Safe to delete if you want, or leave it —
+either way it costs nothing sitting there.
