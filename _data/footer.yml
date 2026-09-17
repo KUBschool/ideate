@@ -27,7 +27,7 @@ columns:
         url: mailto:bschoolinfo@ku.edu
   - heading: Research
     links:
-      - label: Browse by topic
+      - label: Research by topic
         url: /
       - label: Faculty directory
         url: https://business.ku.edu/people/faculty
@@ -45,7 +45,5 @@ address: Capitol Federal Hall, 1654 Naismith Drive, Lawrence, KS 66045
 legal_links:
   - label: Accessibility
     url: https://accessibility.ku.edu
-  - label: Website support
-    url: https://cms.ku.edu
   - label: The University of Kansas
     url: https://ku.edu
