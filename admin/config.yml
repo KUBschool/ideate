@@ -106,6 +106,7 @@ collections:
         file: "_data/header.yml"
         fields:
           - {label: "Logo", name: "logo", widget: "image", required: false, hint: "Upload a logo, or leave blank to keep the text wordmark (Ideate.)."}
+          - {label: "Logo (scrolled / dark background)", name: "logo_scrolled", widget: "image", required: false, hint: "Same logo with a light/reversed color treatment, shown once the header goes dark on scroll. Leave blank and the regular logo just stays put through the color change."}
           - label: "Accent color"
             name: "accent_color"
             widget: "select"

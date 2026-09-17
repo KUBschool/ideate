@@ -9,8 +9,11 @@
   <div class="wrap">
     <div>
       {% if site.data.header.logo %}
-        <a href="{{ '/' | relative_url }}">
-          <img src="{% if site.data.header.logo contains '://' %}{{ site.data.header.logo }}{% else %}{{ site.data.header.logo | relative_url }}{% endif %}" alt="{{ site.title }}" class="site-logo">
+        <a href="{{ '/' | relative_url }}" class="logo-swap">
+          <img src="{% if site.data.header.logo contains '://' %}{{ site.data.header.logo }}{% else %}{{ site.data.header.logo | relative_url }}{% endif %}" alt="{{ site.title }}" class="site-logo logo-default">
+          {% if site.data.header.logo_scrolled %}
+            <img src="{% if site.data.header.logo_scrolled contains '://' %}{{ site.data.header.logo_scrolled }}{% else %}{{ site.data.header.logo_scrolled | relative_url }}{% endif %}" alt="{{ site.title }}" class="site-logo logo-alt">
+          {% endif %}
         </a>
       {% else %}
         <a href="{{ '/' | relative_url }}" class="wordmark">{{ site.title }}<span class="dot">.</span></a>
