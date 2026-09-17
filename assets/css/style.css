@@ -228,8 +228,8 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   letter-spacing: -0.01em;
 }
 .wordmark .dot{ color: var(--ku-crimson); }
-.site-logo{ max-width: 425px; max-height: 200px; width: auto; height: auto; display: block; }
-.footer-logo{ max-width: 300px; max-height: 200px; width: auto; height: auto; margin-bottom: 12px; }
+.site-logo{ max-width: 400px; max-height: 200px; width: auto; height: auto; display: block; }
+.footer-logo{ max-width: 270px; max-height: 200px; width: auto; height: auto; margin-bottom: 12px; }
 .tagline{
   display: block;
   font-family: var(--font-sans);
@@ -758,7 +758,7 @@ blockquote{
 }
 .site-header.is-scrolled .wrap{
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }
 .site-header.is-scrolled .site-logo{
   max-height: 60px;   /* the size you asked for */
