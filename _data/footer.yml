@@ -1,4 +1,4 @@
-logo: /assets/uploads/ideate-footer-logo.png
+logo: /assets/uploads/sobus_unithorz_white.png
 about_text: The research magazine of the University of Kansas School of
   Business. KU Business insights that elevate business.
 social_links:
@@ -15,37 +15,29 @@ social_links:
     url: https://www.linkedin.com/school/the-ku-school-of-business/
     platform: linkedin
 columns:
-  - heading: Ideate
-    links:
-      - label: About Ideate
-        url: /about/
-      - label: Submit a story tip
-        url: mailto:bschoolinfo@ku.edu?subject=Story%20tip%20for%20Ideate
-      - label: Subscribe
-        url: /subscribe/
-      - label: Contact editors
-        url: mailto:bschoolinfo@ku.edu
   - heading: Research
     links:
-      - label: Browse by topic
+      - label: Research by topic
         url: /
-      - label: Faculty directory
-        url: https://business.ku.edu/people/faculty
-      - label: Podcasts & webinars
-        url: "#"
+      - label: About
+        url: /about/
+      - label: Submit a story tip
+        url: mailto:bschoolcomms@ku.edu?subject=Story%20tip%20for%20Ideate
+      - label: Contact editors
+        url: mailto:bschoolinfo@ku.edu
   - heading: KU School of Business
     links:
       - label: business.ku.edu
         url: https://business.ku.edu
+      - label: Faculty
+        url: https://business.ku.edu/people/faculty
       - label: Programs
         url: https://business.ku.edu/graduate-programs
       - label: Support KU Business
-        url: http://www.kuendowment.org
+        url: https://securelb.imodules.com/s/1312/lg21/form.aspx?sid=1312&gid=1&pgid=791&cid=1843&bledit=1&dids=392.1430.537.538.539.540.546.391.375&sort=1&appealcode=WDP
 address: Capitol Federal Hall, 1654 Naismith Drive, Lawrence, KS 66045
 legal_links:
   - label: Accessibility
     url: https://accessibility.ku.edu
-  - label: Website support
-    url: https://cms.ku.edu
   - label: The University of Kansas
     url: https://ku.edu

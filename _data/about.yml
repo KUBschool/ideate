@@ -1,13 +1,14 @@
-heading: "About Ideate"
-body: |
-  Ideate is the research magazine of the University of Kansas School of Business —
-  the successor to our print and email research publication, reimagined for the web.
-  We cover faculty research across accounting, finance, marketing, analytics,
-  entrepreneurship, information systems, supply chain, business law, AI and policy,
-  written for readers who want the finding, not just the abstract.
+heading: About Ideate
+body: >-
+  Ideate is the digital research publication of the University of Kansas School
+  of Business. Through cutting-edge scholarship, KU Business faculty generate
+  insights that inform business practice, shape public policy and address the
+  complex challenges facing organizations and communities.
 
-  KU Business's academic experience — from undergraduate through the PhD — is built
-  on the idea that business problems don't respect departmental lines. Ideate exists
-  to show that same cross-disciplinary thinking in the research our faculty produce.
-contact_prompt: "Have a research finding, faculty accolade, or story tip? Email the editors at"
-contact_email: "bschoolinfo@ku.edu"
+
+  The mission of Ideate is to make that research accessible beyond academic journals and conference presentations. Translating faculty expertise into engaging articles, videos and podcasts, connects research with the people who can put it to work.
+
+
+  Reflecting the collaborative spirit of the KU School of Business, Ideate showcases research that is often cross-disciplinary and challenges conventional boundaries. Through Ideate, we share the ideas, discoveries and perspectives that help make business better for Kansas and beyond.
+contact_prompt: Have a research finding, faculty accolade, or story tip? Email the editors at
+contact_email: bschoolcomms@ku.edu
