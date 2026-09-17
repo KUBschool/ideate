@@ -4,12 +4,16 @@ about_text: The research magazine of the University of Kansas School of
 social_links:
   - label: Facebook
     url: https://www.facebook.com/KUbschool/
+    platform: facebook
   - label: Instagram
     url: https://www.instagram.com/kubschool/
+    platform: instagram
   - label: YouTube
     url: https://www.youtube.com/user/KUBusiness
+    platform: youtube
   - label: LinkedIn
     url: https://www.linkedin.com/school/the-ku-school-of-business/
+    platform: linkedin
 columns:
   - heading: Ideate
     links:

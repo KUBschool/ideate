@@ -101,6 +101,14 @@ collections:
   - name: "settings"
     label: "Site Settings"
     files:
+      - label: "About Page"
+        name: "about"
+        file: "_data/about.yml"
+        fields:
+          - {label: "Heading", name: "heading", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown", hint: "Add, remove, or edit paragraphs freely — same rich-text editor as article bodies."}
+          - {label: "Contact prompt", name: "contact_prompt", widget: "string", hint: "The sentence right before the contact email."}
+          - {label: "Contact email", name: "contact_email", widget: "string"}
       - label: "Header"
         name: "header"
         file: "_data/header.yml"
@@ -128,6 +136,12 @@ collections:
             fields:
               - {label: "Label", name: "label", widget: "string"}
               - {label: "URL", name: "url", widget: "string"}
+              - label: "Icon"
+                name: "platform"
+                widget: "select"
+                options: ["facebook", "instagram", "youtube", "linkedin"]
+                required: false
+                hint: "Picks the matching icon. Leave blank to show the label as plain text instead."
           - label: "Columns"
             name: "columns"
             widget: "list"

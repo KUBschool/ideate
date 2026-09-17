@@ -11,7 +11,33 @@
       {% if fdata.social_links and fdata.social_links.size > 0 %}
       <div class="footer-social">
         {% for s in fdata.social_links %}
-        <a href="{{ s.url }}">{{ s.label }}</a>
+        <a href="{{ s.url }}" class="social-icon" aria-label="{{ s.label }}" title="{{ s.label }}">
+          {% case s.platform %}
+            {% when 'facebook' %}
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                <text x="12" y="16.5" font-size="11" font-weight="700" fill="currentColor" text-anchor="middle" font-family="Georgia, serif">f</text>
+              </svg>
+            {% when 'instagram' %}
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/>
+              </svg>
+            {% when 'youtube' %}
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                <rect x="2.5" y="5.5" width="19" height="13" rx="3.5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                <polygon points="10,9 16,12 10,15" fill="currentColor"/>
+              </svg>
+            {% when 'linkedin' %}
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="4" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                <text x="12" y="16" font-size="9" font-weight="700" fill="currentColor" text-anchor="middle" font-family="Arial, sans-serif">in</text>
+              </svg>
+            {% else %}
+              {{ s.label }}
+          {% endcase %}
+        </a>
         {% endfor %}
       </div>
       {% endif %}
@@ -31,10 +57,10 @@
 
   <div class="wrap footer-bottom">
     <span>&copy; {{ 'now' | date: "%Y" }} The University of Kansas &middot; {{ fdata.address }}</span>
-    <span>
+    <div class="footer-legal-links">
       {% for link in fdata.legal_links %}
-      <a href="{{ link.url }}">{{ link.label }}</a>{% unless forloop.last %} &nbsp;&middot;&nbsp; {% endunless %}
+      <a href="{{ link.url }}">{{ link.label }}</a>
       {% endfor %}
-    </span>
+    </div>
   </div>
 </footer>
