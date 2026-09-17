@@ -726,3 +726,31 @@ blockquote{
   .article-header h1{ font-size: 30px; }
   .stream-row{ grid-template-columns: 1fr; }
 }
+.site-header{ transition: box-shadow 0.2s ease; }
+.site-header .wrap{ transition: padding-top 0.2s ease, padding-bottom 0.2s ease; }
+.site-logo{ transition: max-height 0.2s ease, max-width 0.2s ease; }
+.wordmark{ transition: font-size 0.2s ease; }
+.tagline{
+  max-height: 20px;
+  overflow: hidden;
+  transition: opacity 0.15s ease, max-height 0.2s ease, margin-top 0.2s ease;
+}
+.site-header.is-scrolled{
+  box-shadow: 0 1px 0 rgba(0,0,0,.06);
+}
+.site-header.is-scrolled .wrap{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.site-header.is-scrolled .site-logo{
+  max-height: 75px;   /* the size you asked for */
+}
+.site-header.is-scrolled .wordmark{
+  font-size: 20px;    /* shrinks the text wordmark too, if no image logo is set */
+}
+.site-header.is-scrolled .tagline{
+  opacity: 0;
+  max-height: 0;
+  margin-top: 0;
+}
+
