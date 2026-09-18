@@ -6,7 +6,6 @@ faculty:
   - brian-anderson
 byline: Brian Anderson
 date: 2026-09-10
-read_time: 5
 image_tint: limestone
 featured: false
 source_url: https://www.sciencedirect.com/science/article/pii/S2352673425000058
