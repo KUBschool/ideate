@@ -1,21 +1,21 @@
 ---
 layout: default
-title: "Forthcoming Research"
-permalink: /forthcoming/
-nav_active: forthcoming
-description: "Research KU Business faculty are presenting or discussing publicly ahead of final journal publication."
+title: "Methods"
+permalink: /methods/
+nav_active: methodology
+description: "An analytical look at the tools, assumptions, and open questions behind how business research gets done."
 ---
-{% assign status_data = site.data.statuses | where: 'slug', 'forthcoming' | first %}
-{% assign articles = site.articles | where: 'status', 'forthcoming' | sort: 'date' | reverse %}
+{% assign series_data = site.data.series | where: 'slug', 'methodology' | first %}
+{% assign articles = site.articles | where_exp: 'a', 'a.series contains "methodology"' | sort: 'date' | reverse %}
 {% assign feature = articles | first %}
 {% assign rest = articles | slice: 1, 999 %}
 {% assign hero_list = rest | slice: 0, 3 %}
 {% assign remaining = rest | slice: 3, 999 %}
 
 <div class="wrap archive-header">
-  <div class="eyebrow" style="--topic-color:var(--ku-wheat)"><span class="dot"></span>Status</div>
-  <h1>{{ status_data.name }}</h1>
-  <p>{{ status_data.description }}</p>
+  <div class="eyebrow" style="--topic-color:var(--ku-night)"><span class="dot"></span>Series</div>
+  <h1>{{ series_data.name }}</h1>
+  <p>{{ series_data.description }}</p>
 </div>
 
 {% if feature %}
@@ -67,7 +67,7 @@ description: "Research KU Business faculty are presenting or discussing publicly
 {% if remaining.size > 0 %}
 <section class="wrap" style="padding-bottom:56px;">
   <div class="section-head">
-    <h2>More forthcoming research</h2>
+    <h2>More on methods</h2>
   </div>
   <div class="card-grid">
     {% for a in remaining %}
@@ -79,6 +79,6 @@ description: "Research KU Business faculty are presenting or discussing publicly
 
 {% else %}
 <div class="wrap" style="padding:48px 0;">
-  <p style="color:var(--ku-gray-mid); font-size:15px;">Nothing tagged Forthcoming right now — check back soon.</p>
+  <p style="color:var(--ku-gray-mid); font-size:15px;">Nothing in this series yet — check back soon.</p>
 </div>
 {% endif %}

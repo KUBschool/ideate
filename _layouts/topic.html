@@ -31,6 +31,7 @@ layout: default
       <div class="eyebrow" style="--topic-color:var(--topic-{{ feature.topic }})">
         <span class="dot"></span>{{ topic_data.name }}
         {% include status-badge.html status=feature.status %}
+        {% include series-badge.html series=feature.series %}
       </div>
       <a href="{{ feature.url | relative_url }}"><h1>{{ feature.title }}</h1></a>
       <p class="dek">{{ feature.dek }}</p>

@@ -81,6 +81,14 @@ collections:
           - {label: "Forthcoming", value: "forthcoming"}
         required: false
         hint: "Leave blank for normal published research. Use Forthcoming for research being discussed publicly, e.g. at a conference, before a journal has formally accepted it."
+      - label: "Series"
+        name: "series"
+        widget: "select"
+        multiple: true
+        options:
+          - {label: "Methods", value: "methodology"}
+        required: false
+        hint: "Optional cross-cutting lens, independent of Topic — e.g. Methods is for pieces about the tools and assumptions behind research itself, whatever the subject area."
       - {label: "Body", name: "body", widget: "markdown"}
 
   - name: "faculty"

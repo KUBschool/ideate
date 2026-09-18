@@ -1,0 +1,12 @@
+{%- comment -%}
+  Usage: {% include series-badge.html series=some_article.series %}
+  series is a list field (an article can belong to more than one series),
+  unlike status which is a single value — so this loops rather than doing
+  a single lookup.
+{%- endcomment -%}
+{% if include.series %}
+  {% for s_slug in include.series %}
+    {% assign s = site.data.series | where: 'slug', s_slug | first %}
+    {% if s %}<span class="series-badge" title="{{ s.description }}">{{ s.name }}</span>{% endif %}
+  {% endfor %}
+{% endif %}

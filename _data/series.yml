@@ -1,0 +1,18 @@
+# Cross-cutting content series — separate from topics (what the research is
+# about) and separate from status (where a piece stands in the publication
+# process). A series is an editorial lens that can apply to an article
+# regardless of its subject-matter topic — an article keeps its normal
+# topic (accounting, analytics, etc.) and can ALSO belong to a series.
+#
+# To add another series later: add an entry here, add the matching option
+# in admin/config.yml's Series field, and it'll render automatically
+# anywhere series-badge.html is used. To make it independently browsable
+# like /methods/ is, copy methods.html, swap the slug, and add a pill for
+# it in topic-nav.html.
+
+- slug: methodology
+  name: Methods
+  description: >-
+    An analytical look at the tools, assumptions, and open questions
+    behind how business research actually gets done — separate from any
+    single finding.
