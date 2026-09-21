@@ -63,7 +63,7 @@ layout: default
         {% for a in hero_list %}
         {% assign a_topic = site.data.topics | where: 'slug', a.topic | first %}
         <div class="hero-list-item">
-          <div class="eyebrow" style="--topic-color:var(--topic-{{ a.topic }})"><span class="dot"></span>{{ a_topic.name }}</div>
+          <div class="eyebrow" style="--topic-color:var(--topic-{{ a.topic }})"><span class="dot"></span><a href="{{ '/topics/' | append: a.topic | append: '/' | relative_url }}">{{ a_topic.name }}</a></div>
           <a href="{{ a.url | relative_url }}"><h3>{{ a.title }}</h3></a>
           <p class="dek">{{ a.dek }}</p>
         </div>
