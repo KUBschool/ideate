@@ -1,15 +1,19 @@
 ---
-title: "An honors class puts KU Endowment's equity bet to the test"
-dek: "A FIN 411 class partnered with KU Endowment to stress-test a simple question: with markets richly valued, is an all-in equity allocation still the right call?"
+title: An honors class puts KU Endowment's equity bet to the test
+dek: "A FIN 411 class partnered with KU Endowment to stress-test a simple
+  question: with markets richly valued, is an all-in equity allocation still the
+  right call?"
 topic: finance
-faculty: [felix-meschke]
-byline: "Felix Meschke's honors class"
+faculty:
+  - felix-meschke
+byline: Felix Meschke's honors class
 date: 2026-04-29
+image: /assets/uploads/_1800393-copy.jpg
+image_alt: Faculty member Felix Mesche sitting at classroom desk.
 image_tint: steam
 featured: false
-answer_box: >-
-  Students in KU's honors investment class, FIN 411, worked directly with
-  KU Endowment to evaluate whether its heavily equity-weighted allocation
+answer_box: Students in KU's honors investment class, FIN 411, worked directly
+  with KU Endowment to evaluate whether its heavily equity-weighted allocation
   still makes sense given current valuations — turning a real institutional
   portfolio question into a semester-long applied research project.
 ---
