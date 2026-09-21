@@ -1,18 +1,22 @@
 ---
-title: "What sports betting does to household budgets during big events"
-dek: "Bank-transaction data tracking spending, saving and credit use shows how events like the World Cup can reshape everyday financial decisions."
+title: What sports betting does to household budgets during big events
+dek: Bank-transaction data tracking spending, saving and credit use shows how
+  events like the World Cup can reshape everyday financial decisions.
 topic: finance
-faculty: [kevin-pisciotta]
-byline: "Kevin Pisciotta & Justin Balthrop"
+faculty:
+  - kevin-pisciotta
+byline: Kevin Pisciotta & Justin Balthrop
 date: 2026-07-01
+image: /assets/uploads/sportsbetting.jpg
+image_alt: A young male watches a soccer match on tv while viewing a live score
+  and “Bet Now” button his a smartphone.
 image_tint: steam
 featured: false
-answer_box: >-
-  Using bank-account transaction data spanning major sporting events,
+answer_box: Using bank-account transaction data spanning major sporting events,
   researchers tracked how online sports betting activity shifts household
-  spending, saving and credit-card use over time — finding that betting
-  surges around marquee events leave a measurable, lingering imprint on
-  everyday financial behavior well after the final whistle.
+  spending, saving and credit-card use over time — finding that betting surges
+  around marquee events leave a measurable, lingering imprint on everyday
+  financial behavior well after the final whistle.
 ---
 
 Legal online sports betting has grown fast enough that it now shows up clearly in household financial data, not just in league sponsorship deals. New research uses bank-transaction records to see what that growth actually does to the way people manage money around major sporting events.
