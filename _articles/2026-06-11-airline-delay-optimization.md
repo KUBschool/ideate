@@ -7,7 +7,7 @@ faculty:
   - mazhar-arikan
 byline: Mazhar Arikan
 date: 2026-06-11
-image: /assets/uploads/airline-dashboard.jpg
+image: /assets/uploads/pagenger-iteneraries-simplified.jpg
 image_alt: AI generated airline operations dashboard depicting passenger level
   flight status details.
 image_tint: steam
