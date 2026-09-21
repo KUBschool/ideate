@@ -1,18 +1,21 @@
 ---
-title: "Small itinerary tweaks could cut airline delays without hurting efficiency"
-dek: "Combining passenger-level and flight-level data could let airlines make modest adjustments that meaningfully improve the travel experience."
+title: Small itinerary tweaks could cut airline delays without hurting efficiency
+dek: Combining passenger-level and flight-level data could let airlines make
+  modest adjustments that meaningfully improve the travel experience.
 topic: analytics
-faculty: [mazhar-arikan]
-byline: "Mazhar Arikan"
+faculty:
+  - mazhar-arikan
+byline: Mazhar Arikan
 date: 2026-06-11
+image: /assets/uploads/airline-dashboard.jpg
+image_alt: AI generated airline operations dashboard depicting passenger level
+  flight status details.
 image_tint: steam
 featured: false
-answer_box: >-
-  Research combining passenger-itinerary data with flight-operations data
-  finds that airlines could meaningfully reduce missed connections and
-  compounding delays through modest scheduling adjustments — without
-  sacrificing the aircraft-utilization efficiency airlines currently
-  optimize for.
+answer_box: Research combining passenger-itinerary data with flight-operations
+  data finds that airlines could meaningfully reduce missed connections and
+  compounding delays through modest scheduling adjustments — without sacrificing
+  the aircraft-utilization efficiency airlines currently optimize for.
 ---
 
 Airlines have gotten very good at optimizing one number: how efficiently they use each aircraft over the course of a day. What that optimization often doesn't account for is what a delay actually costs a passenger sitting in the middle of a multi-leg itinerary — a gap the research sets out to close.
