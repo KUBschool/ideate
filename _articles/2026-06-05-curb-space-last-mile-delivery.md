@@ -1,17 +1,21 @@
 ---
-title: "Curb space is the quiet bottleneck in last-mile delivery"
-dek: "As online ordering keeps growing, parking and curb time are shaping delivery costs as much as routing does — especially around major events."
+title: Curb space is the quiet bottleneck in last-mile delivery
+dek: As online ordering keeps growing, parking and curb time are shaping
+  delivery costs as much as routing does — especially around major events.
 topic: supply-chain
-faculty: [sara-reed]
-byline: "Sara Reed"
+faculty:
+  - sara-reed
+byline: Sara Reed
 date: 2026-06-05
+image: /assets/uploads/curb-space-last-mile.jpg
+image_alt: Delivery vans fill a curbside loading zone while another delivery
+  truck waits in the street for space.
 image_tint: limestone
 featured: false
-answer_box: >-
-  Research on last-mile delivery logistics finds that curb space, parking
-  availability and delivery-stop duration are becoming as significant a
-  cost driver as route planning — a constraint that gets sharply worse
-  during major events that temporarily flood a city's curb capacity.
+answer_box: Research on last-mile delivery logistics finds that curb space,
+  parking availability and delivery-stop duration are becoming as significant a
+  cost driver as route planning — a constraint that gets sharply worse during
+  major events that temporarily flood a city's curb capacity.
 ---
 
 Most conversations about delivery efficiency focus on routing — the shortest path, the best sequence of stops. Less attention goes to what happens at each stop itself: whether a driver can actually find a place to park. New research argues that gap deserves more attention as delivery volume keeps climbing.
