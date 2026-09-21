@@ -9,6 +9,8 @@ faculty:
 byline: Todd Hall
 date: 2026-02-02
 image: /assets/uploads/ai-coworker.png
+image_alt: Illustration of a person and an AI robot working together at a laptop
+  amid communication and data symbols.
 image_tint: steam
 featured: true
 source_url: https://business.ku.edu/news/article/human-ai-interactions-stimulate-coordination-between-co-workers-and-improve-team-performance-study-finds
