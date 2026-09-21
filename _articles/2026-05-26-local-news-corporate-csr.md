@@ -1,17 +1,21 @@
 ---
-title: "As local newsrooms shrink, so does corporate accountability"
-dek: "Fewer local reporters covering a company means less outside scrutiny — and research finds that measurably weakens firms' CSR commitments."
+title: As local newsrooms shrink, so does corporate accountability
+dek: Fewer local reporters covering a company means less outside scrutiny — and
+  research finds that measurably weakens firms' CSR commitments.
 topic: policy
-faculty: [jun-ho-lee]
-byline: "Jun Ho Lee"
+faculty:
+  - jun-ho-lee
+byline: Jun Ho Lee
 date: 2026-05-26
+image: /assets/uploads/newspaper-closing.jpg
+image_alt: A closed local newspaper office sits across from a busy coffee shop,
+  bakery, and clothing boutique.
 image_tint: steam
 featured: false
-answer_box: >-
-  Research tracking the decline of local newspapers finds that companies
-  headquartered in areas with shrinking local press coverage measurably
-  reduce their corporate social responsibility engagement — evidence that
-  local journalism functions as a real external check on corporate
+answer_box: Research tracking the decline of local newspapers finds that
+  companies headquartered in areas with shrinking local press coverage
+  measurably reduce their corporate social responsibility engagement — evidence
+  that local journalism functions as a real external check on corporate
   behavior, not just a source of coverage.
 ---
 
