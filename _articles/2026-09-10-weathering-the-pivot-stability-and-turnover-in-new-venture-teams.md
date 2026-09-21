@@ -7,6 +7,8 @@ faculty:
 byline: Brian Anderson
 date: 2026-09-10
 image: /assets/uploads/weathering-the-pivot.jpg
+image_alt: Four people stand together at a fork in the road beneath blue and
+  gold directional signs.
 image_tint: limestone
 featured: false
 source_url: https://www.sciencedirect.com/science/article/pii/S2352673425000058
