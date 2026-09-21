@@ -7,7 +7,7 @@ faculty:
   - jun-ho-lee
 byline: Jun Ho Lee
 date: 2026-05-26
-image: /assets/uploads/newspaper-closing.jpg
+image: /assets/uploads/newspaper-closing-update.jpg
 image_alt: A closed local newspaper office sits across from a busy coffee shop,
   bakery, and clothing boutique.
 image_tint: steam
