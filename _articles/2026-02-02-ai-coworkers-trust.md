@@ -1,19 +1,22 @@
 ---
-title: "AI co-workers might be making teams trust each other more, not less"
-dek: "A new KU study finds that when teammates can point to an AI-backed recommendation, they trust each other's judgment faster — especially on teams that just met."
+title: AI co-workers might be making teams trust each other more, not less
+dek: A new KU study finds that when teammates can point to an AI-backed
+  recommendation, they trust each other's judgment faster — especially on teams
+  that just met.
 topic: ai
-faculty: [todd-hall]
-byline: "Todd Hall"
+faculty:
+  - todd-hall
+byline: Todd Hall
 date: 2026-02-02
+image: /assets/uploads/ai-coworker.png
 image_tint: steam
 featured: true
-source_url: "https://business.ku.edu/news/article/human-ai-interactions-stimulate-coordination-between-co-workers-and-improve-team-performance-study-finds"
-answer_box: >-
-  As AI tools spread through the workplace, many assume they'll crowd out
-  human connection. A KU School of Business study finds the opposite in
+source_url: https://business.ku.edu/news/article/human-ai-interactions-stimulate-coordination-between-co-workers-and-improve-team-performance-study-finds
+answer_box: "As AI tools spread through the workplace, many assume they'll crowd
+  out human connection. A KU School of Business study finds the opposite in
   newly formed teams: when a teammate's suggestion is backed by an AI
-  recommendation, others trust it — and each other — faster, which
-  measurably improves coordination and performance.
+  recommendation, others trust it — and each other — faster, which measurably
+  improves coordination and performance."
 ---
 
 Artificial intelligence is showing up in nearly every corner of work life, and the instinct for a lot of people is to worry it will get in the way of how colleagues actually relate to one another. New research from the KU School of Business suggests that fear may have it backwards, at least for teams that are just getting to know each other.
