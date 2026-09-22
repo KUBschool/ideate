@@ -125,6 +125,40 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 .faculty-topics{ display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
 .faculty-topics .topic-pill{ cursor: pointer; }
 
+/* ---------- faculty page body: article grid + credentials sidebar ---------- */
+.faculty-body-grid{
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.faculty-body-grid.faculty-body-grid-solo{ grid-template-columns: 1fr; }
+.faculty-main .card-grid{ grid-template-columns: repeat(2, 1fr); }
+
+.faculty-sidebar{
+  background: var(--ku-steam);
+  border-radius: 8px;
+  padding: 28px 26px;
+}
+.faculty-sidebar-block + .faculty-sidebar-block{
+  margin-top: 26px;
+  padding-top: 26px;
+  border-top: 1px solid rgba(0,52,89,.12);
+}
+.faculty-sidebar h4{
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--ku-night);
+  margin: 0 0 12px;
+  font-weight: 700;
+}
+
+/* editorial-service-list / journal-contributions-list get their dividers muted
+   to sit correctly on the steam fill rather than the page's white background */
+.faculty-sidebar .editorial-service-list li,
+.faculty-sidebar .journal-contributions-list li{ border-bottom-color: rgba(0,52,89,.12); }
+
 /* ---------- editorial service & journal contributions (faculty page) ---------- */
 .editorial-service-list, .journal-contributions-list{
   list-style: none;
@@ -854,6 +888,7 @@ blockquote{
   .hero-grid{ grid-template-columns: 1fr; }
   .hero-list{ border-left: none; padding-left: 0; border-top: 1px solid #e7e7e2; padding-top: 20px; }
   .card-grid{ grid-template-columns: repeat(2, 1fr); }
+  .faculty-body-grid{ grid-template-columns: 1fr; }
   .stub-grid, .awards-grid{ grid-template-columns: 1fr; }
   .footer-top{ grid-template-columns: 1fr 1fr; }
   .article-body{ grid-template-columns: 1fr; }
@@ -864,6 +899,7 @@ blockquote{
 }
 @media (max-width: 620px){
   .card-grid{ grid-template-columns: 1fr; }
+  .faculty-main .card-grid{ grid-template-columns: 1fr; }
   .footer-top{ grid-template-columns: 1fr; }
   .hero-feature h1{ font-size: 28px; }
   .article-header h1{ font-size: 30px; }
