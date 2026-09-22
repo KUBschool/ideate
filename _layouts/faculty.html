@@ -50,6 +50,34 @@ layout: default
   </div>
 </div>
 
+{% assign my_journal_groups = my_articles | where_exp: 'a', 'a.journal != nil' | group_by: 'journal' | sort: 'name' %}
+
+{% if page.editorial_service and page.editorial_service.size > 0 %}
+<section class="wrap" style="padding-bottom:32px;">
+  <div class="section-head">
+    <h2>Editorial service</h2>
+  </div>
+  <ul class="editorial-service-list">
+    {% for role in page.editorial_service %}
+    <li><span class="es-role">{{ role.role }}</span>, <a href="{{ '/journals/' | relative_url }}#{{ role.journal | slugify }}">{{ role.journal }}</a></li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+
+{% if my_journal_groups.size > 0 %}
+<section class="wrap" style="padding-bottom:32px;">
+  <div class="section-head">
+    <h2>Academic journal contributions</h2>
+  </div>
+  <ul class="journal-contributions-list">
+    {% for group in my_journal_groups %}
+    <li><a href="{{ '/journals/' | relative_url }}#{{ group.name | slugify }}">{{ group.name }}</a>{% if group.items.size > 1 %} <span class="jc-count">({{ group.items.size }} articles)</span>{% endif %}</li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+
 <section class="wrap" style="padding-bottom:56px;">
   <div class="section-head">
     <h2>Research on Ideate</h2>

@@ -125,6 +125,24 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 .faculty-topics{ display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
 .faculty-topics .topic-pill{ cursor: pointer; }
 
+/* ---------- editorial service & journal contributions (faculty page) ---------- */
+.editorial-service-list, .journal-contributions-list{
+  list-style: none;
+  margin: 0; padding: 0;
+  font-size: 15px;
+  color: var(--ku-gray-text);
+  line-height: 1.9;
+}
+.editorial-service-list li, .journal-contributions-list li{
+  border-bottom: 1px solid #ece9e2;
+  padding: 9px 0;
+}
+.editorial-service-list li:last-child, .journal-contributions-list li:last-child{ border-bottom: none; }
+.editorial-service-list a, .journal-contributions-list a{ color: var(--ku-blue); font-weight: 500; }
+.editorial-service-list a:hover, .journal-contributions-list a:hover{ text-decoration: underline; }
+.es-role{ font-weight: 600; color: var(--ku-night); }
+.jc-count{ font-size: 13px; color: var(--ku-gray-mid); font-weight: 400; }
+
 /* ---------- topic-page stats callout (right column alternative to recent stories) ---------- */
 .topic-callout{
   border-left: 3px solid var(--ku-blue);
@@ -893,3 +911,37 @@ blockquote{
 .site-header.is-scrolled .logo-swap .logo-default{ opacity: 0; }
 .site-header.is-scrolled .logo-swap .logo-alt{ opacity: 1; }
 
+
+/* ---------- journals hub page ---------- */
+.journal-jumplist{
+  font-size: 13.5px;
+  color: var(--ku-gray-mid);
+  line-height: 2.1;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e7e7e2;
+}
+.journal-jumplist a{ color: var(--ku-blue); }
+.journal-jumplist a:hover{ text-decoration: underline; }
+.journal-jumplist .jl-sep{ margin: 0 7px; color: #c9c7bf; }
+
+.journal-entry{
+  padding: 28px 0;
+  border-bottom: 1px solid #ece9e2;
+  scroll-margin-top: 90px;
+}
+.journal-entry:last-child{ border-bottom: none; }
+.journal-entry h2{ font-size: 20px; margin: 0 0 14px; }
+.journal-subsection{ margin-top: 14px; }
+.journal-subsection:first-of-type{ margin-top: 0; }
+.journal-subsection h4{
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--ku-gray-mid);
+  margin: 0 0 8px;
+  font-weight: 700;
+}
+.journal-article-list{ list-style: none; margin: 0; padding: 0; font-size: 15px; line-height: 1.8; }
+.journal-article-list a{ color: var(--ku-gray-text); font-weight: 500; }
+.journal-article-list a:hover{ color: var(--ku-blue); }
+.journal-article-list .ja-byline{ color: var(--ku-gray-mid); font-size: 13.5px; }

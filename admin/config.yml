@@ -89,6 +89,11 @@ collections:
           - {label: "Methods", value: "methodology"}
         required: false
         hint: "Optional cross-cutting lens, independent of Topic — e.g. Methods is for pieces about the tools and assumptions behind research itself, whatever the subject area."
+      - label: "Journal"
+        name: "journal"
+        widget: "string"
+        required: false
+        hint: "The journal this research was published in, spelled exactly as it appears elsewhere on the site (check the Journals page or a faculty member's Editorial Service list for the exact spelling already in use) — e.g. \"Management Science\", not \"Mgmt. Science\". Leave blank if unknown; this powers the Journals index and each faculty member's Academic Journal Contributions list, and inconsistent spelling will split one journal into two entries."
       - {label: "Body", name: "body", widget: "markdown"}
 
   - name: "faculty"
@@ -105,6 +110,15 @@ collections:
       - {label: "Academic area", name: "academic_area", widget: "string", required: false}
       - {label: "KU Business profile URL", name: "profile_url", widget: "string", hint: "e.g. https://business.ku.edu/people/jane-doe"}
       - {label: "Photo", name: "photo", widget: "image", required: false, hint: "Upload a headshot, or paste the image URL from their business.ku.edu profile directly — either works."}
+      - label: "Editorial Service"
+        name: "editorial_service"
+        widget: "list"
+        required: false
+        summary: "{{fields.role}} — {{fields.journal}}"
+        hint: "One entry per editorial role. Most faculty have zero or one; a few have several. This is separate from — and not the same as — the journals they've published in, which is tracked automatically from each article's Journal field and doesn't need to be entered here."
+        fields:
+          - {label: "Role", name: "role", widget: "string", hint: "e.g. Editor-in-Chief, Associate Editor, Editorial Board Member — copy the exact title from the source listing."}
+          - {label: "Journal", name: "journal", widget: "string", hint: "Spelled exactly as it appears elsewhere on the site — check the Journals page if unsure, since inconsistent spelling will split one journal into two entries."}
 
   - name: "settings"
     label: "Site Settings"

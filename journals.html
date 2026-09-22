@@ -1,0 +1,88 @@
+---
+layout: default
+title: "Journals"
+permalink: /journals/
+description: "Every academic journal connected to KU Business — through research Ideate has covered, editorial roles our faculty hold, or both."
+---
+{% comment %}
+  Journals are intentionally NOT a curated _data/ list like topics.yml —
+  the set of journals grows every time an article or a faculty member's
+  editorial service is added, so this page derives the full list
+  automatically from two sources instead:
+    1. article.journal (set per-article in the CMS, optional)
+    2. faculty.editorial_service[].journal (set per-faculty, optional)
+  Liquid has no native way to flatten an array built inside a loop, so
+  editorial-service journals are collected via capture+split below —
+  a standard Jekyll workaround, not a bug.
+{% endcomment %}
+{% capture service_journals_raw %}{% for f in site.faculty %}{% if f.editorial_service %}{% for es in f.editorial_service %}{{ es.journal }}|||{% endfor %}{% endif %}{% endfor %}{% endcapture %}
+{% assign service_journals = service_journals_raw | split: "|||" %}
+{% assign article_journals = site.articles | map: 'journal' | compact %}
+{% assign all_journals = article_journals | concat: service_journals | uniq | sort_natural %}
+
+<div class="wrap archive-header">
+  <div class="eyebrow" style="--topic-color:var(--ku-night)"><span class="dot"></span>Reference</div>
+  <h1>Journals</h1>
+  <p>Every academic journal connected to KU Business — through research Ideate has covered, editorial roles our faculty hold, or both.</p>
+</div>
+
+{% if all_journals.size > 0 %}
+<div class="wrap" style="padding-bottom:8px;">
+  <div class="journal-jumplist">
+    {% for journal in all_journals %}
+      <a href="#{{ journal | slugify }}">{{ journal }}</a>{% unless forloop.last %}<span class="jl-sep">&middot;</span>{% endunless %}
+    {% endfor %}
+  </div>
+</div>
+
+<section class="wrap" style="padding-bottom:56px;">
+  {% for journal in all_journals %}
+  {% assign journal_articles = site.articles | where: 'journal', journal | sort: 'date' | reverse %}
+  <div class="journal-entry" id="{{ journal | slugify }}">
+    <h2>{{ journal }}</h2>
+
+    {% if journal_articles.size > 0 %}
+    <div class="journal-subsection">
+      <h4>Ideate coverage</h4>
+      <ul class="journal-article-list">
+        {% for a in journal_articles %}
+        <li><a href="{{ a.url | relative_url }}">{{ a.title }}</a>{% if a.faculty and a.faculty.size > 0 %}<span class="ja-byline"> &mdash; {{ a.byline }}</span>{% endif %}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    {% assign has_service = false %}
+    {% for f in site.faculty %}
+      {% if f.editorial_service %}
+        {% assign matches = f.editorial_service | where: 'journal', journal %}
+        {% if matches.size > 0 %}
+          {% assign has_service = true %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
+    {% if has_service %}
+    <div class="journal-subsection">
+      <h4>KU editorial service</h4>
+      <ul class="journal-article-list">
+        {% for f in site.faculty %}
+          {% if f.editorial_service %}
+            {% assign matches = f.editorial_service | where: 'journal', journal %}
+            {% for m in matches %}
+            <li><a href="{{ f.url | relative_url }}">{{ f.full_name }}</a><span class="ja-byline"> &mdash; {{ m.role }}</span></li>
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+  </div>
+  {% endfor %}
+</section>
+
+{% else %}
+<div class="wrap" style="padding:48px 0;">
+  <p style="color:var(--ku-gray-mid); font-size:15px;">Nothing indexed yet — journals appear here automatically once articles or faculty profiles have one attached.</p>
+</div>
+{% endif %}
