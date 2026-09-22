@@ -19,6 +19,7 @@ answer_box: "As AI tools spread through the workplace, many assume they'll crowd
   newly formed teams: when a teammate's suggestion is backed by an AI
   recommendation, others trust it — and each other — faster, which measurably
   improves coordination and performance."
+journal: Production and Operations Management
 ---
 
 Artificial intelligence is showing up in nearly every corner of work life, and the instinct for a lot of people is to worry it will get in the way of how colleagues actually relate to one another. New research from the KU School of Business suggests that fear may have it backwards, at least for teams that are just getting to know each other.
