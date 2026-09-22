@@ -19,64 +19,49 @@ layout: default
 }
 </script>
 
-<div class="wrap faculty-header">
-  <div class="faculty-photo-wrap">
-    {% if page.photo %}
-      <img
-        src="{% if page.photo contains '://' %}{{ page.photo }}{% else %}{{ page.photo | relative_url }}{% endif %}"
-        alt="{{ page.full_name }}"
-        class="photo portrait">
-    {% else %}
-      <div class="img-placeholder portrait" style="--tint:var(--ku-steam)"><span>Photo placeholder</span></div>
-    {% endif %}
-  </div>
-  <div class="faculty-header-text">
-    <div class="eyebrow" style="--topic-color:var(--ku-blue)"><span class="dot"></span>Faculty</div>
-    <h1>{{ page.full_name }}</h1>
-    <p class="dek">{{ page.title }}{% if page.academic_area %} &middot; {{ page.academic_area }} academic area{% endif %}</p>
-
-    {% if my_topic_slugs.size > 0 %}
-    <div class="faculty-topics">
-      {% for slug in my_topic_slugs %}
-        {% assign t = site.data.topics | where: 'slug', slug | first %}
-        <a href="{{ '/topics/' | append: slug | append: '/' | relative_url }}" class="topic-pill">{{ t.name }}</a>
-      {% endfor %}
-    </div>
-    {% endif %}
-
-    {% if page.profile_url %}
-    <a href="{{ page.profile_url }}" class="view-all" style="display:inline-block; margin-top:14px;">View full KU Business profile &rarr;</a>
-    {% endif %}
-  </div>
-</div>
-
 {% assign my_journal_groups = my_articles | where_exp: 'a', 'a.journal != nil' | group_by: 'journal' | sort: 'name' %}
 {% assign has_sidebar = false %}
 {% if page.editorial_service and page.editorial_service.size > 0 %}{% assign has_sidebar = true %}{% endif %}
 {% if my_journal_groups.size > 0 %}{% assign has_sidebar = true %}{% endif %}
 
-<section class="wrap" style="padding-bottom:56px;">
-  <div class="faculty-body-grid{% unless has_sidebar %} faculty-body-grid-solo{% endunless %}">
-    <div class="faculty-main">
-      <div class="section-head">
-        <h2>Research on Ideate</h2>
+<div class="wrap">
+  <div class="faculty-header-grid{% unless has_sidebar %} faculty-header-grid-solo{% endunless %}">
+    <div class="faculty-header">
+      <div class="faculty-photo-wrap">
+        {% if page.photo %}
+          <img
+            src="{% if page.photo contains '://' %}{{ page.photo }}{% else %}{{ page.photo | relative_url }}{% endif %}"
+            alt="{{ page.full_name }}"
+            class="photo portrait">
+        {% else %}
+          <div class="img-placeholder portrait" style="--tint:var(--ku-steam)"><span>Photo placeholder</span></div>
+        {% endif %}
       </div>
-      {% if my_articles.size > 0 %}
-      <div class="card-grid">
-        {% for a in my_articles %}
-          {% include card.html article=a %}
-        {% endfor %}
+      <div class="faculty-header-text">
+        <div class="eyebrow" style="--topic-color:var(--ku-blue)"><span class="dot"></span>Faculty</div>
+        <h1>{{ page.full_name }}</h1>
+        <p class="dek">{{ page.title }}{% if page.academic_area %} &middot; {{ page.academic_area }} academic area{% endif %}</p>
+
+        {% if my_topic_slugs.size > 0 %}
+        <div class="faculty-topics">
+          {% for slug in my_topic_slugs %}
+            {% assign t = site.data.topics | where: 'slug', slug | first %}
+            <a href="{{ '/topics/' | append: slug | append: '/' | relative_url }}" class="topic-pill">{{ t.name }}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if page.profile_url %}
+        <a href="{{ page.profile_url }}" class="view-all" style="display:inline-block; margin-top:14px;">View full KU Business profile &rarr;</a>
+        {% endif %}
       </div>
-      {% else %}
-      <p style="color:var(--ku-gray-mid); font-size:15px;">No articles tagged to {{ page.full_name }} yet.</p>
-      {% endif %}
     </div>
 
     {% if has_sidebar %}
     <aside class="faculty-sidebar">
       {% if page.editorial_service and page.editorial_service.size > 0 %}
       <div class="faculty-sidebar-block">
-        <h4>Editorial service</h4>
+        <h2>Editorial service</h2>
         <ul class="editorial-service-list">
           {% for role in page.editorial_service %}
           <li><span class="es-role">{{ role.role }}</span>, <a href="{{ '/journals/' | relative_url }}#{{ role.journal | slugify }}">{{ role.journal }}</a></li>
@@ -87,7 +72,7 @@ layout: default
 
       {% if my_journal_groups.size > 0 %}
       <div class="faculty-sidebar-block">
-        <h4>Academic journal contributions</h4>
+        <h2>Academic journal contributions</h2>
         <ul class="journal-contributions-list">
           {% for group in my_journal_groups %}
           <li><a href="{{ '/journals/' | relative_url }}#{{ group.name | slugify }}">{{ group.name }}</a>{% if group.items.size > 1 %} <span class="jc-count">({{ group.items.size }} articles)</span>{% endif %}</li>
@@ -98,4 +83,19 @@ layout: default
     </aside>
     {% endif %}
   </div>
+</div>
+
+<section class="wrap" style="padding-bottom:56px;">
+  <div class="section-head">
+    <h2>Research on Ideate</h2>
+  </div>
+  {% if my_articles.size > 0 %}
+  <div class="card-grid">
+    {% for a in my_articles %}
+      {% include card.html article=a %}
+    {% endfor %}
+  </div>
+  {% else %}
+  <p style="color:var(--ku-gray-mid); font-size:15px;">No articles tagged to {{ page.full_name }} yet.</p>
+  {% endif %}
 </section>
