@@ -6,16 +6,18 @@ topic: analytics
 faculty:
   - mazhar-arikan
 byline: Mazhar Arikan
-date: 2026-06-11
+date: 2025-01-03
 image: /assets/uploads/pagenger-iteneraries-simplified.jpg
 image_alt: AI generated airline operations dashboard depicting passenger level
   flight status details.
 image_tint: steam
 featured: false
+source_url: https://pubsonline.informs.org/doi/10.1287/msom.2023.0070
 answer_box: Research combining passenger-itinerary data with flight-operations
   data finds that airlines could meaningfully reduce missed connections and
   compounding delays through modest scheduling adjustments — without sacrificing
   the aircraft-utilization efficiency airlines currently optimize for.
+journal: Manufacturing & Service Operations Management
 ---
 
 Airlines have gotten very good at optimizing one number: how efficiently they use each aircraft over the course of a day. What that optimization often doesn't account for is what a delay actually costs a passenger sitting in the middle of a multi-leg itinerary — a gap the research sets out to close.
