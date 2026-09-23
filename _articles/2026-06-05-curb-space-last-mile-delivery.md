@@ -12,10 +12,12 @@ image_alt: Delivery vans fill a curbside loading zone while another delivery
   truck waits in the street for space.
 image_tint: limestone
 featured: false
+source_url: https://www.sciencedirect.com/science/chapter/referencework/abs/pii/B9780443289934000664?via%3Dihub
 answer_box: Research on last-mile delivery logistics finds that curb space,
   parking availability and delivery-stop duration are becoming as significant a
   cost driver as route planning — a constraint that gets sharply worse during
   major events that temporarily flood a city's curb capacity.
+journal: Encyclopedia in Operations Management
 ---
 
 Most conversations about delivery efficiency focus on routing — the shortest path, the best sequence of stops. Less attention goes to what happens at each stop itself: whether a driver can actually find a place to park. New research argues that gap deserves more attention as delivery volume keeps climbing.
