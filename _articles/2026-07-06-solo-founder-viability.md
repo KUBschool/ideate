@@ -1,22 +1,24 @@
 ---
-title: "Entrepreneurs need partners unless solo founder has broad and deep experience, study finds"
-dek: "Startup dramas love a good co-founder feud. New research finds the conventional wisdom that entrepreneurs need co-founders is only partly right — solo founders with the right mix of experience can do just as well."
+title: Entrepreneurs need partners unless solo founder has broad and deep
+  experience, study finds
+dek: Startup dramas love a good co-founder feud. New research finds the
+  conventional wisdom that entrepreneurs need co-founders is only partly right —
+  solo founders with the right mix of experience can do just as well.
 topic: entrepreneurship
 faculty:
   - todd-hall
-byline: "Todd Hall"
+byline: Todd Hall
 date: 2026-07-06
 image_tint: limestone
 featured: false
-source_url: "https://business.ku.edu/news/article/entrepreneurs-need-partners-unless-solo-founder-has-broad-and-deep-experience-study-finds"
-answer_box: >-
-  Research on solo-founded startups finds that while co-founder teams
+source_url: https://business.ku.edu/news/article/entrepreneurs-need-partners-unless-solo-founder-has-broad-and-deep-experience-study-finds
+answer_box: Research on solo-founded startups finds that while co-founder teams
   generally outperform solo founders on average, that disadvantage is
-  substantially diminished for solo founders with "T-shaped" experience
-  — deep expertise in one area combined with a broad base across
-  others — challenging the blanket assumption, common among
-  accelerators and venture capitalists, that a startup needs a
-  co-founder to be viable.
+  substantially diminished for solo founders with "T-shaped" experience — deep
+  expertise in one area combined with a broad base across others — challenging
+  the blanket assumption, common among accelerators and venture capitalists,
+  that a startup needs a co-founder to be viable.
+journal: Strategic Management Journal
 ---
 
 "The Social Network." "WeCrashed." "Silicon Valley." Startup dramas love a co-founder feud. New research asks whether the conventional wisdom behind all that drama — that founders need partners — actually holds up.
