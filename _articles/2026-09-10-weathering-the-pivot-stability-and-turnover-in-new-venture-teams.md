@@ -20,6 +20,7 @@ answer_box: Examining turnover patterns around entrepreneurial pivots, this
   strong interpersonal relationships and shared commitment help teams navigate
   uncertainty and adapt together.
 status: forthcoming
+journal: Journal of Business Venturing Insights
 ---
 Entrepreneurs are often advised to pivot when market conditions, customer needs or business assumptions prove incorrect. While pivots are widely viewed as critical to startup success, they can also create uncertainty by changing a venture's goals, products, or target markets. Many theories of strategic change suggest that such disruptions may weaken team cohesion and prompt employees or co-founders to leave. This study examines whether those assumptions hold true within new venture teams.
 
