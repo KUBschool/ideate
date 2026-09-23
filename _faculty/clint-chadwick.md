@@ -1,6 +1,7 @@
 ---
 full_name: Clint Chadwick
-title: Howard Fitch/Fred Ball Professor
+professorship:
+- Howard Fitch/Fred Ball Professor
 academic_area: Management and Entrepreneurship
 profile_url: https://business.ku.edu/people/clint-chadwick
 editorial_service:

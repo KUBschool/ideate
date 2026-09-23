@@ -18,7 +18,7 @@
       {% else %}
         <a href="{{ '/' | relative_url }}" class="wordmark">{{ site.title }}<span class="dot">.</span></a>
       {% endif %}
-      <span class="tagline">{{ site.tagline }}</span>
+      <span class="tagline">{{ site.data.header.tagline }}</span>
     </div>
     <nav class="primary-nav">
       <a href="{{ '/' | relative_url }}">Articles</a>

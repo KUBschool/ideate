@@ -103,10 +103,16 @@ collections:
     create: true
     slug: "{{slug}}"
     identifier_field: "full_name"
-    summary: "{{full_name}} — {{title}}"
+    summary: "{{full_name}} — {{academic_area}}"
     fields:
       - {label: "Full name", name: "full_name", widget: "string", hint: "As it appears on their business.ku.edu profile."}
-      - {label: "Title", name: "title", widget: "string", hint: "Copy exactly from their business.ku.edu listing."}
+      - {label: "Title", name: "title", widget: "string", required: false, hint: "Rank or role only — e.g. \"Associate Professor\" or \"Dean.\" Leave blank if their business.ku.edu listing is just a named professorship with no separate rank given. Named professorships, fellowships, and endowed chairs go in the field below instead, not here."}
+      - label: "Named Professorship(s)"
+        name: "professorship"
+        widget: "list"
+        required: false
+        field: {label: "Professorship", name: "name", widget: "string"}
+        hint: "Endowed chairs and fellowships only — e.g. \"Larry D. Horner/KPMG Professor,\" \"Capitol Federal Fellow.\" Most faculty have zero or one; a couple have two. Center directorships and rank designations like \"Professor of the Practice\" go in Title instead, not here."
       - {label: "Academic area", name: "academic_area", widget: "string", required: false}
       - {label: "KU Business profile URL", name: "profile_url", widget: "string", hint: "e.g. https://business.ku.edu/people/jane-doe"}
       - {label: "Photo", name: "photo", widget: "image", required: false, hint: "Upload a headshot, or paste the image URL from their business.ku.edu profile directly — either works."}
@@ -137,6 +143,7 @@ collections:
         fields:
           - {label: "Logo", name: "logo", widget: "image", required: false, hint: "Upload a logo, or leave blank to keep the text wordmark (Ideate.)."}
           - {label: "Logo (scrolled / dark background)", name: "logo_scrolled", widget: "image", required: false, hint: "Same logo with a light/reversed color treatment, shown once the header goes dark on scroll. Leave blank and the regular logo just stays put through the color change."}
+          - {label: "Subhead", name: "tagline", widget: "string", hint: "The short line shown under the logo in the site header, e.g. \"KU Business insights that elevate business.\""}
           - label: "Accent color"
             name: "accent_color"
             widget: "select"

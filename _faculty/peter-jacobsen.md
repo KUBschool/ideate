@@ -1,6 +1,8 @@
 ---
 full_name: Peter Jacobsen
-title: Assistant Teaching Professor, Otto Fellow
+title: Assistant Teaching Professor
+professorship:
+- Otto Fellow
 academic_area: Finance
 profile_url: https://business.ku.edu/people/peter-jacobsen
 editorial_service:

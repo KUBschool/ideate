@@ -1,7 +1,8 @@
 ---
 full_name: Jill Ellingson
-title: Area Director, Management and Entrepreneurship, Neeli Bendapudi Professor of
-  Management
+title: Area Director, Management and Entrepreneurship
+professorship:
+- Neeli Bendapudi Professor of Management
 academic_area: Management and Entrepreneurship
 profile_url: https://business.ku.edu/people/jill-ellingson
 editorial_service:

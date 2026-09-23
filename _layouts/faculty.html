@@ -3,13 +3,15 @@ layout: default
 ---
 {% assign my_articles = site.articles | where_exp: 'a', 'a.faculty contains page.slug' | sort: 'date' | reverse %}
 {% assign my_topic_slugs = my_articles | map: 'topic' | uniq %}
+{% assign schema_job_title = page.title %}
+{% if schema_job_title == nil or schema_job_title == '' %}{% assign schema_job_title = page.professorship | join: ", " %}{% endif %}
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": {{ page.full_name | jsonify }},
-  "jobTitle": {{ page.title | jsonify }},
+  "jobTitle": {{ schema_job_title | jsonify }},
   "url": "{{ site.url }}{{ page.url | relative_url }}",
   "worksFor": {
     "@type": "CollegeOrUniversity",
@@ -40,7 +42,12 @@ layout: default
       <div class="faculty-header-text">
         <div class="eyebrow" style="--topic-color:var(--ku-blue)"><span class="dot"></span>Faculty</div>
         <h1>{{ page.full_name }}</h1>
-        <p class="dek">{{ page.title }}{% if page.academic_area %} &middot; {{ page.academic_area }} academic area{% endif %}</p>
+
+        {% if page.title %}<p class="faculty-rank">{{ page.title }}</p>{% endif %}
+        {% if page.professorship and page.professorship.size > 0 %}
+        <p class="faculty-professorship">{{ page.professorship | join: " &middot; " }}</p>
+        {% endif %}
+        {% if page.academic_area %}<p class="faculty-area">{{ page.academic_area }} academic area</p>{% endif %}
 
         {% if my_topic_slugs.size > 0 %}
         <div class="faculty-topics">

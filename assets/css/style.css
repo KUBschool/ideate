@@ -116,7 +116,9 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   gap: 40px;
-  padding: 44px 0 40px;
+  padding: 44px 0 36px;
+  margin-bottom: 4px;
+  border-bottom: 3px solid var(--ku-blue);
   align-items: start;
 }
 .faculty-header-grid.faculty-header-grid-solo{ grid-template-columns: 1fr; }
@@ -128,9 +130,36 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   align-items: start;
 }
 .faculty-photo-wrap{ width: 200px; }
-.faculty-header-text h1{ font-size: 32px; margin-bottom: 8px; }
-.faculty-header-text .dek{ font-family: var(--font-sans); font-size: 16px; color: #565650; margin-bottom: 4px; }
-.faculty-topics{ display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.faculty-photo-wrap .photo,
+.faculty-photo-wrap .img-placeholder{
+  border: 1px solid #e2e0da;
+  box-shadow: 0 6px 16px rgba(0,52,89,.08);
+}
+.faculty-header-text h1{ font-size: 32px; margin-bottom: 10px; }
+.faculty-header-text .faculty-rank{
+  font-family: var(--font-sans);
+  font-size: 16px;
+  color: #565650;
+  margin: 0 0 3px;
+}
+.faculty-header-text .faculty-professorship{
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 16.5px;
+  color: var(--ku-crimson);
+  margin: 0 0 8px;
+}
+.faculty-header-text .faculty-area{
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--ku-gray-mid);
+  margin: 0 0 4px;
+}
+.faculty-topics{ display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
 .faculty-topics .topic-pill{ cursor: pointer; }
 
 /* ---------- editorial service / journal contributions sidebar ---------- */
