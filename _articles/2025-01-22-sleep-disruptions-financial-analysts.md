@@ -4,8 +4,9 @@ dek: "Losing an hour of sleep to daylight saving time doesn't hurt the average p
 topic: finance
 faculty:
   - william-bazley
+  - carina-cuculiza
   - kevin-pisciotta
-byline: "William Bazley & Kevin Pisciotta"
+byline: "William Bazley, Carina Cuculiza & Kevin Pisciotta"
 date: 2025-01-22
 image_tint: limestone
 featured: false
@@ -24,7 +25,7 @@ answer_box: >-
 
 "Prior research on the role of sleep in a financial setting is inconclusive — some studies show that market outcomes, such as stock prices, are impacted by disruptions to participants' sleep, while other studies find no significant effects," said William Bazley, assistant professor of finance at the University of Kansas.
 
-His paper, "Sleep Disruptions and Information Processing in Financial Markets," co-written with fellow KU assistant professor of finance Kevin Pisciotta and Carina Cuculiza of Oklahoma State University, appears in Management Science.
+His paper, "Sleep Disruptions and Information Processing in Financial Markets," co-written with fellow KU assistant professors of finance Kevin Pisciotta and Carina Cuculiza, appears in Management Science.
 
 ## Turning a clock change into a natural experiment
 

@@ -40,16 +40,16 @@ layout: default
         {% endif %}
       </div>
       <div class="faculty-header-text">
-        <div class="eyebrow" style="--topic-color:var(--ku-blue)"><span class="dot"></span>Faculty</div>
         <h1>{{ page.full_name }}</h1>
 
+        {% if page.academic_area %}<p class="faculty-area">{{ page.academic_area }} academic area</p>{% endif %}
         {% if page.title %}<p class="faculty-rank">{{ page.title }}</p>{% endif %}
         {% if page.professorship and page.professorship.size > 0 %}
         <p class="faculty-professorship">{{ page.professorship | join: " &middot; " }}</p>
         {% endif %}
-        {% if page.academic_area %}<p class="faculty-area">{{ page.academic_area }} academic area</p>{% endif %}
 
         {% if my_topic_slugs.size > 0 %}
+        <div class="faculty-topics-label">Research topics covered on Ideate</div>
         <div class="faculty-topics">
           {% for slug in my_topic_slugs %}
             {% assign t = site.data.topics | where: 'slug', slug | first %}
