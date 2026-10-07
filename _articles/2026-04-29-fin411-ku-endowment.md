@@ -8,7 +8,7 @@ faculty:
   - felix-meschke
 byline: Felix Meschke's honors class
 date: 2026-04-29
-image: /assets/uploads/fin-411-render.png
+image: /assets/uploads/_1800393-copy.jpg
 image_alt: Faculty member Felix Mesche sitting at classroom desk.
 image_tint: steam
 featured: false

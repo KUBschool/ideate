@@ -1,23 +1,22 @@
 ---
-title: Strategies for fixing out-of-control tipping practices revealed in new article
-dek: Tipping has spread well beyond restaurants and bars into airlines, medical
-  offices and auto repair shops — and the expected percentage keeps climbing.
-  New research names the pattern and offers businesses a way back.
+title: "Strategies for fixing out-of-control tipping practices revealed in new article"
+dek: "Tipping has spread well beyond restaurants and bars into airlines, medical offices and auto repair shops — and the expected percentage keeps climbing. New research names the pattern and offers businesses a way back."
 topic: marketing
 faculty:
   - rob-waiser
-byline: Rob Waiser
+byline: "Rob Waiser"
 date: 2026-03-13
-image: /assets/uploads/vending-machine-tip.png
 image_tint: limestone
 featured: false
-source_url: https://business.ku.edu/news/article/strategies-for-fixing-out-of-control-tipping-practices-revealed-in-new-article
-answer_box: Research on U.S. tipping culture identifies two related trends
-  behind growing consumer frustration — "tip creep," the spread of tip prompts
-  into categories that never used to ask for one, and "tipflation," the rising
-  percentage expected once they do — and proposes three conditions
-  (distinctiveness, visibility, and proportionality) for businesses deciding
-  whether a tipping program actually serves customers or just annoys them.
+source_url: "https://business.ku.edu/news/article/strategies-for-fixing-out-of-control-tipping-practices-revealed-in-new-article"
+answer_box: >-
+  Research on U.S. tipping culture identifies two related trends behind
+  growing consumer frustration — "tip creep," the spread of tip prompts
+  into categories that never used to ask for one, and "tipflation," the
+  rising percentage expected once they do — and proposes three
+  conditions (distinctiveness, visibility, and proportionality) for
+  businesses deciding whether a tipping program actually serves
+  customers or just annoys them.
 ---
 
 The United States has, by most measures, the most ingrained — and expensive — tipping culture in the world. According to new research, it's also gotten progressively more disconnected from what tipping is supposed to reward.

@@ -629,34 +629,6 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   color: var(--ku-gray-mid);
 }
 
-/* ---------- article row list (single-column, thumb + headline + dek) ---------- */
-.article-row-list{ display: flex; flex-direction: column; }
-.article-row{
-  display: grid;
-  grid-template-columns: 128px 1fr;
-  gap: 20px;
-  align-items: center;
-  padding: 20px 0;
-  border-bottom: 1px solid #ebebe5;
-}
-.article-row:first-child{ padding-top: 0; }
-.article-row:last-child{ border-bottom: none; }
-.article-row-thumb{ display: block; }
-.article-row-thumb .photo,
-.article-row-thumb .img-placeholder{
-  aspect-ratio: 4 / 3;
-  margin: 0;
-}
-.article-row-text .eyebrow{ font-size: 12px; margin-bottom: 6px; }
-.article-row-text h3{ font-size: 17px; margin-bottom: 4px; }
-.article-row-text .dek{
-  font-size: 13.5px;
-  color: #565650;
-  line-height: 1.45;
-  margin: 0;
-}
-.article-row-text a.card-link:hover h3{ text-decoration: underline; text-underline-offset: 3px; }
-
 /* faculty chips */
 .faculty-chips{ display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
 .faculty-chip{
@@ -698,105 +670,6 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 }
 .stub-card h3{ font-size: 16px; margin-bottom: 6px; font-family: var(--font-sans); font-weight: 600; }
 .stub-card p{ font-size: 13.5px; color: var(--ku-gray-mid); margin: 0; line-height: 1.5; }
-
-/* ---------- full-width video spotlight ---------- */
-.media-callout{
-  background: var(--ku-blue);
-}
-.media-callout-grid{
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  align-items: center;
-  gap: 40px;
-  padding: 40px 24px;
-}
-.media-callout-thumb{
-  position: relative;
-  display: block;
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: 0 18px 40px rgba(0,0,0,.28);
-}
-.media-callout-thumb .photo,
-.media-callout-thumb .img-placeholder{ margin: 0; }
-.play-badge{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: rgba(0,0,0,.55);
-  color: var(--white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background .15s ease, transform .15s ease;
-}
-.play-badge svg{ margin-left: 2px; } /* optically centers the play triangle */
-.media-callout-thumb:hover .play-badge,
-.media-thumb-wrap:hover .play-badge{
-  background: rgba(0,0,0,.75);
-  transform: translate(-50%, -50%) scale(1.08);
-}
-.play-badge-lg{ width: 64px; height: 64px; }
-.media-callout-kicker{
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  font-family: var(--font-sans);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: .03em;
-  text-transform: uppercase;
-  color: var(--white);
-  opacity: .9;
-  margin-bottom: 10px;
-}
-.media-callout-kicker .dot{ width: 8px; height: 8px; border-radius: 50%; background: var(--white); }
-.media-callout-text h2{
-  font-size: 30px;
-  color: var(--white);
-  margin-bottom: 12px;
-}
-.media-callout-text a:hover h2{ text-decoration: underline; text-underline-offset: 4px; }
-.media-callout-dek{
-  font-family: var(--font-serif);
-  font-size: 17px;
-  line-height: 1.5;
-  color: rgba(255,255,255,.92);
-  margin-bottom: 22px;
-  max-width: 48ch;
-}
-.media-callout-cta{
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: var(--white);
-  color: var(--ku-blue) !important;
-  font-weight: 700;
-  font-size: 14px;
-  padding: 10px 20px;
-  border-radius: var(--radius);
-}
-.media-callout-cta:hover{ background: var(--ku-night); color: var(--white) !important; }
-
-/* ---------- video card (Videos hub + "More videos") ---------- */
-.media-thumb-wrap{ position: relative; display: block; }
-.media-card .play-badge{ width: 40px; height: 40px; }
-
-/* ---------- individual video page player ---------- */
-.media-player{
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: var(--radius);
-  overflow: hidden;
-  margin-bottom: 32px;
-  background: #000;
-}
-.media-player iframe{ position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
 /* ---------- awards strip ---------- */
 .awards-section{ padding: 48px 0; }
@@ -1056,8 +929,6 @@ blockquote{
   .primary-nav a:not(.btn-subscribe){ display: none; }
   .nav-search.is-open .nav-search-input{ width: 130px; }
   .nav-search-results{ width: 260px; }
-  .media-callout-grid{ grid-template-columns: 1fr; padding: 32px 24px; }
-  .media-callout-text h2{ font-size: 26px; }
 }
 @media (max-width: 620px){
   .card-grid{ grid-template-columns: 1fr; }
@@ -1065,23 +936,13 @@ blockquote{
   .hero-feature h1{ font-size: 28px; }
   .article-header h1{ font-size: 30px; }
   .stream-row{ grid-template-columns: 1fr; }
-  .media-callout-grid{ padding: 28px 20px; gap: 24px; }
-  .media-callout-text h2{ font-size: 23px; }
-  .article-row{ grid-template-columns: 96px 1fr; gap: 14px; }
-  .article-row-text h3{ font-size: 15.5px; }
 }
-/* Hard cutover, not a tween: animating padding/max-height/font-size here
-   was forcing a layout reflow of the sticky header (and everything below
-   it) on every frame, at the same time the browser was handling live
-   scroll input — that fight for the frame budget was the jitter. Flipping
-   these instantly with the scroll instead avoids the repeated layout
-   work entirely rather than trying to smooth it. */
-.site-header{ transition: none; }
-.site-header .wrap{ transition: none; }
-.site-logo{ transition: none; }
-.wordmark{ transition: none; }
+.site-header{ transition: background 0.25s ease, box-shadow 0.2s ease, border-color 0.25s ease; }
+.site-header .wrap{ transition: padding-top 0.2s ease, padding-bottom 0.2s ease; }
+.site-logo{ transition: max-height 0.2s ease, max-width 0.2s ease; }
+.wordmark{ transition: font-size 0.2s ease; }
 .tagline{
-  transition: none;
+  transition: opacity 0.15s ease;
 }
 .site-header.is-scrolled{
   background: var(--ku-night);
@@ -1105,17 +966,15 @@ blockquote{
   opacity: 0;
 }
 
-/* Logo crossfade — only visible once logo_scrolled is set in _data/header.yml.
-   Snaps with the rest of the header now rather than fading on its own
-   timeline, so nothing lingers mid-fade after the instant cutover above. */
+/* Logo crossfade — only visible once logo_scrolled is set in _data/header.yml */
 .logo-swap{ position: relative; display: inline-block; }
-.logo-swap .logo-default{ transition: none; }
+.logo-swap .logo-default{ transition: opacity 0.25s ease; }
 .logo-swap .logo-alt{
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
-  transition: none;
+  transition: opacity 0.25s ease;
 }
 .site-header.is-scrolled .logo-swap .logo-default{ opacity: 0; }
 .site-header.is-scrolled .logo-swap .logo-alt{ opacity: 1; }

@@ -1,24 +1,21 @@
 ---
-title: Marketing expert develops framework providing retailers strategies for
-  organizing around ecosystems
-dek: Everyone in retail says 'ecosystem' now — Amazon's Marketplace, Kroger's
-  data platform. A new framework gives retailers an actual roadmap for when and
-  how to build one, rather than just borrowing the word.
+title: "Marketing expert develops framework providing retailers strategies for organizing around ecosystems"
+dek: "Everyone in retail says 'ecosystem' now — Amazon's Marketplace, Kroger's data platform. A new framework gives retailers an actual roadmap for when and how to build one, rather than just borrowing the word."
 topic: marketing
 faculty:
   - murali-k-mantrala
-byline: Murali K. Mantrala
+byline: "Murali K. Mantrala"
 date: 2026-05-05
-image: /assets/uploads/retail-ecosystem-strategy.png
 image_tint: steam
 featured: false
-source_url: https://business.ku.edu/news/article/marketing-expert-develops-framework-providing-retailers-strategies-for-organizing-around-ecosystems
-answer_box: Retailers increasingly describe themselves as running "ecosystems" —
-  interdependent networks of partners like Amazon's Marketplace or Kroger's
-  84.51° data platform — but have lacked a clear strategic framework for
-  deciding when and how to build one. New research provides that framework,
-  linking value proposition design, ecosystem configuration, and governance
-  mechanisms into a practical roadmap.
+source_url: "https://business.ku.edu/news/article/marketing-expert-develops-framework-providing-retailers-strategies-for-organizing-around-ecosystems"
+answer_box: >-
+  Retailers increasingly describe themselves as running "ecosystems" —
+  interdependent networks of partners like Amazon's Marketplace or
+  Kroger's 84.51° data platform — but have lacked a clear strategic
+  framework for deciding when and how to build one. New research
+  provides that framework, linking value proposition design, ecosystem
+  configuration, and governance mechanisms into a practical roadmap.
 ---
 
 "Ecosystem" has become one of those words that means everything and therefore risks meaning nothing. "Any time more than one person is involved, people say, 'We are part of this ecosystem.' Everybody uses it to describe anything these days," said Murali Mantrala, the Ned Fleming Professor of Marketing at the University of Kansas.
