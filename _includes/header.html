@@ -25,6 +25,10 @@
       <a href="{{ '/faculty/' | relative_url }}">Faculty</a>
       <a href="{{ '/journals/' | relative_url }}">Journals</a>
 
+      {% if site.media.size > 0 %}
+        <a href="{{ '/media/' | relative_url }}">Videos</a>
+      {% endif %}
+
       {% if site.sections.podcasts %}
         <a href="{{ '/podcasts/' | relative_url }}">Podcasts</a>
       {% endif %}

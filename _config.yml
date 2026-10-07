@@ -34,6 +34,9 @@ collections:
   faculty:
     output: true
     permalink: /faculty/:slug/
+  media:
+    output: true
+    permalink: /media/:slug/
 
 defaults:
   - scope:
@@ -46,6 +49,11 @@ defaults:
       type: "faculty"
     values:
       layout: "faculty"
+  - scope:
+      path: ""
+      type: "media"
+    values:
+      layout: "media"
   - scope:
       path: "topics"
     values:

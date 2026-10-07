@@ -1,0 +1,126 @@
+---
+layout: default
+---
+{% assign topic_data = site.data.topics | where: 'slug', page.topic | first %}
+
+{% comment %}
+  Accepts whatever plain YouTube link someone pastes into the CMS —
+  youtube.com/watch?v=ID, youtu.be/ID, or an already-embed youtube.com/embed/ID
+  link — and pulls out just the video ID, so the CMS field can stay a normal,
+  copy-pasteable link instead of asking for embed code.
+{% endcomment %}
+{% assign video_id = page.video_url %}
+{% if page.video_url contains "youtu.be/" %}
+  {% assign video_id = page.video_url | split: "youtu.be/" | last | split: "?" | first | split: "&" | first %}
+{% elsif page.video_url contains "watch?v=" %}
+  {% assign video_id = page.video_url | split: "v=" | last | split: "&" | first %}
+{% elsif page.video_url contains "embed/" %}
+  {% assign video_id = page.video_url | split: "embed/" | last | split: "?" | first %}
+{% endif %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": {{ page.title | jsonify }},
+  "description": {{ page.dek | jsonify }},
+  "uploadDate": "{{ page.date | date_to_xmlschema }}",
+  {% if page.thumbnail %}"thumbnailUrl": "{{ site.url }}{{ page.thumbnail | relative_url }}",{% endif %}
+  "embedUrl": "https://www.youtube.com/embed/{{ video_id }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Ideate — KU School of Business",
+    "url": "{{ site.url }}{{ site.baseurl }}/"
+  }
+}
+</script>
+
+<div class="wrap article-header">
+  <div class="eyebrow" style="--topic-color:var(--ku-crimson)">
+    <span class="dot"></span>
+    {% if topic_data %}<a href="{{ '/topics/' | append: page.topic | append: '/' | relative_url }}">{{ topic_data.name }}</a>&nbsp;·&nbsp;{% endif %}
+    Video
+  </div>
+  <h1>{{ page.title }}</h1>
+  <p class="dek">{{ page.dek }}</p>
+  <div class="article-meta">
+    <span>Ideate Video</span>
+    <span>·</span>
+    <span>{{ page.date | date: "%B %-d, %Y" }}</span>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="media-player">
+    <iframe
+      src="https://www.youtube.com/embed/{{ video_id }}"
+      title="{{ page.title }}"
+      loading="lazy"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
+  </div>
+</div>
+
+<div class="wrap article-body">
+  <div class="article-copy">
+    {{ content }}
+  </div>
+
+  <aside class="article-sidebar">
+    {% if page.faculty and page.faculty.size > 0 %}
+    <div class="sidebar-block">
+      <h4>Faculty</h4>
+      <div class="faculty-chips">
+        {% for slug in page.faculty %}
+        {% assign f = site.faculty | where: 'slug', slug | first %}
+        <a href="{{ f.url | relative_url }}" class="faculty-chip"><span class="avatar"></span>{{ f.full_name }}</a>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    {% if topic_data %}
+    <div class="sidebar-block">
+      <h4>Topic</h4>
+      <div class="faculty-chips">
+        <a href="{{ '/topics/' | append: page.topic | append: '/' | relative_url }}" class="faculty-chip">{{ topic_data.name }}</a>
+      </div>
+    </div>
+    {% endif %}
+
+    <div class="sidebar-block">
+      <h4>Watch on YouTube</h4>
+      <p style="font-size:13px; color:var(--ku-gray-mid); line-height:1.5; margin:0;">
+        <a href="https://www.youtube.com/watch?v={{ video_id }}" style="color:var(--ku-blue);">Open on YouTube →</a>
+      </p>
+    </div>
+
+    {% if page.source_url %}
+    <div class="sidebar-block">
+      <h4>Related</h4>
+      <p style="font-size:13px; color:var(--ku-gray-mid); line-height:1.5; margin:0;">
+        <a href="{{ page.source_url }}" style="color:var(--ku-blue);">Read more →</a>
+      </p>
+    </div>
+    {% endif %}
+  </aside>
+</div>
+
+{% assign related_media = site.media | where_exp: 'm', 'm.url != page.url' | sort: 'date' | reverse | slice: 0, 3 %}
+{% unless related_media.size == 0 %}
+<section class="related-section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>More videos</h2>
+      <a href="{{ '/media/' | relative_url }}" class="view-all">View all videos →</a>
+    </div>
+    <div class="card-grid">
+      {% for m in related_media %}
+        {% include media-card.html media=m %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endunless %}

@@ -1,0 +1,28 @@
+{%- comment -%}
+  Usage: {% include media-card.html media=some_media_item %}
+  Same card shape as card.html (articles), with a play badge over the
+  thumbnail and no byline — videos are credited as "Ideate Video" rather
+  than to a staff writer.
+{%- endcomment -%}
+{% assign media = include.media %}
+{% assign topic_data = site.data.topics | where: 'slug', media.topic | first %}
+<article class="card media-card" data-topic="{{ media.topic }}">
+  <a href="{{ media.url | relative_url }}" class="card-link media-thumb-wrap">
+    {% if media.thumbnail %}
+      <img src="{{ media.thumbnail | relative_url }}" alt="{{ media.title }}" class="photo">
+    {% else %}
+      <div class="img-placeholder" style="--tint:var(--ku-night)"><span>Video</span></div>
+    {% endif %}
+    <span class="play-badge" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+    </span>
+  </a>
+  <div class="eyebrow" style="--topic-color:var(--ku-crimson)">
+    <span class="dot"></span>Video{% if topic_data %}&nbsp;·&nbsp;<a href="{{ '/topics/' | append: media.topic | append: '/' | relative_url }}">{{ topic_data.name }}</a>{% endif %}
+  </div>
+  <a href="{{ media.url | relative_url }}" class="card-link"><h3>{{ media.title }}</h3></a>
+  <p class="dek">{{ media.dek }}</p>
+  <div class="card-meta">
+    <span>{{ media.date | date: "%b %-d, %Y" }}</span>
+  </div>
+</article>

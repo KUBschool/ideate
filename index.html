@@ -17,6 +17,14 @@ title: "Home"
 {% assign grid_list = rest | slice: 3, 6 %}
 {% assign feature_topic = site.data.topics | where: 'slug', feature.topic | first %}
 
+{% assign media_sorted = site.media | sort: 'date' | reverse %}
+{% assign media_featured_list = media_sorted | where: 'featured', true %}
+{% if media_featured_list.size > 0 %}
+  {% assign spotlight_media = media_featured_list | first %}
+{% else %}
+  {% assign spotlight_media = media_sorted | first %}
+{% endif %}
+
 <section class="hero-section">
   <div class="wrap hero-grid">
     <article class="hero-feature">
@@ -61,6 +69,8 @@ title: "Home"
   </div>
 </section>
 
+{% include media-callout.html media=spotlight_media %}
+
 <section class="wrap" id="latest">
   <div class="section-head">
     <h2>Recent research</h2>
@@ -90,9 +100,10 @@ title: "Home"
         <p>Faculty-led briefings on the research shaping their fields, open to alumni and industry partners.</p>
       </div>
       <div class="stub-card" data-section="video">
-        <div class="kicker">Video · {% if site.sections.video %}Now live{% else %}Launching soon{% endif %}</div>
+        <div class="kicker">Video · {% if site.media.size > 0 %}Now live{% else %}Launching soon{% endif %}</div>
         <h3>Research in 5 minutes</h3>
         <p>Short video explainers pairing one finding with the faculty member behind it.</p>
+        {% if site.media.size > 0 %}<a href="{{ '/media/' | relative_url }}" class="view-all" style="display:inline-block; margin-top:8px;">Watch now →</a>{% endif %}
       </div>
     </div>
   </div>

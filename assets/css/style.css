@@ -671,6 +671,109 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 .stub-card h3{ font-size: 16px; margin-bottom: 6px; font-family: var(--font-sans); font-weight: 600; }
 .stub-card p{ font-size: 13.5px; color: var(--ku-gray-mid); margin: 0; line-height: 1.5; }
 
+/* ---------- full-width video spotlight ----------
+   The one place on the site that spends KU Crimson boldly — everywhere
+   else it's held in reserve (just the wordmark dot and a couple of
+   underline accents), so a full-bleed crimson band reads as a deliberate
+   feature moment rather than another topic color competing for attention. */
+.media-callout{
+  background: var(--ku-crimson);
+}
+.media-callout-grid{
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 24px;
+}
+.media-callout-thumb{
+  position: relative;
+  display: block;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0,0,0,.28);
+}
+.media-callout-thumb .photo,
+.media-callout-thumb .img-placeholder{ margin: 0; }
+.play-badge{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(0,0,0,.55);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .15s ease, transform .15s ease;
+}
+.play-badge svg{ margin-left: 2px; } /* optically centers the play triangle */
+.media-callout-thumb:hover .play-badge,
+.media-thumb-wrap:hover .play-badge{
+  background: rgba(0,0,0,.75);
+  transform: translate(-50%, -50%) scale(1.08);
+}
+.play-badge-lg{ width: 64px; height: 64px; }
+.media-callout-kicker{
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  color: var(--white);
+  opacity: .9;
+  margin-bottom: 10px;
+}
+.media-callout-kicker .dot{ width: 8px; height: 8px; border-radius: 50%; background: var(--white); }
+.media-callout-text h2{
+  font-size: 30px;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+.media-callout-text a:hover h2{ text-decoration: underline; text-underline-offset: 4px; }
+.media-callout-dek{
+  font-family: var(--font-serif);
+  font-size: 17px;
+  line-height: 1.5;
+  color: rgba(255,255,255,.92);
+  margin-bottom: 22px;
+  max-width: 48ch;
+}
+.media-callout-cta{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--white);
+  color: var(--ku-crimson) !important;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: var(--radius);
+}
+.media-callout-cta:hover{ background: var(--ku-night); color: var(--white) !important; }
+
+/* ---------- video card (Videos hub + "More videos") ---------- */
+.media-thumb-wrap{ position: relative; display: block; }
+.media-card .play-badge{ width: 40px; height: 40px; }
+
+/* ---------- individual video page player ---------- */
+.media-player{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 32px;
+  background: #000;
+}
+.media-player iframe{ position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
 /* ---------- awards strip ---------- */
 .awards-section{ padding: 48px 0; }
 .awards-grid{
@@ -929,6 +1032,8 @@ blockquote{
   .primary-nav a:not(.btn-subscribe){ display: none; }
   .nav-search.is-open .nav-search-input{ width: 130px; }
   .nav-search-results{ width: 260px; }
+  .media-callout-grid{ grid-template-columns: 1fr; padding: 32px 24px; }
+  .media-callout-text h2{ font-size: 26px; }
 }
 @media (max-width: 620px){
   .card-grid{ grid-template-columns: 1fr; }
@@ -936,6 +1041,8 @@ blockquote{
   .hero-feature h1{ font-size: 28px; }
   .article-header h1{ font-size: 30px; }
   .stream-row{ grid-template-columns: 1fr; }
+  .media-callout-grid{ padding: 28px 20px; gap: 24px; }
+  .media-callout-text h2{ font-size: 23px; }
 }
 /* Hard cutover, not a tween: animating padding/max-height/font-size here
    was forcing a layout reflow of the sticky header (and everything below

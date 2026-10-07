@@ -7,12 +7,15 @@ layout: default
 {% assign rest = articles | slice: 1, 999 %}
 {% assign hero_list = rest | slice: 0, 3 %}
 {% assign remaining = rest | slice: 3, 999 %}
+{% assign topic_media = site.media | where: 'topic', page.topic | sort: 'date' | reverse %}
 
 <div class="wrap archive-header">
   <div class="eyebrow" style="--topic-color:var(--topic-{{ page.topic }})"><span class="dot"></span>Topic</div>
   <h1>{{ topic_data.name }}</h1>
   <p>{{ topic_data.description }}</p>
 </div>
+
+{% include media-callout.html media=topic_media.first %}
 
 {% assign show_sidebar = false %}
 {% if topic_data.callout or hero_list.size > 0 %}{% assign show_sidebar = true %}{% endif %}

@@ -4,6 +4,7 @@ permalink: /search.json
 ---
 [
 {% assign articles = site.articles | sort: 'date' | reverse %}
+{% assign media = site.media | sort: 'date' | reverse %}
 {% assign faculty = site.faculty | sort: 'full_name' %}
 {% for a in articles %}
   {% assign topic_data = site.data.topics | where: 'slug', a.topic | first %}
@@ -14,6 +15,17 @@ permalink: /search.json
     "url": {{ a.url | relative_url | jsonify }},
     "topic": {{ topic_data.name | jsonify }},
     "byline": {{ a.byline | jsonify }}
+  }{% unless forloop.last and media.size == 0 and faculty.size == 0 %},{% endunless %}
+{% endfor %}
+{% for m in media %}
+  {% assign topic_data = site.data.topics | where: 'slug', m.topic | first %}
+  {
+    "type": "Video",
+    "title": {{ m.title | jsonify }},
+    "dek": {{ m.dek | jsonify }},
+    "url": {{ m.url | relative_url | jsonify }},
+    "topic": {{ topic_data.name | default: "Video" | jsonify }},
+    "byline": "Ideate Video"
   }{% unless forloop.last and faculty.size == 0 %},{% endunless %}
 {% endfor %}
 {% for f in faculty %}
