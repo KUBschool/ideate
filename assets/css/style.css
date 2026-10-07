@@ -937,12 +937,18 @@ blockquote{
   .article-header h1{ font-size: 30px; }
   .stream-row{ grid-template-columns: 1fr; }
 }
-.site-header{ transition: background 0.25s ease, box-shadow 0.2s ease, border-color 0.25s ease; }
-.site-header .wrap{ transition: padding-top 0.2s ease, padding-bottom 0.2s ease; }
-.site-logo{ transition: max-height 0.2s ease, max-width 0.2s ease; }
-.wordmark{ transition: font-size 0.2s ease; }
+/* Hard cutover, not a tween: animating padding/max-height/font-size here
+   was forcing a layout reflow of the sticky header (and everything below
+   it) on every frame, at the same time the browser was handling live
+   scroll input — that fight for the frame budget was the jitter. Flipping
+   these instantly with the scroll instead avoids the repeated layout
+   work entirely rather than trying to smooth it. */
+.site-header{ transition: none; }
+.site-header .wrap{ transition: none; }
+.site-logo{ transition: none; }
+.wordmark{ transition: none; }
 .tagline{
-  transition: opacity 0.15s ease;
+  transition: none;
 }
 .site-header.is-scrolled{
   background: var(--ku-night);
@@ -966,15 +972,17 @@ blockquote{
   opacity: 0;
 }
 
-/* Logo crossfade — only visible once logo_scrolled is set in _data/header.yml */
+/* Logo crossfade — only visible once logo_scrolled is set in _data/header.yml.
+   Snaps with the rest of the header now rather than fading on its own
+   timeline, so nothing lingers mid-fade after the instant cutover above. */
 .logo-swap{ position: relative; display: inline-block; }
-.logo-swap .logo-default{ transition: opacity 0.25s ease; }
+.logo-swap .logo-default{ transition: none; }
 .logo-swap .logo-alt{
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
-  transition: opacity 0.25s ease;
+  transition: none;
 }
 .site-header.is-scrolled .logo-swap .logo-default{ opacity: 0; }
 .site-header.is-scrolled .logo-swap .logo-alt{ opacity: 1; }
