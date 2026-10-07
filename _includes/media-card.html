@@ -17,7 +17,7 @@
       <svg viewBox="0 0 24 24" width="18" height="18"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
     </span>
   </a>
-  <div class="eyebrow" style="--topic-color:var(--ku-crimson)">
+  <div class="eyebrow" style="--topic-color:var(--ku-blue)">
     <span class="dot"></span>Video{% if topic_data %}&nbsp;·&nbsp;<a href="{{ '/topics/' | append: media.topic | append: '/' | relative_url }}">{{ topic_data.name }}</a>{% endif %}
   </div>
   <a href="{{ media.url | relative_url }}" class="card-link"><h3>{{ media.title }}</h3></a>

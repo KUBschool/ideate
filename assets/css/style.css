@@ -629,6 +629,34 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   color: var(--ku-gray-mid);
 }
 
+/* ---------- article row list (single-column, thumb + headline + dek) ---------- */
+.article-row-list{ display: flex; flex-direction: column; }
+.article-row{
+  display: grid;
+  grid-template-columns: 128px 1fr;
+  gap: 20px;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #ebebe5;
+}
+.article-row:first-child{ padding-top: 0; }
+.article-row:last-child{ border-bottom: none; }
+.article-row-thumb{ display: block; }
+.article-row-thumb .photo,
+.article-row-thumb .img-placeholder{
+  aspect-ratio: 4 / 3;
+  margin: 0;
+}
+.article-row-text .eyebrow{ font-size: 12px; margin-bottom: 6px; }
+.article-row-text h3{ font-size: 17px; margin-bottom: 4px; }
+.article-row-text .dek{
+  font-size: 13.5px;
+  color: #565650;
+  line-height: 1.45;
+  margin: 0;
+}
+.article-row-text a.card-link:hover h3{ text-decoration: underline; text-underline-offset: 3px; }
+
 /* faculty chips */
 .faculty-chips{ display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
 .faculty-chip{
@@ -671,13 +699,9 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 .stub-card h3{ font-size: 16px; margin-bottom: 6px; font-family: var(--font-sans); font-weight: 600; }
 .stub-card p{ font-size: 13.5px; color: var(--ku-gray-mid); margin: 0; line-height: 1.5; }
 
-/* ---------- full-width video spotlight ----------
-   The one place on the site that spends KU Crimson boldly — everywhere
-   else it's held in reserve (just the wordmark dot and a couple of
-   underline accents), so a full-bleed crimson band reads as a deliberate
-   feature moment rather than another topic color competing for attention. */
+/* ---------- full-width video spotlight ---------- */
 .media-callout{
-  background: var(--ku-crimson);
+  background: var(--ku-blue);
 }
 .media-callout-grid{
   display: grid;
@@ -750,7 +774,7 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   align-items: center;
   gap: 6px;
   background: var(--white);
-  color: var(--ku-crimson) !important;
+  color: var(--ku-blue) !important;
   font-weight: 700;
   font-size: 14px;
   padding: 10px 20px;
@@ -1043,6 +1067,8 @@ blockquote{
   .stream-row{ grid-template-columns: 1fr; }
   .media-callout-grid{ padding: 28px 20px; gap: 24px; }
   .media-callout-text h2{ font-size: 23px; }
+  .article-row{ grid-template-columns: 96px 1fr; gap: 14px; }
+  .article-row-text h3{ font-size: 15.5px; }
 }
 /* Hard cutover, not a tween: animating padding/max-height/font-size here
    was forcing a layout reflow of the sticky header (and everything below

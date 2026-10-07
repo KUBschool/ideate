@@ -69,19 +69,19 @@ title: "Home"
   </div>
 </section>
 
-{% include media-callout.html media=spotlight_media %}
-
 <section class="wrap" id="latest">
   <div class="section-head">
     <h2>Recent research</h2>
     <a href="{{ '/articles/' | relative_url }}" class="view-all">View all research →</a>
   </div>
-  <div class="card-grid">
+  <div class="article-row-list">
     {% for a in grid_list %}
-      {% include card.html article=a %}
+      {% include article-row.html article=a %}
     {% endfor %}
   </div>
 </section>
+
+{% include media-callout.html media=spotlight_media %}
 
 <section class="stub-section">
   <div class="wrap">
