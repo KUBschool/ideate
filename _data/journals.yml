@@ -1,0 +1,240 @@
+# Journals — premier flags. Edited in the CMS under Site Settings > Journals.
+#
+# This file only decides which journals get the 'Premier' treatment on the
+# Journals page. The page's journal list itself is still built automatically
+# from article Journal fields and faculty Editorial Service entries, so a row
+# here for a journal nobody has used yet is harmless (it just waits). A journal
+# with no row here is simply treated as not premier. Names match without
+# regard to capitalization but must otherwise be spelled exactly alike.
+#
+# Pre-loaded with every journal in the system as of the 2026-10-07 backup,
+# plus the Financial Times FT50 (2026 revision), with the FT50 pre-checked.
+items:
+  - name: "Academy of Management"
+    premier: false
+  - name: "Academy of Management Annals"
+    premier: true
+    basis: "ft50"
+  - name: "Academy of Management Journal"
+    premier: true
+    basis: "ft50"
+  - name: "Academy of Management Learning and Education"
+    premier: false
+  - name: "Academy of Management Organizations and Their Environments"
+    premier: false
+  - name: "Academy of Management Perspectives"
+    premier: false
+  - name: "Academy of Management Review"
+    premier: true
+    basis: "ft50"
+  - name: "Accounting Horizons"
+    premier: false
+  - name: "Accounting, Organizations and Society"
+    premier: true
+    basis: "ft50"
+  - name: "Administrative Science Quarterly"
+    premier: true
+    basis: "ft50"
+  - name: "American Economic Review"
+    premier: true
+    basis: "ft50"
+  - name: "American Sociological Review"
+    premier: true
+    basis: "ft50"
+  - name: "Auditing: A Journal of Practice & Theory"
+    premier: false
+  - name: "Behavioral Research in Accounting"
+    premier: false
+  - name: "Behavioral Sciences"
+    premier: false
+  - name: "Business Ethics Quarterly"
+    premier: false
+  - name: "Contemporary Accounting Research"
+    premier: true
+    basis: "ft50"
+  - name: "Decision Sciences Journal"
+    premier: false
+  - name: "Decision Support Systems"
+    premier: false
+  - name: "Econometrica"
+    premier: true
+    basis: "ft50"
+  - name: "Emerging Markets Review"
+    premier: false
+  - name: "Encyclopedia in Operations Management"
+    premier: false
+  - name: "Entrepreneurship Theory and Practice"
+    premier: true
+    basis: "ft50"
+  - name: "Global Strategy Journal"
+    premier: false
+  - name: "Harvard Business Review"
+    premier: true
+    basis: "ft50"
+  - name: "Human Resource Management"
+    premier: true
+    basis: "ft50"
+  - name: "Human Resource Management Review"
+    premier: false
+  - name: "Information Systems Research"
+    premier: true
+    basis: "ft50"
+  - name: "International Journal of Data Science"
+    premier: false
+  - name: "Journal of Accounting and Economics"
+    premier: true
+    basis: "ft50"
+  - name: "Journal of Accounting Research"
+    premier: true
+    basis: "ft50"
+  - name: "Journal of Advertising"
+    premier: false
+  - name: "Journal of Applied Psychology"
+    premier: true
+    basis: "ft50"
+  - name: "Journal of Business Analytics"
+    premier: false
+  - name: "Journal of Business Research"
+    premier: false
+  - name: "Journal of Business Venturing"
+    premier: true
+    basis: "ft50"
+  - name: "Journal of Business Venturing Insights"
+    premier: false
+  - name: "Journal of Consumer Psychology"
+    premier: true
+    basis: "ft50"
+  - name: "Journal of Consumer Research"
+    premier: true
+    basis: "ft50"
+  - name: "Journal of Finance"
+    premier: true
+    basis: "ft50"
+  - name: "Journal of Financial and Quantitative Analysis"
+    premier: true
+    basis: "ft50"
+  - name: "Journal of Financial Economics"
+    premier: true
+    basis: "ft50"
+  - name: "Journal of Financial Research"
+    premier: false
+  - name: "Journal of International Business Policy"
+    premier: false
+  - name: "Journal of International Business Studies"
+    premier: true
+    basis: "ft50"
+  - name: "Journal of International Financial Markets, Institutions and Money"
+    premier: false
+  - name: "Journal of International Marketing"
+    premier: false
+  - name: "Journal of Management"
+    premier: true
+    basis: "ft50"
+  - name: "Journal of Management Information Systems"
+    premier: true
+    basis: "ft50"
+  - name: "Journal of Management Studies"
+    premier: true
+    basis: "ft50"
+  - name: "Journal of Marketing"
+    premier: true
+    basis: "ft50"
+  - name: "Journal of Marketing Research"
+    premier: true
+    basis: "ft50"
+  - name: "Journal of Markets and Morality"
+    premier: false
+  - name: "Journal of Operations Management"
+    premier: true
+    basis: "ft50"
+  - name: "Journal of Organizational Behavior"
+    premier: false
+  - name: "Journal of Personal Selling and Sales Management"
+    premier: false
+  - name: "Journal of Political Economy"
+    premier: true
+    basis: "ft50"
+  - name: "Journal of Retailing"
+    premier: false
+  - name: "Journal of Service Research"
+    premier: false
+  - name: "Journal of the Academy of Marketing Science"
+    premier: true
+    basis: "ft50"
+  - name: "Journal of World Business"
+    premier: false
+  - name: "Long Range Planning"
+    premier: false
+  - name: "Management Science"
+    premier: true
+    basis: "ft50"
+  - name: "Managerial Finance"
+    premier: false
+  - name: "Manufacturing & Service Operations Management"
+    premier: true
+    basis: "ft50"
+  - name: "Marketing Science"
+    premier: true
+    basis: "ft50"
+  - name: "MIS Quarterly"
+    premier: true
+    basis: "ft50"
+  - name: "MIT Sloan Management Review"
+    premier: true
+    basis: "ft50"
+  - name: "Multinational Business Review"
+    premier: false
+  - name: "Operations Research"
+    premier: true
+    basis: "ft50"
+  - name: "Organization Science"
+    premier: true
+    basis: "ft50"
+  - name: "Organizational Behavior and Human Decision Processes"
+    premier: true
+    basis: "ft50"
+  - name: "Personnel Psychology"
+    premier: false
+  - name: "Production and Operations Management"
+    premier: true
+    basis: "ft50"
+  - name: "Psychological Science"
+    premier: true
+    basis: "ft50"
+  - name: "Quarterly Journal of Economics"
+    premier: true
+    basis: "ft50"
+  - name: "Research Policy"
+    premier: true
+    basis: "ft50"
+  - name: "Responsible Research in Business and Management (RRBM) Honor Roll"
+    premier: false
+  - name: "Review of Accounting Studies"
+    premier: true
+    basis: "ft50"
+  - name: "Review of Economic Studies"
+    premier: true
+    basis: "ft50"
+  - name: "Review of Finance"
+    premier: true
+    basis: "ft50"
+  - name: "Review of Financial Studies"
+    premier: true
+    basis: "ft50"
+  - name: "Science Journal of Business and Management"
+    premier: false
+  - name: "Strategic Entrepreneurship Journal"
+    premier: true
+    basis: "ft50"
+  - name: "Strategic Management Journal"
+    premier: true
+    basis: "ft50"
+  - name: "The Accounting Review"
+    premier: true
+    basis: "ft50"
+  - name: "The British Accounting Review"
+    premier: false
+  - name: "Transportation Research Part E: Logistics and Transportation Review"
+    premier: false
+  - name: "Venture Capital"
+    premier: false

@@ -93,8 +93,59 @@ collections:
         name: "journal"
         widget: "string"
         required: false
-        hint: "The journal this research was published in, spelled exactly as it appears elsewhere on the site (check the Journals page or a faculty member's Editorial Service list for the exact spelling already in use) — e.g. \"Management Science\", not \"Mgmt. Science\". Leave blank if unknown; this powers the Journals index and each faculty member's Academic Journal Contributions list, and inconsistent spelling will split one journal into two entries."
+        hint: "The journal this research was published in, spelled exactly as it appears elsewhere on the site (check the Journals page, Site Settings > Journals, or a faculty member's Editorial Service list for the exact spelling already in use) — e.g. \"Management Science\", not \"Mgmt. Science\". Leave blank if unknown; this powers the Journals index and each faculty member's Academic Journal Contributions list, and inconsistent spelling will split one journal into two entries."
       - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "media"
+    label: "Videos"
+    label_singular: "Video"
+    folder: "_media"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: title
+    summary: "{{title}}"
+    sortable_fields: ["date", "title", "topic"]
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Summary", name: "dek", widget: "text", hint: "One or two sentences on what the video covers — shown in the homepage/topic spotlight and at the top of the video's own page."}
+      - label: "Research area"
+        name: "topic"
+        widget: "select"
+        options:
+          - {label: "Accounting", value: "accounting"}
+          - {label: "Finance", value: "finance"}
+          - {label: "Supply Chain", value: "supply-chain"}
+          - {label: "Marketing", value: "marketing"}
+          - {label: "Information Systems", value: "information-systems"}
+          - {label: "Analytics", value: "analytics"}
+          - {label: "Entrepreneurship", value: "entrepreneurship"}
+          - {label: "Management", value: "management"}
+          - {label: "Business Law", value: "business-law"}
+          - {label: "AI", value: "ai"}
+          - {label: "Policy", value: "policy"}
+        required: false
+        hint: "Optional. If set, this video becomes the featured video spotlighted on that topic's page. Leave blank for a general-interest video that only shows up on the homepage and the Videos hub."
+      - label: "Faculty featured"
+        name: "faculty"
+        widget: "relation"
+        collection: "faculty"
+        multiple: true
+        search_fields: ["full_name"]
+        display_fields: ["full_name"]
+        value_field: "{{slug}}"
+        required: false
+      - {label: "Publish date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, picker_utc: true}
+      - label: "Thumbnail"
+        name: "thumbnail"
+        widget: "image"
+        hint: "Upload a still from the video (landscape works best). YouTube's auto-generated thumbnails are inconsistent quality, so the site uses this image instead, everywhere the video is teased."
+      - label: "YouTube link"
+        name: "video_url"
+        widget: "string"
+        hint: "Paste the normal YouTube link, either from the address bar (youtube.com/watch?v=...) or the Share button (youtu.be/...) — the site builds the lightweight embed from it automatically. This stays hosted on YouTube; nothing is uploaded to the site itself."
+      - {label: "Feature on homepage", name: "featured", widget: "boolean", default: false, hint: "Only one video should be flagged at a time — the newest featured one wins if more than one is flagged. If none are flagged, the most recently published video is used automatically."}
+      - {label: "Related article or source URL", name: "source_url", widget: "string", required: false, hint: "Optional — link to a related Ideate article or KU Business news post."}
+      - {label: "Body", name: "body", widget: "markdown", required: false, hint: "Optional — additional context shown below the embedded video. Most videos won't need this."}
 
   - name: "faculty"
     label: "Faculty"
@@ -124,7 +175,7 @@ collections:
         hint: "One entry per editorial role. Most faculty have zero or one; a few have several. This is separate from — and not the same as — the journals they've published in, which is tracked automatically from each article's Journal field and doesn't need to be entered here."
         fields:
           - {label: "Role", name: "role", widget: "string", hint: "e.g. Editor-in-Chief, Associate Editor, Editorial Board Member — copy the exact title from the source listing."}
-          - {label: "Journal", name: "journal", widget: "string", hint: "Spelled exactly as it appears elsewhere on the site — check the Journals page if unsure, since inconsistent spelling will split one journal into two entries."}
+          - {label: "Journal", name: "journal", widget: "string", hint: "Spelled exactly as it appears elsewhere on the site — check the Journals page or Site Settings > Journals if unsure, since inconsistent spelling will split one journal into two entries (and a misspelled premier journal won't get its Premier highlight)."}
 
   - name: "settings"
     label: "Site Settings"
@@ -210,3 +261,26 @@ collections:
               - {label: "Kicker", name: "kicker", widget: "string"}
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
+      - label: "Journals (premier flags)"
+        name: "journals"
+        file: "_data/journals.yml"
+        fields:
+          - label: "Journals"
+            name: "items"
+            widget: "list"
+            collapsed: true
+            add_to_top: true
+            label_singular: "Journal"
+            summary: "{{fields.name}}{{fields.premier | ternary(' ★ Premier','')}}"
+            hint: "One row per journal; a ★ next to a name means it's flagged premier. Check \"Premier journal\" to give a journal the bold name, highlighted box, and badge on the Journals page and include it in the Premier filter. This list does not control which journals appear on the Journals page — that still happens automatically from article Journal fields and faculty Editorial Service entries — so rows for journals nobody has used yet are fine (they just wait). A journal with no row here is treated as not premier; to flag a new one, add a row (it goes to the top) with the name spelled exactly as it appears on the article or Editorial Service entry (capitalization doesn't matter, everything else does)."
+            fields:
+              - {label: "Journal name", name: "name", widget: "string", hint: "Exactly as it's spelled on articles and in Editorial Service."}
+              - {label: "Premier journal", name: "premier", widget: "boolean", default: false, hint: "Checked = bold name, highlighted box, and Premier badge on the Journals page. The list started from the Financial Times FT50; School leadership additions are checked the same way."}
+              - label: "Why it's premier (internal note)"
+                name: "basis"
+                widget: "select"
+                required: false
+                options:
+                  - {label: "FT50", value: "ft50"}
+                  - {label: "Added by School leadership", value: "leadership"}
+                hint: "Optional, never shown on the site. Just a record of where the flag came from."

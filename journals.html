@@ -14,11 +14,21 @@ description: "Every academic journal connected to KU Business — through resear
   Liquid has no native way to flatten an array built inside a loop, so
   editorial-service journals are collected via capture+split below —
   a standard Jekyll workaround, not a bug.
+
+  The ONE thing that does come from a data file is the premier flag:
+  _data/journals.yml (edited in the CMS under Site Settings > Journals) is a
+  list of journal names with a "premier" checkbox. It never adds a journal
+  to this page — it only decides which already-listed journals get the
+  premier treatment (bold name, highlighted box, badge, and the Premier
+  sort/filter). Names are matched case-insensitively, then exactly.
 {% endcomment %}
 {% capture service_journals_raw %}{% for f in site.faculty %}{% if f.editorial_service %}{% for es in f.editorial_service %}{{ es.journal }}|||{% endfor %}{% endif %}{% endfor %}{% endcapture %}
 {% assign service_journals = service_journals_raw | split: "|||" %}
 {% assign article_journals = site.articles | map: 'journal' | compact %}
 {% assign all_journals = article_journals | concat: service_journals | uniq | sort_natural %}
+
+{% comment %} Lowercased names of every journal flagged premier, for the per-journal lookups below. {% endcomment %}
+{% assign premier_names = site.data.journals.items | where: 'premier', true | map: 'name' | join: '|||' | downcase | split: '|||' %}
 
 <div class="wrap archive-header">
   <div class="eyebrow" style="--topic-color:var(--ku-night)"><span class="dot"></span>Reference</div>
@@ -27,23 +37,65 @@ description: "Every academic journal connected to KU Business — through resear
 </div>
 
 {% if all_journals.size > 0 %}
+
+{% comment %}
+  Sort/filter controls. Hidden until app.js finds them, so without JavaScript
+  the page is simply the full A-Z list with premier journals highlighted in place.
+{% endcomment %}
+<div class="wrap journal-controls" id="journal-controls" hidden>
+  <div class="jc-row">
+    <div class="jc-group" role="group" aria-label="Sort journals">
+      <span class="jc-label">Sort</span>
+      <div class="jc-segment">
+        <button type="button" class="jc-btn is-active" data-sort="az" aria-pressed="true">A&ndash;Z</button>
+        <button type="button" class="jc-btn" data-sort="premier" aria-pressed="false">Premier first</button>
+      </div>
+    </div>
+    <div class="jc-group" role="group" aria-label="Filter journals">
+      <span class="jc-label">Show</span>
+      <button type="button" class="jc-chip" data-filter="premier" aria-pressed="false"><svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/></svg>Premier</button>
+      <button type="button" class="jc-chip" data-filter="research" aria-pressed="false">KU Research</button>
+      <button type="button" class="jc-chip" data-filter="service" aria-pressed="false">Editorial service</button>
+      <button type="button" class="jc-clear" id="journal-clear" hidden>Clear filters</button>
+    </div>
+  </div>
+  <p class="jc-status" id="journal-status" aria-live="polite"></p>
+</div>
+
 <div class="wrap" style="padding-bottom:8px;">
-  <div class="journal-jumplist">
+  <div class="journal-jumplist" id="journal-jumplist">
     {% for journal in all_journals %}
-      <a href="#{{ journal | slugify }}">{{ journal }}</a>{% unless forloop.last %}<span class="jl-sep">&middot;</span>{% endunless %}
+      {% assign journal_key = journal | downcase %}
+      <span class="jl-item{% if premier_names contains journal_key %} is-premier{% endif %}" data-slug="{{ journal | slugify }}"><a href="#{{ journal | slugify }}">{{ journal }}</a></span>
     {% endfor %}
   </div>
 </div>
 
-<section class="wrap" style="padding-bottom:56px;">
+<section class="wrap journal-list" id="journal-list" style="padding-bottom:56px;">
   {% for journal in all_journals %}
+  {% assign journal_key = journal | downcase %}
+  {% assign is_premier = false %}
+  {% if premier_names contains journal_key %}{% assign is_premier = true %}{% endif %}
+
   {% assign journal_articles = site.articles | where: 'journal', journal | sort: 'date' | reverse %}
-  <div class="journal-entry" id="{{ journal | slugify }}">
+
+  {% assign has_service = false %}
+  {% for f in site.faculty %}
+    {% if f.editorial_service %}
+      {% assign matches = f.editorial_service | where: 'journal', journal %}
+      {% if matches.size > 0 %}
+        {% assign has_service = true %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
+  <div class="journal-entry{% if is_premier %} is-premier{% endif %}" id="{{ journal | slugify }}" data-slug="{{ journal | slugify }}" data-order="{{ forloop.index0 }}" data-premier="{% if is_premier %}1{% else %}0{% endif %}" data-research="{% if journal_articles.size > 0 %}1{% else %}0{% endif %}" data-service="{% if has_service %}1{% else %}0{% endif %}">
+    {% if is_premier %}<span class="premier-badge"><svg viewBox="0 0 24 24" width="11" height="11" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/></svg>Premier journal</span>{% endif %}
     <h2>{{ journal }}</h2>
 
     {% if journal_articles.size > 0 %}
     <div class="journal-subsection">
-      <h4>Ideate coverage</h4>
+      <h4>KU Research</h4>
       <ul class="journal-article-list">
         {% for a in journal_articles %}
         <li><a href="{{ a.url | relative_url }}">{{ a.title }}</a>{% if a.faculty and a.faculty.size > 0 %}<span class="ja-byline"> &mdash; {{ a.byline }}</span>{% endif %}</li>
@@ -51,16 +103,6 @@ description: "Every academic journal connected to KU Business — through resear
       </ul>
     </div>
     {% endif %}
-
-    {% assign has_service = false %}
-    {% for f in site.faculty %}
-      {% if f.editorial_service %}
-        {% assign matches = f.editorial_service | where: 'journal', journal %}
-        {% if matches.size > 0 %}
-          {% assign has_service = true %}
-        {% endif %}
-      {% endif %}
-    {% endfor %}
 
     {% if has_service %}
     <div class="journal-subsection">
@@ -80,6 +122,11 @@ description: "Every academic journal connected to KU Business — through resear
   </div>
   {% endfor %}
 </section>
+
+{% comment %} Outside #journal-list on purpose: app.js re-appends entries into the list when sorting, which would push anything inside it out of place. {% endcomment %}
+<div class="wrap journal-empty" id="journal-empty" hidden>
+  <p>No journals match those filters. <button type="button" class="jc-clear-inline" id="journal-empty-clear">Clear filters</button></p>
+</div>
 
 {% else %}
 <div class="wrap" style="padding:48px 0;">
