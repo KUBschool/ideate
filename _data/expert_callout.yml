@@ -1,0 +1,12 @@
+# "Connect with our experts" call-out — shown near the bottom of every topic
+# page. Edited in the CMS under Site Settings > Expert call-out.
+#
+# Turn "enabled" off to hide it everywhere. The button URL can be a
+# site-relative path (like /contact/) or a full https:// link; point it at the
+# contact page once that page exists.
+enabled: true
+kicker: "Ask the experts"
+heading: "Connect with our experts"
+body: "Looking for a KU Business faculty member to speak on a topic, advise on a project, or collaborate on research? Tell us what you're working on and we'll connect you with the right person."
+button_label: "Contact us"
+button_url: "/contact/"

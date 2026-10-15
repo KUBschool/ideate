@@ -165,6 +165,7 @@ collections:
         field: {label: "Professorship", name: "name", widget: "string"}
         hint: "Endowed chairs and fellowships only — e.g. \"Larry D. Horner/KPMG Professor,\" \"Capitol Federal Fellow.\" Most faculty have zero or one; a couple have two. Center directorships and rank designations like \"Professor of the Practice\" go in Title instead, not here."
       - {label: "Academic area", name: "academic_area", widget: "string", required: false}
+      - {label: "Short bio", name: "bio", widget: "text", required: false, hint: "One or two sentences, in the third person — e.g. \"Jane Doe is a professor of accounting whose research examines audit quality and financial reporting.\" Shown in the Faculty spotlight on topic pages (not on this profile page, which links out to the full KU Business profile). Leave blank and the spotlight simply omits it."}
       - {label: "KU Business profile URL", name: "profile_url", widget: "string", hint: "e.g. https://business.ku.edu/people/jane-doe"}
       - {label: "Photo", name: "photo", widget: "image", required: false, hint: "Upload a headshot, or paste the image URL from their business.ku.edu profile directly — either works."}
       - label: "Editorial Service"
@@ -284,3 +285,105 @@ collections:
                   - {label: "FT50", value: "ft50"}
                   - {label: "Added by School leadership", value: "leadership"}
                 hint: "Optional, never shown on the site. Just a record of where the flag came from."
+      - label: "Topic pages"
+        name: "topic_pages"
+        file: "_data/topic_pages.yml"
+        fields:
+          - label: "Topics"
+            name: "items"
+            widget: "list"
+            collapsed: true
+            label_singular: "Topic page"
+            summary: "{{fields.topic}}"
+            hint: "One row per topic, controlling that topic's page (Accounting, Finance, and so on). Open a topic to set its section header, featured story, stats call-out and faculty spotlight. Every field is optional — leave one blank and the page uses a sensible default (noted under each field)."
+            fields:
+              - label: "Topic"
+                name: "topic"
+                widget: "select"
+                options:
+                  - {label: "Accounting", value: "accounting"}
+                  - {label: "Finance", value: "finance"}
+                  - {label: "Supply Chain", value: "supply-chain"}
+                  - {label: "Marketing", value: "marketing"}
+                  - {label: "Information Systems", value: "information-systems"}
+                  - {label: "Analytics", value: "analytics"}
+                  - {label: "Entrepreneurship", value: "entrepreneurship"}
+                  - {label: "Management", value: "management"}
+                  - {label: "Business Law", value: "business-law"}
+                  - {label: "AI", value: "ai"}
+                  - {label: "Policy", value: "policy"}
+                hint: "Which topic page this row controls. Each topic should appear once."
+              - {label: "Header subhead", name: "subhead", widget: "text", required: false, hint: "One or two sentences under the topic name in the large section header — a good place to call out how prominent KU's research is in this area. Leave blank to show the topic's standard one-line description."}
+              - label: "Header image"
+                name: "header_image"
+                widget: "image"
+                required: false
+                hint: "Shown on the right side of the header, fading out toward the text. Wide, fairly simple images work best (the left edge dissolves away). Leave blank for a soft patterned placeholder."
+              - label: "Header background"
+                name: "header_tone"
+                widget: "select"
+                options:
+                  - {label: "Steam (default)", value: "steam"}
+                  - {label: "Light blue", value: "sky"}
+                default: "steam"
+                hint: "The color the header image fades into."
+              - {label: "Show featured story", name: "show_feature", widget: "boolean", default: true, hint: "On: a large featured story sits under the header, with the stats or articles below beside it. Off: that whole block is hidden and those articles flow into the cards and list instead."}
+              - label: "Featured story"
+                name: "feature_article"
+                widget: "relation"
+                collection: "articles"
+                search_fields: ["title"]
+                display_fields: ["title"]
+                value_field: "title"
+                required: false
+                hint: "Optional — pick an article from this topic to feature. Leave blank to feature the topic's newest article automatically."
+              - label: "Beside the featured story"
+                name: "side"
+                widget: "select"
+                options:
+                  - {label: "Stats call-out (set below)", value: "stats"}
+                  - {label: "Three articles", value: "articles"}
+                  - {label: "Nothing", value: "none"}
+                default: "articles"
+                hint: "What appears next to the featured story."
+              - label: "Three articles (if showing articles)"
+                name: "side_articles"
+                widget: "relation"
+                collection: "articles"
+                multiple: true
+                max: 3
+                search_fields: ["title"]
+                display_fields: ["title"]
+                value_field: "title"
+                required: false
+                hint: "Optional — pick up to three articles from this topic. Leave blank to show the next three newest automatically."
+              - {label: "Stats call-out: title", name: "stats_title", widget: "string", required: false, hint: "e.g. \"Accounting at KU Business\""}
+              - label: "Stats call-out: stats"
+                name: "stats"
+                widget: "list"
+                required: false
+                summary: "{{fields.value}} — {{fields.label}}"
+                hint: "Short, strong figures — a big value and a one-line label each."
+                fields:
+                  - {label: "Value", name: "value", widget: "string", hint: "e.g. \"No. 1\" or \"$4.2M\""}
+                  - {label: "Label", name: "label", widget: "string", hint: "What the value measures, with source and year if it's a ranking."}
+              - {label: "Stats call-out: note", name: "stats_note", widget: "text", required: false, hint: "Optional small print under the stats."}
+              - label: "Faculty spotlight"
+                name: "spotlight"
+                widget: "relation"
+                collection: "faculty"
+                search_fields: ["full_name"]
+                display_fields: ["full_name"]
+                value_field: "{{slug}}"
+                required: false
+                hint: "Optional. Pick a faculty member to spotlight: the spotlight takes two-thirds of the width beside the topic's video (one-third). Shows their photo, name, position, short bio (a field on their Faculty profile) and their three most recent articles. Leave blank to run the video full width instead."
+      - label: "Expert call-out"
+        name: "expert_callout"
+        file: "_data/expert_callout.yml"
+        fields:
+          - {label: "Enabled", name: "enabled", widget: "boolean", default: true, hint: "Turn off to hide the \"Connect with our experts\" call-out on every topic page."}
+          - {label: "Small heading above the title", name: "kicker", widget: "string", required: false, hint: "e.g. \"Ask the experts\". Leave blank to omit."}
+          - {label: "Heading", name: "heading", widget: "string", hint: "e.g. \"Connect with our experts\""}
+          - {label: "Text", name: "body", widget: "text", required: false, hint: "One or two sentences."}
+          - {label: "Button label", name: "button_label", widget: "string", default: "Contact us"}
+          - {label: "Button link", name: "button_url", widget: "string", hint: "A site path like /contact/ or a full https:// link. Point this at the contact page (with the Qualtrics form) once it exists."}

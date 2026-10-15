@@ -1,71 +1,172 @@
 ---
 layout: default
 ---
+{% comment %}
+  Topic archive page. Top to bottom:
+    1. Section header  - topic name, optional subhead, right-hand image that
+                         fades into the background
+    2. Featured story  - optional; stats call-out OR three articles beside it
+    3. Latest research - the next 4 articles, as cards (one row on desktop)
+    4. Video / spotlight - the topic's newest video; if a faculty member is
+                         spotlighted, they take 2/3 width and the video 1/3
+    5. More in <topic> - the remaining articles as a list, first batch shown,
+                         "View more research" reveals the rest
+    6. "Connect with our experts" call-out
+
+  Everything configurable lives in _data/topic_pages.yml (CMS: Site Settings >
+  Topic pages); see the notes at the top of that file for the defaults used
+  when a field is left blank. Articles are handed out in order, newest first,
+  and never repeat: whatever the featured story and its sidebar use is left
+  out of the cards, and whatever the cards use is left out of the list.
+
+  Includes (card.html, article-row.html, the badges, media-callout.html)
+  assign variables of their own, and in Liquid an assign inside an include
+  is visible to this page afterwards. That is why the topic's name is copied
+  into topic_name below and used from there on instead of topic_data.name.
+{% endcomment %}
+{% assign list_limit = 8 %}
+
 {% assign topic_data = site.data.topics | where: 'slug', page.topic | first %}
-{% assign articles = site.articles | where: 'topic', page.topic | sort: 'date' | reverse %}
-{% assign feature = articles | first %}
-{% assign rest = articles | slice: 1, 999 %}
-{% assign hero_list = rest | slice: 0, 3 %}
-{% assign remaining = rest | slice: 3, 999 %}
+{% assign topic_name = topic_data.name %}
+{% assign tp = site.data.topic_pages.items | where: 'topic', page.topic | first %}
+{% assign pool = site.articles | where: 'topic', page.topic | sort: 'date' | reverse %}
 
-<div class="wrap archive-header">
-  <div class="eyebrow" style="--topic-color:var(--topic-{{ page.topic }})"><span class="dot"></span>Topic</div>
-  <h1>{{ topic_data.name }}</h1>
-  <p>{{ topic_data.description }}</p>
-</div>
+{% comment %} ---- section header settings ---- {% endcomment %}
+{% assign hero_sub = tp.subhead | default: topic_data.description %}
+{% assign hero_tone = tp.header_tone | default: 'steam' %}
 
-{% assign show_sidebar = false %}
-{% if topic_data.callout or hero_list.size > 0 %}{% assign show_sidebar = true %}{% endif %}
+{% comment %} ---- featured story: on by default, optionally pinned ---- {% endcomment %}
+{% assign show_feature = true %}
+{% if tp.show_feature == false %}{% assign show_feature = false %}{% endif %}
+{% assign feature = nil %}
+{% if show_feature and pool.size > 0 %}
+  {% if tp.feature_article and tp.feature_article != '' %}
+    {% assign feature = pool | where: 'title', tp.feature_article | first %}
+  {% endif %}
+  {% unless feature %}{% assign feature = pool | first %}{% endunless %}
+{% endif %}
 
+{% comment %} ---- what sits beside it: stats, three articles, or nothing ---- {% endcomment %}
+{% assign stats_title = tp.stats_title %}
+{% assign stats_list = tp.stats %}
+{% assign stats_note = tp.stats_note %}
+{% unless stats_list.size > 0 %}
+  {% assign stats_title = topic_data.callout.title %}
+  {% assign stats_list = topic_data.callout.stats %}
+  {% assign stats_note = topic_data.callout.note %}
+{% endunless %}
+{% assign has_stats = false %}
+{% if stats_list.size > 0 %}{% assign has_stats = true %}{% endif %}
+
+{% assign side_mode = tp.side %}
+{% if side_mode == nil or side_mode == '' %}
+  {% if has_stats %}{% assign side_mode = 'stats' %}{% else %}{% assign side_mode = 'articles' %}{% endif %}
+{% endif %}
+{% if side_mode == 'stats' and has_stats == false %}{% assign side_mode = 'articles' %}{% endif %}
+
+{% assign pool_rest = pool %}
+{% if feature %}{% assign pool_rest = pool | where_exp: 'a', 'a.url != feature.url' %}{% endif %}
+
+{% assign side_articles = '' | split: ',' %}
+{% if feature and side_mode == 'articles' %}
+  {% for t in tp.side_articles %}
+    {% assign picked = pool_rest | where: 'title', t | first %}
+    {% if picked and side_articles.size < 3 %}{% assign side_articles = side_articles | push: picked %}{% endif %}
+  {% endfor %}
+  {% if side_articles.size == 0 %}{% assign side_articles = pool_rest | slice: 0, 3 %}{% endif %}
+{% endif %}
+
+{% assign show_side = false %}
+{% if feature and side_mode == 'stats' %}{% assign show_side = true %}{% endif %}
+{% if side_articles.size > 0 %}{% assign show_side = true %}{% endif %}
+
+{% comment %} ---- hand out the rest: cards, then the list ---- {% endcomment %}
+{% assign used_urls = '' | split: ',' %}
+{% if feature %}{% assign used_urls = used_urls | push: feature.url %}{% endif %}
+{% for a in side_articles %}{% assign used_urls = used_urls | push: a.url %}{% endfor %}
+{% assign rest = '' | split: ',' %}
+{% for a in pool %}{% unless used_urls contains a.url %}{% assign rest = rest | push: a %}{% endunless %}{% endfor %}
+
+{% assign card_articles = rest | slice: 0, 4 %}
+{% assign list_all = rest | slice: 4, 999 %}
+{% assign list_first = list_all | slice: 0, list_limit %}
+{% assign list_extra = list_all | slice: list_limit, 999 %}
+
+{% comment %} ---- video + faculty spotlight ---- {% endcomment %}
+{% assign video = site.media | where: 'topic', page.topic | sort: 'date' | reverse | first %}
+{% assign spotlight = nil %}
+{% if tp.spotlight and tp.spotlight != '' %}
+  {% assign spotlight = site.faculty | where: 'slug', tp.spotlight | first %}
+{% endif %}
+
+
+{% comment %} ================= 1. SECTION HEADER ================= {% endcomment %}
+<section class="topic-hero topic-hero--{{ hero_tone }}">
+  <div class="topic-hero-art" aria-hidden="true">
+    {% if tp.header_image %}
+      <img src="{% if tp.header_image contains '://' %}{{ tp.header_image }}{% else %}{{ tp.header_image | relative_url }}{% endif %}" alt="" class="topic-hero-img">
+    {% else %}
+      <div class="topic-hero-placeholder"></div>
+    {% endif %}
+  </div>
+  <div class="wrap topic-hero-inner">
+    <div class="eyebrow" style="--topic-color:var(--topic-{{ page.topic }})"><span class="dot"></span>Topic</div>
+    <h1>{{ topic_name }}</h1>
+    {% if hero_sub %}<p class="topic-hero-sub">{{ hero_sub }}</p>{% endif %}
+  </div>
+</section>
+
+{% if pool.size > 0 %}
+
+{% comment %} ================= 2. FEATURED STORY (+ stats or 3 articles) ================= {% endcomment %}
 {% if feature %}
 <section class="hero-section">
-  <div class="wrap hero-grid{% unless show_sidebar %} hero-grid-solo{% endunless %}">
+  <div class="wrap hero-grid{% unless show_side %} hero-grid-solo{% endunless %}">
     <article class="hero-feature">
       <a href="{{ feature.url | relative_url }}">
         {% if feature.image %}
-          <img src="{% if feature.image contains '://' %}{{ feature.image }}{% else %}{{ feature.image | relative_url }}{% endif %}" alt="{{ feature.image_alt | default: feature.title }}" class="photo hero-art">
+          <img src="{% if feature.image contains '://' %}{{ feature.image }}{% else %}{{ feature.image | relative_url }}{% endif %}" alt="{{ feature.image_alt | default: feature.title }}" class="photo hero-art topic-feature-photo">
         {% else %}
           <div class="img-placeholder hero-art" style="--tint:var(--ku-{{ feature.image_tint | default: 'steam' }})"><span>Photo placeholder</span></div>
         {% endif %}
       </a>
       <div class="eyebrow" style="--topic-color:var(--topic-{{ feature.topic }})">
-        <span class="dot"></span>{{ topic_data.name }}
+        <span class="dot"></span>{{ topic_name }}
         {% include status-badge.html status=feature.status %}
         {% include series-badge.html series=feature.series %}
       </div>
-      <a href="{{ feature.url | relative_url }}"><h1>{{ feature.title }}</h1></a>
+      <a href="{{ feature.url | relative_url }}"><h2>{{ feature.title }}</h2></a>
       <p class="dek">{{ feature.dek }}</p>
       <div class="byline">By Ideate Staff &middot; {{ feature.date | date: "%B %-d, %Y" }} &middot; {% include read-time.html article=feature %} min read</div>
       {% if feature.faculty and feature.faculty.size > 0 %}
       <div class="faculty-chips">
         {% for slug in feature.faculty %}
-          {% assign f = site.faculty | where: 'slug', slug | first %}
-          <a href="{{ f.url | relative_url }}" class="faculty-chip"><span class="avatar"></span>{{ f.full_name }}</a>
+          {% assign chip_faculty = site.faculty | where: 'slug', slug | first %}
+          <a href="{{ chip_faculty.url | relative_url }}" class="faculty-chip"><span class="avatar"></span>{{ chip_faculty.full_name }}</a>
         {% endfor %}
       </div>
       {% endif %}
     </article>
 
-    {% if show_sidebar %}
+    {% if show_side %}
     <div class="hero-list">
-      {% if topic_data.callout %}
+      {% if side_mode == 'stats' %}
         <div class="topic-callout">
-          <h3>{{ topic_data.callout.title }}</h3>
-          {% for stat in topic_data.callout.stats %}
+          <h3>{{ stats_title }}</h3>
+          {% for stat in stats_list %}
           <div class="stat-row">
             <span class="stat-value">{{ stat.value }}</span>
             <span class="stat-label">{{ stat.label }}</span>
           </div>
           {% endfor %}
-          {% if topic_data.callout.note %}<p class="note">{{ topic_data.callout.note }}</p>{% endif %}
+          {% if stats_note %}<p class="note">{{ stats_note }}</p>{% endif %}
         </div>
       {% else %}
-        {% for a in hero_list %}
-        {% assign a_topic = site.data.topics | where: 'slug', a.topic | first %}
+        {% for side_a in side_articles %}
         <div class="hero-list-item">
-          <div class="eyebrow" style="--topic-color:var(--topic-{{ a.topic }})"><span class="dot"></span><a href="{{ '/topics/' | append: a.topic | append: '/' | relative_url }}">{{ a_topic.name }}</a></div>
-          <a href="{{ a.url | relative_url }}"><h3>{{ a.title }}</h3></a>
-          <p class="dek">{{ a.dek }}</p>
+          <div class="eyebrow" style="--topic-color:var(--topic-{{ side_a.topic }})"><span class="dot"></span><a href="{{ '/topics/' | append: side_a.topic | append: '/' | relative_url }}">{{ topic_name }}</a></div>
+          <a href="{{ side_a.url | relative_url }}"><h3>{{ side_a.title }}</h3></a>
+          <p class="dek">{{ side_a.dek }}</p>
         </div>
         {% endfor %}
       {% endif %}
@@ -73,14 +174,16 @@ layout: default
     {% endif %}
   </div>
 </section>
+{% endif %}
 
-{% if remaining.size > 0 %}
-<section class="wrap" style="padding-bottom:56px;">
+{% comment %} ================= 3. LATEST RESEARCH: 4 cards ================= {% endcomment %}
+{% if card_articles.size > 0 %}
+<section class="wrap topic-block" id="latest">
   <div class="section-head">
-    <h2>More in {{ topic_data.name }}</h2>
+    <h2>Latest research</h2>
   </div>
-  <div class="card-grid">
-    {% for a in remaining %}
+  <div class="card-grid card-grid-4">
+    {% for a in card_articles %}
       {% include card.html article=a %}
     {% endfor %}
   </div>
@@ -89,6 +192,53 @@ layout: default
 
 {% else %}
 <div class="wrap" style="padding:48px 0;">
-  <p style="color:var(--ku-gray-mid); font-size:15px;">No articles tagged {{ topic_data.name }} yet — check back soon.</p>
+  <p style="color:var(--ku-gray-mid); font-size:15px;">No articles tagged {{ topic_name }} yet — check back soon.</p>
 </div>
 {% endif %}
+
+{% comment %} ================= 4. VIDEO CALL-OUT / FACULTY SPOTLIGHT ================= {% endcomment %}
+{% if spotlight %}
+<section class="wrap topic-block split-section{% unless video %} split-section-solo{% endunless %}">
+  <div class="split-main">
+    {% include faculty-spotlight.html faculty=spotlight %}
+  </div>
+  {% if video %}
+  <div class="split-side">
+    {% include media-callout.html media=video compact=true %}
+  </div>
+  {% endif %}
+</section>
+{% else %}
+{% include media-callout.html media=video %}
+{% endif %}
+
+{% comment %} ================= 5. MORE IN <TOPIC>: list + "view more" ================= {% endcomment %}
+{% if list_first.size > 0 %}
+<section class="wrap topic-block" id="more">
+  {% comment %} Marks the page as script-enabled before the rows paint, so the extra rows start collapsed instead of flashing open. Without JavaScript the class never gets set and the whole list simply shows. {% endcomment %}
+  <script>document.documentElement.classList.add('js');</script>
+  <div class="section-head">
+    <h2>More in {{ topic_name }}</h2>
+  </div>
+  <div class="article-row-list">
+    {% for a in list_first %}
+      {% include article-row.html article=a %}
+    {% endfor %}
+    {% if list_extra.size > 0 %}
+    <div class="more-rows" id="topic-more-rows">
+      {% for a in list_extra %}
+        {% include article-row.html article=a %}
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+  {% if list_extra.size > 0 %}
+  <div class="more-wrap">
+    <button type="button" class="more-btn" id="topic-more-btn" aria-expanded="false" aria-controls="topic-more-rows">View more research <span class="more-count">{{ list_extra.size }} more</span></button>
+  </div>
+  {% endif %}
+</section>
+{% endif %}
+
+{% comment %} ================= 6. CONNECT WITH OUR EXPERTS ================= {% endcomment %}
+{% include expert-callout.html %}

@@ -1,0 +1,64 @@
+{%- comment -%}
+  Usage: {% include media-callout.html media=some_media_item %}
+         {% include media-callout.html media=some_media_item compact=true %}
+  Bold-color video spotlight — large thumbnail, kicker, title, and summary.
+  Renders nothing if `media` is nil, so callers can pass a possibly-empty
+  lookup straight through without guarding it themselves.
+  Default: full-width band. Used on the homepage (most recent/featured
+  video, site-wide) and on topic pages (the most recent video tagged to that
+  topic, if one exists).
+  compact=true: a one-third-width stacked panel (thumbnail on top, text
+  below) for sitting beside the faculty spotlight on a topic page.
+  Variable names are prefixed mc_ on purpose: Liquid's assign inside an
+  include writes to the including page's variables, so generic names could
+  overwrite something the page itself is using.
+{%- endcomment -%}
+{% assign mc = include.media %}
+{% if mc %}
+{% assign mc_topic = site.data.topics | where: 'slug', mc.topic | first %}
+{% if include.compact %}
+<aside class="media-callout media-callout-compact">
+  <a href="{{ mc.url | relative_url }}" class="media-callout-thumb" aria-label="Watch: {{ mc.title }}">
+    {% if mc.thumbnail %}
+      <img src="{{ mc.thumbnail | relative_url }}" alt="{{ mc.title }}" class="photo">
+    {% else %}
+      <div class="img-placeholder" style="--tint:var(--ku-night)"><span>Video</span></div>
+    {% endif %}
+    <span class="play-badge" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+    </span>
+  </a>
+  <div class="media-callout-text">
+    <div class="media-callout-kicker">
+      <span class="dot"></span>Watch{% if mc_topic %}&nbsp;·&nbsp;{{ mc_topic.name }}{% endif %}
+    </div>
+    <a href="{{ mc.url | relative_url }}"><h2>{{ mc.title }}</h2></a>
+    <p class="media-callout-dek">{{ mc.dek }}</p>
+    <a href="{{ mc.url | relative_url }}" class="media-callout-cta">Watch now →</a>
+  </div>
+</aside>
+{% else %}
+<section class="media-callout">
+  <div class="wrap media-callout-grid">
+    <a href="{{ mc.url | relative_url }}" class="media-callout-thumb" aria-label="Watch: {{ mc.title }}">
+      {% if mc.thumbnail %}
+        <img src="{{ mc.thumbnail | relative_url }}" alt="{{ mc.title }}" class="photo">
+      {% else %}
+        <div class="img-placeholder" style="--tint:var(--ku-night)"><span>Video</span></div>
+      {% endif %}
+      <span class="play-badge play-badge-lg" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="26" height="26"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+      </span>
+    </a>
+    <div class="media-callout-text">
+      <div class="media-callout-kicker">
+        <span class="dot"></span>Watch{% if mc_topic %}&nbsp;·&nbsp;{{ mc_topic.name }}{% endif %}
+      </div>
+      <a href="{{ mc.url | relative_url }}"><h2>{{ mc.title }}</h2></a>
+      <p class="media-callout-dek">{{ mc.dek }}</p>
+      <a href="{{ mc.url | relative_url }}" class="media-callout-cta">Watch now →</a>
+    </div>
+  </div>
+</section>
+{% endif %}
+{% endif %}

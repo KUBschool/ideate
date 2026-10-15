@@ -301,4 +301,23 @@ document.addEventListener('DOMContentLoaded', () => {
     jControls.hidden = false;
     render();
   }
+
+  // Topic pages — "View more research" reveals the rest of the article list.
+  // The extra rows are real, crawlable markup that's always in the page;
+  // topic.html tags <html class="js"> before they paint and CSS keeps them
+  // collapsed until this opens them (and hides the button when there's no
+  // script, so nothing is ever stranded behind it).
+  const moreBtn = document.getElementById('topic-more-btn');
+  const moreRows = document.getElementById('topic-more-rows');
+  if (moreBtn && moreRows) {
+    moreBtn.addEventListener('click', () => {
+      moreRows.classList.add('is-open');
+      moreBtn.setAttribute('aria-expanded', 'true');
+      const wrap = moreBtn.closest('.more-wrap');
+      if (wrap) wrap.classList.add('is-done');
+      // Keep keyboard/screen-reader users oriented: land on the first new row.
+      const firstNew = moreRows.querySelector('.article-row-text a');
+      if (firstNew) firstNew.focus({ preventScroll: true });
+    });
+  }
 });

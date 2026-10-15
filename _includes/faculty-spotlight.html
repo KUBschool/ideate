@@ -1,0 +1,56 @@
+{%- comment -%}
+  Usage: {% include faculty-spotlight.html faculty=some_faculty_member %}
+  Faculty spotlight panel for topic pages: photo, name, position, short bio
+  (the optional "Short bio" field on the faculty profile in the CMS) and up to
+  three of their most recent articles. On phones the bio and the extra
+  detail drop away in CSS, leaving photo, name, position and the articles.
+  Renders nothing if `faculty` is empty.
+  Variable names are prefixed sp_ on purpose: Liquid's assign inside an
+  include writes to the including page's variables, so generic names could
+  overwrite something the page itself is using.
+{%- endcomment -%}
+{% assign sp = include.faculty %}
+{% if sp %}
+{% assign sp_articles = site.articles | where_exp: 'a', 'a.faculty contains sp.slug' | sort: 'date' | reverse | slice: 0, 3 %}
+{% comment %}
+  Jekyll fills in a title from the file name when a profile has none, so a
+  "title" that is just the person's own name (slugifies to their file slug)
+  isn't a real position; in that case the named professorship stands in.
+{% endcomment %}
+{% assign sp_title = '' %}
+{% if sp.title %}{% assign sp_title_slug = sp.title | slugify %}{% if sp_title_slug != sp.slug %}{% assign sp_title = sp.title %}{% endif %}{% endif %}
+{% assign sp_chair = sp.professorship | join: ' &middot; ' %}
+<article class="spotlight">
+  <div class="spotlight-kicker"><span class="dot"></span>Faculty spotlight</div>
+  <div class="spotlight-body">
+    <a href="{{ sp.url | relative_url }}" class="spotlight-photo" aria-hidden="true" tabindex="-1">
+      {% if sp.photo %}
+        <img src="{% if sp.photo contains '://' %}{{ sp.photo }}{% else %}{{ sp.photo | relative_url }}{% endif %}" alt="" class="photo portrait" loading="lazy">
+      {% else %}
+        <div class="img-placeholder portrait" style="--tint:var(--ku-steam)"></div>
+      {% endif %}
+    </a>
+    <div class="spotlight-id">
+      <h2><a href="{{ sp.url | relative_url }}">{{ sp.full_name }}</a></h2>
+      {% if sp_title != '' %}
+        <p class="spotlight-role">{{ sp_title }}</p>
+        {% if sp_chair != '' %}<p class="spotlight-chair">{{ sp_chair }}</p>{% endif %}
+      {% elsif sp_chair != '' %}
+        <p class="spotlight-role">{{ sp_chair }}</p>
+      {% endif %}
+      {% if sp.bio %}<p class="spotlight-bio">{{ sp.bio }}</p>{% endif %}
+    </div>
+    {% if sp_articles.size > 0 %}
+    <div class="spotlight-research">
+      <h3>Recent research</h3>
+      <ul>
+        {% for sp_a in sp_articles %}
+        <li><a href="{{ sp_a.url | relative_url }}">{{ sp_a.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+    <a href="{{ sp.url | relative_url }}" class="spotlight-more">View full profile &rarr;</a>
+  </div>
+</article>
+{% endif %}

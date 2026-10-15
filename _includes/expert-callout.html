@@ -1,0 +1,26 @@
+{%- comment -%}
+  Usage: {% include expert-callout.html %}
+  The "Connect with our experts" call-out. All of its text and the button's
+  destination come from _data/expert_callout.yml (CMS: Site Settings > Expert
+  call-out); turning "enabled" off there hides it everywhere it's included.
+  Currently used at the bottom of every topic page.
+  Variable names are prefixed ec_ on purpose: Liquid's assign inside an
+  include writes to the including page's variables, so generic names could
+  overwrite something the page itself is using.
+{%- endcomment -%}
+{% assign ec = site.data.expert_callout %}
+{% if ec.enabled %}
+{% assign ec_url = ec.button_url | default: '/contact/' %}
+<section class="expert-callout">
+  <div class="wrap">
+    <div class="expert-callout-box">
+      <div class="expert-callout-text">
+        {% if ec.kicker %}<div class="expert-callout-kicker"><span class="dot"></span>{{ ec.kicker }}</div>{% endif %}
+        <h2>{{ ec.heading | default: 'Connect with our experts' }}</h2>
+        {% if ec.body %}<p>{{ ec.body }}</p>{% endif %}
+      </div>
+      <a href="{% if ec_url contains '://' or ec_url contains 'mailto:' %}{{ ec_url }}{% else %}{{ ec_url | relative_url }}{% endif %}" class="expert-callout-btn">{{ ec.button_label | default: 'Contact us' }}</a>
+    </div>
+  </div>
+</section>
+{% endif %}
