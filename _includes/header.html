@@ -1,13 +1,24 @@
-<div class="parent-bar">
-  <div class="wrap">
-    <a href="https://business.ku.edu">business.ku.edu</a>
-    <a href="https://ku.edu">The University of Kansas</a>
+{%- comment -%}
+  Top bar: KU logo | School of Business, with Subscribe on the right.
+  The KU logo is set in the CMS (Site Settings > Header > KU logo); if that
+  is ever blank the built-in blue logo is used, so the bar never breaks.
+  This bar scrolls away with the page. Once the pinned header below goes
+  dark on scroll, a second Subscribe button (nav-subscribe) takes over.
+{%- endcomment -%}
+{% assign ku_logo = site.data.header.ku_logo | default: '/assets/uploads/ku-logo-blue.svg' %}
+<div class="ku-bar">
+  <div class="wrap ku-bar-inner">
+    <a class="ku-bar-logo" href="https://ku.edu">
+      <img src="{% if ku_logo contains '://' %}{{ ku_logo }}{% else %}{{ ku_logo | relative_url }}{% endif %}" alt="The University of Kansas">
+    </a>
+    <a class="ku-bar-title" href="https://business.ku.edu">School of Business</a>
+    <a href="{{ '/subscribe/' | relative_url }}" class="btn-subscribe bar-subscribe">Subscribe</a>
   </div>
 </div>
 
 <header class="site-header">
   <div class="wrap">
-    <div>
+    <div class="brand">
       {% if site.data.header.logo %}
         <a href="{{ '/' | relative_url }}" class="logo-swap">
           <img src="{% if site.data.header.logo contains '://' %}{{ site.data.header.logo }}{% else %}{{ site.data.header.logo | relative_url }}{% endif %}" alt="{{ site.title }}" class="site-logo logo-default">
@@ -24,6 +35,10 @@
       <a href="{{ '/' | relative_url }}">Articles</a>
       <a href="{{ '/faculty/' | relative_url }}">Faculty</a>
       <a href="{{ '/journals/' | relative_url }}">Journals</a>
+
+      {% if site.media.size > 0 %}
+        <a href="{{ '/media/' | relative_url }}">Videos</a>
+      {% endif %}
 
       {% if site.sections.podcasts %}
         <a href="{{ '/podcasts/' | relative_url }}">Podcasts</a>
@@ -46,7 +61,7 @@
         <div id="nav-search-results" class="nav-search-results"></div>
       </div>
 
-      <a href="{{ '/subscribe/' | relative_url }}" class="btn-subscribe">Subscribe</a>
+      <a href="{{ '/subscribe/' | relative_url }}" class="btn-subscribe nav-subscribe">Subscribe</a>
     </nav>
   </div>
 </header>

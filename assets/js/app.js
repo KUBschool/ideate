@@ -302,6 +302,37 @@ document.addEventListener('DOMContentLoaded', () => {
     render();
   }
 
+  // Topic filter bar — arrow buttons that page the pills left and right.
+  // The arrows only appear when there are pills hidden in that direction.
+  // The row scrolls natively too (swipe, trackpad), so without JS nothing is lost.
+  const tScroller = document.getElementById('topic-scroller');
+  const tTrack = document.getElementById('topic-track');
+  const tPrev = document.getElementById('topic-prev');
+  const tNext = document.getElementById('topic-next');
+  if (tScroller && tTrack && tPrev && tNext) {
+    const updateArrows = () => {
+      const max = tTrack.scrollWidth - tTrack.clientWidth;
+      const hasPrev = tTrack.scrollLeft > 4;
+      const hasNext = tTrack.scrollLeft < max - 4;
+      tPrev.hidden = !hasPrev;
+      tNext.hidden = !hasNext;
+      tScroller.classList.toggle('has-prev', hasPrev);
+      tScroller.classList.toggle('has-next', hasNext);
+    };
+    const page = (dir) => tTrack.scrollBy({ left: dir * tTrack.clientWidth * 0.75, behavior: 'smooth' });
+    tPrev.addEventListener('click', () => page(-1));
+    tNext.addEventListener('click', () => page(1));
+    tTrack.addEventListener('scroll', updateArrows, { passive: true });
+    window.addEventListener('resize', updateArrows);
+    // Start with the current topic's pill in view (matters for topics far along the row).
+    const activePill = tTrack.querySelector('.topic-pill.active');
+    if (activePill) {
+      const target = activePill.offsetLeft - (tTrack.clientWidth - activePill.offsetWidth) / 2;
+      tTrack.scrollLeft = Math.max(0, target);
+    }
+    updateArrows();
+  }
+
   // Topic pages — "View more research" reveals the rest of the article list.
   // The extra rows are real, crawlable markup that's always in the page;
   // topic.html tags <html class="js"> before they paint and CSS keeps them

@@ -276,19 +276,42 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 }
 
 /* ---------- header ---------- */
-.parent-bar{
-  background: var(--ku-night);
-  color: var(--white);
-  font-size: 13px;
-}
-.parent-bar .wrap{
+/* Top bar — KU logo | School of Business, Subscribe on the right. Modeled
+   on business.ku.edu. The blue is KU Blue written out on purpose (not
+   var(--ku-blue)), so the Accent color setting can't recolor the KU lockup.
+   The bar scrolls away; the pinned header below stays. */
+.ku-bar{ background: #E7ECF2; }
+.ku-bar-inner{
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  height: 34px;
+  min-height: 64px;
 }
-.parent-bar a{ color: #cfe0ee; }
-.parent-bar a:hover{ color: var(--white); }
+.ku-bar-logo{
+  display: flex;
+  align-items: center;
+  height: 38px;
+  padding-right: 20px;
+  border-right: 1px solid #0051ba;   /* the divider bar */
+}
+.ku-bar-logo img{
+  display: block;
+  height: 25px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+}
+.ku-bar-title{
+  font-family: var(--font-sans);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: #0051ba;
+  padding-left: 18px;
+  white-space: nowrap;
+}
+.ku-bar-title{ margin-right: 12px; }
+.ku-bar-title:hover{ text-decoration: underline; text-underline-offset: 4px; }
+.ku-bar .btn-subscribe{ margin-left: auto; }
 
 .site-header{
   border-bottom: 1px solid #e7e7e2;
@@ -301,9 +324,16 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 18px;
-  padding-bottom: 18px;
+  padding-top: 26px;
+  padding-bottom: 26px;
   gap: 24px;
+}
+/* Logo with the tagline to its right, on two lines */
+.brand{
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  min-width: 0;
 }
 .wordmark{
   font-family: var(--font-serif);
@@ -313,16 +343,19 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   letter-spacing: -0.01em;
 }
 .wordmark .dot{ color: var(--ku-crimson); }
-.site-logo{ max-width: 425px; max-height: 200px; width: auto; height: auto; display: block; }
+.site-logo{ max-width: 340px; max-height: 88px; width: auto; height: auto; display: block; }
 .footer-logo{ max-width: 300px; max-height: 200px; width: auto; height: auto; margin-bottom: 12px; }
 .tagline{
   display: block;
   font-family: var(--font-sans);
-  font-size: 11.5px;
+  font-size: 13px;
   font-weight: 500;
+  line-height: 1.4;
   color: var(--ku-gray-mid);
-  margin-top: 2px;
+  max-width: 21ch;        /* keeps it to two lines */
+  text-wrap: balance;
 }
+.tagline:empty{ display: none; }
 .primary-nav{ display: flex; align-items: center; gap: 28px; }
 .primary-nav a{
   font-size: 14.5px;
@@ -415,27 +448,90 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 .btn-subscribe{
   background: var(--ku-blue);
   color: var(--white) !important;
-  padding: 9px 18px;
+  padding: 7px 15px;
   border-radius: var(--radius);
   font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
+  line-height: 1.2;
+  white-space: nowrap;
 }
+.primary-nav a.btn-subscribe{ font-size: 13px; font-weight: 600; }
 .btn-subscribe:hover{ background: var(--ku-night); }
+/* The Subscribe button lives in the top bar; the pinned header only picks
+   it up once the bar has scrolled out of view. */
+.nav-subscribe{ display: none; }
+.site-header.is-scrolled .nav-subscribe{ display: inline-block; }
+.site-header.is-scrolled .btn-subscribe:hover{ background: var(--ku-sky); color: var(--ku-night) !important; }
 
 /* ---------- topic pill nav ---------- */
 .topic-nav{
+  border-top: 1px solid #e7e7e2;
   border-bottom: 1px solid #e7e7e2;
   background: var(--ku-limestone-2);
+  margin-bottom: 40px;
 }
-.topic-nav .wrap{
+.topic-nav-inner{
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+.topic-nav-label{
+  flex: 0 0 auto;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ku-night);
+  white-space: nowrap;
+}
+.topic-scroller{ position: relative; flex: 1 1 auto; min-width: 0; }
+.topic-track{
   display: flex;
   gap: 8px;
   overflow-x: auto;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding: 2px 1px;
   scrollbar-width: none;
 }
-.topic-nav .wrap::-webkit-scrollbar{ display: none; }
+.topic-track::-webkit-scrollbar{ display: none; }
+/* soft fade at whichever edge has more pills hidden behind it */
+.topic-scroller::before,
+.topic-scroller::after{
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 64px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+}
+.topic-scroller::before{ left: 0;  background: linear-gradient(to right, var(--ku-limestone-2) 35%, rgba(245,244,242,0)); }
+.topic-scroller::after{  right: 0; background: linear-gradient(to left,  var(--ku-limestone-2) 35%, rgba(245,244,242,0)); }
+.topic-scroller.has-prev::before,
+.topic-scroller.has-next::after{ opacity: 1; }
+.scroll-btn{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 0;
+  background: var(--ku-blue);
+  color: var(--white);
+  box-shadow: 0 1px 4px rgba(0,40,90,.28);
+  cursor: pointer;
+}
+.scroll-btn:hover{ background: var(--ku-night); }
+.scroll-btn:focus-visible{ outline: 2px solid var(--ku-night); outline-offset: 2px; }
+.scroll-prev{ left: 0; }
+.scroll-next{ right: 0; }
+.scroll-btn[hidden]{ display: none; }
 .topic-pill{
   flex: 0 0 auto;
   font-family: var(--font-sans);
@@ -1090,13 +1186,17 @@ blockquote{
   border-bottom-color: transparent;
   box-shadow: 0 1px 0 rgba(0,0,0,.06);
 }
+.site-header.is-scrolled{ border-bottom-width: 0; }
 .site-header.is-scrolled .wrap{
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 .site-header.is-scrolled .site-logo{
-  max-height: 60px;   /* the size you asked for */
+  max-height: 24px;   /* 24px logo + 8px above and below = a 40px bar */
 }
+.site-header.is-scrolled .nav-search-toggle{ padding: 3px; }
+.site-header.is-scrolled .btn-subscribe{ padding: 4px 12px; font-size: 12px; }
+.site-header.is-scrolled .primary-nav a.btn-subscribe{ font-size: 12px; }
 .site-header.is-scrolled .wordmark{
   font-size: 20px;    /* shrinks the text wordmark too, if no image logo is set */
   color: var(--white);
@@ -1104,7 +1204,7 @@ blockquote{
 .site-header.is-scrolled .primary-nav a{ color: var(--white); }
 .site-header.is-scrolled .primary-nav a:hover{ color: var(--ku-sky); }
 .site-header.is-scrolled .tagline{
-  opacity: 0;
+  display: none;
 }
 
 /* Logo crossfade — only visible once logo_scrolled is set in _data/header.yml.
@@ -1121,6 +1221,44 @@ blockquote{
 }
 .site-header.is-scrolled .logo-swap .logo-default{ opacity: 0; }
 .site-header.is-scrolled .logo-swap .logo-alt{ opacity: 1; }
+
+/* Header responsive tuning (top bar + logo band) */
+@media (max-width: 1000px){
+  .site-logo{ max-height: 72px; max-width: 280px; }
+  .site-header .wrap{ padding-top: 22px; padding-bottom: 22px; }
+  .brand{ gap: 18px; }
+  .tagline{ font-size: 12.5px; }
+}
+@media (max-width: 620px){
+  .ku-bar-inner{ min-height: 56px; }
+  .ku-bar-logo{ height: 32px; padding-right: 14px; }
+  .ku-bar-logo img{ height: 21px; }
+  .ku-bar-title{ font-size: 17px; padding-left: 12px; }
+  .btn-subscribe{ padding: 6px 12px; font-size: 12.5px; }
+  .primary-nav a.btn-subscribe{ font-size: 12.5px; }
+  .site-header .wrap{ padding-top: 16px; padding-bottom: 16px; }
+  .site-logo{ max-height: 52px; max-width: 220px; }
+  .site-header.is-scrolled .site-logo{ max-height: 22px; }
+  /* no room beside the logo on a phone: tagline goes underneath, one line */
+  .brand{ flex-direction: column; align-items: flex-start; gap: 6px; }
+  .tagline{ max-width: none; font-size: 11.5px; text-wrap: wrap; }
+}
+@media (max-width: 700px){
+  .topic-nav-inner{ padding-top: 12px; padding-bottom: 12px; }
+  /* no room for the label on a phone; kept for screen readers */
+  .topic-nav-label{
+    position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
+  /* swipe-first on phones: no arrow buttons, the edge fade still hints at more */
+  .scroll-btn{ display: none; }
+}
+@media (max-width: 380px){
+  .ku-bar-logo{ padding-right: 10px; }
+  .ku-bar-logo img{ height: 19px; }
+  .ku-bar-title{ font-size: 14px; padding-left: 9px; }
+  .ku-bar .btn-subscribe{ padding: 5px 10px; font-size: 12px; }
+}
 
 
 /* ---------- journals hub page ---------- */

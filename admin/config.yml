@@ -193,9 +193,10 @@ collections:
         name: "header"
         file: "_data/header.yml"
         fields:
-          - {label: "Logo", name: "logo", widget: "image", required: false, hint: "Upload a logo, or leave blank to keep the text wordmark (Ideate.)."}
-          - {label: "Logo (scrolled / dark background)", name: "logo_scrolled", widget: "image", required: false, hint: "Same logo with a light/reversed color treatment, shown once the header goes dark on scroll. Leave blank and the regular logo just stays put through the color change."}
-          - {label: "Subhead", name: "tagline", widget: "string", hint: "The short line shown under the logo in the site header, e.g. \"KU Business insights that elevate business.\""}
+          - {label: "KU logo (top bar)", name: "ku_logo", widget: "image", required: false, hint: "The KU logo at the left of the light blue top bar, next to \"School of Business\". PNG or SVG — a one-color KU Blue (#0051ba) logo on a transparent background looks best, and it is shown about 25px tall. Leave blank to use the built-in KU logo."}
+          - {label: "Ideate logo", name: "logo", widget: "image", required: false, hint: "Upload a logo, or leave blank to keep the text wordmark (Ideate.)."}
+          - {label: "Ideate logo (scrolled / dark background)", name: "logo_scrolled", widget: "image", required: false, hint: "Same logo with a light/reversed color treatment, shown once the header goes dark on scroll. Leave blank and the regular logo just stays put through the color change."}
+          - {label: "Subhead", name: "tagline", widget: "string", hint: "The short line shown to the right of the logo in the site header (it wraps onto two lines), e.g. \"KU Business insights that elevate business.\" On phones it sits under the logo."}
           - label: "Accent color"
             name: "accent_color"
             widget: "select"

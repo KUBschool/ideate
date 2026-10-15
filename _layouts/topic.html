@@ -176,6 +176,8 @@ layout: default
 </section>
 {% endif %}
 
+{% include topic-nav.html %}
+
 {% comment %} ================= 3. LATEST RESEARCH: 4 cards ================= {% endcomment %}
 {% if card_articles.size > 0 %}
 <section class="wrap topic-block" id="latest">
@@ -191,6 +193,7 @@ layout: default
 {% endif %}
 
 {% else %}
+{% include topic-nav.html %}
 <div class="wrap" style="padding:48px 0;">
   <p style="color:var(--ku-gray-mid); font-size:15px;">No articles tagged {{ topic_name }} yet — check back soon.</p>
 </div>

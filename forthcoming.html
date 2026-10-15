@@ -64,6 +64,8 @@ description: "Research KU Business faculty are presenting or discussing publicly
   </div>
 </section>
 
+{% include topic-nav.html %}
+
 {% if remaining.size > 0 %}
 <section class="wrap" style="padding-bottom:56px;">
   <div class="section-head">
@@ -78,6 +80,7 @@ description: "Research KU Business faculty are presenting or discussing publicly
 {% endif %}
 
 {% else %}
+{% include topic-nav.html %}
 <div class="wrap" style="padding:48px 0;">
   <p style="color:var(--ku-gray-mid); font-size:15px;">Nothing tagged Forthcoming right now — check back soon.</p>
 </div>
