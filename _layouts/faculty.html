@@ -1,6 +1,30 @@
 ---
 layout: default
 ---
+{% comment %}
+  Faculty profile. Top to bottom:
+    1. Header     - photo, name, rank/professorships, optional short bio,
+                    research topics, link to the full KU Business profile;
+                    beside it, the journals this person has published in
+    2. Tabs       - only the tabs that have something in them are shown:
+         Featured research  one Ideate story picked on the faculty file
+         Research           every Ideate story tagged to this person (cards)
+         Editorial service  from the faculty file's Editorial Service list
+         In the media       Ideate videos tagged to this person, plus the
+                            videos / podcasts / news stories / other items
+                            entered on the faculty file
+
+  With one tab there's no tab bar, just that section. With none, a short
+  "nothing yet" line. A link to .../faculty/someone/#in-the-media opens that tab
+  (app.js reads the hash; the panels' ids are prefixed panel- so the browser
+  doesn't also try to scroll to them on its own). Without JavaScript every section simply shows one
+  after another (see the tabs handler in app.js), and all of it is real
+  markup in the page, so search and AI crawlers see everything.
+
+  Includes (card.html and the badges) assign variables of their own, and in
+  Liquid an assign inside an include is visible to this page afterwards, so
+  every variable here that the includes might also use is prefixed my_.
+{% endcomment %}
 {% assign my_articles = site.articles | where_exp: 'a', 'a.faculty contains page.slug' | sort: 'date' | reverse %}
 {% assign my_topic_slugs = my_articles | map: 'topic' | uniq %}
 {% assign schema_job_title = page.title %}
@@ -23,8 +47,30 @@ layout: default
 
 {% assign my_journal_groups = my_articles | where_exp: 'a', 'a.journal != nil' | group_by: 'journal' | sort: 'name' %}
 {% assign has_sidebar = false %}
-{% if page.editorial_service and page.editorial_service.size > 0 %}{% assign has_sidebar = true %}{% endif %}
 {% if my_journal_groups.size > 0 %}{% assign has_sidebar = true %}{% endif %}
+
+{% comment %} ---- what goes in each tab ---- {% endcomment %}
+{% assign my_feature = nil %}
+{% if page.featured_article and page.featured_article != '' %}
+  {% assign my_feature = site.articles | where: 'title', page.featured_article | first %}
+{% endif %}
+
+{% assign my_service = page.editorial_service %}
+{% assign has_service = false %}
+{% if my_service and my_service.size > 0 %}{% assign has_service = true %}{% endif %}
+{% assign premier_names = site.data.journals.items | where: 'premier', true | map: 'name' | join: '|||' | downcase | split: '|||' %}
+
+{% assign my_no_items = '' | split: ',' %}
+{% assign my_media_pool = site.media | default: my_no_items %}
+{% assign my_videos = my_media_pool | where_exp: 'm', 'm.faculty contains page.slug' | sort: 'date' | reverse %}
+{% assign my_appearances = page.media_appearances | default: my_no_items %}
+{% assign my_media_count = my_videos.size | plus: my_appearances.size %}
+
+{% assign tabs_n = 0 %}
+{% if my_feature %}{% assign tabs_n = tabs_n | plus: 1 %}{% endif %}
+{% if my_articles.size > 0 %}{% assign tabs_n = tabs_n | plus: 1 %}{% endif %}
+{% if has_service %}{% assign tabs_n = tabs_n | plus: 1 %}{% endif %}
+{% if my_media_count > 0 %}{% assign tabs_n = tabs_n | plus: 1 %}{% endif %}
 
 <div class="wrap">
   <div class="faculty-header-grid{% unless has_sidebar %} faculty-header-grid-solo{% endunless %}">
@@ -48,6 +94,8 @@ layout: default
         <p class="faculty-professorship">{{ page.professorship | join: " &middot; " }}</p>
         {% endif %}
 
+        {% if page.bio and page.bio != '' %}<p class="faculty-bio">{{ page.bio }}</p>{% endif %}
+
         {% if my_topic_slugs.size > 0 %}
         <div class="faculty-topics-label">Research topics covered on Ideate</div>
         <div class="faculty-topics">
@@ -66,18 +114,6 @@ layout: default
 
     {% if has_sidebar %}
     <aside class="faculty-sidebar">
-      {% if page.editorial_service and page.editorial_service.size > 0 %}
-      <div class="faculty-sidebar-block">
-        <h2>Editorial service</h2>
-        <ul class="editorial-service-list">
-          {% for role in page.editorial_service %}
-          <li><span class="es-role">{{ role.role }}</span>, <a href="{{ '/journals/' | relative_url }}#{{ role.journal | slugify }}">{{ role.journal }}</a></li>
-          {% endfor %}
-        </ul>
-      </div>
-      {% endif %}
-
-      {% if my_journal_groups.size > 0 %}
       <div class="faculty-sidebar-block">
         <h2>Academic journal contributions</h2>
         <ul class="journal-contributions-list">
@@ -86,23 +122,80 @@ layout: default
           {% endfor %}
         </ul>
       </div>
-      {% endif %}
     </aside>
     {% endif %}
   </div>
 </div>
 
-<section class="wrap" style="padding-bottom:56px;">
-  <div class="section-head">
-    <h2>Research on Ideate</h2>
-  </div>
-  {% if my_articles.size > 0 %}
-  <div class="card-grid">
-    {% for a in my_articles %}
-      {% include card.html article=a %}
-    {% endfor %}
-  </div>
-  {% else %}
+{% if tabs_n == 0 %}
+<section class="wrap faculty-tabs faculty-tabs--single">
   <p style="color:var(--ku-gray-mid); font-size:15px;">No articles tagged to {{ page.full_name }} yet.</p>
+</section>
+{% else %}
+
+<section class="wrap faculty-tabs{% if tabs_n == 1 %} faculty-tabs--single{% endif %}" id="profile-tabs" data-tabs>
+  {% comment %} Marks the page as script-enabled before the tabs paint, so they don't flash as one long stack. Without JavaScript the class never gets set and every section just shows. {% endcomment %}
+  <script>document.documentElement.classList.add('js');</script>
+
+  {% if tabs_n > 1 %}
+  <div class="tab-bar">
+    <div class="tab-list" role="tablist" aria-label="More about {{ page.full_name }}">
+      {% if my_feature %}<button type="button" class="tab" role="tab" id="tab-featured" data-tab="featured" aria-controls="panel-featured" aria-selected="false" tabindex="-1">Featured research</button>{% endif %}
+      {% if my_articles.size > 0 %}<button type="button" class="tab" role="tab" id="tab-research" data-tab="research" aria-controls="panel-research" aria-selected="false" tabindex="-1">Research<span class="tab-count">{{ my_articles.size }}</span></button>{% endif %}
+      {% if has_service %}<button type="button" class="tab" role="tab" id="tab-editorial-service" data-tab="editorial-service" aria-controls="panel-editorial-service" aria-selected="false" tabindex="-1">Editorial service<span class="tab-count">{{ my_service.size }}</span></button>{% endif %}
+      {% if my_media_count > 0 %}<button type="button" class="tab" role="tab" id="tab-in-the-media" data-tab="in-the-media" aria-controls="panel-in-the-media" aria-selected="false" tabindex="-1">In the media<span class="tab-count">{{ my_media_count }}</span></button>{% endif %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if my_feature %}
+  <div class="tab-panel" id="panel-featured"{% if tabs_n > 1 %} role="tabpanel" aria-labelledby="tab-featured" tabindex="0"{% endif %}>
+    <h2 class="tab-panel-title">Featured research</h2>
+    {% include faculty-feature.html article=my_feature %}
+  </div>
+  {% endif %}
+
+  {% if my_articles.size > 0 %}
+  <div class="tab-panel" id="panel-research"{% if tabs_n > 1 %} role="tabpanel" aria-labelledby="tab-research" tabindex="0"{% endif %}>
+    <h2 class="tab-panel-title">Research on Ideate</h2>
+    <div class="card-grid">
+      {% for a in my_articles %}
+        {% include card.html article=a %}
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if has_service %}
+  <div class="tab-panel" id="panel-editorial-service"{% if tabs_n > 1 %} role="tabpanel" aria-labelledby="tab-editorial-service" tabindex="0"{% endif %}>
+    <h2 class="tab-panel-title">Editorial service</h2>
+    <ul class="service-grid">
+      {% for role in my_service %}
+      {% assign my_journal_key = role.journal | downcase %}
+      {% assign my_is_premier = false %}
+      {% if premier_names contains my_journal_key %}{% assign my_is_premier = true %}{% endif %}
+      <li class="service-card{% if my_is_premier %} is-premier{% endif %}">
+        <div class="service-role">{{ role.role }}</div>
+        <a class="service-journal" href="{{ '/journals/' | relative_url }}#{{ role.journal | slugify }}">{{ role.journal }}</a>
+        {% if my_is_premier %}<span class="premier-badge"><svg viewBox="0 0 24 24" width="11" height="11" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/></svg>Premier journal</span>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  {% if my_media_count > 0 %}
+  <div class="tab-panel" id="panel-in-the-media"{% if tabs_n > 1 %} role="tabpanel" aria-labelledby="tab-in-the-media" tabindex="0"{% endif %}>
+    <h2 class="tab-panel-title">In the media</h2>
+    <div class="card-grid">
+      {% for v in my_videos %}
+        {% include faculty-media-card.html video=v %}
+      {% endfor %}
+      {% for item in my_appearances %}
+        {% include faculty-media-card.html item=item %}
+      {% endfor %}
+    </div>
+  </div>
   {% endif %}
 </section>
+{% endif %}

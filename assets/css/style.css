@@ -1694,3 +1694,214 @@ blockquote{
   .expert-callout h2{ font-size: 26px; }
   .more-btn{ width: 100%; }
 }
+
+/* =========================================================
+   Faculty profile: tabs (Featured research / Research /
+   Editorial service / In the media)
+   ========================================================= */
+.visually-hidden{
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+.faculty-bio{
+  font-family: var(--font-serif);
+  font-size: 16.5px;
+  line-height: 1.55;
+  color: #3c3c38;
+  max-width: 60ch;
+  margin: 14px 0 0;
+}
+.faculty-tabs{ padding-bottom: 64px; scroll-margin-top: 64px; }
+
+/* the tab bar only exists once script has run; without JS every section just stacks */
+.tab-bar{
+  display: none;
+  position: relative;
+  border-bottom: 1px solid #dcdad4;
+  margin-bottom: 36px;
+}
+.js .tab-bar{ display: block; }
+.tab-list{
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 0 2px;
+}
+.tab-list::-webkit-scrollbar{ display: none; }
+.tab{
+  flex: 0 0 auto;
+  appearance: none;
+  background: none;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  margin: 0 0 -1px;
+  padding: 14px 2px 12px;
+  font-family: var(--font-sans);
+  font-size: 15.5px;
+  font-weight: 600;
+  color: #565650;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.tab:hover{ color: var(--ku-blue); }
+.tab[aria-selected="true"]{ color: var(--ku-night); border-bottom-color: var(--ku-blue); }
+.tab:focus-visible{ outline: 2px solid var(--ku-blue); outline-offset: 2px; border-radius: 2px; }
+.tab-count{
+  margin-left: 7px;
+  padding: 1px 7px;
+  border-radius: 10px;
+  background: var(--ku-limestone-2);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ku-gray-mid);
+}
+.tab[aria-selected="true"] .tab-count{ background: var(--ku-steam); color: var(--ku-night); }
+/* soft fade where more tabs are hidden off the edge of a narrow screen */
+.tab-bar::before,
+.tab-bar::after{
+  content: "";
+  position: absolute;
+  top: 0; bottom: 1px;
+  width: 36px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+}
+.tab-bar::before{ left: 0;  background: linear-gradient(to right, var(--white) 20%, rgba(255,255,255,0)); }
+.tab-bar::after{  right: 0; background: linear-gradient(to left,  var(--white) 20%, rgba(255,255,255,0)); }
+.tab-bar.has-prev::before,
+.tab-bar.has-next::after{ opacity: 1; }
+
+.tab-panel{ margin-bottom: 56px; }
+.tab-panel:last-child{ margin-bottom: 0; }
+.tab-panel:focus-visible{ outline: 2px solid var(--ku-blue); outline-offset: 6px; border-radius: 2px; }
+.tab-panel-title{
+  font-size: 22px;
+  margin: 0 0 22px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--ku-night);
+}
+/* with tabs showing, the tab itself is the heading */
+.js .faculty-tabs:not(.faculty-tabs--single) .tab-panel-title{
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.js .faculty-tabs:not(.faculty-tabs--single) .tab-panel{ margin-bottom: 0; }
+.tab-panel[hidden]{ display: none !important; }
+
+/* featured research */
+.fac-feature{
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.fac-feature-media{ display: block; }
+.fac-feature-media .photo,
+.fac-feature-media .img-placeholder{ margin: 0; }
+.fac-feature h3{ font-size: 28px; line-height: 1.2; margin: 4px 0 12px; }
+.fac-feature a.card-link:hover h3{ text-decoration: underline; text-underline-offset: 4px; }
+.fac-feature .dek{
+  font-family: var(--font-serif);
+  font-size: 18px;
+  line-height: 1.55;
+  color: #565650;
+  margin: 0 0 14px;
+}
+.fac-feature-journal{ font-size: 14px; color: #565650; margin: 0 0 8px; }
+.fac-feature-journal a{ color: var(--ku-blue); font-weight: 600; }
+.fac-feature-journal a:hover{ text-decoration: underline; }
+.fac-feature .faculty-chips{ margin-top: 14px; }
+.fac-cta{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+  background: var(--ku-blue);
+  color: var(--white) !important;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 11px 20px;
+  border-radius: var(--radius);
+}
+.fac-cta:hover{ background: var(--ku-night); }
+
+/* editorial service */
+.service-grid{
+  list-style: none;
+  margin: 0; padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 22px;
+}
+.service-card{
+  background: var(--white);
+  border: 1px solid #e2e0da;
+  border-left: 4px solid var(--ku-steam);
+  border-radius: var(--radius);
+  padding: 18px 24px 20px;
+}
+.service-card.is-premier{ background: #eef3fb; border-color: #cddcf2; border-left-color: var(--ku-blue); }
+.service-role{
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--ku-gray-mid);
+  margin-bottom: 6px;
+}
+.service-journal{
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--ku-night);
+}
+.service-journal:hover{ color: var(--ku-blue); text-decoration: underline; text-underline-offset: 3px; }
+.service-card .premier-badge{ margin: 12px 0 0; }
+
+/* in the media */
+.media-appearance .mi-thumb{
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 14px;
+  background: var(--ku-steam);
+}
+.mi-img{ display: block; width: 100%; height: 100%; object-fit: cover; }
+.mi-tile{
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--ku-limestone);
+  color: var(--ku-night);
+}
+.mi-tile svg{ width: 46px; height: 46px; opacity: .92; }
+.mi-tile.is-video{ background: var(--ku-night); color: var(--white); }
+.mi-tile.is-podcast{ background: var(--ku-blue); color: var(--white); }
+.mi-tile.is-article{ background: var(--ku-steam); color: var(--ku-night); }
+.mi-tile.is-other{ background: var(--ku-limestone-2); color: var(--ku-night); }
+.media-appearance .mi-thumb:hover .play-badge{ background: rgba(0,0,0,.75); transform: translate(-50%, -50%) scale(1.08); }
+.media-appearance .play-badge{ width: 44px; height: 44px; }
+.mi-ext{ font-size: .72em; color: var(--ku-gray-mid); font-weight: 400; white-space: nowrap; }
+
+@media (max-width: 900px){
+  .fac-feature{ grid-template-columns: 1fr; gap: 22px; }
+  .fac-feature h3{ font-size: 25px; }
+}
+@media (max-width: 620px){
+  .faculty-tabs{ padding-bottom: 48px; }
+  .tab-list{ gap: 22px; }
+  .tab{ font-size: 15px; }
+  .service-grid{ grid-template-columns: 1fr; }
+  .tab-bar{ margin-bottom: 28px; }
+}

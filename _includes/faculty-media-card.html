@@ -1,0 +1,68 @@
+{%- comment -%}
+  Usage: {% include faculty-media-card.html video=some_media_doc %}   (an Ideate video)
+         {% include faculty-media-card.html item=some_appearance %}   (an "In the media" entry)
+  One card in a faculty profile's "In the media" tab, same shape as the
+  article cards.
+    video: an Ideate video (the Videos collection) - links to its page here.
+    item:  an entry from the faculty file's In the media list: type (video,
+           podcast, article, other), title, outlet, url, date, description,
+           thumbnail. Links out to the outlet's page in a new tab. With no
+           thumbnail it gets a colored tile with an icon for its type.
+  Variable names are prefixed fm_ on purpose: Liquid's assign inside an
+  include writes to the including page's variables.
+{%- endcomment -%}
+{% if include.video %}
+{% assign fm_v = include.video %}
+<article class="card media-appearance">
+  <a href="{{ fm_v.url | relative_url }}" class="card-link mi-thumb" aria-label="Watch: {{ fm_v.title }}">
+    {% if fm_v.thumbnail %}
+      <img src="{% if fm_v.thumbnail contains '://' %}{{ fm_v.thumbnail }}{% else %}{{ fm_v.thumbnail | relative_url }}{% endif %}" alt="" class="mi-img">
+    {% else %}
+      <span class="mi-tile is-video"></span>
+    {% endif %}
+    <span class="play-badge" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+  </a>
+  <div class="eyebrow" style="--topic-color:var(--ku-blue)"><span class="dot"></span>Video&nbsp;&middot;&nbsp;Ideate</div>
+  <a href="{{ fm_v.url | relative_url }}" class="card-link"><h3>{{ fm_v.title }}</h3></a>
+  {% if fm_v.dek %}<p class="dek">{{ fm_v.dek | strip_html | truncate: 160 }}</p>{% endif %}
+  {% if fm_v.date %}<div class="card-meta"><span>{{ fm_v.date | date: "%b %-d, %Y" }}</span></div>{% endif %}
+</article>
+{% elsif include.item %}
+{% assign fm_i = include.item %}
+{% assign fm_type = fm_i.type | default: 'article' %}
+{% assign fm_url = fm_i.url | strip %}
+{% assign fm_href = fm_url %}
+{% unless fm_url contains '://' or fm_url contains 'mailto:' %}
+  {% assign fm_first = fm_url | slice: 0, 1 %}
+  {% if fm_first == '/' %}{% assign fm_href = fm_url | relative_url %}{% else %}{% assign fm_href = 'https://' | append: fm_url %}{% endif %}
+{% endunless %}
+{% case fm_type %}
+  {% when 'video' %}{% assign fm_label = 'Video' %}
+  {% when 'podcast' %}{% assign fm_label = 'Podcast' %}
+  {% when 'article' %}{% assign fm_label = 'News story' %}
+  {% else %}{% assign fm_label = 'Appearance' %}
+{% endcase %}
+<article class="card media-appearance">
+  <a href="{{ fm_href }}" class="card-link mi-thumb" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+    {% if fm_i.thumbnail %}
+      <img src="{% if fm_i.thumbnail contains '://' %}{{ fm_i.thumbnail }}{% else %}{{ fm_i.thumbnail | relative_url }}{% endif %}" alt="" class="mi-img">
+    {% else %}
+      <span class="mi-tile is-{{ fm_type }}">
+        {% case fm_type %}
+          {% when 'video' %}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+          {% when 'podcast' %}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z" fill="currentColor"/></svg>
+          {% when 'article' %}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" fill="currentColor"/></svg>
+          {% else %}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.9 12a3.1 3.1 0 0 1 3.1-3.1h4V7H7a5 5 0 0 0 0 10h4v-1.9H7A3.1 3.1 0 0 1 3.9 12zM8 13h8v-2H8v2zm9-6h-4v1.9h4a3.1 3.1 0 0 1 0 6.2h-4V17h4a5 5 0 0 0 0-10z" fill="currentColor"/></svg>
+        {% endcase %}
+      </span>
+    {% endif %}
+    {% if fm_type == 'video' and fm_i.thumbnail %}
+    <span class="play-badge" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+    {% endif %}
+  </a>
+  <div class="eyebrow" style="--topic-color:var(--ku-blue)"><span class="dot"></span>{{ fm_label }}{% if fm_i.outlet and fm_i.outlet != '' %}&nbsp;&middot;&nbsp;{{ fm_i.outlet }}{% endif %}</div>
+  <a href="{{ fm_href }}" class="card-link" target="_blank" rel="noopener noreferrer"><h3>{{ fm_i.title }}&nbsp;<span class="mi-ext" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></h3></a>
+  {% if fm_i.description and fm_i.description != '' %}<p class="dek">{{ fm_i.description | strip_html | truncate: 220 }}</p>{% endif %}
+  {% if fm_i.date %}<div class="card-meta"><span>{{ fm_i.date | date: "%b %-d, %Y" }}</span></div>{% endif %}
+</article>
+{% endif %}

@@ -165,7 +165,7 @@ collections:
         field: {label: "Professorship", name: "name", widget: "string"}
         hint: "Endowed chairs and fellowships only — e.g. \"Larry D. Horner/KPMG Professor,\" \"Capitol Federal Fellow.\" Most faculty have zero or one; a couple have two. Center directorships and rank designations like \"Professor of the Practice\" go in Title instead, not here."
       - {label: "Academic area", name: "academic_area", widget: "string", required: false}
-      - {label: "Short bio", name: "bio", widget: "text", required: false, hint: "One or two sentences, in the third person — e.g. \"Jane Doe is a professor of accounting whose research examines audit quality and financial reporting.\" Shown in the Faculty spotlight on topic pages (not on this profile page, which links out to the full KU Business profile). Leave blank and the spotlight simply omits it."}
+      - {label: "Short bio", name: "bio", widget: "text", required: false, hint: "One or two sentences, in the third person — e.g. \"Jane Doe is a professor of accounting whose research examines audit quality and financial reporting.\" Shown under their name on this profile page and in the Faculty spotlight on topic pages. Leave blank and it is simply left out."}
       - {label: "KU Business profile URL", name: "profile_url", widget: "string", hint: "e.g. https://business.ku.edu/people/jane-doe"}
       - {label: "Photo", name: "photo", widget: "image", required: false, hint: "Upload a headshot, or paste the image URL from their business.ku.edu profile directly — either works."}
       - label: "Editorial Service"
@@ -177,6 +177,37 @@ collections:
         fields:
           - {label: "Role", name: "role", widget: "string", hint: "e.g. Editor-in-Chief, Associate Editor, Editorial Board Member — copy the exact title from the source listing."}
           - {label: "Journal", name: "journal", widget: "string", hint: "Spelled exactly as it appears elsewhere on the site — check the Journals page or Site Settings > Journals if unsure, since inconsistent spelling will split one journal into two entries (and a misspelled premier journal won't get its Premier highlight)."}
+      - label: "Featured research"
+        name: "featured_article"
+        widget: "relation"
+        collection: "articles"
+        search_fields: ["title"]
+        display_fields: ["title"]
+        value_field: "title"
+        required: false
+        hint: "Optional. Pick one Ideate story to spotlight in the Featured research tab of this profile. Leave blank and that tab is hidden. (The Research tab always lists every story this person is tagged in.)"
+      - label: "In the media"
+        name: "media_appearances"
+        widget: "list"
+        required: false
+        summary: "{{fields.type}} — {{fields.title}}"
+        hint: "Videos, podcasts, news stories and other appearances outside Ideate. Shown in the In the media tab, in the order listed here (drag to reorder, newest first works well). Ideate videos this person is tagged in appear there automatically — don't re-enter those. Leave empty and the tab is hidden unless there is an Ideate video."
+        fields:
+          - label: "Type"
+            name: "type"
+            widget: "select"
+            options:
+              - {label: "News story or article", value: "article"}
+              - {label: "Video", value: "video"}
+              - {label: "Podcast", value: "podcast"}
+              - {label: "Other", value: "other"}
+            default: "article"
+          - {label: "Title", name: "title", widget: "string", hint: "The headline or episode title."}
+          - {label: "Outlet or source", name: "outlet", widget: "string", required: false, hint: "e.g. KU News, NPR, The Wall Street Journal, a podcast name."}
+          - {label: "Link", name: "url", widget: "string", hint: "The full web address of the story, video or episode. It opens in a new tab."}
+          - {label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, picker_utc: true, required: false}
+          - {label: "Short description", name: "description", widget: "text", required: false, hint: "Optional — one or two sentences. Plain text."}
+          - {label: "Thumbnail", name: "thumbnail", widget: "image", required: false, hint: "Optional. Landscape works best. Without one, the card gets a colored tile with an icon for its type."}
 
   - name: "settings"
     label: "Site Settings"

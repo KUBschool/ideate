@@ -1,0 +1,47 @@
+{%- comment -%}
+  Usage: {% include faculty-feature.html article=some_article %}
+  The single story shown in a faculty profile's "Featured research" tab:
+  photo on one side; topic, headline, summary, where it was published, date
+  and co-authors on the other, with a button through to the story.
+  Renders nothing if `article` is nil.
+  Variable names are prefixed ff_ on purpose: Liquid's assign inside an
+  include writes to the including page's variables.
+{%- endcomment -%}
+{% assign ff = include.article %}
+{% if ff %}
+{% assign ff_topic = site.data.topics | where: 'slug', ff.topic | first %}
+<article class="fac-feature">
+  <a href="{{ ff.url | relative_url }}" class="fac-feature-media">
+    {% if ff.image %}
+      <img src="{% if ff.image contains '://' %}{{ ff.image }}{% else %}{{ ff.image | relative_url }}{% endif %}" alt="{{ ff.image_alt | default: ff.title }}" class="photo hero-art">
+    {% else %}
+      <div class="img-placeholder hero-art" style="--tint:var(--ku-{{ ff.image_tint | default: 'steam' }})"><span>Photo placeholder</span></div>
+    {% endif %}
+  </a>
+  <div class="fac-feature-body">
+    <div class="eyebrow" style="--topic-color:var(--topic-{{ ff.topic }})">
+      <span class="dot"></span>
+      <a href="{{ '/topics/' | append: ff.topic | append: '/' | relative_url }}">{{ ff_topic.name }}</a>
+      {% include status-badge.html status=ff.status %}
+      {% include series-badge.html series=ff.series %}
+    </div>
+    <a href="{{ ff.url | relative_url }}" class="card-link"><h3>{{ ff.title }}</h3></a>
+    <p class="dek">{{ ff.dek }}</p>
+    {% if ff.journal and ff.journal != '' %}
+    <p class="fac-feature-journal">Published in <a href="{{ '/journals/' | relative_url }}#{{ ff.journal | slugify }}">{{ ff.journal }}</a></p>
+    {% endif %}
+    <div class="byline">{{ ff.date | date: "%B %-d, %Y" }} &middot; {% include read-time.html article=ff %} min read</div>
+    {% if ff.faculty and ff.faculty.size > 1 %}
+    <div class="faculty-chips">
+      {% for ff_slug in ff.faculty %}
+        {% unless ff_slug == page.slug %}
+          {% assign ff_person = site.faculty | where: 'slug', ff_slug | first %}
+          {% if ff_person %}<a href="{{ ff_person.url | relative_url }}" class="faculty-chip"><span class="avatar"></span>{{ ff_person.full_name }}</a>{% endif %}
+        {% endunless %}
+      {% endfor %}
+    </div>
+    {% endif %}
+    <a href="{{ ff.url | relative_url }}" class="fac-cta">Read the story <span aria-hidden="true">&rarr;</span></a>
+  </div>
+</article>
+{% endif %}

@@ -333,6 +333,87 @@ document.addEventListener('DOMContentLoaded', () => {
     updateArrows();
   }
 
+  // Faculty profile tabs (Featured research / Research / Editorial service /
+  // In the media). Every panel is real markup in the page; this just shows one
+  // at a time. Without JS the panels all show, stacked, and the tab bar stays
+  // hidden. Works as a standard tab widget: click, Left/Right/Home/End keys,
+  // and a #research / #in-the-media style link opens that tab directly.
+  document.querySelectorAll('[data-tabs]').forEach((root) => {
+    const list = root.querySelector('[role="tablist"]');
+    const tabs = list ? Array.from(list.querySelectorAll('[role="tab"]')) : [];
+    if (tabs.length < 2) return;
+    const bar = list.parentElement;
+    const panels = tabs.map((t) => document.getElementById(t.getAttribute('aria-controls')));
+    if (panels.some((p) => !p)) return;
+
+    const updateFades = () => {
+      const max = list.scrollWidth - list.clientWidth;
+      bar.classList.toggle('has-prev', list.scrollLeft > 4);
+      bar.classList.toggle('has-next', list.scrollLeft < max - 4);
+    };
+
+    const select = (tab, opts) => {
+      const o = opts || {};
+      tabs.forEach((t, i) => {
+        const on = t === tab;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+        panels[i].hidden = !on;
+      });
+      // keep the chosen tab in view on a narrow screen
+      const left = tab.offsetLeft - 24;
+      const right = tab.offsetLeft + tab.offsetWidth + 24;
+      if (left < list.scrollLeft) list.scrollLeft = Math.max(0, left);
+      else if (right > list.scrollLeft + list.clientWidth) list.scrollLeft = right - list.clientWidth;
+      updateFades();
+      if (o.focus) tab.focus();
+      if (o.hash) {
+        try { window.history.replaceState(null, '', window.location.pathname + window.location.search + '#' + tab.dataset.tab); } catch (e) { /* ignore */ }
+      }
+    };
+
+    const fromHash = () => {
+      const id = window.location.hash.replace('#', '');
+      return tabs.find((t) => t.dataset.tab === id) || null;
+    };
+
+    tabs.forEach((tab) => tab.addEventListener('click', () => select(tab, { hash: true })));
+
+    list.addEventListener('keydown', (e) => {
+      const i = tabs.indexOf(document.activeElement);
+      if (i < 0) return;
+      let next = null;
+      if (e.key === 'ArrowRight') next = tabs[(i + 1) % tabs.length];
+      else if (e.key === 'ArrowLeft') next = tabs[(i - 1 + tabs.length) % tabs.length];
+      else if (e.key === 'Home') next = tabs[0];
+      else if (e.key === 'End') next = tabs[tabs.length - 1];
+      if (next) { e.preventDefault(); select(next, { focus: true, hash: true }); }
+    });
+
+    list.addEventListener('scroll', updateFades, { passive: true });
+    window.addEventListener('resize', updateFades);
+
+    // Bring the tab bar into view (jumping, not gliding, like any link to an anchor).
+    const showTabs = () => {
+      try { root.scrollIntoView({ behavior: 'instant', block: 'start' }); }
+      catch (e) { root.scrollIntoView(); }
+    };
+    window.addEventListener('hashchange', () => { const t = fromHash(); if (t) { select(t); showTabs(); } });
+
+    // A shared link ending #in-the-media opens that tab and lands on the tab bar. The panels'
+    // ids deliberately don't match the hash, so the browser never scrolls on its own and
+    // this is the only scroll; it runs again once images have loaded, since they can push
+    // the tabs down, unless the reader has already started scrolling.
+    const initial = fromHash();
+    select(initial || tabs[0]);
+    if (initial) {
+      let moved = false;
+      ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach((ev) => window.addEventListener(ev, () => { moved = true; }, { once: true, passive: true }));
+      window.requestAnimationFrame(showTabs);
+      window.addEventListener('load', () => { if (!moved) showTabs(); });
+    }
+  });
+
   // Topic pages — "View more research" reveals the rest of the article list.
   // The extra rows are real, crawlable markup that's always in the page;
   // topic.html tags <html class="js"> before they paint and CSS keeps them
