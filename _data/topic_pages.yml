@@ -1,65 +1,59 @@
-# Topic pages — per-topic settings for each /topics/<name>/ page.
-# Edited in the CMS under Site Settings > Topic pages.
-#
-# Every field is optional. A topic with no row here (or a blank field) falls
-# back to sensible defaults, so adding a topic to _data/topics.yml never breaks
-# its page:
-#   subhead          -> the topic's one-line description from topics.yml
-#   header_image     -> a soft patterned placeholder
-#   header_tone      -> steam
-#   show_feature     -> on (the newest article in the topic)
-#   side             -> stats if the topic has stats below, otherwise 3 articles
-#   spotlight        -> off (the video call-out simply runs full width)
-#
-# One row per topic, matching the topics in _data/topics.yml. If you add a
-# topic there, add its row here (and its option in admin/config.yml).
 items:
-  - topic: "accounting"
-    header_tone: "steam"
+  - subhead: Advancing the field of accounting through influential research and
+      outstanding teaching.
+    header_tone: steam
+    header_image: /assets/uploads/acct325-113-1bw.jpg
+    feature_article: The benchmark auditors actually use to catch fraud isn't the
+      one that works best
+    topic: accounting
+    stats_note: KU accounting faculty have sustained this ranking year over year —
+      see the full story in Faculty & school recognition on the homepage.
+    spotlight: chan-li
     show_feature: true
-    side: "stats"
-    stats_title: "Accounting at KU Business"
+    side: stats
+    stats_title: Accounting at KU Business
     stats:
-      - {value: "No. 1", label: "Global ranking, audit archival research (BYU, 2025)"}
-      - {value: "No. 2", label: "Global ranking, auditing publications overall"}
-    stats_note: "KU accounting faculty have sustained this ranking year over year — see the full story in Faculty & school recognition on the homepage."
-  - topic: "finance"
-    header_tone: "steam"
+      - value: No. 1
+        label: Global ranking, audit archival research (BYU, 2025)
+      - value: No. 2
+        label: Global ranking, auditing publications overall
+  - topic: finance
+    header_tone: steam
     show_feature: true
-    side: "articles"
-  - topic: "supply-chain"
-    header_tone: "steam"
+    side: articles
+  - topic: supply-chain
+    header_tone: steam
     show_feature: true
-    side: "articles"
-  - topic: "marketing"
-    header_tone: "steam"
+    side: articles
+  - topic: marketing
+    header_tone: steam
     show_feature: true
-    side: "articles"
-  - topic: "information-systems"
-    header_tone: "steam"
+    side: articles
+  - topic: information-systems
+    header_tone: steam
     show_feature: true
-    side: "articles"
-  - topic: "analytics"
-    header_tone: "steam"
+    side: articles
+  - topic: analytics
+    header_tone: steam
     show_feature: true
-    side: "articles"
-  - topic: "entrepreneurship"
-    header_tone: "steam"
+    side: articles
+  - topic: entrepreneurship
+    header_tone: steam
     show_feature: true
-    side: "articles"
-  - topic: "management"
-    header_tone: "steam"
+    side: articles
+  - topic: management
+    header_tone: steam
     show_feature: true
-    side: "articles"
-  - topic: "business-law"
-    header_tone: "steam"
+    side: articles
+  - topic: business-law
+    header_tone: steam
     show_feature: true
-    side: "articles"
-  - topic: "ai"
-    header_tone: "steam"
+    side: articles
+  - topic: ai
+    header_tone: steam
     show_feature: true
-    side: "articles"
-  - topic: "policy"
-    header_tone: "steam"
+    side: articles
+  - topic: policy
+    header_tone: steam
     show_feature: true
-    side: "articles"
+    side: articles
