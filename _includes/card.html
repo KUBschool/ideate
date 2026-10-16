@@ -1,6 +1,22 @@
+{%- comment -%}
+  Usage: {% include card.html article=some_article %}
+         {% include card.html article=some_article links=true %}
+  links=true is what the topic pages' "Latest research" row uses: the card
+  drops the publication date (the author line stays) and ends with two links -
+  "Read the story" (the Ideate article) and "Journal article" (the paper
+  itself, from the article's Journal article link field; left out when that
+  field is blank). Variables starting cl_ belong to this include.
+{%- endcomment -%}
 {% assign article = include.article %}
 {% assign topic_data = site.data.topics | where: 'slug', article.topic | first %}
-<article class="card" data-topic="{{ article.topic }}">
+{% assign cl_href = '' %}
+{% if include.links %}
+  {% assign cl_url = article.journal_url | strip %}
+  {% if cl_url != '' %}
+    {% if cl_url contains '://' %}{% assign cl_href = cl_url %}{% else %}{% assign cl_href = 'https://' | append: cl_url %}{% endif %}
+  {% endif %}
+{% endif %}
+<article class="card{% if include.links %} card--actions{% endif %}" data-topic="{{ article.topic }}">
   <a href="{{ article.url | relative_url }}" class="card-link">
     {% if article.image %}
       <img src="{{ article.image | relative_url }}" alt="{{ article.image_alt | default: article.title }}" class="photo">
@@ -16,7 +32,17 @@
   </div>
   <a href="{{ article.url | relative_url }}" class="card-link"><h3>{{ article.title }}</h3></a>
   <p class="dek">{{ article.dek }}</p>
+  {% if include.links %}
+  <div class="card-meta">
+    <span>{{ article.byline }}</span>
+  </div>
+  <div class="card-actions">
+    <a href="{{ article.url | relative_url }}" class="card-action">Read the story <span aria-hidden="true">&rarr;</span><span class="visually-hidden">: {{ article.title }}</span></a>
+    {% if cl_href != '' %}<a href="{{ cl_href }}" class="card-action card-action-ext" target="_blank" rel="noopener noreferrer">Journal article <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> for {{ article.title }} (opens in a new tab)</span></a>{% endif %}
+  </div>
+  {% else %}
   <div class="card-meta">
     <span>{{ article.byline }}</span><span>·</span><span>{{ article.date | date: "%b %-d, %Y" }}</span>
   </div>
+  {% endif %}
 </article>

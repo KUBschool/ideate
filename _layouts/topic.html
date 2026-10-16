@@ -6,7 +6,9 @@ layout: default
     1. Section header  - topic name, optional subhead, right-hand image that
                          fades into the background
     2. Featured story  - optional; stats call-out OR three articles beside it
-    3. Latest research - the next 4 articles, as cards (one row on desktop)
+    3. Latest research - the next 4 articles, as cards (one row on desktop),
+                         each with a "Read the story" link and, when the article has
+                         one, a link to the journal article
     4. Video / spotlight - the topic's newest video; if a faculty member is
                          spotlighted, they take 2/3 width and the video 1/3
     5. More in <topic> - the remaining articles as a list, first batch shown,
@@ -110,7 +112,8 @@ layout: default
     {% endif %}
   </div>
   <div class="wrap topic-hero-inner">
-    <div class="eyebrow" style="--topic-color:var(--topic-{{ page.topic }})"><span class="dot"></span>Topic</div>
+    {% assign crumb_color = 'var(--topic-' | append: page.topic | append: ')' %}
+    {% include breadcrumb.html title=topic_name color=crumb_color %}
     <h1>{{ topic_name }}</h1>
     {% if hero_sub %}<p class="topic-hero-sub">{{ hero_sub }}</p>{% endif %}
   </div>
@@ -186,7 +189,7 @@ layout: default
   </div>
   <div class="card-grid card-grid-4">
     {% for a in card_articles %}
-      {% include card.html article=a %}
+      {% include card.html article=a links=true %}
     {% endfor %}
   </div>
 </section>

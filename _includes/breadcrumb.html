@@ -1,0 +1,27 @@
+{%- comment -%}
+  Usage: {% include breadcrumb.html title=topic_name color=crumb_color %}
+  The "Home > Page title" trail that sits above the heading on the filtered
+  pages (topic pages, Forthcoming, Methods) in place of the old small label.
+    title: the current page's name - shown as plain text, not a link
+    color: optional CSS color for the little dot, e.g. "var(--topic-finance)"
+           (defaults to KU blue)
+  Also writes the same trail as BreadcrumbList structured data, which is what
+  lets search engines show "Home > Accounting" under the result.
+{%- endcomment -%}
+<nav class="breadcrumb" aria-label="Breadcrumb"{% if include.color %} style="--topic-color:{{ include.color }}"{% endif %}>
+  <span class="dot" aria-hidden="true"></span>
+  <ol>
+    <li><a href="{{ '/' | relative_url }}">Home</a></li>
+    <li aria-current="page">{{ include.title }}</li>
+  </ol>
+</nav>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}{{ '/' | relative_url }}" },
+    { "@type": "ListItem", "position": 2, "name": {{ include.title | jsonify }}, "item": "{{ site.url }}{{ page.url | relative_url }}" }
+  ]
+}
+</script>

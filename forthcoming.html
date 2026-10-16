@@ -13,7 +13,7 @@ description: "Research KU Business faculty are presenting or discussing publicly
 {% assign remaining = rest | slice: 3, 999 %}
 
 <div class="wrap archive-header">
-  <div class="eyebrow" style="--topic-color:var(--ku-wheat)"><span class="dot"></span>Status</div>
+  {% include breadcrumb.html title=status_data.name color="var(--ku-wheat)" %}
   <h1>{{ status_data.name }}</h1>
   <p>{{ status_data.description }}</p>
 </div>

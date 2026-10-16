@@ -13,7 +13,7 @@ description: "An analytical look at the tools, assumptions, and open questions b
 {% assign remaining = rest | slice: 3, 999 %}
 
 <div class="wrap archive-header">
-  <div class="eyebrow" style="--topic-color:var(--ku-night)"><span class="dot"></span>Series</div>
+  {% include breadcrumb.html title=series_data.name color="var(--ku-night)" %}
   <h1>{{ series_data.name }}</h1>
   <p>{{ series_data.description }}</p>
 </div>

@@ -94,6 +94,12 @@ collections:
         widget: "string"
         required: false
         hint: "The journal this research was published in, spelled exactly as it appears elsewhere on the site (check the Journals page, Site Settings > Journals, or a faculty member's Editorial Service list for the exact spelling already in use) — e.g. \"Management Science\", not \"Mgmt. Science\". Leave blank if unknown; this powers the Journals index and each faculty member's Academic Journal Contributions list, and inconsistent spelling will split one journal into two entries."
+      - label: "Journal article link"
+        name: "journal_url"
+        widget: "string"
+        required: false
+        pattern: ['^https?://', "Start with http:// or https:// — paste the full web address."]
+        hint: "Optional. The web address of the original paper on the journal's or publisher's site (or its DOI link). It becomes the \"Journal article\" link on the Latest research cards on topic pages. Leave blank and that link simply doesn't appear. (Source URL above is something else — a page this story was adapted from.)"
       - {label: "Body", name: "body", widget: "markdown"}
 
   - name: "media"
