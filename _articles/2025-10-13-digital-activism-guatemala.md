@@ -1,39 +1,41 @@
 ---
-title: "How digital activism builds shared meaning when official channels can't be trusted"
-dek: "A case study of a Guatemalan tragedy examines how activists used social media not just to dissent from an official account, but to gradually weave competing viewpoints into a unified, harder-to-dismiss public narrative."
-topic: policy
+title: How digital activism builds shared meaning when official channels can't
+  be trusted
+dek: A case study of a Guatemalan tragedy examines how activists used social
+  media not just to dissent from an official account, but to gradually weave
+  competing viewpoints into a unified, harder-to-dismiss public narrative.
+topic: information-systems
 faculty:
   - arvind-tripathi
-byline: "Arvind Tripathi"
-date: 2025-10-13
+byline: Arvind Tripathi
+date: 2025-09-27
 image_tint: steam
 featured: false
-source_url: "https://business.ku.edu/research-and-faculty/analytics-information-operations/research-insights"
-answer_box: >-
-  A case study of digital activism following a major Guatemalan tragedy
-  finds that activist organizations used social media both to circulate
-  alternative accounts diverging from official narratives and,
-  critically, to progressively combine diverse viewpoints into more
-  unified messages over time — a two-part process of dissent followed
-  by consolidation that helped amplify public attention and
-  accountability in an environment where traditional media and
-  political expression were constrained.
+source_url: https://business.ku.edu/research-and-faculty/analytics-information-operations/research-insights
+answer_box: A case study of digital activism following a major Guatemalan
+  tragedy finds that activist organizations used social media both to circulate
+  alternative accounts diverging from official narratives and, critically, to
+  progressively combine diverse viewpoints into more unified messages over time
+  — a two-part process of dissent followed by consolidation that helped amplify
+  public attention and accountability in an environment where traditional media
+  and political expression were constrained.
+journal: Journal of Information Technology
+journal_url: https://journals.sagepub.com/doi/epub/10.1177/02683962251380597
 ---
+#### Research objective
 
-In places where traditional media and political expression are tightly constrained, how does public accountability for a tragedy actually get built? New research examines one real case in close detail — and finds the answer isn't simply "people post about it online."
+This study examines how activist organizations use digital communication technologies to mobilize public support and promote broader societal values in settings where traditional media and political expression are constrained. The authors focus on how activists communicate about a major public tragedy in a politically repressive environment.
 
-## Beyond evaluating whether a protest "worked"
+The goal is to understand how online activism helps shape shared meanings around social issues and encourages collective action. Rather than evaluating the success of a specific protest, the study seeks to clarify how digital platforms can support value formation related to societal development.
 
-Arvind Tripathi, the Ronald G. Harper Professor at the University of Kansas School of Business, co-authored "Promoting Societal Development Through Digital Activism: A Case Study of a Guatemalan Tragedy" with Jose Ortiz and Michael D. Myers, published in the Journal of Information Technology. Rather than asking whether a specific protest campaign succeeded or failed, the study asks a more structural question: how do digital platforms actually help activists build shared public meaning around an issue, in an environment where official channels dominate the story by default?
+#### What the researchers find
 
-## Dissent first, then consolidation
+The study finds that activist organizations used social media to circulate messages that differed from official or dominant accounts of the tragedy. These alternative messages highlighted shared responsibility and the need for public accountability. Over time, activists combined diverse viewpoints into more unified narratives that reinforced common values. This combination of presenting alternative perspectives and then aligning them into a shared message helped amplify public attention and engagement.
 
-The research finds activist organizations used social media to circulate accounts that diverged directly from official narratives of the tragedy — versions of events emphasizing shared responsibility and the need for public accountability rather than the narrative institutions were putting forward. That alone isn't the whole mechanism, though. Over time, the study finds activists took those diverse, sometimes scattered viewpoints and actively combined them into more unified, coherent narratives that reinforced a common set of values. That second step — consolidation, not just dissent — is what the researchers find actually amplified public attention and sustained engagement, rather than the initial alternative accounts alone.
+The findings suggest that digital platforms supported both the expression of dissent and the consolidation of collective meaning, primarily where traditional channels were restricted.
 
-## What digital platforms are actually doing here
+#### Why it matters
 
-The findings position social media as doing two distinct jobs at once in a repressive environment: providing space to challenge an official account, and providing infrastructure to knit a coherent shared narrative out of what starts as scattered dissent. Both functions matter, and the research suggests neither alone would have produced the same level of public accountability pressure — expression without consolidation stays fragmented, while consolidation without genuine alternative viewpoints has nothing real to unify.
+The study helps clarify how digital activism can function in environments where freedom of expression is limited. It shows that online platforms can provide spaces for citizens to challenge official narratives and coordinate around shared values. This insight is relevant for policymakers, civil society groups, and observers interested in how technology affects civic participation and accountability.
 
-## Civic engagement without formal institutions
-
-More broadly, the study offers a grounded account of how societal development and public accountability can advance through digital activism even when the formal political institutions that would normally carry that role are constrained or unavailable. For policymakers, civil society organizations, and researchers studying civic participation under authoritarian or restrictive conditions, the case offers a concrete, close-up example of the mechanism — not just the outcome — behind how online platforms can support democratic engagement when the usual channels for it are closed off.
+The findings also offer a clearer understanding of how digital communication can contribute to societal development without relying on formal political institutions. More broadly, the research informs discussions about the role of technology in supporting democratic engagement under challenging conditions.
