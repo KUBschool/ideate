@@ -1,25 +1,30 @@
 ---
-title: "Reasons for talent gap in procurement field examined in new business analysis"
-dek: "Procurement is something everyone does without thinking about it — negotiating with suppliers, weighing price against quality. New research argues even top supply chain programs aren't teaching the skills the field actually needs."
+title: Reasons for talent gap in procurement field examined in new business analysis
+dek: Procurement is something everyone does without thinking about it —
+  negotiating with suppliers, weighing price against quality. New research
+  argues even top supply chain programs aren't teaching the skills the field
+  actually needs.
 topic: supply-chain
 faculty: []
-byline: "Joe Walden"
+byline: Joe Walden
 date: 2023-05-10
 image_tint: steam
 featured: false
-source_url: "https://business.ku.edu/reasons-talent-gap-procurement-field-examined-new-business-analysis"
-answer_box: >-
-  An analysis of procurement curricula against what employers actually
-  seek finds a persistent talent gap traceable to what future supply
-  chain managers learn in college — with ethics, negotiation, and
-  supplier evaluation consistently underemphasized even at top-ranked
-  supply chain programs, leaving graduates less competitive for
-  procurement roles than their degrees would suggest.
+source_url: https://business.ku.edu/reasons-talent-gap-procurement-field-examined-new-business-analysis
+answer_box: An analysis of procurement curricula against what employers actually
+  seek finds a persistent talent gap traceable to what future supply chain
+  managers learn in college — with ethics, negotiation, and supplier evaluation
+  consistently underemphasized even at top-ranked supply chain programs, leaving
+  graduates less competitive for procurement roles than their degrees would
+  suggest.
+journal: " Journal of Supply Chain Management, Logistics and Procurement"
+journal_url: https://www.ingentaconnect.com/contentone/hsp/jscm/2023/00000005/00000003/art00007
 ---
+Everybody is a student of “procurement,” whether they realize it or not.
 
-Everybody practices procurement, whether they realize it or not. New research argues the people whose actual job it is aren't being taught what the role now requires.
+“It’s really what we do every day,” said Joe Walden, associate teaching professor of business at the University of Kansas. New research argues the people whose actual job it is aren't being taught what the role now requires.
 
-"It's really what we do every day," said Joe Walden, then an associate teaching professor of business at the University of Kansas. "When you go to the grocery store, you're there to do procurement. You're finding suppliers, negotiating with them on quality terms and delivery price, then receiving and paying for it."
+“When you go to the grocery store, you’re there to do procurement. You’re finding suppliers, negotiating with them on quality terms and delivery price, then receiving and paying for it.”
 
 His article, "What are we teaching our procurement students?", appears in the Journal of Supply Chain Management, Logistics and Procurement.
 
