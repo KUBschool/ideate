@@ -1,23 +1,28 @@
 ---
-title: "A statistical test for whether bank regulators actually act in the public interest"
-dek: "Debates about bank bailouts usually focus on one high-profile decision at a time. New research instead tests regulators' entire decision-making pattern against economic theory — and finds one 1980s regulator's failures were predictable well before its eventual collapse."
+title: A statistical test for whether bank regulators actually act in the public
+  interest
+dek: Debates about bank bailouts usually focus on one high-profile decision at a
+  time. New research instead tests regulators' entire decision-making pattern
+  against economic theory — and finds one 1980s regulator's failures were
+  predictable well before its eventual collapse.
 topic: policy
 faculty:
   - trambak-banerjee
-byline: "Trambak Banerjee"
-date: 2025-12-04
+byline: Trambak Banerjee
+date: 2025-03-12
 image_tint: limestone
 featured: false
-source_url: "https://business.ku.edu/research-and-faculty/analytics-information-operations/research-insights"
-answer_box: >-
-  A Bayesian latent-class framework evaluating U.S. banking regulators'
-  resolution decisions during 1980s crises — bailout, sale, or
-  liquidation — against the decision rules economic theory recommends
-  finds the FDIC's choices closely tracked theoretical predictions,
-  while the FSLIC systematically failed to distinguish high- from
-  low-distress conditions and instead appeared more responsive to
-  political considerations, a pattern consistent with its eventual
-  insolvency and the significant losses it left taxpayers.
+source_url: https://business.ku.edu/research-and-faculty/analytics-information-operations/research-insights
+answer_box: A Bayesian latent-class framework evaluating U.S. banking
+  regulators' resolution decisions during 1980s crises — bailout, sale, or
+  liquidation — against the decision rules economic theory recommends finds the
+  FDIC's choices closely tracked theoretical predictions, while the FSLIC
+  systematically failed to distinguish high- from low-distress conditions and
+  instead appeared more responsive to political considerations, a pattern
+  consistent with its eventual insolvency and the significant losses it left
+  taxpayers.
+journal: Journal of the Royal Statistical Society Series A
+journal_url: https://academic.oup.com/jrsssa/article/189/1/330/8069911
 ---
 
 When a bank fails, a regulator faces a real tradeoff: bail it out to preserve short-run stability, or let it fail to avoid encouraging future risk-taking. Public debate about that choice tends to fixate on individual, high-profile decisions. New research instead asks a harder, more useful question — does a regulator's entire pattern of decisions actually track what economic theory says it should?
