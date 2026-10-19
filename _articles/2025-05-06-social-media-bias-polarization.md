@@ -4,7 +4,7 @@ title: Profit motivation of social media companies may compel them to inject
 dek: A microeconomic model of how social platforms profit from engagement finds
   bias and polarization act as substitutes — crack down on one and a
   profit-driven platform may simply shift to the other.
-topic: policy
+topic: information-systems
 faculty:
   - debabrata-dey
 byline: Jon Niccum
