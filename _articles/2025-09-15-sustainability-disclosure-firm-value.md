@@ -1,23 +1,27 @@
 ---
-title: "Not all sustainability disclosures move the stock the same way — or on the same timeline"
-dek: "Companies treat ESG reporting like one undifferentiated block of content. New research finds the specific topics a firm emphasizes matter enormously — some pay off immediately, others take two years to show up."
-topic: policy
+title: Not all sustainability disclosures move the stock the same way — or on
+  the same timeline
+dek: Companies treat ESG reporting like one undifferentiated block of content.
+  New research finds the specific topics a firm emphasizes matter enormously —
+  some pay off immediately, others take two years to show up.
+topic: analytics
 faculty:
   - karthik-srinivasan
-byline: "Karthik Srinivasan"
+byline: Karthik Srinivasan
 date: 2025-09-15
 image_tint: limestone
 featured: false
-source_url: "https://business.ku.edu/research-and-faculty/analytics-information-operations/research-insights"
-answer_box: >-
-  Text analysis of U.S. firms' sustainability reports identifies six
-  dominant disclosure topics and finds their relationship to firm value
-  differs sharply: healthcare and daily-necessities disclosures show
-  immediate, persistent value increases, while environmental and
-  socio-economic impact topics show positive effects only after roughly
-  a two-year lag. Third-party assurance's effect on that relationship is
-  mixed — strengthening valuation in some cases while reducing it in
-  others, particularly for environmental and socio-economic topics.
+source_url: https://business.ku.edu/research-and-faculty/analytics-information-operations/research-insights
+answer_box: "Text analysis of U.S. firms' sustainability reports identifies six
+  dominant disclosure topics and finds their relationship to firm value differs
+  sharply: healthcare and daily-necessities disclosures show immediate,
+  persistent value increases, while environmental and socio-economic impact
+  topics show positive effects only after roughly a two-year lag. Third-party
+  assurance's effect on that relationship is mixed — strengthening valuation in
+  some cases while reducing it in others, particularly for environmental and
+  socio-economic topics."
+journal: Journal of Risk and Financial Management
+journal_url: https://www.researchgate.net/publication/394807328_Textual_Analysis_of_Sustainability_Reports_Topics_Firm_Value_and_the_Moderating_Role_of_Assurance
 ---
 
 Sustainability reporting gets treated in a lot of corporate and investor conversation as one undifferentiated block: a company either does ESG reporting well or it doesn't. New research argues that framing misses most of what actually matters — the specific content of a disclosure, not just its existence, is what moves firm value, and different content moves it on completely different timelines.
