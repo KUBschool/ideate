@@ -1,34 +1,41 @@
 ---
-title: "Cities are wasting most of their delivery loading zones — and it's not because there isn't enough space"
-dek: "The standard 60-minute, first-come loading zone leaves nearly three-quarters of its awarded parking time unused. A demand-based redesign more than doubled that utilization without cutting city revenue."
+title: Cities are wasting most of their delivery loading zones — and it's not
+  because there isn't enough space
+dek: The standard 60-minute, first-come loading zone leaves nearly
+  three-quarters of its awarded parking time unused. A demand-based redesign
+  more than doubled that utilization without cutting city revenue.
 topic: supply-chain
 faculty:
   - sara-reed
-byline: "Sara Reed"
-date: 2025-06-16
+byline: Sara Reed
+date: 2025-08-01
 image_tint: limestone
 featured: false
-source_url: "https://business.ku.edu/research-and-faculty/analytics-information-operations/research-insights"
-answer_box: >-
-  Modeling urban loading-zone management as a Markov Decision Process,
-  research finds the common first-come, first-served policy with fixed
-  60-minute parking sessions uses only about 27% of its awarded parking
-  minutes. Flexible sessions matched to actual delivery duration raised
-  utilization to roughly 70%, and combining flexible sessions with
-  reservations, block pricing, and holding fees maintained revenue
-  neutrality while also reducing illegal parking.
+source_url: https://business.ku.edu/research-and-faculty/analytics-information-operations/research-insights
+answer_box: Modeling urban loading-zone management as a Markov Decision Process,
+  research finds the common first-come, first-served policy with fixed 60-minute
+  parking sessions uses only about 27% of its awarded parking minutes. Flexible
+  sessions matched to actual delivery duration raised utilization to roughly
+  70%, and combining flexible sessions with reservations, block pricing, and
+  holding fees maintained revenue neutrality while also reducing illegal
+  parking.
+journal: "Transportation Research Part E: Logistics and Transportation Review"
+journal_url: https://www.sciencedirect.com/science/article/abs/pii/S1366554525002261
 ---
+#### Research objective
 
-Double-parked delivery trucks and drivers circling for a loading spot are such a familiar part of city traffic that they can seem like an unsolvable side effect of urban density. New research argues the real problem isn't a shortage of curb space — it's that the space cities already have is being managed badly.
+This study examines how urban on-street loading zones for last-mile freight deliveries can be managed more efficiently by designing parking policies that explicitly account for delivery driver behavior and demand patterns.
 
-## A policy that wastes most of what it allocates
+The authors aim to evaluate whether flexible parking sessions, reservations, and pricing schemes outperform the common first-come, first-served policy with fixed 60-minute parking sessions, in terms of utilization, illegal parking, and revenue.
 
-Sara Reed, assistant professor of business analytics at the University of Kansas, co-authored "Space Management Policy for Urban Last-Mile Parking Infrastructure: A Demand-Oriented Approach" with J. Amaya, published in Transportation Research Part E: Logistics and Transportation Review. Modeling a loading-zone reservation system as a Markov Decision Process, the team found that the common policy most cities actually run — first-come, first-served access with a fixed 60-minute session — leaves roughly 73% of its awarded parking minutes unused. Deliveries simply don't take an hour most of the time, but the fixed session blocks the space regardless.
+#### What the researchers find
 
-## A flexible session more than doubles real usage
+Using a Markov Decision Process to model a loading-zone reservation system, the authors show that current static 60-minute parking sessions result in low efficiency, with only about 27% of awarded parking minutes actually used. Introducing flexible parking sessions that better match observed delivery durations substantially improves utilization, raising it to about 70% of awarded minutes on average.
 
-Replacing the fixed 60-minute block with sessions that better match observed delivery durations raised utilization from about 27% to roughly 70% of awarded minutes — without adding a single new parking space. Layering reservations on top of flexible sessions improved space management further still. When the team added increasing block pricing and reservation holding fees to that combination, the resulting system generated revenue comparable to the current policy — meaning cities don't have to trade away parking income to fix the underlying inefficiency.
+Flexible sessions combined with reservations can further improve space management without reducing overall revenue. When paired with increasing block pricing and reservation holding fees, the proposed system generates revenues comparable to current policies while using curb space more effectively. Extending the model with a multinomial logit framework, the authors find that flexible policies also reduce illegal parking by making legal loading zones more attractive to drivers.
 
-## A side benefit: less illegal parking, too
+#### Why it matters
 
-Extending the model with a multinomial logit framework, Reed's team also found the flexible-policy redesign reduced illegal parking, simply by making legal loading zones a more attractive option for drivers than they currently are. That's a meaningful result on its own — illegal parking in loading zones is a direct contributor to the congestion and blocked lanes that make last-mile delivery visibly worse for everyone nearby, not just the delivery companies. The overall takeaway runs against the instinct that curb congestion calls for more infrastructure: better-designed rules for the infrastructure cities already have can close most of the gap on their own.
+Urban freight parking shortages contribute to congestion, emissions, delivery inefficiencies, and illegal parking. This study shows that better policy design, rather than costly infrastructure expansion, can significantly improve curbside performance.
+
+By aligning parking rules with real driver behavior, cities can increase utilization, reduce externalities, and maintain revenue neutrality. The findings provide actionable guidance for planners and regulators seeking demand-oriented, behaviorally informed solutions for last-mile logistics in dense urban environments.
