@@ -1,41 +1,56 @@
 ---
-title: "Multinational enterprises should choose between two colocation strategies, research finds"
-dek: "When multinational firms decide where to locate alongside rivals, they're usually pursuing one of two opposite goals — staying close to competitors or staying away from them. New research finds trying to do both at once backfires."
+title: Multinational enterprises should choose between two colocation
+  strategies, research finds
+dek: When multinational firms decide where to locate alongside rivals, they're
+  usually pursuing one of two opposite goals — staying close to competitors or
+  staying away from them. New research finds trying to do both at once
+  backfires.
 topic: management
 faculty:
   - minyoung-kim
   - chang-hoon-oh
-byline: "Minyoung Kim & Chang Hoon Oh"
+byline: Jon Niccum
 date: 2023-07-24
 image_tint: steam
 featured: false
-source_url: "https://business.ku.edu/news/article/2023/07/24/multinational-enterprises-should-choose-between-two-colocation-strategies-research-finds"
-answer_box: >-
-  A network-based analysis of multinational firm location choices,
-  tested against Fortune Global 500 subsidiary data, finds that firms
-  pursuing both "encountering-the-same-competitors" and
-  "avoiding-the-same-competitors" colocation strategies simultaneously
-  see worse performance than firms committing clearly to one —
-  suggesting managers need to choose a colocation strategy aligned with
-  their broader goals rather than hedging between the two.
+source_url: https://business.ku.edu/news/article/2023/07/24/multinational-enterprises-should-choose-between-two-colocation-strategies-research-finds
+answer_box: A network-based analysis of multinational firm location choices,
+  tested against Fortune Global 500 subsidiary data, finds that firms pursuing
+  both "encountering-the-same-competitors" and "avoiding-the-same-competitors"
+  colocation strategies simultaneously see worse performance than firms
+  committing clearly to one — suggesting managers need to choose a colocation
+  strategy aligned with their broader goals rather than hedging between the two.
+journal: Journal of International Business Studies
+journal_url: https://link.springer.com/article/10.1057/s41267-023-00629-8
 ---
+In business, colocation occurs when firms locate together in the same geographic space.
 
-When a multinational company decides where to open its next foreign office, it's rarely just about the local market — where rivals have already set up shop is often just as decisive. New research argues that decision has more strategic weight, and more room for a specific kind of mistake, than firms typically recognize.
+“In the process of internationalization, firms sometimes colocate with other firms in the same host countries,” said Minyoung Kim, the Frank T. Stockton Professor of Strategic Management at the University of Kansas School of Business.
 
-"In the process of internationalization, firms sometimes colocate with other firms in the same host countries," said Minyoung Kim, the Frank T. Stockton Professor of Strategic Management at the University of Kansas School of Business.
+His new paper [“Colocation as network: Types and performance implications of structural positions in colocation network”](https://link.springer.com/article/10.1057/s41267-023-00629-8) investigates competitive colocation from a network perspective, introducing a theoretical framework on the dimensions of competitive colocation and their implications for large firms competing in a global scale. It appears in the Journal of International Business Studies.
 
-His paper, "Colocation as network: Types and performance implications of structural positions in colocation network," co-written with Chang Hoon Oh, the William & Judy Docking Professor of Strategy at KU, and Jukyeong Han of McMaster University, appears in the Journal of International Business Studies.
+One of the key mechanisms for colocation is “strategic interactions,” which concern the patterns of a focal firm’s sequential decisions in consideration of rivals’ location choices. (For instance, the multinational tire company Michelin famously attacked Goodyear’s U.S. home market in the 1970s by using its cash flow from the European market. Goodyear defended against Michelin’s push by retaliating in Michelin’s European market.)
 
-## A historical rivalry as illustration
+“The new perspective that we are introducing in this paper is the conceptualization of colocation as network,” said Kim, who co-wrote the piece with Chang Hoon Oh, the William & Judy Docking Professor of Strategy at KU, and Jukyeong Han, an assistant professor at McMaster University and Kim’s former doctoral student at KU.
 
-Kim points to Michelin and Goodyear's tire-market rivalry as a classic example of the "strategic interactions" his team studies: Michelin famously used cash flow from its strong European market to attack Goodyear on Goodyear's own U.S. home turf in the 1970s, prompting Goodyear to retaliate by pushing into Michelin's European market in kind. Each firm's location decisions were made not just around customer access, but in direct response to where the other had already staked ground.
+“We introduce a new conceptualization of location choice and colocation as an interfirm network relationship, and this new conceptualization enables us to investigate types and performance implications of structural positions in the colocation network,” he said. “In doing so, we also shed light on the ‘strength of weak ties’ in the process of firm internationalization.”
 
-> "We introduce a new conceptualization of location choice and colocation as an interfirm network relationship."
+He said the study addresses the question of “To follow, or not to follow?” Specifically, this paper helps managers answer whether multinational enterprises should repeatedly colocate with the same competitors across multiple countries or with diverse competitors with less repetition.
 
-## Treating location choice as a network, not a series of one-offs
+From the network perspective, previous studies highlight strong ties in repetitive colocation with a small number of competitors, neglecting the strength of weak ties in less repetitive colocation with a large number of unique firms.
 
-The paper's central methodological contribution is reframing colocation as a network problem rather than a series of independent site decisions. Kim's team introduces two dimensions for measuring a firm's competitive colocation — intensity and diversity — along with a typology of structural positions within that network: simple colocation, multicountry colocation, and multifirm colocation. Testing the framework against subsidiary location data from Fortune Global 500 companies, they found both dimensions independently and jointly shaped firm performance.
+“Our network-based approach provides an integrative framework to simultaneously investigate these two types of colocation strategies. By doing so, it enables us to compare and contrast the two types and investigate their performance implications,” Kim said.
 
-## Pick a lane
+Another managerial implication is the intrinsic tradeoff between the two colocation strategies. Managers need to understand the trade-off between “encountering-the-same-competitors” and “avoiding-the-same-competitors,” and choose one that fits their strategic goals. Pursuing both strategies could cancel out the unique benefits of each strategy and can result in “stuck-in-the-middle” performance.
 
-The paper's clearest practical takeaway is a warning against strategic indecision. Managers need to recognize the genuine tradeoff between "encountering-the-same-competitors" (colocating deliberately, to contest markets directly) and "avoiding-the-same-competitors" (colocating to sidestep direct confrontation) — and commit to whichever fits their broader strategic goals. Firms that try to pursue both at once, the research finds, don't get the best of both worlds; they land in a "stuck-in-the-middle" position that cancels out the distinct benefits each pure strategy would otherwise deliver. Kim frames the stakes as rising, not falling, with current market conditions: "As the level of uncertainty in the current business environment is getting higher, colocation as an imitative behavior becomes more crucial."
+In terms of methodology, the team introduced two distinct dimensions of a firm’s competitive colocation: intensity and diversity. They also developed a typology of a firm’s structural position in the competitive colocation network: simple colocation, multicountry colocation and multifirm colocation. Testing predictions of the theoretical framework with subsidiary location information of those listed in the Fortune Global 500, they found corroborating evidence in support of their thesis that the intensity and diversity of a firm’s competitive colocation individually and jointly influenced firm performance. Additionally, they found multicountry colocation outperforms the other two types.
+
+Kim said he’s always been interested in the phenomenon of firms’ behaviors in geographic space.
+
+“There was a point when I realized that the existing approach is limiting our understanding, and the network perspective can be helpful better illuminating the relational nature of the phenomenon because firms choose locations and make decisions on colocation not only for what locations have to offer but also to consider rivals’ location choices,” he said.
+
+Now in his 11th year at KU, Kim studies the intersection between strategic management and international business. He often focuses on how firms create value and how they appropriate the value they have created.
+
+“Imitative behaviors in location decisions in general and colocation in specific bear ever more important performance implications nowadays because they help reduce competitive risks in conditions of uncertainty,” Kim said.
+
+“As the level of uncertainty in the current business environment is getting higher, colocation as an imitative behavior becomes more crucial.”
