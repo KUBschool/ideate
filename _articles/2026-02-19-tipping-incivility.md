@@ -1,18 +1,22 @@
 ---
-title: "Watching a server get treated badly makes customers tip more"
-dek: "Across four studies, witnessing incivility toward service workers reliably produced bigger tips — not confrontation."
+title: Watching a server get treated badly makes customers tip more
+dek: Across four studies, witnessing incivility toward service workers reliably
+  produced bigger tips — not confrontation.
 topic: marketing
-faculty: [jonathan-beck]
-byline: "Jonathan Beck"
-date: 2026-02-19
+faculty:
+  - jonathan-beck
+byline: Jonathan Beck
+date: 2026-01-27
 image_tint: steam
 featured: false
-answer_box: >-
-  Across four separate studies, customers who witnessed a service worker
-  being treated rudely by another customer tipped that worker more
-  afterward — the study found tips rose from an average of roughly 17
-  percent to 20 percent — driven by sympathy rather than a desire to
-  confront the rude customer.
+answer_box: Across four separate studies, customers who witnessed a service
+  worker being treated rudely by another customer tipped that worker more
+  afterward — the study found tips rose from an average of roughly 17 percent to
+  20 percent — driven by sympathy rather than a desire to confront the rude
+  customer.
+status: forthcoming
+journal: Journal of Service Research
+journal_url: https://journals.sagepub.com/doi/10.1177/10946705251406567
 ---
 
 Bad behavior toward service workers is depressingly common, but new research finds it has an unexpected side effect: it makes bystanders more generous toward the worker who was mistreated, not just more annoyed at the person being rude.
