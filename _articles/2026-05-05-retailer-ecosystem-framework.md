@@ -9,6 +9,7 @@ faculty:
   - murali-k-mantrala
 byline: Jon Niccum
 date: 2026-05-05
+image: /assets/uploads/01kqswgsrezn610y4r9kkb03ww.jpg
 image_tint: steam
 featured: false
 source_url: https://business.ku.edu/news/article/marketing-expert-develops-framework-providing-retailers-strategies-for-organizing-around-ecosystems
