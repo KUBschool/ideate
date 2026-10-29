@@ -3,6 +3,19 @@ layout: default
 ---
 {% assign topic_data = site.data.topics | where: 'slug', page.topic | first %}
 
+{% comment %}
+  All of this article's topics - the main one first, then any "Also relates to"
+  topics, three at most - as slugs (ar_topics) and names (ar_names). The rule for
+  which topics count lives in _includes/topic-links.html.
+{% endcomment %}
+{% capture ar_slug_list %}{% include topic-links.html article=page slugs=true %}{% endcapture %}
+{% assign ar_topics = ar_slug_list | split: ',' %}
+{% assign ar_names = '' | split: ',' %}
+{% for ar_slug in ar_topics %}
+  {% assign ar_t = site.data.topics | where: 'slug', ar_slug | first %}
+  {% assign ar_names = ar_names | push: ar_t.name %}
+{% endfor %}
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -22,7 +35,7 @@ layout: default
     "name": "Ideate — KU School of Business",
     "url": "{{ site.url }}{{ site.baseurl }}/"
   },
-  "about": [{{ topic_data.name | jsonify }}]
+  "about": {{ ar_names | jsonify }}
   {% if page.source_url %}, "isBasedOn": {{ page.source_url | jsonify }}{% endif %}
   {% if page.status %}, "creativeWorkStatus": "Forthcoming"{% endif %}
 }
@@ -31,7 +44,7 @@ layout: default
 <div class="wrap article-header">
   <div class="eyebrow" style="--topic-color:var(--topic-{{ page.topic }})">
     <span class="dot"></span>
-    <a href="{{ '/topics/' | append: page.topic | append: '/' | relative_url }}">{{ topic_data.name }}</a>
+    {% include topic-links.html article=page %}
     {% include status-badge.html status=page.status %}
     {% include series-badge.html series=page.series %}
   </div>
@@ -80,9 +93,12 @@ layout: default
     </div>
     {% endif %}
     <div class="sidebar-block">
-      <h4>Topic</h4>
+      <h4>{% if ar_topics.size > 1 %}Topics{% else %}Topic{% endif %}</h4>
       <div class="faculty-chips">
-        <a href="{{ '/topics/' | append: page.topic | append: '/' | relative_url }}" class="faculty-chip">{{ topic_data.name }}</a>
+        {% for ar_slug in ar_topics %}
+        {% assign ar_t = site.data.topics | where: 'slug', ar_slug | first %}
+        <a href="{{ '/topics/' | append: ar_slug | append: '/' | relative_url }}" class="faculty-chip">{{ ar_t.name }}</a>
+        {% endfor %}
       </div>
     </div>
     {% if page.source_url %}
@@ -104,7 +120,11 @@ layout: default
   </aside>
 </div>
 
-{% assign related = site.articles | where: 'topic', page.topic | where_exp: 'a', 'a.url != page.url' | sort: 'date' | reverse | slice: 0, 3 %}
+{% comment %} Related = newest other articles that share any of this article's topics (as main or "Also relates to"). {% endcomment %}
+{% assign rel_t1 = ar_topics[0] | default: '' %}
+{% assign rel_t2 = ar_topics[1] | default: '' %}
+{% assign rel_t3 = ar_topics[2] | default: '' %}
+{% assign related = site.articles | where_exp: 'a', 'a.url != page.url' | where_exp: 'a', 'a.topic == rel_t1 or a.also_topics contains rel_t1 or a.topic == rel_t2 or a.also_topics contains rel_t2 or a.topic == rel_t3 or a.also_topics contains rel_t3' | sort: 'date' | reverse | slice: 0, 3 %}
 {% unless related.size == 0 %}
 <section class="related-section">
   <div class="wrap">

@@ -15,7 +15,6 @@ title: "Home"
 {% assign rest = sorted | where_exp: 'a', 'a.url != feature.url' %}
 {% assign hero_list = rest | slice: 0, 3 %}
 {% assign grid_list = rest | slice: 3, 6 %}
-{% assign feature_topic = site.data.topics | where: 'slug', feature.topic | first %}
 
 {% assign media_sorted = site.media | sort: 'date' | reverse %}
 {% assign media_featured_list = media_sorted | where: 'featured', true %}
@@ -37,7 +36,7 @@ title: "Home"
       </a>
       <div class="eyebrow" style="--topic-color:var(--topic-{{ feature.topic }})">
         <span class="dot"></span>
-        <a href="{{ '/topics/' | append: feature.topic | append: '/' | relative_url }}">{{ feature_topic.name }}</a>
+        {% include topic-links.html article=feature %}
         {% include status-badge.html status=feature.status %}
         {% include series-badge.html series=feature.series %}
       </div>
@@ -58,9 +57,8 @@ title: "Home"
 
     <div class="hero-list">
       {% for a in hero_list %}
-      {% assign a_topic = site.data.topics | where: 'slug', a.topic | first %}
       <div class="hero-list-item">
-        <div class="eyebrow" style="--topic-color:var(--topic-{{ a.topic }})"><span class="dot"></span><a href="{{ '/topics/' | append: a.topic | append: '/' | relative_url }}">{{ a_topic.name }}</a></div>
+        <div class="eyebrow" style="--topic-color:var(--topic-{{ a.topic }})"><span class="dot"></span>{% include topic-links.html article=a %}</div>
         <a href="{{ a.url | relative_url }}"><h3>{{ a.title }}</h3></a>
         <p class="dek">{{ a.dek }}</p>
       </div>

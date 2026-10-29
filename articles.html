@@ -12,11 +12,10 @@ permalink: /articles/
 {% assign all_articles = site.articles | sort: 'date' | reverse %}
 <div class="wrap stream">
   {% for a in all_articles %}
-  {% assign a_topic = site.data.topics | where: 'slug', a.topic | first %}
   <div class="stream-row">
     <div>
       <div class="eyebrow" style="--topic-color:var(--topic-{{ a.topic }}); margin-bottom:4px;">
-        <span class="dot"></span>{{ a_topic.name }}
+        <span class="dot"></span>{% include topic-links.html article=a plain=true %}
         {% include status-badge.html status=a.status %}
       </div>
       <a href="{{ a.url | relative_url }}" class="card-link"><h3>{{ a.title }}</h3></a>

@@ -26,7 +26,9 @@ layout: default
   every variable here that the includes might also use is prefixed my_.
 {% endcomment %}
 {% assign my_articles = site.articles | where_exp: 'a', 'a.faculty contains page.slug' | sort: 'date' | reverse %}
-{% assign my_topic_slugs = my_articles | map: 'topic' | uniq %}
+{% comment %} Topics across everything this person is tagged in: main topics first, then "Also relates to" topics, each once (which topics count for an article is decided in _includes/topic-links.html). {% endcomment %}
+{% capture my_topic_raw %}{% for a in my_articles %}{{ a.topic }},{% endfor %}{% for a in my_articles %}{% include topic-links.html article=a slugs=true %},{% endfor %}{% endcapture %}
+{% assign my_topic_slugs = my_topic_raw | split: ',' | uniq | where_exp: 's', 's != ""' %}
 {% assign schema_job_title = page.title %}
 {% if schema_job_title == nil or schema_job_title == '' %}{% assign schema_job_title = page.professorship | join: ", " %}{% endif %}
 
@@ -101,7 +103,7 @@ layout: default
         <div class="faculty-topics">
           {% for slug in my_topic_slugs %}
             {% assign t = site.data.topics | where: 'slug', slug | first %}
-            <a href="{{ '/topics/' | append: slug | append: '/' | relative_url }}" class="topic-pill">{{ t.name }}</a>
+            {% if t %}<a href="{{ '/topics/' | append: slug | append: '/' | relative_url }}" class="topic-pill">{{ t.name }}</a>{% endif %}
           {% endfor %}
         </div>
         {% endif %}

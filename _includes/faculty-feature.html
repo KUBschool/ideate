@@ -9,7 +9,6 @@
 {%- endcomment -%}
 {% assign ff = include.article %}
 {% if ff %}
-{% assign ff_topic = site.data.topics | where: 'slug', ff.topic | first %}
 <article class="fac-feature">
   <a href="{{ ff.url | relative_url }}" class="fac-feature-media">
     {% if ff.image %}
@@ -21,7 +20,7 @@
   <div class="fac-feature-body">
     <div class="eyebrow" style="--topic-color:var(--topic-{{ ff.topic }})">
       <span class="dot"></span>
-      <a href="{{ '/topics/' | append: ff.topic | append: '/' | relative_url }}">{{ ff_topic.name }}</a>
+      {% include topic-links.html article=ff %}
       {% include status-badge.html status=ff.status %}
       {% include series-badge.html series=ff.series %}
     </div>

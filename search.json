@@ -6,13 +6,16 @@ permalink: /search.json
 {% assign articles = site.articles | sort: 'date' | reverse %}
 {% assign faculty = site.faculty | sort: 'full_name' %}
 {% for a in articles %}
-  {% assign topic_data = site.data.topics | where: 'slug', a.topic | first %}
+  {% comment %} "Accounting, Policy": the main topic first, then any "Also relates to" topics, so a search for either finds it. {% endcomment %}
+  {% capture sj_slug_list %}{% include topic-links.html article=a slugs=true %}{% endcapture %}
+  {% assign sj_slugs = sj_slug_list | split: ',' %}
+  {% capture sj_topics %}{% for sj_slug in sj_slugs %}{% assign sj_t = site.data.topics | where: 'slug', sj_slug | first %}{% unless forloop.first %}, {% endunless %}{{ sj_t.name }}{% endfor %}{% endcapture %}
   {
     "type": "Article",
     "title": {{ a.title | jsonify }},
     "dek": {{ a.dek | jsonify }},
     "url": {{ a.url | relative_url | jsonify }},
-    "topic": {{ topic_data.name | jsonify }},
+    "topic": {{ sj_topics | jsonify }},
     "byline": {{ a.byline | jsonify }}
   }{% unless forloop.last and faculty.size == 0 %},{% endunless %}
 {% endfor %}

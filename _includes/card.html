@@ -8,7 +8,6 @@
   field is blank). Variables starting cl_ belong to this include.
 {%- endcomment -%}
 {% assign article = include.article %}
-{% assign topic_data = site.data.topics | where: 'slug', article.topic | first %}
 {% assign cl_href = '' %}
 {% if include.links %}
   {% assign cl_url = article.journal_url | strip %}
@@ -26,7 +25,7 @@
   </a>
   <div class="eyebrow" style="--topic-color:var(--topic-{{ article.topic }})">
     <span class="dot"></span>
-    <a href="{{ '/topics/' | append: article.topic | append: '/' | relative_url }}">{{ topic_data.name }}</a>
+    {% include topic-links.html article=article %}
     {% include status-badge.html status=article.status %}
     {% include series-badge.html series=article.series %}
   </div>

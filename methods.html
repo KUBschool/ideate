@@ -29,10 +29,9 @@ description: "An analytical look at the tools, assumptions, and open questions b
           <div class="img-placeholder hero-art" style="--tint:var(--ku-{{ feature.image_tint | default: 'steam' }})"><span>Photo placeholder</span></div>
         {% endif %}
       </a>
-      {% assign feature_topic = site.data.topics | where: 'slug', feature.topic | first %}
       <div class="eyebrow" style="--topic-color:var(--topic-{{ feature.topic }})">
         <span class="dot"></span>
-        <a href="{{ '/topics/' | append: feature.topic | append: '/' | relative_url }}">{{ feature_topic.name }}</a>
+        {% include topic-links.html article=feature %}
         {% include status-badge.html status=feature.status %}
         {% include series-badge.html series=feature.series %}
       </div>
@@ -52,9 +51,8 @@ description: "An analytical look at the tools, assumptions, and open questions b
     {% if hero_list.size > 0 %}
     <div class="hero-list">
       {% for a in hero_list %}
-      {% assign a_topic = site.data.topics | where: 'slug', a.topic | first %}
       <div class="hero-list-item">
-        <div class="eyebrow" style="--topic-color:var(--topic-{{ a.topic }})"><span class="dot"></span><a href="{{ '/topics/' | append: a.topic | append: '/' | relative_url }}">{{ a_topic.name }}</a></div>
+        <div class="eyebrow" style="--topic-color:var(--topic-{{ a.topic }})"><span class="dot"></span>{% include topic-links.html article=a %}</div>
         <a href="{{ a.url | relative_url }}"><h3>{{ a.title }}</h3></a>
         <p class="dek">{{ a.dek }}</p>
       </div>

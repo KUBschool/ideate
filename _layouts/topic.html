@@ -31,7 +31,23 @@ layout: default
 {% assign topic_data = site.data.topics | where: 'slug', page.topic | first %}
 {% assign topic_name = topic_data.name %}
 {% assign tp = site.data.topic_pages.items | where: 'topic', page.topic | first %}
-{% assign pool = site.articles | where: 'topic', page.topic | sort: 'date' | reverse %}
+{% comment %}
+  Every article whose main topic is this one, plus those that list it under "Also relates to".
+  An "also relates to" match is checked with topic-links.html (slugs mode), so an article
+  is filed under exactly the topics its cards show - never more than three.
+{% endcomment %}
+{% assign pool_raw = site.articles | where_exp: 'a', 'a.topic == page.topic or a.also_topics contains page.topic' %}
+{% assign pool = '' | split: ',' %}
+{% for pl_a in pool_raw %}
+  {% if pl_a.topic == page.topic %}
+    {% assign pool = pool | push: pl_a %}
+  {% else %}
+    {% capture pl_slug_list %}{% include topic-links.html article=pl_a slugs=true %}{% endcapture %}
+    {% assign pl_slugs = pl_slug_list | split: ',' %}
+    {% if pl_slugs contains page.topic %}{% assign pool = pool | push: pl_a %}{% endif %}
+  {% endif %}
+{% endfor %}
+{% assign pool = pool | sort: 'date' | reverse %}
 
 {% comment %} ---- section header settings ---- {% endcomment %}
 {% assign hero_sub = tp.subhead | default: topic_data.description %}
@@ -134,7 +150,7 @@ layout: default
         {% endif %}
       </a>
       <div class="eyebrow" style="--topic-color:var(--topic-{{ feature.topic }})">
-        <span class="dot"></span>{{ topic_name }}
+        <span class="dot"></span>{% include topic-links.html article=feature plain=true %}
         {% include status-badge.html status=feature.status %}
         {% include series-badge.html series=feature.series %}
       </div>
@@ -167,7 +183,7 @@ layout: default
       {% else %}
         {% for side_a in side_articles %}
         <div class="hero-list-item">
-          <div class="eyebrow" style="--topic-color:var(--topic-{{ side_a.topic }})"><span class="dot"></span><a href="{{ '/topics/' | append: side_a.topic | append: '/' | relative_url }}">{{ topic_name }}</a></div>
+          <div class="eyebrow" style="--topic-color:var(--topic-{{ side_a.topic }})"><span class="dot"></span>{% include topic-links.html article=side_a %}</div>
           <a href="{{ side_a.url | relative_url }}"><h3>{{ side_a.title }}</h3></a>
           <p class="dek">{{ side_a.dek }}</p>
         </div>

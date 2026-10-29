@@ -1,0 +1,36 @@
+{%- comment -%}
+  The one place that decides which topics an article shows.
+  An article has a main topic (topic:) and, optionally, "Also relates to" topics
+  (also_topics:). At most THREE topics are used in total: the main one first,
+  then up to two more, in the order they were entered. A repeat of the main topic,
+  a repeated extra, a blank, or a slug that is not in _data/topics.yml is skipped
+  and does not use up one of the places.
+
+  Usage: {% include topic-links.html article=some_article %}           links, with a small dot between
+         {% include topic-links.html article=some_article plain=true %}  the names with no links
+         {% include topic-links.html article=some_article slugs=true %}  just the slugs, comma-separated
+                                                                         (for templates that build their own markup)
+  The main topic's color is set by whatever wraps this (--topic-color).
+  Variable names start tl_ on purpose: an assign inside an include is visible
+  to the page that included it.
+{%- endcomment -%}
+{%- assign tl_a = include.article -%}
+{%- assign tl_slugs = '' | split: ',' | push: tl_a.topic -%}
+{%- assign tl_extra = tl_a.also_topics | join: ',' | split: ',' | uniq -%}
+{%- for tl_slug in tl_extra -%}
+  {%- if tl_slugs.size < 3 and tl_slug != '' and tl_slug != tl_a.topic -%}
+    {%- assign tl_t = site.data.topics | where: 'slug', tl_slug | first -%}
+    {%- if tl_t -%}{%- assign tl_slugs = tl_slugs | push: tl_slug -%}{%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- if include.slugs -%}
+  {{- tl_slugs | join: ',' -}}
+{%- else -%}
+  {%- comment -%} With more than one topic each name travels with the dot that follows it, so if the line has to wrap, it wraps after a dot and never starts with one. {%- endcomment -%}
+  {%- for tl_slug in tl_slugs -%}
+    {%- assign tl_t = site.data.topics | where: 'slug', tl_slug | first -%}
+    {%- if tl_slugs.size > 1 -%}<span class="topic-item">{%- endif -%}
+    {%- if include.plain -%}{{ tl_t.name }}{%- else -%}<a href="{{ '/topics/' | append: tl_slug | append: '/' | relative_url }}">{{ tl_t.name }}</a>{%- endif -%}
+    {%- if tl_slugs.size > 1 -%}{%- unless forloop.last -%}<span class="topic-sep" aria-hidden="true">&middot;</span>{%- endunless -%}</span>{%- endif -%}
+  {%- endfor -%}
+{%- endif -%}

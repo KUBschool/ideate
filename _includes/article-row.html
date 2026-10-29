@@ -6,7 +6,6 @@
   existing `dek` rather than needing separate list-specific copy.
 {%- endcomment -%}
 {% assign article = include.article %}
-{% assign topic_data = site.data.topics | where: 'slug', article.topic | first %}
 <article class="article-row" data-topic="{{ article.topic }}">
   <a href="{{ article.url | relative_url }}" class="article-row-thumb">
     {% if article.image %}
@@ -18,7 +17,7 @@
   <div class="article-row-text">
     <div class="eyebrow" style="--topic-color:var(--topic-{{ article.topic }})">
       <span class="dot"></span>
-      <a href="{{ '/topics/' | append: article.topic | append: '/' | relative_url }}">{{ topic_data.name }}</a>
+      {% include topic-links.html article=article %}
       {% include status-badge.html status=article.status %}
       {% include series-badge.html series=article.series %}
     </div>

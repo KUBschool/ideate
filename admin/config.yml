@@ -29,9 +29,29 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Dek / subhead", name: "dek", widget: "text", hint: "One or two sentences. Shown on cards and at the top of the article."}
-      - label: "Topic"
+      - label: "Main topic"
         name: "topic"
         widget: "select"
+        hint: "The topic this research mainly belongs to. It sets the story's color and is listed first. If the research also fits other topics, add them in \"Also relates to\" just below."
+        options:
+          - {label: "Accounting", value: "accounting"}
+          - {label: "Finance", value: "finance"}
+          - {label: "Supply Chain", value: "supply-chain"}
+          - {label: "Marketing", value: "marketing"}
+          - {label: "Information Systems", value: "information-systems"}
+          - {label: "Analytics", value: "analytics"}
+          - {label: "Entrepreneurship", value: "entrepreneurship"}
+          - {label: "Management", value: "management"}
+          - {label: "Business Law", value: "business-law"}
+          - {label: "AI", value: "ai"}
+          - {label: "Policy", value: "policy"}
+      - label: "Also relates to"
+        name: "also_topics"
+        widget: "select"
+        multiple: true
+        max: 2
+        required: false
+        hint: "Optional. Up to two more topics this research also belongs to (so three topics at most, counting the main one). The story then also shows up on those topic pages and on the faculty member's profile. Don't repeat the main topic."
         options:
           - {label: "Accounting", value: "accounting"}
           - {label: "Finance", value: "finance"}
@@ -191,7 +211,7 @@ collections:
         display_fields: ["title"]
         value_field: "title"
         required: false
-        hint: "Optional. Pick one Ideate story to spotlight in the Featured research tab of this profile. Leave blank and that tab is hidden. (The Research tab always lists every story this person is tagged in.)"
+        hint: "Optional. Pick one Ideate story to spotlight in the Featured research tab of this profile. Tip: click the box and start typing to search articles by headline. Leave blank and that tab is hidden. (The Research tab always lists every story this person is tagged in.)"
       - label: "In the media"
         name: "media_appearances"
         widget: "list"
@@ -363,6 +383,7 @@ collections:
                 options:
                   - {label: "Steam (default)", value: "steam"}
                   - {label: "Light blue", value: "sky"}
+                  - {label: "Plain white", value: "white"}
                 default: "steam"
                 hint: "The color the header image fades into."
               - {label: "Show featured story", name: "show_feature", widget: "boolean", default: true, hint: "On: a large featured story sits under the header, with the stats or articles below beside it. Off: that whole block is hidden and those articles flow into the cards and list instead."}
@@ -374,7 +395,7 @@ collections:
                 display_fields: ["title"]
                 value_field: "title"
                 required: false
-                hint: "Optional — pick an article from this topic to feature. Leave blank to feature the topic's newest article automatically."
+                hint: "Optional — pick an article from this topic to feature. Tip: click the box and start typing to search articles by headline. Leave blank to feature the topic's newest article automatically."
               - label: "Beside the featured story"
                 name: "side"
                 widget: "select"
@@ -394,7 +415,7 @@ collections:
                 display_fields: ["title"]
                 value_field: "title"
                 required: false
-                hint: "Optional — pick up to three articles from this topic. Leave blank to show the next three newest automatically."
+                hint: "Optional — pick up to three articles from this topic. Tip: click the box and start typing to search articles by headline. Leave blank to show the next three newest automatically."
               - {label: "Stats call-out: title", name: "stats_title", widget: "string", required: false, hint: "e.g. \"Accounting at KU Business\""}
               - label: "Stats call-out: stats"
                 name: "stats"
