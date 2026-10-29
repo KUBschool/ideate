@@ -1,42 +1,39 @@
 ---
-title: "Firms borrowed more after the Fed bought bonds — even the firms the Fed never actually bought from"
-dek: "The Fed's pandemic-era bond-buying program had an explicit eligibility list. New research finds firms that merely looked like they belonged on it increased their borrowing too, and the effect never fully unwound."
+title: Firms borrowed more after the Fed bought bonds — even the firms the Fed
+  never actually bought from
+dek: The Fed's pandemic-era bond-buying program had an explicit eligibility
+  list. New research finds firms that merely looked like they belonged on it
+  increased their borrowing too, and the effect never fully unwound.
 topic: finance
 faculty:
   - justin-balthrop
-byline: "Justin Balthrop"
-date: 2026-01-01
+byline: Justin Balthrop
+date: 2025-09-30
+image: /assets/uploads/influencer-stock.jpeg
 image_tint: steam
 featured: false
-source_url: "https://business.ku.edu/research-and-faculty/finance/research-insights"
-answer_box: >-
-  A triple-differences analysis of the Federal Reserve's Secondary
-  Market Corporate Credit Facility finds firms with stronger indicators
-  of implied Fed support — such as sharing an industry with a firm
-  whose bonds the Fed actually purchased — increased leverage by
-  roughly 4 to 7 percent relative to other firms, an effect that
-  persisted well beyond the immediate bond-market impact and even after
-  Fed purchases were unwound.
+source_url: https://business.ku.edu/research-and-faculty/finance/research-insights
+answer_box: A triple-differences analysis of the Federal Reserve's Secondary
+  Market Corporate Credit Facility finds firms with stronger indicators of
+  implied Fed support — such as sharing an industry with a firm whose bonds the
+  Fed actually purchased — increased leverage by roughly 4 to 7 percent relative
+  to other firms, an effect that persisted well beyond the immediate bond-market
+  impact and even after Fed purchases were unwound.
+journal: Review of Quantitative Finance and Accounting
+journal_url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4168245
 ---
+#### Research objective
 
-Crisis-era central bank interventions are usually evaluated by their immediate effect on bond prices and market liquidity. New research asks a longer-horizon question: did firms actually change how they finance themselves afterward — and does that change extend beyond the firms the Fed explicitly said it would help?
+This paper examines whether Federal Reserve credit market interventions during COVID-19, both explicit support and implied future support, changed firms’ capital structure choices, especially leverage, during and after the crisis.
 
-Justin Balthrop, assistant professor of finance at the University of Kansas, co-authored "Implied Future Policy Promises and Firm Leverage" with J. Bitting, forthcoming in the Review of Quantitative Finance and Accounting.
+#### What the researchers find
 
-## Explicit eligibility versus implied eligibility
+Using a triple-differences design around the Secondary Market Corporate Credit Facility (SMCCF), the authors find that firms with stronger indicators of support increase leverage relative to other firms and that this gap is persistent. Leverage is about 4 to 7 percent higher for firms that are explicitly eligible and also match the Fed’s revealed purchase preferences, such as being in industries where the Fed bought at least one peer’s bonds.
 
-The study centers on the Fed's Secondary Market Corporate Credit Facility (SMCCF), a COVID-era program with a formal eligibility list. Balthrop's team's key methodological move is distinguishing between firms explicitly eligible for support and firms that merely *resembled* eligible firms — sharing an industry, for instance, with a company whose bonds the Fed actually bought. Using a triple-differences design, they test whether that second, implied category responded to the program too.
+The estimated leverage increase persists beyond the immediate bond market effects documented in prior work and persists even after Fed purchases were unwound. The leverage response increases with more granular measures of eligibility, including proximity to the investment-grade threshold and similarity to purchased firms based on product-market measures.
 
-## A leverage increase that outlasted the program itself
+The authors also document lower bond yields for firms with both explicit eligibility and signals of implicit support, consistent with investors viewing expected support as risk-reducing.
 
-It did. Firms with stronger signals of implied support — explicit eligibility combined with matching the Fed's revealed purchase preferences — increased leverage by roughly 4 to 7 percent relative to other firms, and that gap proved durable rather than temporary. The leverage increase persisted beyond the SMCCF's immediate bond-market effects documented in earlier research, and it held even after the Fed had fully unwound its purchases.
+#### Why it matters
 
-> "Firms may respond not only to written eligibility rules but also to implied policy promises inferred from who actually receives support."
-
-## More granular signals, stronger effects
-
-The relationship wasn't a blunt eligible-versus-ineligible split — it scaled with how closely a firm matched the Fed's actual purchase behavior. Firms closer to the investment-grade threshold and firms more similar to purchased companies on product-market measures showed a stronger leverage response, consistent with firms reading the Fed's real purchasing pattern as information, not just its published rules. Balthrop's team also found lower bond yields for firms combining explicit eligibility with implied support signals, consistent with investors independently treating expected future support as risk-reducing.
-
-## Why "who actually got helped" matters as much as the rulebook
-
-The broader implication is that a crisis intervention's real reach extends past whoever it's formally written to cover. Markets and firms both appear to read revealed purchase behavior as a signal about future policy — meaning the effective scope of an intervention like the SMCCF is shaped as much by who it's *seen* helping as by its official eligibility criteria, with consequences for corporate risk-taking that outlast the program's own timeline.
+The study suggests that crisis interventions can shape real corporate financial decisions, not just short-run bond prices and liquidity. It highlights that firms may respond not only to written eligibility rules but also to implied policy promises inferred from who actually receives support, thereby broadening the effective reach of interventions and potentially raising leverage and risk-taking incentives over longer horizons.
