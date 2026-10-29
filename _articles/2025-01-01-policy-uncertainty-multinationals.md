@@ -1,44 +1,44 @@
 ---
-title: "Going global doesn't protect a company from political risk abroad — it just spreads it out"
-dek: "Multinational firms are often assumed to diversify away country-specific risk. New research finds policy uncertainty in a single foreign market can still drag down a firm's overall value, and firms rarely shift activity elsewhere to compensate."
+title: Going global doesn't protect a company from political risk abroad — it
+  just spreads it out
+dek: Multinational firms are often assumed to diversify away country-specific
+  risk. New research finds policy uncertainty in a single foreign market can
+  still drag down a firm's overall value, and firms rarely shift activity
+  elsewhere to compensate.
 topic: finance
 faculty:
   - atanas-mihov
-byline: "Atanas Mihov"
-date: 2025-01-01
+byline: Atanas Mihov
+date: 2025-10-28
+image: /assets/uploads/multinational.jpeg
 image_tint: limestone
 featured: false
-source_url: "https://business.ku.edu/research-and-faculty/finance/research-insights"
-answer_box: >-
-  Research on U.S. multinational companies finds higher economic policy
-  uncertainty in countries where they operate subsidiaries is
-  associated with lower overall firm valuations, with affected
-  subsidiaries slowing asset and employment growth — effects that are
-  stronger for firms relying more on intangible assets, facing tighter
-  financial constraints, or operating in countries with weaker
-  institutions. Firms generally do not shift activity to other
-  countries to offset the uncertainty, though some spillover occurs
+source_url: https://business.ku.edu/research-and-faculty/finance/research-insights
+answer_box: Research on U.S. multinational companies finds higher economic
+  policy uncertainty in countries where they operate subsidiaries is associated
+  with lower overall firm valuations, with affected subsidiaries slowing asset
+  and employment growth — effects that are stronger for firms relying more on
+  intangible assets, facing tighter financial constraints, or operating in
+  countries with weaker institutions. Firms generally do not shift activity to
+  other countries to offset the uncertainty, though some spillover occurs
   through closely linked production relationships.
+journal: Review of Finance
+journal_url: https://academic.oup.com/rof/article-abstract/29/6/1769/8305189?redirectedFrom=fulltext
 ---
+#### Research objective
 
-Operating in many countries at once is often treated as a natural hedge — trouble in one market gets absorbed by stability elsewhere. New research on U.S. multinational companies tests that assumption directly, using a source of risk that firms genuinely can't control: foreign governments' own policy uncertainty.
+This study examines how uncertainty about foreign governments' economic policies affects United States multinational companies. The researchers focus on firms with subsidiaries operating across borders and ask whether policy uncertainty in host countries influences firm value and real business activity. They aim to understand whether global operations help firms absorb uncertainty or instead expose them to additional risk.
 
-Atanas Mihov, associate professor of finance and Capitol Federal Fellow at the University of Kansas, co-authored "Economic Policy Uncertainty and Multinational Companies" with L. Lin and L. Sanz, forthcoming in the Review of Finance.
+The study also explores whether these effects differ across firms and countries with different characteristics. Overall, the objective is to clarify how policy uncertainty travels through multinational subsidiary networks.
 
-## Uncertainty that travels back to the parent company
+#### What the researchers find
 
-Mihov's team finds that higher economic policy uncertainty in a country where a U.S. multinational has subsidiaries is associated with lower valuation for the *entire* company, not just weaker performance at that specific subsidiary. Subsidiaries located in higher-uncertainty countries slow down both asset growth and employment growth in response — a real operational pullback, not just a market-sentiment effect.
+The study finds that higher economic policy uncertainty in countries with subsidiaries is associated with lower overall firm valuations. Subsidiaries in countries with higher uncertainty tend to slow their asset and employment growth. These effects are stronger for firms that rely more on intangible assets, face tighter financial constraints, or operate in countries with weaker institutions.
 
-## Some firms are far more exposed than others
+On average, firms do not appear to shift activity across countries to offset uncertainty elsewhere. However, there is some evidence that uncertainty affects other subsidiaries when they are closely linked through production relationships.
 
-The effect isn't spread evenly across the multinational universe. It's stronger for firms that rely more heavily on intangible assets, firms facing tighter financial constraints, and firms operating in countries with weaker institutions to begin with — exactly the combination of characteristics that would make a firm least able to absorb or hedge against a foreign policy shock in the first place.
+#### Why it matters
 
-> "Operating across borders does not fully protect firms from policy-related risks abroad."
+Multinational companies play a central role in the global economy, yet they face risks that arise outside their home countries. This study shows that uncertainty about foreign economic policies can meaningfully affect firm value and business activity, even for globally diversified firms.
 
-## The hedge that mostly doesn't happen
-
-Here's where the "natural diversification" story breaks down most clearly: on average, firms facing elevated uncertainty in one country don't meaningfully shift activity to other countries to offset it. The exception is narrow — some spillover effects do show up in *other* subsidiaries, but specifically when those subsidiaries are closely linked to the affected one through production relationships, not as a general diversification response across the whole global footprint.
-
-## Why "we're diversified" isn't the same as "we're insulated"
-
-For managers and investors, the practical implication is that a genuinely global footprint doesn't function as automatic insurance against a single foreign government's policy environment — each subsidiary's local political risk still shows up in the parent company's valuation, largely undiluted by everything else the firm has going on elsewhere. That argues for monitoring policy conditions market by market, not just tracking overall geographic diversification as a proxy for safety. For policymakers, the findings are a reminder that domestic policy uncertainty has real, measurable spillover costs for foreign investors operating within their borders — costs that extend well past that country's own economy.
+The findings suggest that operating across borders does not fully protect firms from policy-related risks abroad. For managers and investors, the results highlight the importance of monitoring policy environments across all countries in which a firm operates. For policymakers, the study provides insight into how uncertainty can influence foreign investment and multinational activity.
