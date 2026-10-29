@@ -1,24 +1,27 @@
 ---
-title: "Some stocks quietly move with the weather — and the market hasn't caught on"
-dek: "A new firm-level measure of temperature sensitivity finds companies more exposed to abnormal heat and cold have lower profitability and riskier policies — and that the market systematically overprices them anyway."
+title: Some stocks quietly move with the weather — and the market hasn't caught on
+dek: A new firm-level measure of temperature sensitivity finds companies more
+  exposed to abnormal heat and cold have lower profitability and riskier
+  policies — and that the market systematically overprices them anyway.
 topic: finance
 faculty:
   - carina-cuculiza
-byline: "Carina Cuculiza"
-date: 2025-01-01
+byline: Carina Cuculiza
+date: 2025-07-14
+image: /assets/uploads/heatwave.jpeg
 image_tint: limestone
 featured: false
-source_url: "https://business.ku.edu/research-and-faculty/finance/research-insights"
-answer_box: >-
-  A new firm-level measure of temperature sensitivity — based on how a
-  company's stock returns respond to abnormal temperature changes —
-  finds firms with higher sensitivity have lower future profitability
-  and riskier corporate policies, yet are systematically overpriced by
-  the market. A strategy buying low-sensitivity firms and selling
-  high-sensitivity firms produced risk-adjusted returns exceeding 4%
-  annually from 1968 to 2020, driven partly by nonlocal institutional
-  investors overweighting these firms and analysts issuing less
-  accurate forecasts for them.
+source_url: https://business.ku.edu/research-and-faculty/finance/research-insights
+answer_box: A new firm-level measure of temperature sensitivity — based on how a
+  company's stock returns respond to abnormal temperature changes — finds firms
+  with higher sensitivity have lower future profitability and riskier corporate
+  policies, yet are systematically overpriced by the market. A strategy buying
+  low-sensitivity firms and selling high-sensitivity firms produced
+  risk-adjusted returns exceeding 4% annually from 1968 to 2020, driven partly
+  by nonlocal institutional investors overweighting these firms and analysts
+  issuing less accurate forecasts for them.
+journal: Management Science
+journal_url: https://pubsonline.informs.org/doi/10.1287/mnsc.2023.00972
 ---
 
 Climate risk research usually looks at firms with obvious physical exposure — coastal real estate, agriculture, energy. New research builds a more general, firm-level measure of temperature exposure that applies to any public company, and finds the market is slow to price it correctly across the board.
