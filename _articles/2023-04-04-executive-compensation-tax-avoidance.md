@@ -3,7 +3,7 @@ title: Executive compensation incentives influence firms' conforming tax avoidan
 dek: How a CEO's stock option package is structured shapes how aggressively a
   company avoids taxes — with a real cost to reported profits that shareholders
   may not expect.
-topic: finance
+topic: accounting
 faculty: []
 byline: Mehmet Kara
 date: 2023-04-04
