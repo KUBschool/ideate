@@ -1,40 +1,45 @@
 ---
-title: "Partisan politics proved most significant factor for speed of corporate shutdowns during pandemic, study shows"
-dek: "When U.S. companies decided how fast to shut down their headquarters during COVID-19, the political leanings of the firm and its CEO mattered more than cash reserves or executive pay structure."
+title: Partisan politics proved most significant factor for speed of corporate
+  shutdowns during pandemic, study shows
+dek: When U.S. companies decided how fast to shut down their headquarters during
+  COVID-19, the political leanings of the firm and its CEO mattered more than
+  cash reserves or executive pay structure.
 topic: finance
 faculty:
   - shradha-bindal
   - felix-meschke
   - kissan-joseph
-byline: "Shradha Bindal, Felix Meschke & Kissan Joseph"
-date: 2025-04-22
+byline: Shradha Bindal, Felix Meschke & Kissan Joseph
+date: 2025-06-01
+image: /assets/uploads/empty-parking-lot.jpeg
 image_tint: steam
 featured: false
-source_url: "https://business.ku.edu/news/article/partisan-politics-proved-most-significant-factor-for-speed-of-corporate-shutdowns-during-pandemic-study-shows"
-answer_box: >-
-  Whether U.S. companies shut down their headquarters during COVID-19 is
-  not up for debate — some clearly did it faster than others. New
-  research testing cash reserves, executive pay structure and CEO
-  overconfidence as possible explanations finds that political
-  orientation, of both the firm and its CEO, was the most significant
-  factor — Democrat-leaning CEOs in Democrat-leaning states shut down
-  meaningfully faster than their counterparts.
+source_url: https://business.ku.edu/news/article/partisan-politics-proved-most-significant-factor-for-speed-of-corporate-shutdowns-during-pandemic-study-shows
+answer_box: Whether U.S. companies shut down their headquarters during COVID-19
+  is not up for debate — some clearly did it faster than others. New research
+  testing cash reserves, executive pay structure and CEO overconfidence as
+  possible explanations finds that political orientation, of both the firm and
+  its CEO, was the most significant factor — Democrat-leaning CEOs in
+  Democrat-leaning states shut down meaningfully faster than their counterparts.
+journal: Journal of Corporate Finance
+journal_url: https://www.sciencedirect.com/science/article/pii/S0929119925000343
 ---
+#### Research objective
 
-Whether corporate shutdowns should have happened during COVID-19 remains a hotly debated topic. What isn't debatable is that some firms shut down faster than others — and new research points to why.
+This study examines what factors influenced how quickly large U.S. companies shut down their corporate headquarters during the early stages of the COVID-19 pandemic. The authors focus on whether financial flexibility, the ability to work remotely, CEO personal traits, and political alignment help explain shutdown timing.
 
-"Our paper underscores the role regulatory factors and politics play in times of crisis," said Shradha Bindal, assistant professor of finance at the University of Kansas.
+The study aims to understand how firms responded when guidance was limited and uncertainty was high. Rather than evaluating outcomes or performance, the objective is to identify which characteristics shaped shutdown decisions. The analysis concentrates on large publicly traded firms. 
 
-Her paper, "Corporate Shutdowns in the Time of COVID-19," co-written with KU's Felix Meschke and Kissan Joseph, appears in the Journal of Corporate Finance. It tests several competing explanations for why some companies shut their headquarters down faster than others during the pandemic.
+#### What the researchers find
 
-## Ruling out the obvious explanations first
+The researchers find that financial flexibility does not explain how quickly firms shut down their headquarters. CEO characteristics, such as age, gender, power, pay structure, or overconfidence, also show no meaningful relationship with shutdown timing. Instead, firms that could more easily transition to remote work shut down earlier. Local shelter-in-place rules and nearby COVID cases also played an important role. Political alignment emerges as a key factor: Firms that lean Democratic shut down earlier, particularly when led by Democratic-leaning CEOs. 
 
-Bindal's team started with the hypotheses that seemed most intuitive: firms with more cash on hand would shut down faster, since they were better positioned to weather the disruption. CEOs whose pay wasn't closely tied to company stock might act faster too, unburdened by short-term share-price concerns. Overconfident CEOs might move differently than cautious ones.
+#### Why it matters
 
-> "During the pandemic, companies had to balance financial viability, employee health and compliance with government directives."
+Corporate shutdown decisions affected employee safety operations and public health during the pandemic. This study shows that political and regulatory context mattered more than financial strength or executive traits in shaping these decisions.
 
-None of those factors turned out to be the deciding one. Instead, political orientation dominated: Democrat-leaning CEOs at Democrat-leaning firms in blue states shut down significantly faster than their counterparts — a pattern the researchers tie to differences in trust in public health guidance and a shared prioritization of collective welfare.
+For policymakers, the findings highlight how partisanship and local rules can influence corporate behavior during crises.
 
-## A personal starting point
+For managers and boards, the results suggest that operational flexibility, such as remote work capability, is central to crisis response.
 
-Bindal traces some of her interest in the question to her own family. "My father runs a small hotel back in India. And when COVID came, he had to shut down the hotel — since the Indian government had imposed strict curfews — but he kept all his employees on payroll because he was worried about how they were going to feed their families," she said. Every CEO and business owner, she notes, faced some version of that same cost-benefit calculation — just with wildly different answers depending, it turns out, on where they and their company stood politically.
+More broadly, the study improves understanding of how firms behave in the face of extreme uncertainty.
