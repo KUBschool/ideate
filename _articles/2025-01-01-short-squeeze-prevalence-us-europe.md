@@ -1,42 +1,39 @@
 ---
-title: "Short squeezes aren't the rare, dramatic events GameStop made them look like"
-dek: "A new measure finds roughly one in ten U.S. stocks experiences a short squeeze in any given quarter — and that squeezes actually come in two different flavors with very different consequences for the market."
+title: Short squeezes aren't the rare, dramatic events GameStop made them look like
+dek: A new measure finds roughly one in ten U.S. stocks experiences a short
+  squeeze in any given quarter — and that squeezes actually come in two
+  different flavors with very different consequences for the market.
 topic: finance
 faculty:
   - angel-tengulov
-byline: "Angel Tengulov"
-date: 2025-01-01
+byline: Angel Tengulov
+date: 2025-07-01
+image: /assets/uploads/stock-trading.jpeg
 image_tint: limestone
 featured: false
-source_url: "https://business.ku.edu/research-and-faculty/finance/research-insights"
-answer_box: >-
-  Developing a novel market-squeeze measure based on sharp price
-  increases combined with abrupt declines in short interest, research
-  finds roughly 9.9% of U.S. stocks and 12.3% of EU stocks experience a
-  market squeeze in a given quarter. Market squeezes and lender squeezes
-  turn out to be driven by different forces and have different
-  consequences — only market squeezes meaningfully impair price
-  discovery, while lender squeezes leave it largely unaffected.
+source_url: https://business.ku.edu/research-and-faculty/finance/research-insights
+answer_box: Developing a novel market-squeeze measure based on sharp price
+  increases combined with abrupt declines in short interest, research finds
+  roughly 9.9% of U.S. stocks and 12.3% of EU stocks experience a market squeeze
+  in a given quarter. Market squeezes and lender squeezes turn out to be driven
+  by different forces and have different consequences — only market squeezes
+  meaningfully impair price discovery, while lender squeezes leave it largely
+  unaffected.
+journal: Journal of Banking & Finance
+journal_url: https://www.sciencedirect.com/science/article/pii/S0378426625000561
 ---
+#### Research objective
 
-GameStop made short squeezes look like rare, dramatic, headline-generating events. New large-sample research asks a more basic question that the 2021 meme-stock frenzy never really answered: how common are short squeezes, actually — and are they all the same kind of event?
+The paper aims to systematically measure how prevalent short squeezes are across the United States and Europe, and assess their determinants and consequences for price discovery. To do so, the authors develop a novel market-squeeze measure based on sharp price increases combined with abrupt declines in short interest, and compare this measure to existing lender-squeeze measures based on share recalls.
 
-Angel Tengulov, assistant professor of finance at the University of Kansas, co-authored "How Prevalent Are Short Squeezes? Evidence from the U.S. and Europe" with F. Allen, M. Haas, and M. Pirovano, published in the Journal of Banking & Finance.
+#### What the researchers find
 
-## A new way to measure something hard to define
+At the quarterly frequency, squeezes are not negligible: On average, about 9.9% of U.S. stocks and 12.3% of EU stocks experience a market squeeze in a given quarter; lender squeezes occur at similar but not identical frequencies. Market squeezes and lender squeezes are fundamentally different phenomena. Market squeezes are driven primarily by high short interest, firm size, price dispersion, and turnover, and are associated with sharp declines in short interest afterward.
 
-Part of the challenge in answering "how common are short squeezes" is that the concept hasn't had a clean, systematic measure. Tengulov's team builds one: a market-squeeze measure combining sharp price increases with abrupt declines in short interest, which they compare against existing lender-squeeze measures based on share recalls — the two concepts that get conflated under the single term "short squeeze" in everyday usage.
+Lender squeezes are driven mainly by securities-lending conditions (fees, utilization, lendable quantity) and do not trigger sustained reductions in short interest. The authors also find that only market squeezes impair price discovery: After market squeezes, the speed of price discovery deteriorates, consistent with short sellers being forced out. In contrast, price discovery remains largely unaffected after lender squeezes.
 
-## Not rare at all, once you measure it properly
+#### Why it matters
 
-By this measure, squeezes turn out to be far from rare: on average, about 9.9% of U.S. stocks and 12.3% of EU stocks experience a market squeeze in a given quarter. Lender squeezes occur at a similar, though not identical, frequency. Once you have a systematic measure rather than relying on headline-grabbing individual cases, short squeezes look like a routine part of market functioning rather than an exceptional event.
+The paper provides the first large-sample, cross-country evidence on how common equity short squeezes actually are. By clearly separating market squeezes from lender squeezes, the study shows that not all squeezes are equally harmful — only market squeezes meaningfully disrupt price discovery and the information intermediation role of short sellers.
 
-> "Not all squeezes are equally harmful — only market squeezes meaningfully disrupt price discovery."
-
-## Two genuinely different phenomena sharing one name
-
-The paper's more important finding is that "market squeeze" and "lender squeeze" aren't just two measurement approaches to the same underlying thing — they're driven by different forces entirely. Market squeezes track with high short interest, firm size, price dispersion, and trading turnover, and are followed by sharp declines in short interest afterward. Lender squeezes track instead with securities-lending market conditions — fees, utilization, lendable share quantity — and don't trigger the same sustained reduction in short interest.
-
-## Why the distinction actually matters for market quality
-
-The consequences diverge just as sharply as the causes. After a market squeeze, the speed of price discovery measurably deteriorates, consistent with short sellers effectively being forced out of a stock they'd normally help keep efficiently priced. After a lender squeeze, price discovery is largely unaffected. That's the paper's real practical contribution: a monitoring tool that lets regulators — relevant given newer short-selling disclosure rules in the U.S. and long-standing ones in the EU — tell apart the kind of squeeze that actually threatens market efficiency from the kind that doesn't.
+The proposed measure offers a practical monitoring tool for regulators, particularly relevant given new short-selling disclosure rules in the US and longstanding disclosure requirements in the EU. More broadly, the findings reinforce the idea that short sellers play a critical role in market efficiency, and that short-sale constraints, e.g., via market squeezes, can have real welfare and regulatory implications.
