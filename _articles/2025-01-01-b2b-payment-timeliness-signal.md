@@ -1,42 +1,44 @@
 ---
-title: "Paying suppliers a little late might be a power move. Paying them suddenly late is a warning sign."
-dek: "Equity investors rarely look at how promptly a company pays its suppliers — but new research finds that behavior carries real information the stock market is slow to catch up on."
+title: Paying suppliers a little late might be a power move. Paying them
+  suddenly late is a warning sign.
+dek: Equity investors rarely look at how promptly a company pays its suppliers —
+  but new research finds that behavior carries real information the stock market
+  is slow to catch up on.
 topic: finance
 faculty:
   - atanas-mihov
-byline: "Atanas Mihov"
-date: 2025-01-01
+byline: Atanas Mihov
+date: 2025-10-01
+image: /assets/uploads/unpaid-invoice.jpeg
 image_tint: steam
 featured: false
-source_url: "https://business.ku.edu/research-and-faculty/finance/research-insights"
-answer_box: >-
-  Research on business-to-business payment behavior finds two distinct
-  signals hiding in how promptly firms pay suppliers: firms that
-  abruptly begin paying later than their own history predicts earn
-  lower future stock returns, consistent with emerging financial
-  strain the market absorbs only gradually, while firms that
-  consistently pay moderately late — a stable pattern reflecting
-  bargaining power rather than distress — earn higher future returns.
+source_url: https://business.ku.edu/research-and-faculty/finance/research-insights
+answer_box: "Research on business-to-business payment behavior finds two
+  distinct signals hiding in how promptly firms pay suppliers: firms that
+  abruptly begin paying later than their own history predicts earn lower future
+  stock returns, consistent with emerging financial strain the market absorbs
+  only gradually, while firms that consistently pay moderately late — a stable
+  pattern reflecting bargaining power rather than distress — earn higher future
+  returns."
+journal: Journal of Financial Economics
+journal_url: https://www.sciencedirect.com/science/article/pii/S0304405X25001163
 ---
+#### Research objective
 
-Suppliers and credit intermediaries watch a company's payment timeliness closely as a matter of course. Equity investors, by and large, don't. New research argues that gap is a mistake — because payment behavior is quietly signaling something the stock market is slow to price in.
+This study examines whether faster growth among large banking organizations is associated with higher operational risk. The researchers aim to understand whether expanding quickly creates challenges in managing internal processes, people, and systems. They focus on large banks to assess how growth relates to day-to-day operational problems rather than lending or market activity.
 
-Atanas Mihov, associate professor of finance and Capitol Federal Fellow at the University of Kansas, co-authored "Show Me the Receipts: B2B Payment Timeliness and Expected Returns" with P. Lieberman, A. Naranjo, and M. Velikov, published in the Journal of Financial Economics.
+The study also examines whether different types of growth and business activities are associated with distinct risk patterns. Overall, the objective is to clarify how organizational growth relates to non-financial sources of loss within banks.
 
-## Two kinds of "late," two different meanings
+#### What the researchers find
 
-The paper's central insight is that not all late payments mean the same thing, and market participants need to tell them apart. A firm that suddenly starts paying suppliers later than its own historical pattern predicts is showing something different than a firm that has always paid moderately late as a matter of course — and Mihov's team finds the stock market eventually treats them very differently too, just not quickly.
+The study finds that not all late payments convey the same message to investors. Firms that suddenly begin paying suppliers later than usual tend to experience lower future stock returns, consistent with these payment delays reflecting emerging financial strain that investors incorporate only gradually. 
 
-## A warning sign the market catches up to slowly
+In contrast, firms that consistently pay moderately late tend to earn higher future returns. This pattern appears to reflect stable bargaining power over suppliers rather than financial weakness.
 
-Firms with an abrupt shift toward later payments go on to earn lower future stock returns — a pattern consistent with those payment delays reflecting real, emerging financial strain that investors incorporate into prices only gradually, well after the underlying stress has already begun showing up in how the company treats its suppliers.
+The findings suggest that investors react differently to abrupt changes in payment behavior versus steady payment practices, and that these distinctions matter for future returns.
 
-> "Such information can help distinguish between firms facing financial stress and firms exercising strategic leverage in their supply chains."
+#### Why it matters
 
-## Steady late payment looks like something else entirely
+Business-to-business payment behavior is widely observed by suppliers and credit intermediaries but overlooked mainly by equity investors. This study shows that such information can help distinguish between firms facing financial stress and firms exercising strategic leverage in their supply chains.
 
-The more surprising half of the finding is the opposite pattern: firms that consistently pay moderately late, as an established practice rather than a recent shift, tend to earn *higher* future returns. Mihov's team reads this as reflecting stable bargaining power over suppliers — a company secure enough in its position to negotiate longer payment terms as standard practice — rather than any sign of financial weakness.
-
-## A data source hiding in plain sight
-
-What makes the finding practically useful is that this information isn't secret — it's the kind of thing suppliers and credit intermediaries already track routinely as part of doing business with a company. Mihov's team's contribution is showing that this same information, largely overlooked by equity markets, contains a genuine, tradable signal once it's separated into the right categories. For investors, that's a concrete argument for paying attention to a data source that's been sitting in plain sight; for managers, it's a reminder that everyday operational choices — like how promptly to pay a vendor — carry financial-market consequences well beyond the supply chain itself.
+For investors, the findings highlight a new way to interpret payment behavior as a signal about risk and expected returns. For managers and suppliers, the results clarify how payment practices may shape perceptions beyond the supply chain itself. More broadly, the study helps connect everyday operational decisions to financial market outcomes.
