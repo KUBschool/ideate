@@ -1,23 +1,27 @@
 ---
-title: "Do auditors who spend time selling their firm's services actually cut corners on the audit?"
-dek: "Audit regulation has long assumed commercial hustle and audit quality pull in opposite directions. New research using internal firm data finds no evidence of that tradeoff — and finds a specific reason why."
+title: Do auditors who spend time selling their firm's services actually cut
+  corners on the audit?
+dek: Audit regulation has long assumed commercial hustle and audit quality pull
+  in opposite directions. New research using internal firm data finds no
+  evidence of that tradeoff — and finds a specific reason why.
 topic: accounting
 faculty:
   - will-ciconte
-byline: "Will Ciconte"
-date: 2025-01-01
+byline: Will Ciconte
+date: 2024-08-17
+image: /assets/uploads/sales-meeting.png
 image_tint: steam
 featured: false
-source_url: "https://business.ku.edu/research-and-faculty/accounting/research-insights"
-answer_box: >-
-  Using detailed internal data from large audit firms, research finds no
-  evidence that senior auditors who spend more time on commercial
-  activities — business development, client acquisition — deliver lower
-  audit quality or reduced audit effort. Auditors with higher commercial
-  effort instead relied more heavily on technical consultations, which
-  was associated with higher-quality outcomes, suggesting firm quality
-  control systems, not suppressed commercial incentive, are what
-  actually protect audit quality.
+source_url: https://business.ku.edu/research-and-faculty/accounting/research-insights
+answer_box: Using detailed internal data from large audit firms, research finds
+  no evidence that senior auditors who spend more time on commercial activities
+  — business development, client acquisition — deliver lower audit quality or
+  reduced audit effort. Auditors with higher commercial effort instead relied
+  more heavily on technical consultations, which was associated with
+  higher-quality outcomes, suggesting firm quality control systems, not
+  suppressed commercial incentive, are what actually protect audit quality.
+journal: Journal of Accounting Research
+journal_url: https://onlinelibrary.wiley.com/doi/10.1111/1475-679X.12569
 ---
 
 A basic assumption sits underneath a lot of audit regulation: an auditor spending time on business development and client acquisition is an auditor with less attention left for the audit itself. New research tests that assumption directly against real internal firm data — and doesn't find support for it.
