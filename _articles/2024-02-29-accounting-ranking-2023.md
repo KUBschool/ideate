@@ -1,18 +1,20 @@
 ---
-title: "KU School of Business accounting faculty again earn top spot in BYU rankings"
-dek: "For the fifth year in a row, KU accounting faculty held the No. 1 global ranking for audit archival research, according to Brigham Young University's 2023 accounting research rankings."
+title: KU School of Business accounting faculty again earn top spot in BYU rankings
+dek: For the fifth year in a row, KU accounting faculty held the No. 1 global
+  ranking for audit archival research, according to Brigham Young University's
+  2023 accounting research rankings.
 topic: accounting
 faculty: []
-byline: "KU Accounting faculty"
+byline: Lauren Cunningham
 date: 2024-02-29
+image: /assets/uploads/cap-fed-hall-cover-image.jpg
 image_tint: steam
 featured: false
-source_url: "https://business.ku.edu/news/article/ku-school-of-business-accounting-faculty-again-earn-top-spot-in-byu-rankings"
-answer_box: >-
-  KU School of Business accounting faculty held onto the No. 1 global
-  ranking for audit archival research contributions over the past six
-  and 12 years for the fifth consecutive year, according to Brigham
-  Young University's 2023 index of accounting research.
+source_url: https://business.ku.edu/news/article/ku-school-of-business-accounting-faculty-again-earn-top-spot-in-byu-rankings
+answer_box: KU School of Business accounting faculty held onto the No. 1 global
+  ranking for audit archival research contributions over the past six and 12
+  years for the fifth consecutive year, according to Brigham Young University's
+  2023 index of accounting research.
 ---
 
 A top ranking once can be a fluke of timing. A top ranking five years running is a track record.
