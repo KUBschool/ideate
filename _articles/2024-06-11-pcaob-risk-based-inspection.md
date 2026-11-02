@@ -8,6 +8,7 @@ faculty:
   - mike-wilkins
 byline: Jon Niccum
 date: 2024-06-11
+image: /assets/uploads/audit-records.jpeg
 image_tint: limestone
 featured: false
 source_url: https://business.ku.edu/news/article/pcaob-risk-based-inspection-consequences-evaluated-using-new-model
