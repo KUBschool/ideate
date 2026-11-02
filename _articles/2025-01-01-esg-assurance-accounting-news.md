@@ -1,39 +1,43 @@
 ---
-title: "A bad accounting headline can quietly tank trust in a company's sustainability claims, too"
-dek: "Consumers can't verify most ESG claims directly, so they use whatever signals of credibility are available — including accounting scandals that have nothing to do with the product. Voluntary assurance helps, but not equally in every case."
+title: A bad accounting headline can quietly tank trust in a company's
+  sustainability claims, too
+dek: Consumers can't verify most ESG claims directly, so they use whatever
+  signals of credibility are available — including accounting scandals that have
+  nothing to do with the product. Voluntary assurance helps, but not equally in
+  every case.
 topic: accounting
 faculty:
   - adi-masli
-byline: "Adi Masli"
-date: 2025-01-01
+byline: Adi Masli
+date: 2025-12-01
+image: /assets/uploads/esg-headlines.png
 image_tint: limestone
 featured: false
-source_url: "https://business.ku.edu/research-and-faculty/accounting/research-insights"
-answer_box: >-
-  Research on consumer response to negative accounting news finds it
-  reduces willingness to purchase products carrying ESG claims, with
-  more severe events (irregularities) causing larger declines than
-  less severe ones (errors). Voluntary ESG product-quality assurance
-  offsets some of that damage, but its effectiveness depends on the
-  assurance provider: same-firm assurance is less effective than
-  independent providers after an error, though provider choice stops
-  mattering once the event involves outright irregularities.
+source_url: https://business.ku.edu/research-and-faculty/accounting/research-insights
+answer_box: "Research on consumer response to negative accounting news finds it
+  reduces willingness to purchase products carrying ESG claims, with more severe
+  events (irregularities) causing larger declines than less severe ones
+  (errors). Voluntary ESG product-quality assurance offsets some of that damage,
+  but its effectiveness depends on the assurance provider: same-firm assurance
+  is less effective than independent providers after an error, though provider
+  choice stops mattering once the event involves outright irregularities."
+journal: Accounting, Organizations and Society
+journal_url: https://www.sciencedirect.com/science/article/pii/S036136822500011X
 ---
+#### Research objective
 
-Consumers generally can't verify a company's environmental or social claims directly — there's no way to personally check a supply chain. New research finds they compensate by reaching for whatever credibility signal is available, including ones that have nothing to do with the product they're actually buying: the company's accounting track record.
+This study examines whether negative accounting news affects how consumers respond to products that make environmental, social, and governance claims. The researchers focus on whether consumers use accounting events as signals about a company’s credibility when product quality cannot be directly observed.
 
-Adi Masli, associate dean of graduate programs and the Larry D. Horner/KPMG Professor at the University of Kansas, co-authored "How Negative Accounting News Events, Voluntary ESG Assurance, and Assurance Provider Influence Consumer Purchasing Intentions" with C. Hampton, M. Knutson, and C. Stefaniak, published in Accounting, Organizations and Society.
+They also examine whether voluntary assurance of ESG production practices changes consumer reactions to negative accounting news. In addition, the study considers whether the type of assurance provider influences consumer trust. Overall, the objective is to understand how accounting credibility and ESG assurance jointly shape purchasing intentions.
 
-## A shortcut consumers didn't ask for, but use anyway
+#### What the researchers find
 
-Masli's team finds that negative accounting news — even news with no direct connection to a product's actual ESG claims — measurably reduces consumer willingness to buy products carrying those claims. The severity of the news scales the damage: irregularities (more serious, closer to fraud) caused larger drops in purchase intention than simple errors (less severe, more like an honest mistake).
+The researchers find that negative accounting news reduces consumers’ willingness to purchase products that make ESG claims. More severe events, such as irregularities, lead to larger declines in purchasing intentions than less severe events, such as errors. Voluntary ESG product quality assurance helps offset these adverse effects but does not eliminate them.
 
-## Voluntary assurance helps, but the provider matters
+When an error occurs, assurance is less effective when provided by the same firm that audits the financial statements than when provided by a government agency or a different accounting firm. When irregularities occur, assurance still helps, but consumers do not distinguish between assurance providers, suggesting that trust in assurance declines more broadly in severe cases.
 
-Companies aren't defenseless against this spillover. Voluntary ESG product-quality assurance — an outside party verifying the ESG claim itself — offset some of the damage from negative accounting news, though it didn't eliminate it. The complication is in the details: after a simple error, assurance was *less* effective when it came from the same firm that audits the company's financial statements than when it came from a government agency or a different accounting firm entirely. After a more serious irregularity, assurance still helped — but consumers stopped distinguishing between providers, suggesting that in the most severe cases, trust erodes broadly enough that provider identity stops being the thing consumers are weighing.
+#### Why it matters
 
-> "Consumers use accounting news as a shortcut to judge whether ESG claims can be trusted, even when the news is not directly related to the product."
+Consumers increasingly rely on ESG claims when choosing products, yet these claims are often difficult to verify. This study shows that consumers use accounting news as a shortcut to judge whether ESG claims can be trusted, even when the news is not directly related to the product. The findings suggest that voluntary ESG assurance can protect consumer confidence after adverse events, but provider choice matters in some situations.
 
-## Why credibility doesn't stay in its lane
-
-The broader implication is that a company's reputation doesn't compartmentalize the way an org chart might suggest — an accounting scandal doesn't stay contained to investors and accountants, it bleeds into how consumers read entirely separate ESG claims. For managers and boards, that's a reputational risk that extends further than the finance department. For assurance providers, the finding that same-firm assurance reads as less credible after an error is a concrete argument for structural independence, not just a theoretical one.
+For managers and boards, the results highlight reputational risks from accounting problems that extend beyond investors to customers. For assurance providers, the study shows that credibility in one area of assurance can influence perceptions in others.
