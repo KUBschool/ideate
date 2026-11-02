@@ -1,43 +1,43 @@
 ---
-title: "Auditors who flag a client's broken internal controls can pay for it in their own career"
-dek: "Issuing an adverse internal control opinion is exactly the judgment call audit regulation wants auditors to make honestly. New research finds the partners who make that call often get quietly reassigned to less valuable clients afterward."
+title: Auditors who flag a client's broken internal controls can pay for it in
+  their own career
+dek: Issuing an adverse internal control opinion is exactly the judgment call
+  audit regulation wants auditors to make honestly. New research finds the
+  partners who make that call often get quietly reassigned to less valuable
+  clients afterward.
 topic: accounting
 faculty:
   - mike-wilkins
-byline: "Mike Wilkins"
-date: 2025-01-01
+byline: Mike Wilkins
+date: 2025-01-06
+image: /assets/uploads/auditing.png
 image_tint: limestone
 featured: false
-source_url: "https://business.ku.edu/research-and-faculty/accounting/research-insights"
-answer_box: >-
-  Research on audit partner outcomes finds partners who issue adverse
-  internal control opinions are more likely to be reassigned afterward,
-  with less favorable subsequent client portfolios — lower fees and
-  assignments to less prestigious clients — especially when the adverse
-  opinion involved a more important client or the partner worked at a
-  non-Big Four firm. These portfolio effects persisted for multiple
-  years and did not apply to partners who simply inherited an existing
-  adverse opinion from someone else.
+source_url: https://business.ku.edu/research-and-faculty/accounting/research-insights
+answer_box: Research on audit partner outcomes finds partners who issue adverse
+  internal control opinions are more likely to be reassigned afterward, with
+  less favorable subsequent client portfolios — lower fees and assignments to
+  less prestigious clients — especially when the adverse opinion involved a more
+  important client or the partner worked at a non-Big Four firm. These portfolio
+  effects persisted for multiple years and did not apply to partners who simply
+  inherited an existing adverse opinion from someone else.
+journal: Journal of Accounting Research
+journal_url: https://onlinelibrary.wiley.com/doi/10.1111/1475-679X.12597
 ---
+#### Research objective
 
-Issuing an adverse opinion on a client's internal controls is exactly the kind of judgment call audit regulation depends on partners making honestly, even when it's unwelcome news for the client. New research finds that honesty can come with a quiet professional cost.
+This study examines how audit firms respond when engagement partners issue adverse internal control opinions. The researchers focus on whether partners face reassignment or changes in their client portfolios after issuing these opinions.
 
-Mike Wilkins, the Larry D. Horner/KPMG Professor at the University of Kansas, co-authored "What Happens to Partners Who Issue Adverse Internal Control Opinions?" with KU doctoral graduate Ashleigh Bakke and co-authors E.N. Cowle and S.P. Rowe, published in the Journal of Accounting Research.
+The study explores the tension audit firms face between meeting professional responsibilities and maintaining client relationships. It also examines whether consequences differ based on client importance and audit firm size. Overall, the objective is to understand how audit firms manage partner assignments in response to adverse internal control reporting.
 
-## A career consequence for doing the job right
+#### What the researchers find
 
-Wilkins's team finds partners who issue adverse internal control opinions are more likely to be reassigned to different clients in the periods that follow. Beyond reassignment itself, these partners tend to see less favorable shifts in their overall client portfolio — lower fees, and assignments to less prestigious clients than before.
+The researchers find that partners who issue adverse internal control opinions are more likely to be reassigned in subsequent periods. These partners also experience less favorable changes in their client portfolios, including lower fees and assignments to less prestigious clients.
 
-## Worse for higher-stakes calls, and outside the Big Four
+The negative effects are stronger when the adverse opinion is issued to a more important client and when the partner works at a non-Big Four audit firm. Partners who inherit clients with continuing adverse opinions do not face similar consequences. The portfolio effects persist for multiple years, suggesting long-lasting impacts on partners’ careers.
 
-The effect isn't uniform. It's stronger when the adverse opinion involves a more important client — the kind of relationship a firm has more to lose by upsetting — and stronger for partners at non-Big Four firms, where a single client relationship likely carries more relative weight. Notably, partners who simply *inherit* a client that already has a continuing adverse opinion, rather than being the one who first issued it, don't face the same consequences — the cost attaches specifically to making the call, not to being associated with a flagged client.
+#### Why it matters
 
-> "These portfolio effects persist for multiple years, suggesting long-lasting impacts on partners' careers."
+Adverse internal control opinions provide valuable information to investors but can strain auditor-client relationships. This study shows that partners who make these complex judgments may face meaningful professional consequences. The findings highlight how audit firms balance investor protection and client service incentives.
 
-## A structural tension audit firms haven't fully resolved
-
-The research surfaces a real tension audit firms navigate constantly: protecting investors requires partners willing to make unpopular calls, but firms also depend on client relationships for revenue, and those two pressures don't always point the same direction for an individual partner's career. Wilkins's findings suggest that tension resolves, at least partly, at the partner's expense.
-
-## Why regulators should be paying attention
-
-For regulators, the results raise a genuine concern — if honest internal control reporting carries a real, multi-year career cost, that's exactly the kind of incentive structure that could quietly discourage the behavior audit oversight depends on. For the profession itself, the study is a case for firm culture and structural support — protecting partners who make the right call, not just requiring that they make it.
+For regulators, the results raise concerns that these incentives may discourage auditors from reporting internal control weaknesses. For the profession, the study underscores the importance of firm culture and support for partners who prioritize audit quality.
