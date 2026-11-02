@@ -12,6 +12,11 @@ image: /assets/uploads/smart-speaker.jpg
 image_tint: steam
 featured: true
 source_url: https://news.ku.edu/news/article/humanlike-design-of-ai-voice-assistants-helps-users-disregard-security-risks-study-finds
+answer_box: Humanlike design makes AI voice assistants more enjoyable to use,
+  and that enjoyment is what eases users’ security concerns. In a survey of 277
+  voice assistant users, humanlike qualities did not lower perceived security
+  risk directly; they worked through enjoyment, which reduced both perceived
+  risk and users’ resolve to stop using the assistant.
 journal: Information & Management
 journal_url: https://www.researchgate.net/publication/412276954_Sounds_Good_and_Feels_Better-How_Anthropomorphism_Influences_Artificial_Intelligence_Voice_Assistant_Use
 ---
