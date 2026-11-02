@@ -7,7 +7,7 @@ topic: accounting
 faculty:
   - min-park
 byline: Min Park
-date: 2025-01-01
+date: 2025-05-01
 image: /assets/uploads/esg_puzzle.png
 image_tint: limestone
 featured: false
