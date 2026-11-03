@@ -1,14 +1,15 @@
 ---
-title: "KU accounting research holds its No. 1 global ranking"
-dek: "KU's audit archival research kept its top spot in BYU's 2025 rankings, with a No. 2 finish in auditing publications overall."
+title: KU accounting research holds its No. 1 global ranking
+dek: KU's audit archival research kept its top spot in BYU's 2025 rankings, with
+  a No. 2 finish in auditing publications overall.
 topic: accounting
 faculty: []
-byline: "KU Accounting faculty"
+byline: KU Accounting faculty
 date: 2026-02-17
+image: /assets/uploads/cfh-daytime.jpg
 image_tint: steam
 featured: false
-answer_box: >-
-  KU School of Business accounting faculty maintained the No. 1 global
+answer_box: KU School of Business accounting faculty maintained the No. 1 global
   ranking for audit archival research in Brigham Young University's 2025
   accounting research rankings, and placed No. 2 worldwide in overall
   auditing-research publication output.
