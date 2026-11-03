@@ -5,6 +5,8 @@ dek: Equity investors rarely look at how promptly a company pays its suppliers â
   but new research finds that behavior carries real information the stock market
   is slow to catch up on.
 topic: finance
+also_topics:
+  - supply-chain
 faculty:
   - atanas-mihov
 byline: Atanas Mihov
