@@ -1,35 +1,43 @@
 ---
-title: "Making good predictions when huge chunks of your data are simply missing"
-dek: "Survey data and merged databases don't fail gracefully — they go missing in whole blocks at a time, not scattered individual gaps. A new modeling approach makes reliable predictions anyway, without deleting data or guessing at what's missing."
+title: Making good predictions when huge chunks of your data are simply missing
+dek: Survey data and merged databases don't fail gracefully — they go missing in
+  whole blocks at a time, not scattered individual gaps. A new modeling approach
+  makes reliable predictions anyway, without deleting data or guessing at what's
+  missing.
 topic: analytics
 faculty:
   - karthik-srinivasan
-byline: "Karthik Srinivasan"
-date: 2025-06-02
+byline: Karthik Srinivasan
+date: 2024-11-26
+image: /assets/uploads/missing-data.jpeg
 image_tint: limestone
 featured: false
-source_url: "https://business.ku.edu/research-and-faculty/analytics-information-operations/research-insights"
-answer_box: >-
-  A blockwise reduced modeling approach for datasets with large,
-  structured gaps in the data — common in survey research and
-  multi-source databases — trains multiple models on overlapping
-  subsets of available information and matches each new observation to
-  the most appropriate model, avoiding both large-scale data deletion
-  and imputation. The approach outperformed common alternatives across
-  simulated and real datasets, with stable predictions even when
-  missing data was substantial, and scaled efficiently as data size grew.
+source_url: https://business.ku.edu/research-and-faculty/analytics-information-operations/research-insights
+answer_box: A blockwise reduced modeling approach for datasets with large,
+  structured gaps in the data — common in survey research and multi-source
+  databases — trains multiple models on overlapping subsets of available
+  information and matches each new observation to the most appropriate model,
+  avoiding both large-scale data deletion and imputation. The approach
+  outperformed common alternatives across simulated and real datasets, with
+  stable predictions even when missing data was substantial, and scaled
+  efficiently as data size grew.
+journal: INFORMS Journal on Data Science
+journal_url: https://pubsonline.informs.org/doi/10.1287/ijds.2022.9016
 ---
+#### Research objective
 
-Most missing-data techniques assume the gaps are scattered — a few random blanks sprinkled across an otherwise complete dataset. Real-world data often doesn't miss that way. Surveys with optional sections, or databases merged from multiple sources, tend to go missing in whole structured blocks at once. New research builds a method specifically for that messier, more common reality.
+This study examines how predictive models can be built when datasets contain large, structured gaps rather than a few scattered missing values. The authors focus on situations in which missing data occur in blocks, such as when information comes from multiple sources or from surveys with optional sections. They aim to develop an approach that avoids discarding large amounts of data or imputing missing values with estimates.
 
-## The usual fixes don't fit blockwise gaps well
+More broadly, the study seeks to understand how models can make reliable predictions using only the information that is actually observed.
 
-Karthik Srinivasan, associate professor of business analytics at the University of Kansas, co-authored "A Reduced Modeling Approach for Making Predictions with Incomplete Data Having Blockwise Missing Patterns" with F. Currim and S. Ram, published in INFORMS Journal on Data Science. The standard responses to missing data — dropping incomplete records or imputing estimated values in their place — both come with real costs when the gaps are large and structured: dropping records can waste enormous amounts of otherwise-usable data, and imputation means predictions partly rest on values nobody actually observed.
+#### What the researchers find
 
-## Matching each observation to the model that fits what it actually has
+The researchers find that their proposed blockwise reduced modeling approach delivers stronger predictive performance than common alternatives. By training multiple models on overlapping subsets of available data and matching new observations to the most appropriate model, the approach limits information loss. The method performs well across both simulated and real datasets with blockwise missing patterns.
 
-The team's blockwise reduced modeling approach sidesteps both tradeoffs by training multiple models on overlapping subsets of the available data, then matching each new observation to whichever trained model best fits the specific fields that observation actually has present. Rather than forcing every prediction through one model built for complete data, the method routes each case to a model built around the information that's genuinely there.
+Results show improvements for both simpler and more complex prediction models, and the approach scales efficiently as data size grows. Overall, predictions remain stable even when the missing data are substantial.
 
-## Reliable even when the gaps are large
+#### Why it matters
 
-Testing across both simulated and real datasets with blockwise missing patterns, the approach delivered stronger predictive performance than common alternatives, with the improvement holding for both simpler and more complex underlying prediction models. Performance stayed stable even when the share of missing data was substantial, and the method scaled efficiently as dataset size grew — a meaningful practical detail, since many of the settings where blockwise missingness shows up (integrated databases, large health and social-data sources) are exactly the settings where scalability matters most. For analysts working with data that never was going to be complete, the finding is a genuine alternative to the usual choice between throwing data away and guessing at what isn't there.
+Many real-world datasets contain large, systematic gaps that make standard analysis difficult or unreliable. This study offers practical insight into how organizations can still extract useful predictions without relying heavily on data deletion or imputation.
+
+The findings are relevant for analysts and decision-makers working with survey data, integrated databases, or health and social data sources. By preserving more of the original information, the approach supports better decision-making in settings where complete data are rarely available.
