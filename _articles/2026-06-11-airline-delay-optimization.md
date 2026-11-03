@@ -3,6 +3,8 @@ title: Small itinerary tweaks could cut airline delays without hurting efficienc
 dek: Combining passenger-level and flight-level data could let airlines make
   modest adjustments that meaningfully improve the travel experience.
 topic: analytics
+also_topics:
+  - management
 faculty:
   - mazhar-arikan
 byline: Mazhar Arikan
@@ -12,18 +14,28 @@ image_alt: AI generated airline operations dashboard depicting passenger level
   flight status details.
 image_tint: steam
 featured: false
-source_url: https://pubsonline.informs.org/doi/10.1287/msom.2023.0070
+source_url: https://business.ku.edu/research-and-faculty/analytics-information-operations/research-insights
 answer_box: Research combining passenger-itinerary data with flight-operations
   data finds that airlines could meaningfully reduce missed connections and
   compounding delays through modest scheduling adjustments — without sacrificing
   the aircraft-utilization efficiency airlines currently optimize for.
 journal: Manufacturing & Service Operations Management
+journal_url: https://pubsonline.informs.org/doi/10.1287/msom.2023.0070
 ---
+#### Research objective
 
-Airlines have gotten very good at optimizing one number: how efficiently they use each aircraft over the course of a day. What that optimization often doesn't account for is what a delay actually costs a passenger sitting in the middle of a multi-leg itinerary — a gap the research sets out to close.
+This study examines how airlines' route planning and flight scheduling decisions influence passenger travel outcomes. The authors focus on efficiency, measured through scheduled travel times, and resilience, measured through the likelihood of long travel delays.
 
-By combining passenger-level itinerary data with flight-level operations data, the analysis identifies where the two objectives — aircraft efficiency and passenger experience — are more compatible than airlines' current scheduling practices assume. In many cases, modest adjustments to how tightly connections are scheduled could reduce missed-connection cascades without materially hurting aircraft utilization.
+The study uses the repeal of the Wright Amendment as a natural setting to observe how changes in route offerings affect these outcomes. Rather than focusing solely on whether nonstop service is added, the research seeks to understand why impacts differ across destinations. The goal is to identify route-level features that explain variation in passenger experiences.
 
-## Why passengers feel delays differently than airlines measure them
+#### What the researchers find
 
-A single delayed flight matters less to a passenger than what it triggers downstream — a missed connection, a canceled meeting, an overnight stay that wasn't planned. Airline performance metrics tend to track on-time performance per flight, not per passenger journey. The research argues that closing that measurement gap is itself part of the fix: airlines that started measuring delay costs the way passengers experience them would likely make different scheduling trade-offs than they do today.
+The repeal of the Wright Amendment led to substantial changes in Southwest Airlines' service patterns at Dallas Love Field, but the effects on passengers varied widely by destination. Some routes experienced improved efficiency or fewer long delays, while others saw little change or even worse outcomes. Adding nonstop service alone does not fully explain these differences.
+
+The authors show that route inefficiency and route resilience, two route-level measures capturing itinerary structure and buffer times, help explain the uneven effects. They also find that small adjustments in how connecting passengers are assigned to itineraries can meaningfully reduce long delays with little impact on overall travel time.
+
+#### Why it matters
+
+The findings highlight that airline performance depends not only on headline decisions like adding nonstop flights, but also on deeper route design choices. For airline managers, the study shows how targeted reallocation of connecting passengers can improve resilience without sacrificing efficiency.
+
+For regulators, the results suggest that passenger-level data can reveal important operational dynamics that are invisible in standard flight-level statistics. More broadly, the study clarifies how efficiency and resilience trade-offs can be actively managed rather than treated as unavoidable. This insight is valuable for improving passenger experiences while maintaining operational performance.
