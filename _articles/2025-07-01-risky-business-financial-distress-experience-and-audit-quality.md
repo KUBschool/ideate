@@ -3,12 +3,15 @@ title: "Risky business: Financial distress experience and audit quality"
 dek: A look at how specialized audit experience improves judgments while
   reducing costs.
 topic: accounting
-faculty: [matthew-beck, chan-li]
+faculty:
+  - matthew-beck
+  - chan-li
 byline: Beck, M., Constance, P., & Li, C.
-date: 2025-07-01
+date: 2025-02-01
+image: /assets/uploads/auditing-meeting.jpeg
 image_tint: steam
 featured: false
-source_url: https://publications.aaahq.org/ajpt/article-abstract/44/1/1/12599/Risky-Business-The-Impact-of-Experience-in?redirectedFrom=fulltext
+source_url: ""
 answer_box: This study finds that audit offices with extensive experience
   auditing financially distressed companies make more accurate judgments about
   whether those firms can continue operating. Rather than becoming overly
@@ -19,12 +22,22 @@ answer_box: This study finds that audit offices with extensive experience
   highlight how experience and shared learning within audit offices can improve
   audit quality and provide more reliable information to investors, lenders, and
   other stakeholders.
+journal: "Auditing: A Journal of Practice & Theory"
+journal_url: https://publications.aaahq.org/ajpt/article-abstract/44/1/1/12599/Risky-Business-The-Impact-of-Experience-in?redirectedFrom=fulltext
 ---
+#### Research objective
+
 This study examines whether audit offices that have previously worked with financially distressed companies develop experience that helps them make better judgments about a company’s ability to continue operating.
 
 The researchers focus on office-level experience rather than individual auditors to understand how shared learning may occur within audit teams. The study examines how this experience relates to the accuracy of going-concern opinions, which are warnings included in audit reports when a company may not survive. It also examines whether this experience is associated with audit fees and legal exposure for audit firms.
 
-> **"Overall, the objective is to determine whether repeated exposure to high-risk clients shapes audit reporting quality and related outcomes."**
+Overall, the objective is to determine whether repeated exposure to high-risk clients shapes audit reporting quality and related outcomes.
+
+#### What the researchers find
+
+The researchers find that audit offices with greater experience auditing financially distressed clients tend to issue more accurate going-concern opinions. These offices are less likely to issue warnings that later prove unnecessary and less likely to miss cases where a warning would have been appropriate. The findings suggest that this experience improves judgment rather than simply making auditors more conservative or more lenient. The study also finds that these audit offices generally charge lower audit fees to distressed clients, which may reflect greater efficiency or lower perceived legal risk. These patterns are strongest among audit offices outside the largest global audit firms, while results are more limited among the largest firms.
+
+#### Why it matters
 
 Going-concern opinions are important signals for investors, lenders, and other stakeholders who rely on audit reports to assess financial risk. Errors in these opinions can impose real costs, either by raising unnecessary alarms or by failing to warn about serious trouble.
 
