@@ -5,6 +5,8 @@ dek: When U.S. companies decided how fast to shut down their headquarters during
   COVID-19, the political leanings of the firm and its CEO mattered more than
   cash reserves or executive pay structure.
 topic: finance
+also_topics:
+  - management
 faculty:
   - shradha-bindal
   - felix-meschke
