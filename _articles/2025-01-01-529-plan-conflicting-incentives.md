@@ -4,6 +4,8 @@ dek: Families trust that a state-sponsored 529 plan is being managed in their
   interest. New research finds states under fiscal pressure negotiate contracts
   that quietly shift costs onto the very families saving for college.
 topic: finance
+also_topics:
+  - policy
 faculty:
   - justin-balthrop
   - gjergji-cici
