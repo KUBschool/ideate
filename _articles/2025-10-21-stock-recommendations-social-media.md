@@ -5,6 +5,8 @@ dek: When investors discuss analyst stock recommendation revisions on Twitter,
   markets absorb that information faster — especially when the discussion comes
   from more credible, more engaged accounts.
 topic: finance
+also_topics:
+  - accounting
 faculty:
   - eric-weisbrod
 byline: Jon Niccum
