@@ -4,6 +4,8 @@ dek: "Bank risk research usually looks at lending and market exposure. New
   research finds a bank's growth rate alone predicts a different kind of
   trouble: internal breakdowns in people, processes and systems."
 topic: finance
+also_topics:
+  - management
 faculty:
   - atanas-mihov
 byline: Atanas Mihov
