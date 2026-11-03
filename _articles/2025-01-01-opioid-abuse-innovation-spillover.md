@@ -4,6 +4,8 @@ dek: "The economic toll of the opioid epidemic is usually measured in the people
   it directly affects. New research finds a second cost hiding in the data:
   skilled, non-using workers leaving, and local innovation leaving with them."
 topic: finance
+also_topics:
+  - policy
 faculty:
   - kevin-pisciotta
 byline: Kevin Pisciotta
