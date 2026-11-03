@@ -6,6 +6,8 @@ dek: A refrigerator hums at 50 decibels; a leaf blower roars at 110. New
   right around that refrigerator hum — and both louder and quieter environments
   make people feel worse.
 topic: analytics
+also_topics:
+  - management
 faculty:
   - karthik-srinivasan
 byline: Jon Niccum
