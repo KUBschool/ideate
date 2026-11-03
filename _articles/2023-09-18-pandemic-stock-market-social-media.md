@@ -7,7 +7,7 @@ topic: analytics
 faculty:
   - shaobo-li
   - karthik-srinivasan
-byline: Michael Lash, Shaobo Li & Karthik Srinivasan
+byline: Jon Niccum
 date: 2023-09-18
 image: /assets/uploads/covid-investing.jpeg
 image_tint: limestone
