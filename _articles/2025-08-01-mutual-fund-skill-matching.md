@@ -4,6 +4,8 @@ dek: Firms that fit employees' skills to the right jobs within the mutual fund
   industry see significantly stronger risk-adjusted performance, new research
   finds.
 topic: finance
+also_topics:
+  - management
 faculty:
   - gjergji-cici
 byline: Gjergji Cici
