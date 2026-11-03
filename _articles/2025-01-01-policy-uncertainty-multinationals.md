@@ -6,6 +6,8 @@ dek: Multinational firms are often assumed to diversify away country-specific
   still drag down a firm's overall value, and firms rarely shift activity
   elsewhere to compensate.
 topic: finance
+also_topics:
+  - policy
 faculty:
   - atanas-mihov
 byline: Atanas Mihov
