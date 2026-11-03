@@ -1,40 +1,42 @@
 ---
-title: "Companies with formal risk management give more — and more accurate — earnings guidance"
-dek: "Enterprise risk management is usually framed as a compliance and control investment. New research finds it also pays off in a place few would expect: how honestly and how often a company forecasts its own earnings."
+title: Companies with formal risk management give more — and more accurate —
+  earnings guidance
+dek: "Enterprise risk management is usually framed as a compliance and control
+  investment. New research finds it also pays off in a place few would expect:
+  how honestly and how often a company forecasts its own earnings."
 topic: accounting
 faculty:
   - chan-li
   - kristin-stack
-byline: "Chan Li & Kristin Stack"
-date: 2026-01-01
+byline: Chan Li & Kristin Stack
+date: 2025-09-04
+image: /assets/uploads/earnings-report.jpeg
 image_tint: limestone
 featured: false
-source_url: "https://business.ku.edu/research-and-faculty/accounting/research-insights"
-answer_box: >-
-  Research on firms adopting enterprise risk management — a firmwide,
-  as opposed to siloed, approach to identifying and managing risk —
-  finds those firms are more likely to issue voluntary earnings
-  forecasts and that the forecasts they issue tend to be more accurate,
-  with the benefit strongest for longer-horizon forecasts, consistent
-  with ERM's long-term planning orientation.
+source_url: https://business.ku.edu/research-and-faculty/accounting/research-insights
+answer_box: Research on firms adopting enterprise risk management — a firmwide,
+  as opposed to siloed, approach to identifying and managing risk — finds those
+  firms are more likely to issue voluntary earnings forecasts and that the
+  forecasts they issue tend to be more accurate, with the benefit strongest for
+  longer-horizon forecasts, consistent with ERM's long-term planning
+  orientation.
+journal: Management Science
+journal_url: https://pubsonline.informs.org/doi/10.1287/mnsc.2022.01120
 ---
+#### Research objective
 
-Enterprise risk management usually gets pitched to boards as a compliance and internal-control investment — the kind of thing that shows up as a cost center, not a communications upgrade. New research finds it has a real payoff in a place that rarely gets attributed to risk management at all: how firms talk to investors about future earnings.
+This study examines whether adopting enterprise risk management affects managers’ decisions to issue earnings forecasts and the quality of those forecasts. The researchers focus on enterprise risk management as a firmwide approach to identifying and managing risks rather than isolated risk controls. They explore whether this approach helps managers better assess uncertainty when communicating expectations about future performance.
 
-Chan Li, C.A. Scupin Professor, and Kristin Stack, assistant professor of accounting, both at the University of Kansas, co-authored "Enterprise Risk Management and Management Earnings Forecasts" with L. Sun and J. Xu, forthcoming in Management Science.
+The study also considers whether the effects differ across forecast time horizons. Overall, the objective is to understand how a firm’s risk oversight approach relates to its voluntary earnings guidance.
 
-## A firmwide view of risk, not a checklist
+#### What the researchers find
 
-The research specifically studies enterprise risk management (ERM) as a firmwide approach to identifying and managing risk, distinct from the isolated, department-by-department risk controls many companies already have in place. That firmwide vantage point turns out to matter for a specific downstream outcome: whether, and how well, a company forecasts its own future earnings for investors.
+The researchers find that firms adopting enterprise risk management are more likely to issue earnings forecasts and that those forecasts tend to be more accurate. The findings suggest that enterprise risk management helps reduce unexpected fluctuations in performance and improves how managers process information about uncertainty in both internal operations and external conditions affecting the firm. The benefits are stronger for forecasts that look further into the future, which aligns with the long-term planning focus of enterprise risk management.
 
-## More forecasts, and better ones
+#### Why it matters
 
-Firms that adopt ERM are more likely to voluntarily issue earnings forecasts in the first place, and the forecasts they do issue tend to be more accurate than those from firms without a comparable risk framework. The mechanism, as Li and Stack's team read it, is that ERM helps managers process uncertainty more effectively — both the uncertainty coming from inside the company's own operations and uncertainty arriving from outside conditions — which in turn reduces the kind of unexpected performance swings that make forecasting genuinely hard.
+Management earnings forecasts play an important role in shaping investor expectations and market understanding of firm performance. This study suggests that enterprise risk management can support more informative and reliable communication with investors.
 
-## Why the effect grows stronger for longer time horizons
+For managers and boards, the findings highlight that investments in firmwide risk oversight may benefit beyond compliance and control, extending to disclosure quality.
 
-The benefit isn't uniform across all forecasts — it's strongest for forecasts that look further into the future, which lines up neatly with what ERM is actually built to do: plan for risk over the long term, not just react to it quarter to quarter. That pattern is itself a form of evidence that the effect is real and mechanistic, not incidental.
-
-## A case for risk management as a disclosure investment
-
-For boards evaluating whether ERM is worth the investment, this gives them a genuinely new column to weigh it against: not just fewer surprises internally, but more credible, more informative guidance to the market. For investors and analysts, the finding offers a partial explanation for why some firms' earnings guidance holds up better than others — it may have less to do with the industry they're in and more to do with how seriously they've formalized risk oversight behind the scenes.
+For investors and analysts, the results offer insight into why forecasts from some firms may be more reliable than those from others. More broadly, the study helps clarify how internal risk practices can influence transparency and decision-making.
