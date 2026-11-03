@@ -123,15 +123,24 @@ layout: default
 {% comment %}
   Related = the newest other articles that share any of this article's topics (as main
   topic or "Also relates to"), three at most. It is gathered one topic at a time, with a
-  list of the addresses already picked so nothing shows twice, because GitHub Pages
-  (Jekyll 3.10) allows only ONE "or" inside a single where_exp filter - a long chain of
-  them stops the whole site from building.
+  list of the addresses already picked so nothing shows twice.
+
+  IMPORTANT: never put "and" / "or" inside a where_exp filter. GitHub Pages (Jekyll 3.10)
+  accepts only ONE comparison there (a == b, or a contains b) and a longer expression
+  stops the whole site from building. "and" / "or" are fine in the if / unless tags.
 {% endcomment %}
 {% assign rel_urls = '' | split: ',' %}
 {% assign related = '' | split: ',' %}
 {% for rel_slug in ar_topics %}
-  {% assign rel_found = site.articles | where_exp: 'a', 'a.topic == rel_slug or a.also_topics contains rel_slug' %}
-  {% for rel_a in rel_found %}
+  {% assign rel_main = site.articles | where: 'topic', rel_slug %}
+  {% assign rel_also = site.articles | where_exp: 'a', 'a.also_topics contains rel_slug' %}
+  {% for rel_a in rel_main %}
+    {% unless rel_a.url == page.url or rel_urls contains rel_a.url %}
+      {% assign rel_urls = rel_urls | push: rel_a.url %}
+      {% assign related = related | push: rel_a %}
+    {% endunless %}
+  {% endfor %}
+  {% for rel_a in rel_also %}
     {% unless rel_a.url == page.url or rel_urls contains rel_a.url %}
       {% assign rel_urls = rel_urls | push: rel_a.url %}
       {% assign related = related | push: rel_a %}

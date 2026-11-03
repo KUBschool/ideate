@@ -35,17 +35,22 @@ layout: default
   Every article whose main topic is this one, plus those that list it under "Also relates to".
   An "also relates to" match is checked with topic-links.html (slugs mode), so an article
   is filed under exactly the topics its cards show - never more than three.
+
+  IMPORTANT: no "and" / "or" inside a where_exp filter - GitHub Pages (Jekyll 3.10) allows
+  only one comparison there and anything longer stops the whole site from building.
 {% endcomment %}
-{% assign pool_raw = site.articles | where_exp: 'a', 'a.topic == page.topic or a.also_topics contains page.topic' %}
+{% assign pool_main = site.articles | where: 'topic', page.topic %}
+{% assign pool_also = site.articles | where_exp: 'a', 'a.also_topics contains page.topic' %}
 {% assign pool = '' | split: ',' %}
-{% for pl_a in pool_raw %}
-  {% if pl_a.topic == page.topic %}
-    {% assign pool = pool | push: pl_a %}
-  {% else %}
+{% for pl_a in pool_main %}
+  {% assign pool = pool | push: pl_a %}
+{% endfor %}
+{% for pl_a in pool_also %}
+  {% unless pl_a.topic == page.topic %}
     {% capture pl_slug_list %}{% include topic-links.html article=pl_a slugs=true %}{% endcapture %}
     {% assign pl_slugs = pl_slug_list | split: ',' %}
     {% if pl_slugs contains page.topic %}{% assign pool = pool | push: pl_a %}{% endif %}
-  {% endif %}
+  {% endunless %}
 {% endfor %}
 {% assign pool = pool | sort: 'date' | reverse %}
 
