@@ -5,10 +5,13 @@ dek: Companies treat ESG reporting like one undifferentiated block of content.
   New research finds the specific topics a firm emphasizes matter enormously —
   some pay off immediately, others take two years to show up.
 topic: analytics
+also_topics:
+  - management
 faculty:
   - karthik-srinivasan
 byline: Karthik Srinivasan
-date: 2025-09-15
+date: 2025-08-01
+image: /assets/uploads/firm-esg.jpeg
 image_tint: limestone
 featured: false
 source_url: https://business.ku.edu/research-and-faculty/analytics-information-operations/research-insights
@@ -23,19 +26,18 @@ answer_box: "Text analysis of U.S. firms' sustainability reports identifies six
 journal: Journal of Risk and Financial Management
 journal_url: https://www.researchgate.net/publication/394807328_Textual_Analysis_of_Sustainability_Reports_Topics_Firm_Value_and_the_Moderating_Role_of_Assurance
 ---
+#### Research objective
 
-Sustainability reporting gets treated in a lot of corporate and investor conversation as one undifferentiated block: a company either does ESG reporting well or it doesn't. New research argues that framing misses most of what actually matters — the specific content of a disclosure, not just its existence, is what moves firm value, and different content moves it on completely different timelines.
+This study examines how the specific topics firms emphasize in standalone sustainability reports relate to firm value and whether third-party assurance changes that relationship. Rather than treating sustainability reporting as a single aggregate construct, the authors focus on the content of disclosures and the role of assurance in shaping market responses.
 
-## Six topics, six very different market responses
+#### What the researchers find
 
-Karthik Srinivasan, associate professor of business analytics at the University of Kansas, co-authored "Textual Analysis of Sustainability Reports: Topics, Firm Value, and the Moderating Role of Assurance" with S. Rao and N. Juma, published in the Journal of Risk and Financial Management. Using latent Dirichlet allocation — a text-analysis technique for automatically identifying dominant themes — the team identified six recurring topics across U.S. firms' standalone sustainability reports: environmental impact, sustainable consumption, daily necessities, socio-economic impact, healthcare, and operations.
+Using latent Dirichlet allocation, the authors identify six dominant sustainability topics in U.S. firms’ sustainability reports: environmental impact, sustainable consumption, daily necessities, socio-economic impact, healthcare, and operations. Panel regressions show that disclosures of healthcare and daily necessities are associated with immediate and persistent increases in firm value, as measured by Tobin’s Q.
 
-Panel regressions tracking firm value (measured via Tobin's Q) against these topics turned up a sharp split. Disclosures emphasizing healthcare and daily necessities were associated with immediate and lasting increases in firm value. Environmental and socio-economic impact disclosures showed a genuinely different pattern — a positive effect that only materialized roughly two years after disclosure, not immediately.
+In contrast, environmental and socio-economic impact topics are linked to positive effects that materialize with a lag, typically about two years after disclosure. The moderating role of assurance is mixed. In some cases, assurance strengthens the valuation effect by enhancing credibility, but in others, it is associated with lower firm value, particularly for environmental and socio-economic topics. Additional analyses using discrete Bayesian networks and SHAP values confirm that these relationships are non-linear and context-dependent.
 
-## Assurance doesn't uniformly help
+#### Why it matters
 
-The role of third-party assurance — an outside party formally verifying a sustainability report's claims — turned out to be more complicated than "assurance builds credibility, therefore it helps." In some cases assurance did strengthen the valuation effect, consistent with a credibility story. In others, particularly for environmental and socio-economic topics, assurance was associated with *lower* firm value. Additional analysis using discrete Bayesian networks and SHAP values confirmed these relationships are genuinely non-linear and context-dependent, not just noise in the data.
+The findings highlight that not all sustainability disclosures are valued equally by the market, and that the timing of valuation effects depends on the disclosed topic. The study also shows that assurance is not uniformly beneficial, suggesting a dual signaling effect in which assurance can both increase credibility and intensify investor scrutiny.
 
-## Why the mixed assurance result isn't actually a contradiction
-
-The most useful way to read the assurance finding is as a dual signaling effect: verifying a claim can simultaneously make it more credible *and* draw more investor scrutiny to it, with the net effect depending on the topic and what scrutiny tends to uncover. For managers, the practical implication is that strategic topic selection and consistency matter as much as whether a report gets assured at all — and that timing expectations should differ by topic, since a sustainability disclosure that seems to have no market effect after a quarter or two may simply be one of the topics that takes two years to pay off.
+For managers, the results emphasize the importance of strategic topic selection, consistency in sustainability reporting, and careful consideration of when and how to apply assurance. For researchers and regulators, the study underscores the need to look beyond aggregate ESG measures and consider the content and credibility of disclosures when assessing their economic consequences.
