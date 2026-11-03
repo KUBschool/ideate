@@ -6,7 +6,7 @@ dek: A new KU study finds that when teammates can point to an AI-backed
 topic: ai
 faculty:
   - todd-hall
-byline: Todd Hall
+byline: Jon Niccum
 date: 2026-02-02
 image: /assets/uploads/ai-coworker.png
 image_alt: Illustration of a person and an AI robot working together at a laptop
@@ -20,20 +20,40 @@ answer_box: "As AI tools spread through the workplace, many assume they'll crowd
   recommendation, others trust it — and each other — faster, which measurably
   improves coordination and performance."
 journal: Production and Operations Management
+journal_url: https://journals.sagepub.com/doi/10.1177/10591478251407777
 ---
+Artificial intelligence is rapidly inserting itself into various forms of human engagement. Consequently, many fear AI may be creating barriers that obstruct or prevent relationships between people.
 
-Artificial intelligence is showing up in nearly every corner of work life, and the instinct for a lot of people is to worry it will get in the way of how colleagues actually relate to one another. New research from the KU School of Business suggests that fear may have it backwards, at least for teams that are just getting to know each other.
+A new study by Todd Hall, assistant professor of business at the University of Kansas, reveals AI may actually motivate individuals to interact more with one another.
 
-The study placed participants into teams of three, running a simulated factory together — a setup designed to force the kind of interdependent, moment-to-moment decision-making that real teams deal with. Some teams had worked together before; others were assembled from strangers. Across both, teams with access to AI-generated recommendations coordinated more effectively than teams without them.
+His article titled “[Does Artificial Intelligence Stimulate or Diminish Human Interactions? An Affordance Perspective on AI, Relational Coordination, and Performance”](https://journals.sagepub.com/doi/10.1177/10591478251407777) finds that AI can do more than just augment or substitute for human capabilities. Instead, human-AI interactions can stimulate relational coordination among individuals and improve team performance. 
 
-## Where the trust actually comes from
+The article appears in Production and Operations Management.
 
-The effect was strongest on newly formed teams, where colleagues don't yet have a track record to judge each other by. An AI-backed suggestion functions as a second opinion attached to a teammate's judgment — evidence a colleague can point to instead of asking others to simply take their word for it.
+“We wondered if when an AI tool is introduced into a team setting, do people just ignore their teammates and focus on the tool?” asked Hall, who co-wrote the article with John Gardner and Zachary Wright of Brigham Young University.
 
-> "It helps people trust each other more."
+“We find the opposite happens. People use the tool as a stimulant to their interactions with other people. They use it as a topic of discussion. They build relationships over discussing what the AI is recommending. People do choose to interact with other people.”
 
-AI also shortened the ramp-up period on unfamiliar tasks. When a team is new to a problem, much of their early effort goes toward simply figuring out what they're doing. Recommendations that help clear away that initial uncertainty freed teams to spend more of their time on higher-value coordination instead.
+Hall said his is one of the few papers in any field focusing on how AI affects human-to-human interaction.
 
-## A caution alongside the finding
+“A lot of the research out there is about how humans interact with AI. How does it change their decision-making? Ours asks, ‘AI is already there, so how is this affecting your relationship with other humans who are also there?’” he said.
 
-The research doesn't read as an unqualified endorsement of AI in every team setting. The pace of change over just the last few years, and what it implies for the next few, is enough to give the researcher pause about over-reliance — and about which parts of work people will ultimately prefer to keep human. The takeaway isn't that AI replaces trust-building; it's that, deployed well, it can give a new team a faster start toward building it themselves.
+The study was conducted using a synchronous behavioral lab experiment — what Hall terms a “classic interdependent decision-making team” — in which participants managed a simulated factory in teams of three. Each participant played the role of operations, quality or demand manager, making decisions over 10 rounds to adjust operations to meet fluctuations in simulated plant performance and external demand.
+
+“The most surprising thing was how frequently people chose to use AI to engage with their colleagues, meaning there is a lot of heterogeneity in how they interact with AI,” Hall said. “Some people did just read it, follow it, type it in. But the most common thing was people used the AI as a conversation starter and a relationship builder.”
+
+The professor observed several concrete ways in which AI can stimulate human interactions.
+
+“One is it helps people trust each other more. And this is particularly in cases like this study where the teams are new. In one of them, they have experience working together, and other ones, they’re just thrown together. ‘Do I trust what this person’s talking about?’ But if they’re telling me something that I know is backed up by AI, you’re essentially getting two opinions in one,” he said.
+
+It also assists individuals in getting past uncertainty.
+
+He said, “If you’re starting something new and don’t really know what you’re doing, a lot of your time is dedicated to just figuring things out. If you have AI to help get you past some of the hurdles of figuring out details, it can allow you to shift your focus to building relationships.”
+
+Now in his fourth year at KU, Hall studies how people organize around technologies. Before going into academia, he helped hospitals implement billing software as a project manager for Epic Systems. 
+
+Despite his research interest, Hall said he understands the dangers in over-reliance on such emerging technology.
+
+“It’s easy to get to a very scary place when you realize, ‘OK, think of the last three years. OK, think of the next three years. If we improve at the same rate, things are going to become bad for all of us,’” he said.
+
+“Yes, there will be options in business and other parts of our day-to-day lives that will be taken over by AI. Ultimately, people will need to make a choice that they prefer human interaction … and I think people are going to choose humans.”
