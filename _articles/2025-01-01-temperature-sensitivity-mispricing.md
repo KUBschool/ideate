@@ -23,25 +23,18 @@ answer_box: A new firm-level measure of temperature sensitivity — based on how
 journal: Management Science
 journal_url: https://pubsonline.informs.org/doi/10.1287/mnsc.2023.00972
 ---
+#### Research objective
 
-Climate risk research usually looks at firms with obvious physical exposure — coastal real estate, agriculture, energy. New research builds a more general, firm-level measure of temperature exposure that applies to any public company, and finds the market is slow to price it correctly across the board.
+This study examines whether some firms are more sensitive to changes in temperature, whether this exposure affects their performance, and if market participants recognize these effects.
 
-Carina Cuculiza, assistant professor of finance at the University of Kansas, co-authored "Temperature Sensitivity, Mispricing, and Predictable Returns" with A. Kumar, W. Xin, and C. Zhang, forthcoming in Management Science.
+#### What the researchers find
 
-## Measuring exposure directly from stock behavior
+The authors develop a new, firm-level measure of temperature sensitivity based on how a firm’s stock returns move in response to abnormal changes in temperature. Firms with higher temperature sensitivity have lower profitability and riskier corporate policies. 
 
-Rather than relying on industry classifications or physical asset location, Cuculiza's team built their temperature-sensitivity measure directly from data: how much a firm's stock returns move in response to abnormal changes in temperature. That approach captures exposure that industry-based proxies would miss — a company doesn't need to be in an obviously climate-exposed sector for its returns to be sensitive to temperature swings.
+Firms’ exposure to temperature changes also have asset pricing implications. Specifically, firms with a high temperature sensitivity are overpriced and systematically earn lower future returns. The mispricing persists because nonlocal institutional investors allocate higher portfolio weights to firms with a high temperature sensitivity and sell-side equity analysts issue forecasts that are less accurate for these firms. That is, financial markets underreact to information related to firms’ exposure to changes in temperature, generating an economically meaningful return predictability: a strategy that buys low-temperature-sensitivity firms and sells high-temperature-sensitivity firms produces risk-adjusted returns of more than 4% from 1968 to 2020. Overall, the evidence indicates that financial markets are slow to fully incorporate firm-level exposure to temperature changes into asset prices.
 
-## Sensitivity that shows up in the fundamentals, not just the stock price
+#### Why it matters
 
-Firms with higher temperature sensitivity by this measure aren't just noisier in the market — they have real underlying differences: lower profitability and riskier corporate policies compared to less sensitive firms. That's an important distinction, since it means the measure is picking up something structural about the business, not just short-term stock volatility.
+The study uses publicly available data to develop a novel measure that quantifies firms’ exposure to changes in temperature. It shows that firms with a higher temperature sensitivity have lower future profitability, riskier corporate policies, and lower future stock returns. These firms are overpriced as financial market participants underreact to information related to firms’ temperature sensitivity.
 
-> "Financial markets are slow to fully incorporate firm-level exposure to temperature changes into asset prices."
-
-## A mispricing that persists — and a plausible reason why
-
-Despite the weaker fundamentals, high-temperature-sensitivity firms are systematically overpriced, and that mispricing doesn't correct quickly. A trading strategy buying low-sensitivity firms and selling high-sensitivity ones produced risk-adjusted returns exceeding 4% annually across more than five decades of data, from 1968 to 2020. Cuculiza's team traces at least part of the persistence to two specific channels: nonlocal institutional investors allocate disproportionately high portfolio weight to high-sensitivity firms, and sell-side analysts issue systematically less accurate forecasts for them — both consistent with the market underreacting to information it technically has access to.
-
-## Why this matters beyond one trading strategy
-
-The finding adds a genuinely new channel to how climate exposure affects asset prices — not through catastrophic physical risk to specific assets, but through a slower-moving, harder-to-see sensitivity that shows up in a firm's fundamentals well before it shows up in headlines. For investors and analysts, the takeaway is less about any single trade and more about a category of exposure that's currently being systematically underpriced into risk assessments across the market.
+The findings highlight an important channel through which changes in temperature can affect asset prices and generate systematic mispricing in financial markets.
