@@ -1,43 +1,43 @@
 ---
-title: "Earnings reports are supposed to resolve uncertainty about the past. Often, they don't."
-dek: "Analysts build forecasting models around details companies never actually disclose — and a lot of that uncertainty about what already happened doesn't go away once earnings come out."
+title: Earnings reports are supposed to resolve uncertainty about the past.
+  Often, they don't.
+dek: Analysts build forecasting models around details companies never actually
+  disclose — and a lot of that uncertainty about what already happened doesn't
+  go away once earnings come out.
 topic: accounting
 faculty:
   - min-park
-byline: "Min Park"
-date: 2026-01-01
+byline: Min Park
+date: 2025-01-13
+image: /assets/uploads/forcasting-business-model.jpeg
 image_tint: steam
 featured: false
-source_url: "https://business.ku.edu/research-and-faculty/accounting/research-insights"
-answer_box: >-
-  Research introducing the concept of "past uncertainty" finds analysts
-  build forecasting models around numerous items firms never publicly
-  disclose, leaving a meaningful share of those items unresolved even
-  after earnings announcements. That lingering uncertainty is associated
-  with greater analyst disagreement about future earnings, weaker stock
-  price reactions to the earnings announcement itself, and lower market
-  liquidity afterward — effects that differ by whether the undisclosed
-  items are financial-statement details or key performance indicators.
+source_url: https://business.ku.edu/research-and-faculty/accounting/research-insights
+answer_box: Research introducing the concept of "past uncertainty" finds
+  analysts build forecasting models around numerous items firms never publicly
+  disclose, leaving a meaningful share of those items unresolved even after
+  earnings announcements. That lingering uncertainty is associated with greater
+  analyst disagreement about future earnings, weaker stock price reactions to
+  the earnings announcement itself, and lower market liquidity afterward —
+  effects that differ by whether the undisclosed items are financial-statement
+  details or key performance indicators.
+journal: Review of Accounting Studies
+journal_url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5030615
 ---
+#### Research objective
 
-Earnings announcements are usually treated, implicitly, as the moment that resolves the big question mark over a company's recent performance. New research argues that assumption doesn't hold nearly as often as it should.
+This study examines how analysts build their forecasting models and whether firms provide the information analysts seek. The researchers focus on the gap between the information that analysts include in their models and what firms actually disclose through required and voluntary channels. They introduce the idea of past uncertainty to describe situations in which analysts cannot confirm key historical information even after earnings are released.
 
-Min Park, associate professor of accounting at the University of Kansas, co-authored "Analysts' Forecasting Models and Uncertainty About the Past" with T. Zach, forthcoming in Review of Accounting Studies.
+The study evaluates how this unresolved uncertainty affects analysts and markets. Overall, the objective is to understand how disclosure limits shape the information environment after earnings announcements.
 
-## The gap between what analysts model and what firms disclose
+#### What the researchers find
 
-Park's team starts from a genuinely useful observation: analysts build highly detailed forecasting models that include far more line items than firms actually disclose, whether through required financial statements or voluntary commentary. The paper introduces "past uncertainty" as a name for the resulting gap — situations where analysts can't confirm key historical information even after a company's earnings have already come out.
+The researchers find that analysts use highly detailed forecasting models that include many items that firms do not publicly disclose. A meaningful share of these items remains undisclosed even after earnings announcements, leaving analysts uncertain about past performance. This uncertainty about the past is associated with greater disagreement among analysts about future earnings.
 
-## Uncertainty that survives the earnings announcement
+It is also linked to weaker stock price reactions to earnings announcements and lower market liquidity after the announcement. The effects differ by information type: uncertainty about financial statement items affects announcement reactions, while uncertainty about key performance indicators affects trading and analyst behavior afterward.
 
-A meaningful share of the items analysts want to model remain undisclosed even once earnings are public, and that unresolved uncertainty has real, measurable consequences. It's associated with greater disagreement among analysts about future earnings, weaker stock price reactions to the earnings announcement itself, and lower market liquidity in the aftermath.
+#### Why it matters
 
-> "This study shows that this assumption does not always hold."
+Earnings announcements are often assumed to resolve uncertainty about past performance. This study shows that this assumption does not always hold. When firms do not disclose items that analysts view as important, uncertainty can persist, influencing forecast prices and trading.
 
-## Two kinds of missing information, two different effects
-
-The paper draws a useful distinction between types of undisclosed information. Uncertainty tied to financial statement items mainly affects how the market reacts *at* the announcement itself. Uncertainty tied to key performance indicators — the operational metrics firms discuss but don't always formally disclose — instead shows up afterward, in ongoing trading behavior and analyst activity. That split matters for anyone trying to diagnose *why* a stock's reaction to earnings seems muted or why disagreement among analysts persists.
-
-## What firms could actually fix here
-
-For companies, the finding is a fairly direct argument that disclosure choices — specifically, which operational and financial details get left out — have consequences that outlast the earnings announcement itself. For investors and analysts, the research offers a concrete explanation for something that can otherwise feel mysterious: why meaningful disagreement and information friction can persist even after a company has, in a formal sense, already told the market everything it's required to.
+For firms, the findings highlight how disclosure choices affect how well markets understand performance. For analysts and investors, the study explains why disagreement and information frictions can remain even after earnings are released. More broadly, the research deepens understanding of how information gaps shape market outcomes.
