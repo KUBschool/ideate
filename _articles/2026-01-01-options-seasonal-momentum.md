@@ -1,43 +1,42 @@
 ---
-title: "Options that performed well last quarter tend to do it again — on a schedule investors aren't pricing in"
-dek: "New research finds equity option returns follow a genuine seasonal rhythm, tied to predictable patterns in volatility that investors' own expectations consistently fail to capture."
+title: Options that performed well last quarter tend to do it again — on a
+  schedule investors aren't pricing in
+dek: New research finds equity option returns follow a genuine seasonal rhythm,
+  tied to predictable patterns in volatility that investors' own expectations
+  consistently fail to capture.
 topic: finance
 faculty:
   - haitao-mo
-byline: "Haitao Mo"
-date: 2026-01-01
+byline: Haitao Mo
+date: 2026-06-13
+image: /assets/uploads/calendars.jpeg
 image_tint: steam
 featured: false
-source_url: "https://business.ku.edu/research-and-faculty/finance/research-insights"
-answer_box: >-
-  Using tradable option portfolios to measure returns linked to
-  individual equity volatility, research finds a strong seasonal
-  continuation pattern — options that performed well at a given
-  calendar interval in the past tend to perform well again at that same
-  interval, at both quarterly and yearly frequencies, persisting over
-  long horizons and distinct from standard momentum effects. The
-  pattern reflects investors' expectations of volatility failing to
+source_url: https://business.ku.edu/research-and-faculty/finance/research-insights
+answer_box: Using tradable option portfolios to measure returns linked to
+  individual equity volatility, research finds a strong seasonal continuation
+  pattern — options that performed well at a given calendar interval in the past
+  tend to perform well again at that same interval, at both quarterly and yearly
+  frequencies, persisting over long horizons and distinct from standard momentum
+  effects. The pattern reflects investors' expectations of volatility failing to
   fully capture predictable seasonal changes in realized volatility.
+journal: Review of Financial Studies
+journal_url: https://academic.oup.com/rfs/advance-article-abstract/doi/10.1093/rfs/hhag057/8707650
 ---
+#### Research objective
 
-Momentum — the tendency for recent winners to keep winning — is one of the best-documented patterns in finance. New research finds a related but genuinely distinct pattern in the options market, tied not to recent performance generally, but to the calendar itself.
+This study examines how returns on equity options vary over time and whether they display predictable seasonal patterns. The authors aim to improve the measurement of option-based returns linked to individual equity volatility using tradable option portfolios. They then investigate whether past option performance at regular calendar intervals is related to future option returns.
 
-Haitao Mo, associate professor of finance and Koch Fellow at the University of Kansas, co-authored "The Variance Premium and Seasonal Momentum in Options Returns" with S.L. Heston, C.S. Jones, M. Khorram, and S. Li, forthcoming in the Review of Financial Studies.
+A central goal is to understand whether these patterns reflect predictable movements in underlying equity volatility. Overall, the study seeks to clarify how option returns relate to recurring changes in realized and investor-expected volatilities of underlyings.
 
-## Measuring options returns more precisely
+#### What the researchers find
 
-Before testing for the seasonal pattern, Mo's team first had to solve a measurement problem: getting a clean read on returns linked specifically to an individual stock's volatility, isolated from other factors option prices reflect. They do this using tradable option portfolios, an approach designed to more accurately capture equity-volatility-linked returns than cruder proxies would.
+The researchers find that option returns show a strong seasonal continuation pattern, meaning options that performed well at certain regular intervals in the past tend to perform well again. This pattern appears at quarterly and yearly frequencies and persists over long horizons.
 
-## A pattern tied to the calendar, not just recent performance
+The results indicate that investors’ expectation of underlying equity volatility does not fully reflect predictable seasonal changes in realized volatility. As a result, option returns linked to volatility continue to exhibit return persistence. These seasonal patterns are distinct from standard momentum effects and remain even after accounting for other known predictors of option returns.
 
-With that cleaner measure in hand, the team finds a genuine seasonal continuation effect: options that performed well at a specific point in the calendar cycle — the same quarter, the same time of year — in the past tend to perform well again at that same point going forward. This shows up at both quarterly and yearly frequencies, and it persists over long horizons rather than fading out after a period or two.
+#### Why it matters
 
-> "Investors' expectation of underlying equity volatility does not fully reflect predictable seasonal changes in realized volatility."
+Options play a key role in risk management, trading, and price discovery in financial markets. This study highlights that predictable patterns in equity volatility are not fully incorporated into equity option prices.
 
-## Not the same thing as ordinary momentum
-
-The paper is explicit that this isn't just standard momentum wearing a calendar disguise — the seasonal pattern remains even after accounting for known momentum effects and other established predictors of option returns. That distinction matters: it means investors aren't simply underreacting to recent performance generally, they're specifically underreacting to a recurring, calendar-linked component of volatility that keeps showing up at the same points in the cycle.
-
-## Why option markets are missing something predictable
-
-The underlying story is that investors' expectations of a stock's future volatility don't fully incorporate the fact that realized volatility itself follows predictable seasonal rhythms — certain calendar windows are just reliably more or less volatile for reasons tied to earnings cycles, reporting patterns, and other recurring calendar effects. Because that seasonality isn't fully priced into investor expectations, it shows up instead as a persistent, exploitable pattern in option returns. For practitioners, the finding is a fairly direct signal that equity options markets are systematically underreacting to something genuinely predictable, not just noisy.
+For investors and practitioners, the findings suggest that equity option markets may systematically underreact to recurring changes in equity volatility. The results also provide insight into how investors’ expectations about risk evolve. More broadly, the study deepens understanding of how market expectations differ from realized outcomes in derivatives markets.
