@@ -10,7 +10,7 @@ also_topics:
 faculty:
   - eric-weisbrod
   - adi-masli
-byline: Eric Weisbrod & Adi Masli
+byline: Jon Niccum
 date: 2024-06-18
 image: /assets/uploads/injury-lawyer.jpeg
 image_tint: steam
