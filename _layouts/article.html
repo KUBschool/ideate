@@ -120,11 +120,25 @@ layout: default
   </aside>
 </div>
 
-{% comment %} Related = newest other articles that share any of this article's topics (as main or "Also relates to"). {% endcomment %}
-{% assign rel_t1 = ar_topics[0] | default: '' %}
-{% assign rel_t2 = ar_topics[1] | default: '' %}
-{% assign rel_t3 = ar_topics[2] | default: '' %}
-{% assign related = site.articles | where_exp: 'a', 'a.url != page.url' | where_exp: 'a', 'a.topic == rel_t1 or a.also_topics contains rel_t1 or a.topic == rel_t2 or a.also_topics contains rel_t2 or a.topic == rel_t3 or a.also_topics contains rel_t3' | sort: 'date' | reverse | slice: 0, 3 %}
+{% comment %}
+  Related = the newest other articles that share any of this article's topics (as main
+  topic or "Also relates to"), three at most. It is gathered one topic at a time, with a
+  list of the addresses already picked so nothing shows twice, because GitHub Pages
+  (Jekyll 3.10) allows only ONE "or" inside a single where_exp filter - a long chain of
+  them stops the whole site from building.
+{% endcomment %}
+{% assign rel_urls = '' | split: ',' %}
+{% assign related = '' | split: ',' %}
+{% for rel_slug in ar_topics %}
+  {% assign rel_found = site.articles | where_exp: 'a', 'a.topic == rel_slug or a.also_topics contains rel_slug' %}
+  {% for rel_a in rel_found %}
+    {% unless rel_a.url == page.url or rel_urls contains rel_a.url %}
+      {% assign rel_urls = rel_urls | push: rel_a.url %}
+      {% assign related = related | push: rel_a %}
+    {% endunless %}
+  {% endfor %}
+{% endfor %}
+{% assign related = related | sort: 'date' | reverse | slice: 0, 3 %}
 {% unless related.size == 0 %}
 <section class="related-section">
   <div class="wrap">
