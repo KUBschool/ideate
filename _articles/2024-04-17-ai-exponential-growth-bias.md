@@ -1,39 +1,60 @@
 ---
-title: "People underestimate AI capabilities due to 'exponential growth bias,' study finds"
-dek: "AI is widely named as a top existential risk candidate, yet little urgency follows. New research finds two overlapping biases explain the gap — we're bad at grasping exponential growth, and reluctant to accept what it implies."
+title: People underestimate AI capabilities due to 'exponential growth bias,'
+  study finds
+dek: AI is widely named as a top existential risk candidate, yet little urgency
+  follows. New research finds two overlapping biases explain the gap — we're bad
+  at grasping exponential growth, and reluctant to accept what it implies.
 topic: ai
 faculty:
   - nathan-l-meikle
-byline: "Nathan L. Meikle"
+byline: Jon Niccum
 date: 2024-04-17
+image: /assets/uploads/ai-chip.jpeg
 image_tint: steam
 featured: false
-source_url: "https://business.ku.edu/news/article/people-underestimate-ai-capabilities-due-to-exponential-growth-bias-study-finds"
-answer_box: >-
-  Experiments testing how people assess AI's future trajectory find two
-  compounding biases at work: exponential growth bias, where people
-  systematically underestimate how fast exponential progress
-  accelerates, and motivated reasoning, where people reject the
-  unsettling implications of that progress even when they themselves
-  predicted the growth rate — together explaining why public urgency
-  around AI risk lags what experts describe as a leading candidate for
-  humanity's greatest threat.
+source_url: https://business.ku.edu/news/article/people-underestimate-ai-capabilities-due-to-exponential-growth-bias-study-finds
+answer_box: "Experiments testing how people assess AI's future trajectory find
+  two compounding biases at work: exponential growth bias, where people
+  systematically underestimate how fast exponential progress accelerates, and
+  motivated reasoning, where people reject the unsettling implications of that
+  progress even when they themselves predicted the growth rate — together
+  explaining why public urgency around AI risk lags what experts describe as a
+  leading candidate for humanity's greatest threat."
+journal: Technology, Mind, and Behavior
+journal_url: https://psycnet.apa.org/fulltext/2024-70808-001.html
 ---
+When asked to name the greatest potential threat to humanity, many scientists believe artificial intelligence (AI) to be a top contender. Yet there seems to be very little currently being done to ensure its safety.
 
-When scientists are asked to name the greatest potential threat to humanity, artificial intelligence routinely makes the shortlist. Very little urgency follows that ranking in practice. New research on human psychology offers a two-part explanation for the gap.
+“We are, on average, going to be surprised at how quickly AI progresses and potentially surpasses human capability,” said Nathan Meikle, an assistant professor of business at the University of Kansas.
 
-"We are, on average, going to be surprised at how quickly AI progresses and potentially surpasses human capability," said Nathan Meikle, assistant professor of business at the University of Kansas.
+His new paper, titled [“Unaware and Unaccepting: Human Biases and the Advent of Artificial Intelligence,”](https://tmb.apaopen.org/pub/qebl3hrd/release/1) examines the human biases that impede AI’s assessment. His experiments find that people are prone to underestimate AI capabilities due to exponential growth bias and people reject the aversive implications of rapid technological progress even in cases in which they themselves predict the growth rate.
 
-His paper, "Unaware and Unaccepting: Human Biases and the Advent of Artificial Intelligence," co-written with Bryan Bonner of the University of Utah, appears in Technology, Mind, and Behavior.
+It is published in Technology, Mind, and Behavior.
 
-## Two biases that compound each other
+“We’re motivated to believe things we want to have happen,” said Meikle, who co-wrote the paper with Bryan Bonner of the University of Utah.
 
-The first bias is well-documented outside AI specifically: humans are bad at intuiting exponential growth, consistently underestimating how quickly it accelerates compared to the more familiar, gradual curve of linear progress. Applied to AI capability, that means most people's mental model of "how fast AI is improving" lags meaningfully behind the actual trajectory. The second bias is motivational rather than purely cognitive. "We're motivated to believe things we want to have happen," Meikle said. "Most of us don't want to live in a world where AI is smarter than humans."
+“Most of us don’t want to live in a world where AI is smarter than humans. And because we want humans to be superior to AI, there’s a chance that we are sticking our head in the sand. We don’t want AI to surpass human intelligence. Therefore, we think it’s not going to happen.”
 
-> "Genetically, we share about 99% of our DNA with chimpanzees. But it's just that little bit of extra intelligence which allows us to be at the top of the food chain."
+Motivated reasoning emerges most often when the facts are ambiguous.
 
-Meikle's experiments recruited several hundred U.S. participants and tested both effects directly, including questions asking participants to imagine AI reaching human-level intelligence within 20 years and rate how positively they felt about that imagined future. The compounding effect is what makes the finding notable: even participants who correctly predicted a fast growth rate still tended to reject or minimize its more unsettling implications — meaning better information alone doesn't fully close the gap, since acceptance turns out to be a separate, motivated obstacle from awareness.
+“For instance, I don’t want to get cancer. Say my odds of getting cancer in a lifetime are 40%. But because I don’t want cancer, and because I can look to my past and say, ‘I’m reasonably healthy, and I’ve never had cancer,’ I’m prone to underestimate my odds of getting cancer, and I might think the probability is only like 20%,” he said. 
 
-## Why "a little bit smarter" is the wrong intuition to trust
+But exponential growth bias (which is our inability to accurately estimate exponential growth curves) becomes even more skewed when a concept turns more abstract.
 
-Meikle's chimpanzee comparison is the paper's central intuition pump: a small intelligence gap was enough for humans to dominate every other species on the planet, not despite the gap being small but because even a modest cognitive edge compounds into total advantage. The implication for AI, in his framing, is that "smarter than us, but only by a little" is not the reassuring scenario intuition suggests — it may be functionally identical to the scenario people are most trying to avoid imagining.
+“A simple example is would you rather have a billion dollars or would you rather have the money from doubling a penny 64 times?” he said. “Our intuition tells us to take the billion. But from doubling a penny, you’re actually looking at more than 184 billion dollars. And this example is especially relevant to AI because AI has been progressing at an exponential rate, in tandem with computing speed.”
+
+To verify this theory as it relates to underestimating AI, Meikle recruited several hundred participants in the U.S. and conducted two experiments that examined the effects of motivated reasoning and exponential growth bias on human judgment. The questions tested how participants might envision the interaction between AIs and humans decades from now. (Sample: Imagine 20 years into the future and AIs are equal in intelligence to humans. How positive do you feel about the future you just imagined?)
+
+“An AI doesn’t need to be way smarter than us to pose an existential risk,” Meikle said.
+
+“Genetically, we share about 99% of our DNA with chimpanzees. But it’s just that little bit of extra intelligence which allows us to be at the top of the food chain. And so if an AI were to become more intelligent than humans — which I think there’s a reasonable probability of happening very soon — then maybe the AI adopts a goal that is not consistent with human flourishing … and we’re in trouble. Or, even more believably now, people use AI to manipulate other humans.”
+
+An Idaho native, Meikle came to KU in 2021. He is a former receiver with the BYU Cougars. (He caught a dozen passes in the 2005 Las Vegas Bowl.) He also hosts a podcast titled “Meikles and Dimes,” where he interviews guests about leadership, including Kansas City Chiefs head coach Andy Reid. Meikle teaches courses in leadership and ethics at KU.
+
+Meikle said he personally employs AI all the time.
+
+“I’m getting to the point now where I use ChatGPT every day. It’s one of my most commonly opened apps — just asking it questions about what happened here, what happened there,” he said.
+
+Is he fearful it might eventually replace him?
+
+“Does it bother me that a calculator can run calculations better than me? No. And so in some ways, we don’t care. But I think we’re especially concerned about if artificial intelligence takes our jobs,” Meikle said. “I don’t mind if a calculator can calculate faster than me. But if it’s collecting my paycheck, there are going to be problems.”
