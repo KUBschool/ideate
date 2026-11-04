@@ -10,6 +10,7 @@ faculty:
   - sajeev-nair
 byline: Jon Niccum
 date: 2023-01-12
+image: /assets/uploads/covid-closed.jpeg
 image_tint: limestone
 featured: false
 source_url: https://business.ku.edu/news/article/2023/01/12/costs-vs-benefits-covid-19-lockdowns-and-mask-mandates-revealed-new-research
