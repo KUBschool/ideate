@@ -5,10 +5,13 @@ dek: The standard 60-minute, first-come loading zone leaves nearly
   three-quarters of its awarded parking time unused. A demand-based redesign
   more than doubled that utilization without cutting city revenue.
 topic: supply-chain
+also_topics:
+  - policy
 faculty:
   - sara-reed
 byline: Sara Reed
 date: 2025-08-01
+image: /assets/uploads/loading-zone.jpeg
 image_tint: limestone
 featured: false
 source_url: https://business.ku.edu/research-and-faculty/analytics-information-operations/research-insights
