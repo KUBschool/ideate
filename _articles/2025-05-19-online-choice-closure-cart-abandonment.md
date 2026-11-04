@@ -5,10 +5,13 @@ dek: Consumers who pick a product but haven't hit purchase yet are still quietly
   second-guessing themselves. New research finds small interface cues can settle
   that doubt — and stop the cart abandonment that follows it.
 topic: information-systems
+also_topics:
+  - analytics
 faculty:
   - andrew-n-k-chen
 byline: Andrew N. K. Chen
 date: 2025-02-14
+image: /assets/uploads/online-shopping.jpeg
 image_tint: steam
 featured: false
 source_url: https://business.ku.edu/research-and-faculty/analytics-information-operations/research-insights
