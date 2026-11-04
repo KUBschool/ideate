@@ -3,8 +3,7 @@ title: What sports betting does to household budgets during big events
 dek: Bank-transaction data tracking spending, saving and credit use shows how
   events like the World Cup can reshape everyday financial decisions.
 topic: finance
-faculty:
-  - kevin-pisciotta
+faculty: []
 byline: Lauryn Zebrowski
 date: 2025-09-17
 image: /assets/uploads/sportsbetting.jpg
