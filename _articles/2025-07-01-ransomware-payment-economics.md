@@ -3,9 +3,10 @@ title: Paying the ransom can make the next attack more likely
 dek: A microeconomic model of ransomware "extortionality" finds that payouts
   create costs that spill over to other future victims.
 topic: information-systems
-faculty: [debabrata-dey]
+faculty:
+  - debabrata-dey
 byline: Debabrata Dey
-date: 2025-07-01
+date: 2025-05-02
 image: /assets/uploads/1903719_aw_business-school-stock-739.jpg
 image_tint: limestone
 featured: false
@@ -13,12 +14,23 @@ answer_box: A microeconomic model of ransomware finds that when corporate
   victims pay attackers, it doesn't just resolve their own incident — it
   strengthens attackers' incentives and resources for future attacks,
   effectively imposing a cost on victims who haven't been targeted yet.
+journal: Information Systems Research
+journal_url: https://pubsonline.informs.org/doi/10.1287/isre.2024.1160
 ---
+#### Research objective
 
-The advice on ransomware has always split two ways: pay to make the immediate problem go away, or refuse on principle and absorb the damage. New research models the economics underneath that choice and finds the "just pay it" instinct carries costs that extend well past the paying company.
+This study examines ransomware payments as a source of a negative externality that increases future cyberattack risk for all organizations. The authors aim to understand how firms’ decisions to pay or not pay ransoms affect attackers’ incentives over time.
 
-Building a formal microeconomic model of ransomware attacks, the research treats payment decisions as part of a broader system rather than an isolated transaction. Each ransom paid doesn't just resolve one incident — it improves the attacker's returns on the whole enterprise, funding better tools and reinforcing the strategy for the next target.
+A central objective is to analyze whether standard policy tools, such as taxes, subsidies, or bans on ransom payments, can mitigate this externality. The study also explores how outcomes depend on whether ransomware attackers behave strategically or nonstrategically.
 
-## An externality problem, not just a risk decision
+#### What the researchers find
 
-The framing recasts ransomware payment as something closer to a classic economic externality: the company paying captures the immediate benefit of a resolved incident, while the cost of a strengthened attacker gets distributed across every future victim who didn't get a say in the decision. That has real implications for how policymakers think about disclosure requirements, insurance design, and whether payment bans — controversial as they are — might address a market failure that individual companies have no incentive to fix on their own.
+The authors develop a multiperiod game in which firms face repeated ransomware threats and must decide whether to pay ransoms, knowing their decisions affect future attack probabilities. Paying ransom benefits the breached firm in the short run but increases attackers' incentives to attack, raising risks for all firms.
+
+When attackers are nonstrategic and set ransom demands exogenously, fiscal interventions such as taxes or subsidies can reduce payments and mitigate the externality. However, when attackers are strategic and adjust ransom demands in response to policy, fiscal tools may backfire by increasing firms’ willingness to pay. In such cases, a ban on ransom payments becomes the only effective policy lever to reduce the externality.
+
+#### Why it matters
+
+Ransomware has become a significant threat to firms, governments, and national security, yet there is little consensus on whether banning ransom payments is desirable or effective. This study shows that policy effectiveness critically depends on attacker behavior, a factor often ignored in standard externality analysis.
+
+The findings caution policymakers against relying solely on fiscal interventions without considering attackers' strategic responses. More broadly, the concept of “extortionality” provides a framework for evaluating policies in settings where externalities arise from extortion rather than conventional market activity.
