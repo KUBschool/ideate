@@ -10,6 +10,7 @@ faculty:
   - vincent-barker
 byline: Jon Niccum
 date: 2023-09-28
+image: /assets/uploads/envelope-in-jacket.jpeg
 image_tint: limestone
 featured: false
 source_url: https://business.ku.edu/news/article/2023/09/28/value-experienced-ceo-fades-when-working-regions-vulnerable-corruption-political-instability
