@@ -9,6 +9,7 @@ faculty:
   - debabrata-dey
 byline: Jon Niccum
 date: 2025-05-06
+image: /assets/uploads/social-media.jpeg
 image_tint: steam
 featured: false
 source_url: https://business.ku.edu/news/article/profit-motivation-of-social-media-companies-may-compel-them-to-inject-bias-and-create-polarization-study-finds
