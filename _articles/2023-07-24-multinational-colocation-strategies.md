@@ -11,6 +11,7 @@ faculty:
   - chang-hoon-oh
 byline: Jon Niccum
 date: 2023-07-24
+image: /assets/uploads/colocation-map.jpeg
 image_tint: steam
 featured: false
 source_url: https://business.ku.edu/news/article/2023/07/24/multinational-enterprises-should-choose-between-two-colocation-strategies-research-finds
