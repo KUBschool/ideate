@@ -5,10 +5,13 @@ dek: Companies hold calibration meetings so managers can jointly sanity-check
   performance ratings against each other. New research finds some supervisors
   quietly manage what gets discussed — and end up with higher ratings for it.
 topic: accounting
+also_topics:
+  - management
 faculty:
   - jeremy-lill
 byline: Jeremy Lill
 date: 2025-03-30
+image: /assets/uploads/performance-calibration.jpeg
 image_tint: steam
 featured: false
 source_url: https://business.ku.edu/research-and-faculty/accounting/research-insights
