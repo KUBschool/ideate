@@ -5,6 +5,8 @@ dek: Commissions, quotas and bonuses are supposed to keep employees engaged. New
   workers out and drive them away — because it can still be the more profitable
   choice.
 topic: marketing
+also_topics:
+  - management
 faculty:
   - rob-waiser
 byline: Jon Niccum
