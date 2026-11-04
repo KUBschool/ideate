@@ -244,6 +244,10 @@ collections:
         fields:
           - {label: "Heading", name: "heading", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown", hint: "Add, remove, or edit paragraphs freely — same rich-text editor as article bodies."}
+          - {label: "Magazine cover", name: "cover_image", widget: "image", required: false, hint: "Optional. The cover art of the latest Ideate issue, shown beside the text on the About page (below it on phones). A tall (portrait) JPG or PNG about 800 pixels wide works best. To swap in a new issue, upload the new cover here. Leave blank and no cover is shown."}
+          - {label: "Cover description", name: "cover_alt", widget: "string", required: false, hint: "Optional. A short description of the cover for screen readers, e.g. \"Cover of the Fall 2026 issue of Ideate\". If left blank it reads \"Cover of the latest issue of Ideate\"."}
+          - {label: "Cover caption", name: "cover_caption", widget: "string", required: false, hint: "Optional. A short line shown under the cover, e.g. \"Fall 2026 issue\"."}
+          - {label: "Cover link", name: "cover_link", widget: "string", required: false, hint: "Optional. Where the cover goes when someone clicks it, such as the issue's PDF or online edition: a full https:// address, or a site page like /articles/. Leave blank for a plain picture."}
           - {label: "Contact prompt", name: "contact_prompt", widget: "string", hint: "The sentence right before the contact email."}
           - {label: "Contact email", name: "contact_email", widget: "string"}
       - label: "Header"

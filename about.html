@@ -4,15 +4,39 @@ title: "About Ideate"
 permalink: /about/
 description: "Ideate is the research magazine of the University of Kansas School of Business."
 ---
-<div class="wrap archive-header">
-  <div class="eyebrow" style="--topic-color:var(--ku-blue)"><span class="dot"></span>About</div>
-  <h1>{{ site.data.about.heading }}</h1>
-  <div class="about-body">
-    {{ site.data.about.body | markdownify }}
+{% comment %}
+  The cover is optional. It is added in the CMS under Site Settings > About Page. With no cover
+  image the page looks exactly as it always has.
+{% endcomment %}
+{% comment %} A blank field counts as "not filled in" (in Liquid an empty string is otherwise true). {% endcomment %}
+{% assign ab_cover = site.data.about.cover_image | default: '' | strip %}
+{% assign ab_link = site.data.about.cover_link | default: '' | strip %}
+{% assign ab_alt = site.data.about.cover_alt | default: '' | strip %}
+{% assign ab_caption = site.data.about.cover_caption | default: '' | strip %}
+{% if ab_alt == '' %}{% assign ab_alt = 'Cover of the latest issue of Ideate' %}{% endif %}
+{% assign ab_has = false %}
+{% unless ab_cover == '' %}{% assign ab_has = true %}{% endunless %}
+{% capture ab_src %}{% if ab_cover contains '://' %}{{ ab_cover }}{% else %}{{ ab_cover | relative_url }}{% endif %}{% endcapture %}
+{% capture ab_href %}{% if ab_link contains '://' or ab_link contains 'mailto:' %}{{ ab_link }}{% else %}{{ ab_link | relative_url }}{% endif %}{% endcapture %}
+<div class="wrap archive-header about-header{% if ab_has %} has-cover{% endif %}">
+  <div class="about-text">
+    <div class="eyebrow" style="--topic-color:var(--ku-blue)"><span class="dot"></span>About</div>
+    <h1>{{ site.data.about.heading }}</h1>
+    <div class="about-body">
+      {{ site.data.about.body | markdownify }}
+    </div>
   </div>
+  {% if ab_has %}
+  <figure class="about-cover">
+    {% unless ab_link == '' %}<a class="about-cover-link" href="{{ ab_href | escape }}"{% if ab_link contains '://' %} target="_blank" rel="noopener"{% endif %}>{% endunless %}
+      <img src="{{ ab_src | escape }}" alt="{{ ab_alt | escape }}" decoding="async">
+    {% unless ab_link == '' %}</a>{% endunless %}
+    {% unless ab_caption == '' %}<figcaption>{{ ab_caption | escape }}</figcaption>{% endunless %}
+  </figure>
+  {% endif %}
 </div>
 
-<div class="wrap" style="padding:32px 0 56px;">
+<div class="wrap about-contact" style="padding:32px {% if ab_has %}24px{% else %}0{% endif %} 56px;">
   <p style="font-family:var(--font-serif); font-size:17px; color:#565650; max-width:65ch;">
     {{ site.data.about.contact_prompt }}
     <a href="mailto:{{ site.data.about.contact_email }}" style="color:var(--ku-blue);">{{ site.data.about.contact_email }}</a>.

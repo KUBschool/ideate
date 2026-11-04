@@ -1185,6 +1185,41 @@ blockquote{
 .archive-header .eyebrow, .archive-header .breadcrumb{ font-size: 13px; margin-bottom: 10px; }
 .archive-header h1{ font-size: 32px; margin-bottom: 10px; }
 .archive-header p{ font-family: var(--font-serif); font-size: 17px; color: #565650; max-width: 60ch; }
+/* About page: optional cover of the latest issue, beside the text (below it on phones) */
+.about-header.has-cover{
+  display: grid;
+  grid-template-columns: minmax(0, 560px) 280px;
+  gap: 24px 64px;
+  justify-content: start;
+  align-items: start;
+  padding-left: 24px;   /* the base .archive-header rule removes the page's side margin; the cover needs it */
+  padding-right: 24px;
+}
+.about-cover{ margin: 4px 0 0; }
+.about-cover img{
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 28px rgba(0,0,0,.14);
+}
+.about-cover-link{ display: block; }
+.about-cover-link:hover img, .about-cover-link:focus-visible img{ box-shadow: 0 12px 32px rgba(0,0,0,.2); }
+.about-cover figcaption{
+  margin-top: 12px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.4;
+  color: #565650;
+}
+@media (max-width: 900px){
+  .about-header.has-cover{ grid-template-columns: minmax(0, 1fr) 220px; gap: 24px 36px; }
+}
+@media (max-width: 620px){
+  .about-header.has-cover{ grid-template-columns: minmax(0, 1fr); }
+  .about-cover{ width: min(100%, 240px); margin: 8px auto 0; }
+  .about-cover figcaption{ text-align: center; }
+}
 .stream{ padding: 32px 0 56px; }
 .stream-row{
   display: grid;
