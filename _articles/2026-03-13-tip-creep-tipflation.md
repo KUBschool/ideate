@@ -8,6 +8,7 @@ faculty:
   - rob-waiser
 byline: Jon Niccum
 date: 2026-03-13
+image: /assets/uploads/tip-screen.jpeg
 image_tint: limestone
 featured: false
 source_url: https://business.ku.edu/news/article/strategies-for-fixing-out-of-control-tipping-practices-revealed-in-new-article
@@ -46,11 +47,7 @@ His team came up with three conditions businesses should weigh when deciding to 
 
 * Distinctiveness: Customers should not be expected to tip for services that are essential to a purchase. They need to clearly recognize which part of their experience comes from discretionary service.
 * Visibility: The discretionary service being performed must be observable to the customer.
-* Proportionality
-
-  **:**
-
-   Customers should have the freedom to reward workers based on their perception of service quality.
+* Proportionality: Customers should have the freedom to reward workers based on their perception of service quality.
 
 “Regarding distinctiveness, I’m tipping for the discretionary service that could be better or worse,” he said. “For instance, there was a video game company that asked people who bought their game to tip the programmers. I bought the product. I paid for the product. What’s the discretionary thing that necessitates a tip?”
 
