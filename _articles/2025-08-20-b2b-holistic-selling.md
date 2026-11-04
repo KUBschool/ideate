@@ -8,6 +8,7 @@ faculty:
   - murali-k-mantrala
 byline: Jon Niccum
 date: 2025-08-20
+image: /assets/uploads/handshake.jpeg
 image_tint: limestone
 featured: false
 source_url: https://business.ku.edu/news/article/b2b-sales-now-require-a-holistic-selling-approach-study-finds
