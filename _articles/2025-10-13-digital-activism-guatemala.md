@@ -9,6 +9,7 @@ faculty:
   - arvind-tripathi
 byline: Arvind Tripathi
 date: 2025-09-27
+image: /assets/uploads/intltech.jpeg
 image_tint: steam
 featured: false
 source_url: https://business.ku.edu/research-and-faculty/analytics-information-operations/research-insights
