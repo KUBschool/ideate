@@ -10,6 +10,7 @@ faculty:
   - sara-reed
 byline: Jon Niccum
 date: 2024-02-05
+image: /assets/uploads/parking-and-delivery.jpeg
 image_tint: steam
 featured: false
 source_url: https://business.ku.edu/news/article/strategies-to-improve-the-impact-of-parking-time-on-last-mile-delivery-examined-in-new-study
