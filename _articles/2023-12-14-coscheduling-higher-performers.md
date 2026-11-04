@@ -9,6 +9,7 @@ faculty:
   - patrick-e-downes
 byline: Jon Niccum
 date: 2023-12-14
+image: /assets/uploads/high-performers.jpeg
 image_tint: steam
 featured: false
 source_url: https://business.ku.edu/news/article/2023/12/14/advantages-scheduling-retail-employees-higher-performers-revealed-new-study
