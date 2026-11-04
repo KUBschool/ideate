@@ -3,10 +3,13 @@ title: Watching a server get treated badly makes customers tip more
 dek: Across four studies, witnessing incivility toward service workers reliably
   produced bigger tips — not confrontation.
 topic: marketing
+also_topics:
+  - management
 faculty:
   - jonathan-beck
 byline: Jonathan Beck
 date: 2026-01-27
+image: /assets/uploads/server-mistreatment.jpeg
 image_tint: steam
 featured: false
 answer_box: Across four separate studies, customers who witnessed a service
