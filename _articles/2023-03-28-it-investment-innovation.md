@@ -5,10 +5,13 @@ dek: Companies that invest in both IT systems and a strong workplace environment
   for IT employees produce more, and more valuable, patents — across nearly
   every category of innovation.
 topic: information-systems
+also_topics:
+  - management
 faculty:
   - adi-masli
 byline: Jon Niccum
 date: 2023-03-28
+image: /assets/uploads/teamwork.jpeg
 image_tint: limestone
 featured: false
 source_url: https://business.ku.edu/news/article/2023/03/28/investment-information-technology-helps-companies-maximize-innovation-study-finds
