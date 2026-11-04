@@ -5,10 +5,13 @@ dek: Most delivery-routing models treat parking as an afterthought, something
   that happens once the vehicle stops. A new reference chapter argues it needs
   to be part of the model from the start — and lays out three ways to do it.
 topic: supply-chain
+also_topics:
+  - management
 faculty:
   - sara-reed
 byline: Sara Reed
 date: 2026-01-01
+image: /assets/uploads/delivery-parking.jpeg
 image_tint: steam
 featured: false
 source_url: https://business.ku.edu/research-and-faculty/analytics-information-operations/research-insights
