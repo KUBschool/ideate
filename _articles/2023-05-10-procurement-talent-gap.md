@@ -7,7 +7,8 @@ dek: Procurement is something everyone does without thinking about it —
 topic: supply-chain
 faculty: []
 byline: Joe Walden
-date: 2023-05-10
+date: 2023-01-01
+image: /assets/uploads/supply-chain-training.jpeg
 image_tint: steam
 featured: false
 source_url: https://business.ku.edu/reasons-talent-gap-procurement-field-examined-new-business-analysis
