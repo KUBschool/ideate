@@ -10,6 +10,7 @@ faculty:
   - colin-mcroberts
 byline: Jon Niccum
 date: 2025-12-16
+image: /assets/uploads/radio-show.jpeg
 image_tint: limestone
 featured: false
 source_url: https://business.ku.edu/news/article/supermans-bygone-battle-with-hate-group-provides-strategy-for-thwarting-modern-conspiracy-theories
