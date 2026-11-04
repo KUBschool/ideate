@@ -6,6 +6,8 @@ dek: State lockdowns cut infections substantially — but a natural experiment
   satisfaction, and raised unemployment, in ways policymakers need to weigh
   alongside the case count.
 topic: policy
+also_topics:
+  - marketing
 faculty:
   - sajeev-nair
 byline: Jon Niccum
