@@ -4,6 +4,8 @@ dek: A new KU study finds that when teammates can point to an AI-backed
   recommendation, they trust each other's judgment faster — especially on teams
   that just met.
 topic: ai
+also_topics:
+  - management
 faculty:
   - todd-hall
 byline: Jon Niccum
