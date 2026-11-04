@@ -5,10 +5,13 @@ dek: Companies favor visible effort from internal candidates even over
   better-qualified outsiders — and the effect grows stronger when performance is
   harder to measure precisely.
 topic: accounting
+also_topics:
+  - management
 faculty:
   - jeremy-lill
 byline: Jon Niccum
 date: 2023-06-27
+image: /assets/uploads/job-interview.jpeg
 image_tint: limestone
 featured: false
 source_url: https://business.ku.edu/news/article/2023/06/27/reliable-internal-candidates-preferred-over-more-qualified-external-ones-according-new-study
