@@ -4,11 +4,15 @@ dek: Businesses generally assume their property rights are stable and
   politically entrenched. New historical research argues that stability is often
   an illusion firms themselves helped construct — and can help unwind.
 topic: policy
+also_topics:
+  - management
+  - business-law
 faculty:
   - jun-ho-lee
   - minyoung-kim
 byline: Jon Niccum
 date: 2024-01-24
+image: /assets/uploads/property-rights.jpeg
 image_tint: limestone
 featured: false
 source_url: https://business.ku.edu/news/article/2024/01/24/property-rights-laws-historically-manipulated-businesses-research-finds
