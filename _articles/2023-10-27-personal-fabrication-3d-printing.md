@@ -1,21 +1,26 @@
 ---
-title: "Business advantages of customers using 'personal fabrication' in 3D printing revealed in new study"
-dek: "Instead of manufacturing and shipping physical goods, a firm can sell the design file and let customers print it themselves. New research maps out when that strategy actually creates value — and when it doesn't."
+title: Business advantages of customers using 'personal fabrication' in 3D
+  printing revealed in new study
+dek: Instead of manufacturing and shipping physical goods, a firm can sell the
+  design file and let customers print it themselves. New research maps out when
+  that strategy actually creates value — and when it doesn't.
 topic: supply-chain
 faculty: []
-byline: "Nagarajan Sethuraman"
-date: 2023-10-27
+byline: Nagarajan Sethuraman
+date: 2023-03-29
+image: /assets/uploads/3d-printing.jpeg
 image_tint: steam
 featured: false
-source_url: "https://business.ku.edu/business-advantages-customers-using-personal-fabrication-3d-printing-revealed-new-study"
-answer_box: >-
-  Research on "personal fabrication" — selling a product's design file
+source_url: https://business.ku.edu/business-advantages-customers-using-personal-fabrication-3d-printing-revealed-new-study
+answer_box: Research on "personal fabrication" — selling a product's design file
   and letting customers 3D-print and customize it themselves rather than
-  manufacturing and shipping the physical good — finds the strategy
-  creates real, capturable value through horizontal customization (size,
-  shape, color) but struggles to capture value through vertical
-  customization (material quality and type), a distinction that
-  determines whether the model is worth pursuing for a given product.
+  manufacturing and shipping the physical good — finds the strategy creates
+  real, capturable value through horizontal customization (size, shape, color)
+  but struggles to capture value through vertical customization (material
+  quality and type), a distinction that determines whether the model is worth
+  pursuing for a given product.
+journal: Production and Operations Management
+journal_url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3170011
 ---
 
 3D printing has moved well past its novelty-item reputation, and a newer offshoot is reshaping how some companies think about manufacturing altogether: selling the design instead of the object.
