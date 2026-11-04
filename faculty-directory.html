@@ -4,25 +4,116 @@ title: "Faculty"
 permalink: /faculty/
 description: "Browse KU School of Business faculty and their research featured on Ideate."
 ---
-<div class="wrap archive-header">
+{% comment %}
+  Faculty directory: every faculty member as a card, A-Z by LAST name, with filters for
+  academic area and research topic (and a name search) that app.js switches on.
+
+  Last name = the "Last name" field on the faculty profile when it is filled in; otherwise the
+  final word of the full name, plus any lowercase words just before it ("den Nieuwenboer",
+  "van der Berg"). Everyone is sorted on that, then on the full name.
+
+  A person's research topics are the topics of the Ideate stories they are tagged in (a story's
+  main topic and its "Also relates to" topics, worked out by topic-links.html).
+
+  Written for GitHub Pages (Jekyll 3.10): no "and" / "or" inside a where_exp filter.
+  Variables are all prefixed fd_ because an assign inside an include leaks onto this page.
+{% endcomment %}
+
+{% comment %} ---- 1. a sort key for each person: last name ! full name ! slug ---- {% endcomment %}
+{% assign fd_keys = '' | split: ',' %}
+{% for fd_f in site.faculty %}
+  {% assign fd_last = fd_f.last_name | default: '' | strip %}
+  {% if fd_last == '' %}
+    {% assign fd_words = fd_f.full_name | split: ' ' %}
+    {% assign fd_last = fd_words.last %}
+    {% assign fd_rev = fd_words | reverse %}
+    {% assign fd_stop = false %}
+    {% for fd_w in fd_rev %}
+      {% unless forloop.first %}
+        {% unless fd_stop %}
+          {% assign fd_w_dc = fd_w | downcase %}
+          {% if fd_w == fd_w_dc %}
+            {% assign fd_last = fd_w | append: ' ' | append: fd_last %}
+          {% else %}
+            {% assign fd_stop = true %}
+          {% endif %}
+        {% endunless %}
+      {% endunless %}
+    {% endfor %}
+  {% endif %}
+  {% capture fd_key %}{{ fd_last }}!{{ fd_f.full_name }}!{{ fd_f.slug }}{% endcapture %}
+  {% assign fd_keys = fd_keys | push: fd_key %}
+{% endfor %}
+{% assign fd_keys = fd_keys | sort_natural %}
+
+{% comment %} ---- 2. the cards, in that order (built first so the filter lists below can use what they found) ---- {% endcomment %}
+{% assign fd_used_topics = '' | split: ',' %}
+{% capture fd_cards %}
+  {% for fd_key in fd_keys %}
+    {% assign fd_slug = fd_key | split: '!' | last %}
+    {% assign fd_p = site.faculty | where: 'slug', fd_slug | first %}
+    {% assign fd_arts = site.articles | where_exp: 'a', 'a.faculty contains fd_slug' %}
+    {% assign fd_tslugs = '' | split: ',' %}
+    {% for fd_a in fd_arts %}
+      {% capture fd_list %}{% include topic-links.html article=fd_a slugs=true %}{% endcapture %}
+      {% assign fd_parts = fd_list | split: ',' %}
+      {% for fd_part in fd_parts %}
+        {% assign fd_t = fd_part | strip %}
+        {% unless fd_t == '' %}
+          {% unless fd_tslugs contains fd_t %}{% assign fd_tslugs = fd_tslugs | push: fd_t %}{% endunless %}
+          {% unless fd_used_topics contains fd_t %}{% assign fd_used_topics = fd_used_topics | push: fd_t %}{% endunless %}
+        {% endunless %}
+      {% endfor %}
+    {% endfor %}
+    {% include faculty-card.html person=fd_p topic_slugs=fd_tslugs %}
+  {% endfor %}
+{% endcapture %}
+
+{% assign fd_total = fd_keys.size %}
+{% assign fd_areas = '' | split: ',' %}
+{% for fd_f in site.faculty %}
+  {% assign fd_ar = fd_f.academic_area | default: '' | strip %}
+  {% unless fd_ar == '' %}{% unless fd_areas contains fd_ar %}{% assign fd_areas = fd_areas | push: fd_ar %}{% endunless %}{% endunless %}
+{% endfor %}
+{% assign fd_areas = fd_areas | sort_natural %}
+{% assign fd_topics_sorted = site.data.topics | sort_natural: 'name' %}
+
+<div class="wrap archive-header fd-header">
   <div class="eyebrow" style="--topic-color:var(--ku-blue)"><span class="dot"></span>People</div>
   <h1>Faculty</h1>
   <p>Faculty whose research has been featured on Ideate. Each profile links to their full KU Business listing.</p>
 </div>
 
-{% assign faculty_sorted = site.faculty | sort: 'full_name' %}
-{% assign areas = faculty_sorted | map: 'academic_area' | uniq | sort %}
+{% comment %} The filter bar stays hidden until app.js finds it, so without JavaScript this is simply the full A-Z list. {% endcomment %}
+<form class="wrap fd-controls" id="fd-controls" role="search" aria-label="Filter faculty" hidden>
+  <div class="fd-field fd-field-search">
+    <label for="fd-q">Search by name</label>
+    <input type="search" id="fd-q" name="q" placeholder="Start typing a name" autocomplete="off" enterkeyhint="search">
+  </div>
+  <div class="fd-field">
+    <label for="fd-area">Academic area</label>
+    <select id="fd-area" name="area">
+      <option value="">All academic areas</option>
+      {% for fd_area in fd_areas %}<option value="{{ fd_area | slugify }}">{{ fd_area }}</option>{% endfor %}
+    </select>
+  </div>
+  <div class="fd-field">
+    <label for="fd-topic">Research topic</label>
+    <select id="fd-topic" name="topic">
+      <option value="">All research topics</option>
+      {% for fd_topic in fd_topics_sorted %}{% if fd_used_topics contains fd_topic.slug %}<option value="{{ fd_topic.slug }}">{{ fd_topic.name }}</option>{% endif %}{% endfor %}
+    </select>
+  </div>
+  <button type="button" class="fd-clear" id="fd-clear" hidden>Clear filters</button>
+</form>
 
-<div class="wrap" style="padding: 8px 0 56px;">
-  {% for area in areas %}
-    {% assign area_faculty = faculty_sorted | where: 'academic_area', area %}
-    <div class="section-head" style="margin-top:36px;">
-      <h2>{{ area | default: "Other" }}</h2>
-    </div>
-    <div class="faculty-grid">
-      {% for f in area_faculty %}
-        {% include faculty-card.html person=f %}
-      {% endfor %}
-    </div>
-  {% endfor %}
+<div class="wrap fd-listing">
+  <p class="fd-status" id="fd-status" aria-live="polite">{{ fd_total }} faculty, listed A&ndash;Z by last name</p>
+  <ul class="fd-grid" id="fd-grid">
+    {{ fd_cards }}
+  </ul>
+  <div class="fd-empty" id="fd-empty" hidden>
+    <p>No faculty match those filters.</p>
+    <button type="button" class="fd-clear-inline" id="fd-empty-clear">Clear filters</button>
+  </div>
 </div>

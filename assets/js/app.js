@@ -414,6 +414,79 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Faculty directory — filter the cards by academic area and research topic, and search by
+  // name. Every card carries data-name / data-area / data-topics set at build time (see
+  // faculty-directory.html and faculty-card.html), so this only hides and shows what is already
+  // on the page: the full A-Z list is there without JavaScript. The chosen view is mirrored
+  // into the address (?area=finance&topic=accounting&q=smith) so it can be bookmarked or shared.
+  const fdControls = document.getElementById('fd-controls');
+  const fdGrid = document.getElementById('fd-grid');
+  if (fdControls && fdGrid) {
+    const fdItems = Array.from(fdGrid.querySelectorAll('.fd-item'));
+    const fdQ = document.getElementById('fd-q');
+    const fdArea = document.getElementById('fd-area');
+    const fdTopic = document.getElementById('fd-topic');
+    const fdClear = document.getElementById('fd-clear');
+    const fdStatus = document.getElementById('fd-status');
+    const fdEmpty = document.getElementById('fd-empty');
+    const fdEmptyClear = document.getElementById('fd-empty-clear');
+    const fdTotal = fdItems.length;
+
+    // Lower-case and strip accents so "jose" finds "José".
+    const fdNorm = (s) => (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').trim();
+    const fdHas = (sel, value) => Array.from(sel.options).some((o) => o.value === value);
+    fdItems.forEach((li) => { li._fdName = fdNorm(li.dataset.name); });
+
+    // Pick up a shared/bookmarked view from the address.
+    const fdParams = new URLSearchParams(window.location.search);
+    if (fdHas(fdArea, fdParams.get('area'))) fdArea.value = fdParams.get('area');
+    if (fdHas(fdTopic, fdParams.get('topic'))) fdTopic.value = fdParams.get('topic');
+    if (fdParams.get('q')) fdQ.value = fdParams.get('q').slice(0, 80);
+
+    function fdSyncUrl() {
+      const p = new URLSearchParams();
+      if (fdArea.value) p.set('area', fdArea.value);
+      if (fdTopic.value) p.set('topic', fdTopic.value);
+      if (fdQ.value.trim()) p.set('q', fdQ.value.trim());
+      const qs = p.toString();
+      try { window.history.replaceState(null, '', window.location.pathname + (qs ? '?' + qs : '') + window.location.hash); }
+      catch (e) { /* a sandboxed preview may refuse; the filters still work */ }
+    }
+
+    function fdRender() {
+      const q = fdNorm(fdQ.value);
+      const area = fdArea.value;
+      const topic = fdTopic.value;
+      let shown = 0;
+      fdItems.forEach((li) => {
+        const topics = (li.dataset.topics || '').split(' ');
+        const ok = (!area || li.dataset.area === area)
+          && (!topic || topics.indexOf(topic) !== -1)
+          && (!q || li._fdName.indexOf(q) !== -1);
+        li.hidden = !ok;
+        if (ok) shown += 1;
+      });
+      const filtered = !!(area || topic || q);
+      fdStatus.textContent = filtered
+        ? 'Showing ' + shown + ' of ' + fdTotal + ' faculty, listed A–Z by last name'
+        : fdTotal + ' faculty, listed A–Z by last name';
+      fdClear.hidden = !filtered;
+      fdEmpty.hidden = shown > 0;
+      fdSyncUrl();
+    }
+
+    const fdReset = () => { fdQ.value = ''; fdArea.value = ''; fdTopic.value = ''; fdRender(); };
+    fdQ.addEventListener('input', fdRender);
+    fdArea.addEventListener('change', fdRender);
+    fdTopic.addEventListener('change', fdRender);
+    fdClear.addEventListener('click', fdReset);
+    fdEmptyClear.addEventListener('click', fdReset);
+    fdControls.addEventListener('submit', (e) => e.preventDefault());   // Enter in the search box must not reload the page
+
+    fdControls.hidden = false;
+    fdRender();
+  }
+
   // Topic pages — "View more research" reveals the rest of the article list.
   // The extra rows are real, crawlable markup that's always in the page;
   // topic.html tags <html class="js"> before they paint and CSS keeps them

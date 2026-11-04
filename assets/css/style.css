@@ -250,29 +250,209 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   .faculty-photo-wrap{ width: 160px; }
 }
 
-/* ---------- faculty directory grid ---------- */
-.faculty-grid{
+/* ---------- faculty directory: filters + cards ---------- */
+/* The base .archive-header rule drops the page's side margin, so this page puts it back. */
+.archive-header.fd-header{ padding-left: 24px; padding-right: 24px; }
+
+/* filter bar - hidden until app.js switches it on (see faculty-directory.html) */
+.fd-controls{
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px 22px;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr) minmax(0, 1fr) auto;
+  gap: 16px 20px;
+  align-items: end;
+  padding-top: 24px;
 }
-.faculty-dir-card{ display: block; }
-.faculty-dir-card .photo,
-.faculty-dir-card .img-placeholder{ margin-bottom: 10px; }
-.faculty-dir-card h3{
+.fd-controls[hidden], .fd-empty[hidden], .fd-item[hidden], .fd-clear[hidden]{ display: none; }
+.fd-field label{
+  display: block;
+  margin-bottom: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: #565650;
+}
+.fd-field input, .fd-field select{
+  display: block;
+  width: 100%;
+  height: 44px;
+  padding: 0 12px;
+  border: 1px solid #cfcfc8;
+  border-radius: var(--radius);
+  background-color: var(--white);
   font-family: var(--font-sans);
-  font-size: 15px;
+  font-size: 16px;                 /* 16px keeps iPhones from zooming in on focus */
+  color: var(--ku-gray-text);
+}
+.fd-field select{
+  -webkit-appearance: none;
+  appearance: none;
+  padding-right: 38px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%230051ba' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  cursor: pointer;
+}
+.fd-field input:focus, .fd-field select:focus{
+  outline: none;
+  border-color: var(--ku-blue);
+  box-shadow: 0 0 0 3px rgba(0,81,186,.18);
+}
+.fd-clear, .fd-clear-inline{
+  height: 44px;
+  padding: 0 4px;
+  border: none;
+  background: none;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ku-blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.fd-clear:hover, .fd-clear-inline:hover{ color: var(--ku-night); }
+
+.fd-listing{ padding-bottom: 56px; }
+.fd-status{ margin: 18px 0 20px; font-size: 13px; color: var(--ku-gray-mid); }
+.fd-empty{ padding: 48px 0 24px; text-align: center; }
+.fd-empty p{ margin: 0 0 4px; font-family: var(--font-serif); font-size: 18px; color: #565650; }
+
+/* cards */
+.fd-grid{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px 24px;
+}
+.fd-item{ min-width: 0; }
+.fd-card{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--white);
+  border: 1px solid #e7e7e2;
+  border-radius: var(--radius);
+  overflow: hidden;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+}
+.fd-card:hover, .fd-card:focus-visible{
+  border-color: var(--ku-blue);
+  box-shadow: 0 10px 26px rgba(0,52,89,.12);
+  transform: translateY(-2px);
+}
+.fd-photo{
+  position: relative;
+  aspect-ratio: 1 / 1.1;
+  overflow: hidden;
+  background: var(--ku-steam);
+}
+.fd-monogram{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 52px;
+  font-weight: 600;
+  letter-spacing: .03em;
+  color: var(--ku-night);
+  background: linear-gradient(160deg, #e8eef4 0%, #c9d6e4 100%);
+}
+.fd-photo img{
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 12%;   /* keep the face; trim from the bottom of the shot */
+}
+.fd-body{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 4px;
+  padding: 16px 16px 18px;
+  border-top: 3px solid transparent;
+  transition: border-color .15s ease;
+}
+.fd-card:hover .fd-body, .fd-card:focus-visible .fd-body{ border-top-color: var(--ku-blue); }
+.fd-area{
+  margin: 6px 0 0;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ku-blue);
+}
+.fd-name{
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 20px;
+  line-height: 1.2;
   font-weight: 600;
   color: var(--ku-night);
-  margin: 0 0 2px;
+  overflow-wrap: anywhere;
 }
-.faculty-dir-card p{ font-size: 13px; color: var(--ku-gray-mid); margin: 0; line-height: 1.4; }
-.faculty-dir-card:hover h3{ color: var(--ku-blue); }
+.fd-card:hover .fd-name{ color: var(--ku-blue); }
+.fd-title{
+  margin: 2px 0 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #565650;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.fd-topics{
+  margin: auto 0 0;
+  padding-top: 12px;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--ku-gray-mid);
+}
+.fd-topics-label{
+  display: block;
+  margin-bottom: 1px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #8a8a82;
+}
+.fd-more{ white-space: nowrap; }
+
+@media (max-width: 1000px){
+  .fd-grid{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
 @media (max-width: 900px){
-  .faculty-grid{ grid-template-columns: repeat(3, 1fr); }
+  .fd-controls{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fd-field-search{ grid-column: 1 / -1; }
+  .fd-clear{ justify-self: start; height: 32px; grid-column: 1 / -1; }
+}
+@media (max-width: 700px){
+  .fd-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 14px; }
+  .fd-body{ padding: 12px 12px 14px; }
+  .fd-name{ font-size: 17px; }
+  .fd-title{ font-size: 13px; }
+  .fd-monogram{ font-size: 40px; }
 }
 @media (max-width: 620px){
-  .faculty-grid{ grid-template-columns: repeat(2, 1fr); }
+  .fd-controls{ grid-template-columns: minmax(0, 1fr); gap: 12px; }
+}
+@media (max-width: 360px){
+  .fd-grid{ grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce){
+  .fd-card, .fd-body{ transition: none; }
+  .fd-card:hover, .fd-card:focus-visible{ transform: none; }
 }
 
 /* ---------- header ---------- */

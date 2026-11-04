@@ -1,13 +1,39 @@
-{% assign f = include.person %}
-<a href="{{ f.url | relative_url }}" class="faculty-dir-card">
-  {% if f.photo %}
-    <img
-      src="{% if f.photo contains '://' %}{{ f.photo }}{% else %}{{ f.photo | relative_url }}{% endif %}"
-      alt="{{ f.full_name }}"
-      class="photo portrait">
-  {% else %}
-    <div class="img-placeholder portrait" style="--tint:var(--ku-steam)"><span>Photo placeholder</span></div>
-  {% endif %}
-  <h3>{{ f.full_name }}</h3>
-  <p>{{ f.title }}</p>
-</a>
+{% comment %}
+  One card in the faculty directory (faculty-directory.html).
+  Pass: person = a faculty member, topic_slugs = the research topics (slugs) of their Ideate stories.
+  The data- attributes are what app.js filters on. Variables are prefixed fc_ (an assign in an
+  include leaks onto the page that includes it).
+{% endcomment %}
+{% assign fc_p = include.person %}
+{% assign fc_slugs = include.topic_slugs %}
+{% assign fc_names = '' | split: ',' %}
+{% for fc_s in fc_slugs %}
+  {% assign fc_t = site.data.topics | where: 'slug', fc_s | first %}
+  {% if fc_t %}{% assign fc_names = fc_names | push: fc_t.name %}{% endif %}
+{% endfor %}
+{% comment %}
+  A profile with no Title in its file gets one made up by Jekyll from the file name ("Vincent Barker").
+  Those are recognised - a real title never slugifies to the person's own slug - and left off the card.
+{% endcomment %}
+{% assign fc_title = '' %}
+{% if fc_p.title %}{% assign fc_title_slug = fc_p.title | slugify %}{% if fc_title_slug != fc_p.slug %}{% assign fc_title = fc_p.title %}{% endif %}{% endif %}
+{% assign fc_words = fc_p.full_name | split: ' ' %}
+{% assign fc_i1 = fc_words.first | slice: 0 %}
+{% assign fc_i2 = fc_words.last | slice: 0 %}
+{% capture fc_initials %}{{ fc_i1 }}{% if fc_words.size > 1 %}{{ fc_i2 }}{% endif %}{% endcapture %}
+<li class="fd-item" data-name="{{ fc_p.full_name | downcase | escape }}" data-area="{{ fc_p.academic_area | slugify }}" data-topics="{{ fc_slugs | join: ' ' }}">
+  <a href="{{ fc_p.url | relative_url }}" class="fd-card">
+    <div class="fd-photo">
+      <span class="fd-monogram" aria-hidden="true">{{ fc_initials | upcase }}</span>
+      {% if fc_p.photo %}<img src="{% if fc_p.photo contains '://' %}{{ fc_p.photo }}{% else %}{{ fc_p.photo | relative_url }}{% endif %}" alt="" loading="lazy" decoding="async">{% endif %}
+    </div>
+    <div class="fd-body">
+      <h3 class="fd-name">{{ fc_p.full_name }}</h3>
+      {% unless fc_title == '' %}<p class="fd-title">{{ fc_title }}</p>{% endunless %}
+      {% if fc_p.academic_area %}<p class="fd-area">{{ fc_p.academic_area }}</p>{% endif %}
+      {% if fc_names.size > 0 %}
+      <p class="fd-topics"><span class="fd-topics-label">Research</span> {{ fc_names | slice: 0, 3 | join: ' &middot; ' }}{% if fc_names.size > 3 %} <span class="fd-more">+{{ fc_names.size | minus: 3 }} more</span>{% endif %}</p>
+      {% endif %}
+    </div>
+  </a>
+</li>

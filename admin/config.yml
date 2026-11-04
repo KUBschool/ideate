@@ -183,6 +183,7 @@ collections:
     summary: "{{full_name}} — {{academic_area}}"
     fields:
       - {label: "Full name", name: "full_name", widget: "string", hint: "As it appears on their business.ku.edu profile."}
+      - {label: "Last name (for A-Z order)", name: "last_name", widget: "string", required: false, hint: "Optional. The Faculty page lists people A-Z by last name and works it out from the full name (the last word, plus lowercase words before it, like \"den Nieuwenboer\"). Fill this in only if that guess is wrong - for example a name ending in \"Jr.\" or one that should be filed under a different word. Type just the word(s) to sort under."}
       - {label: "Title", name: "title", widget: "string", required: false, hint: "Rank or role only — e.g. \"Associate Professor\" or \"Dean.\" Leave blank if their business.ku.edu listing is just a named professorship with no separate rank given. Named professorships, fellowships, and endowed chairs go in the field below instead, not here."}
       - label: "Named Professorship(s)"
         name: "professorship"
