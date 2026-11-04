@@ -3,6 +3,9 @@ title: As local newsrooms shrink, so does corporate accountability
 dek: Fewer local reporters covering a company means less outside scrutiny — and
   research finds that measurably weakens firms' CSR commitments.
 topic: management
+also_topics:
+  - policy
+  - business-law
 faculty:
   - jun-ho-lee
 byline: Jon Niccum
