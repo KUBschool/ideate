@@ -1674,6 +1674,10 @@ blockquote{
 .journal-article-list a{ color: var(--ku-gray-text); font-weight: 500; }
 .journal-article-list a:hover{ color: var(--ku-blue); }
 .journal-article-list .ja-byline{ color: var(--ku-gray-mid); font-size: 13.5px; }
+.journal-article-list .ja-byline a{ color: inherit; font-weight: 400; }
+.journal-article-list .ja-byline a:hover{ color: var(--ku-blue); text-decoration: underline; text-underline-offset: 2px; }
+.journal-article-list li{ margin-bottom: 6px; }
+.journal-article-list .ja-story{ display: block; margin-top: -2px; font-size: 12.5px; line-height: 1.5; color: var(--ku-gray-mid); }
 
 /* ============================================================
    Topic pages — section header, 4-up cards, faculty spotlight +

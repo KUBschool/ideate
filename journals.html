@@ -98,7 +98,23 @@ description: "Every academic journal connected to KU Business — through resear
       <h4>KU Research</h4>
       <ul class="journal-article-list">
         {% for a in journal_articles %}
-        <li><a href="{{ a.url | relative_url }}">{{ a.title }}</a>{% if a.faculty and a.faculty.size > 0 %}<span class="ja-byline"> &mdash; {{ a.byline }}</span>{% endif %}</li>
+        {% comment %}
+          What is listed: the journal article's own title ("Journal article title" in the CMS), or this
+          story's headline when that is blank, then the faculty tagged on the story. The byline is the
+          Ideate writer, so it is not used here. The link goes to the Ideate story either way.
+        {% endcomment %}
+        {% assign ja_title = a.journal_article_title | default: '' | strip %}
+        {% assign ja_own_title = true %}
+        {% if ja_title == '' %}{% assign ja_title = a.title %}{% assign ja_own_title = false %}{% endif %}
+        {% assign ja_people = '' | split: ',' %}
+        {% for ja_slug in a.faculty %}
+          {% assign ja_person = site.faculty | where: 'slug', ja_slug | first %}
+          {% if ja_person %}
+            {% capture ja_link %}<a href="{{ ja_person.url | relative_url }}">{{ ja_person.full_name }}</a>{% endcapture %}
+            {% assign ja_people = ja_people | push: ja_link %}
+          {% endif %}
+        {% endfor %}
+        <li><a href="{{ a.url | relative_url }}">{{ ja_title | escape }}</a>{% if ja_people.size > 0 %}<span class="ja-byline"> &mdash; {{ ja_people | join: ', ' }}</span>{% endif %}{% if ja_own_title %}<span class="ja-story">Ideate story: {{ a.title | escape }}</span>{% endif %}</li>
         {% endfor %}
       </ul>
     </div>

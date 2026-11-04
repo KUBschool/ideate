@@ -20,10 +20,11 @@ permalink: /search.json
   }{% unless forloop.last and faculty.size == 0 %},{% endunless %}
 {% endfor %}
 {% for f in faculty %}
+  {% capture sj_ft %}{% include faculty-title.html person=f %}{% endcapture %}
   {
     "type": "Faculty",
     "title": {{ f.full_name | jsonify }},
-    "dek": {{ f.title | jsonify }},
+    "dek": {{ sj_ft | strip | jsonify }},
     "url": {{ f.url | relative_url | jsonify }},
     "topic": "Faculty",
     "byline": ""

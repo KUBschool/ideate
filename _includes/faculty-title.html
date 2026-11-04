@@ -1,0 +1,8 @@
+{% comment %}
+  Prints a faculty member's real title (rank or role), or nothing.
+  Pass: person = a faculty member (or the page itself on a profile).
+  A profile with no Title in its file gets one made up by Jekyll from the file name
+  ("Vincent Barker" for vincent-barker.md). A made-up title always slugifies back to the
+  person's own slug and a real one never does, so that is how it is told apart and left out.
+  Wrap the call in a capture and strip it to test whether anything came out.
+{% endcomment %}{% assign ft_p = include.person %}{% assign ft_t = ft_p.title | default: '' | strip %}{% unless ft_t == '' %}{% assign ft_s = ft_t | slugify %}{% unless ft_s == ft_p.slug %}{{ ft_t }}{% endunless %}{% endunless %}

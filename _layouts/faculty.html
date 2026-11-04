@@ -29,7 +29,9 @@ layout: default
 {% comment %} Topics across everything this person is tagged in: main topics first, then "Also relates to" topics, each once (which topics count for an article is decided in _includes/topic-links.html). {% endcomment %}
 {% capture my_topic_raw %}{% for a in my_articles %}{{ a.topic }},{% endfor %}{% for a in my_articles %}{% include topic-links.html article=a slugs=true %},{% endfor %}{% endcapture %}
 {% assign my_topic_slugs = my_topic_raw | split: ',' | uniq %}
-{% assign schema_job_title = page.title %}
+{% capture fp_title_raw %}{% include faculty-title.html person=page %}{% endcapture %}
+{% assign fp_title = fp_title_raw | strip %}
+{% assign schema_job_title = fp_title %}
 {% if schema_job_title == nil or schema_job_title == '' %}{% assign schema_job_title = page.professorship | join: ", " %}{% endif %}
 
 <script type="application/ld+json">
@@ -91,7 +93,7 @@ layout: default
         <h1>{{ page.full_name }}</h1>
 
         {% if page.academic_area %}<p class="faculty-area">{{ page.academic_area }} academic area</p>{% endif %}
-        {% if page.title %}<p class="faculty-rank">{{ page.title }}</p>{% endif %}
+        {% unless fp_title == '' %}<p class="faculty-rank">{{ fp_title }}</p>{% endunless %}
         {% if page.professorship and page.professorship.size > 0 %}
         <p class="faculty-professorship">{{ page.professorship | join: " &middot; " }}</p>
         {% endif %}

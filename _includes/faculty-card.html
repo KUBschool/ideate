@@ -11,12 +11,8 @@
   {% assign fc_t = site.data.topics | where: 'slug', fc_s | first %}
   {% if fc_t %}{% assign fc_names = fc_names | push: fc_t.name %}{% endif %}
 {% endfor %}
-{% comment %}
-  A profile with no Title in its file gets one made up by Jekyll from the file name ("Vincent Barker").
-  Those are recognised - a real title never slugifies to the person's own slug - and left off the card.
-{% endcomment %}
-{% assign fc_title = '' %}
-{% if fc_p.title %}{% assign fc_title_slug = fc_p.title | slugify %}{% if fc_title_slug != fc_p.slug %}{% assign fc_title = fc_p.title %}{% endif %}{% endif %}
+{% capture fc_title_raw %}{% include faculty-title.html person=fc_p %}{% endcapture %}
+{% assign fc_title = fc_title_raw | strip %}
 {% assign fc_words = fc_p.full_name | split: ' ' %}
 {% assign fc_i1 = fc_words.first | slice: 0 %}
 {% assign fc_i2 = fc_words.last | slice: 0 %}
