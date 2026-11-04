@@ -10,6 +10,7 @@ faculty:
   - murali-k-mantrala
 byline: Jon Niccum
 date: 2024-10-14
+image: /assets/uploads/fashion-selection.jpeg
 image_tint: steam
 featured: false
 source_url: https://business.ku.edu/news/article/crowdsourcing-proves-more-accurate-than-retail-buying-experts-at-predicting-fashion-demand
