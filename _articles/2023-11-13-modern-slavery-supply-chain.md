@@ -7,6 +7,7 @@ topic: supply-chain
 faculty: []
 byline: Jon Niccum
 date: 2023-11-13
+image: /assets/uploads/factory-worker.jpeg
 image_tint: limestone
 featured: false
 source_url: https://business.ku.edu/news/article/2023/11/13/workplace-slavery-still-embedded-supply-chain-researcher-says
