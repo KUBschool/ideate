@@ -414,6 +414,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Story pages — the Share buttons (LinkedIn, Email). The links in the page already work; this
+  // rebuilds them from the address the page is being viewed at, so they are right whichever
+  // address serves the site (the project's github.io address now, the school's own domain later)
+  // and whatever the site's url setting says.
+  const shareLinks = document.querySelectorAll('a[data-share]');
+  if (shareLinks.length) {
+    const shareUrl = window.location.origin + window.location.pathname;
+    const h1 = document.querySelector('.article-header h1');
+    const shareTitle = ((h1 && h1.textContent) || document.title || '').replace(/\s+/g, ' ').trim();
+    shareLinks.forEach((a) => {
+      if (a.dataset.share === 'linkedin') {
+        a.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(shareUrl);
+      } else if (a.dataset.share === 'email') {
+        a.href = 'mailto:?subject=' + encodeURIComponent(shareTitle)
+          + '&body=' + encodeURIComponent(shareTitle + '\n\n' + shareUrl);
+      }
+    });
+  }
+
   // Faculty directory — filter the cards by academic area and research topic, and search by
   // name. Every card carries data-name / data-area / data-topics set at build time (see
   // faculty-directory.html and faculty-card.html), so this only hides and shows what is already
