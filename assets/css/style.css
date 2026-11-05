@@ -1550,7 +1550,6 @@ blockquote{
    button it cannot use: there the links just wrap onto a row of their own under the logo. */
 .nav-links{ display: flex; align-items: center; gap: 28px; }
 .nav-toggle{ display: none; }
-.nav-menu-subscribe{ display: none; }
 
 @keyframes nav-menu-in{
   from{ opacity: 0; transform: translateY(-6px); }
@@ -1598,7 +1597,7 @@ blockquote{
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    padding: 4px 24px 22px;
+    padding: 4px 24px 8px;
     background: var(--white);
     border-top: 1px solid #e7e7e2;
     box-shadow: 0 16px 28px rgba(0,0,0,.14);
@@ -1618,15 +1617,7 @@ blockquote{
   }
   .js .site-header .primary-nav .nav-links a:hover,
   .js .site-header.is-scrolled .primary-nav .nav-links a:hover{ color: var(--ku-blue); }
-  .js .site-header .primary-nav .nav-links a.nav-menu-subscribe{
-    display: block;
-    margin-top: 18px;
-    padding: 13px 16px;
-    text-align: center;
-    font-size: 15px;
-    color: var(--white) !important;
-    border-bottom: none;
-  }
+  .js .site-header .primary-nav .nav-links a:last-child{ border-bottom: none; }
 
   /* search: the icon stays in the bar, results drop down full-width under the header */
   .nav-search-results{
