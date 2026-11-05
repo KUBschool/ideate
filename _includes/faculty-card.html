@@ -1,6 +1,7 @@
 {% comment %}
   One card in the faculty directory (faculty-directory.html).
   Pass: person = a faculty member, topic_slugs = the research topics (slugs) of their Ideate stories.
+  The line under the name is the person's title, or their named professorship when they have no title.
   The data- attributes are what app.js filters on. Variables are prefixed fc_ (an assign in an
   include leaks onto the page that includes it).
 {% endcomment %}
@@ -13,6 +14,20 @@
 {% endfor %}
 {% capture fc_title_raw %}{% include faculty-title.html person=fc_p %}{% endcapture %}
 {% assign fc_title = fc_title_raw | strip %}
+{% comment %}
+  No title filled in (so nothing real to show): the named professorship(s) stand in for it, as on the
+  faculty spotlight. Two or more are joined with a dot. A person who has a title keeps just the title here
+  (their profile page shows both).
+{% endcomment %}
+{% if fc_title == '' %}
+  {% assign fc_prs = fc_p.professorship | join: '|||' | split: '|||' %}
+  {% for fc_pr in fc_prs %}
+    {% assign fc_pr_s = fc_pr | strip | escape %}
+    {% unless fc_pr_s == '' %}
+      {% if fc_title == '' %}{% assign fc_title = fc_pr_s %}{% else %}{% assign fc_title = fc_title | append: ' &middot; ' | append: fc_pr_s %}{% endif %}
+    {% endunless %}
+  {% endfor %}
+{% endif %}
 {% assign fc_words = fc_p.full_name | split: ' ' %}
 {% assign fc_i1 = fc_words.first | slice: 0 %}
 {% assign fc_i2 = fc_words.last | slice: 0 %}
