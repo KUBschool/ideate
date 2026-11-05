@@ -1358,6 +1358,14 @@ blockquote{
   color: var(--ku-gray-mid);
   margin: 0 0 12px;
 }
+.sidebar-journal p{ margin: 0 0 8px; }
+.sidebar-journal .sj-journal{ font-size: 14px; font-weight: 600; line-height: 1.4; }
+.sidebar-journal .sj-journal a{ color: var(--ku-night); }
+.sidebar-journal .sj-journal a:hover{ color: var(--ku-blue); text-decoration: underline; text-underline-offset: 3px; }
+.sidebar-journal .sj-title{ font-family: var(--font-serif); font-size: 15px; line-height: 1.45; color: var(--ku-gray-text); }
+.sidebar-journal .sj-link{ margin-top: 10px; }
+.sidebar-journal .sj-link a{ font-size: 13px; font-weight: 600; color: var(--ku-blue); }
+.sidebar-journal .sj-link a:hover{ text-decoration: underline; text-underline-offset: 3px; }
 .related-section{ padding: 8px 0 56px; }
 
 /* ---------- topic archive page (MIT Sloan style stream) ---------- */

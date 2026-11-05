@@ -118,13 +118,13 @@ collections:
         name: "journal_article_title"
         widget: "string"
         required: false
-        hint: "Optional. The exact title of the original paper as it was published in the journal. The Journals page lists this under the journal, followed by the Faculty tagged on this story. Leave it blank and the Journals page uses this story's headline instead."
+        hint: "Optional. The exact title of the original paper as it was published in the journal. It shows in the Journal box on the right side of this story's page, and the Journals page lists it under the journal, followed by the Faculty tagged on this story. Leave it blank and the story page shows no title there, and the Journals page uses this story's headline instead."
       - label: "Journal article link"
         name: "journal_url"
         widget: "string"
         required: false
         pattern: ['^https?://', "Start with http:// or https:// — paste the full web address."]
-        hint: "Optional. The web address of the original paper on the journal's or publisher's site (or its DOI link). It becomes the \"Journal article\" link on the Latest research cards on topic pages. Leave blank and that link simply doesn't appear. (Source URL above is something else — a page this story was adapted from.)"
+        hint: "Optional. The web address of the original paper on the journal's or publisher's site (or its DOI link). It becomes the \"Journal article\" link on the Latest research cards on topic pages and the \"Read the journal article\" link in the Journal box on the right side of this story's page. Leave blank and those links simply don't appear. (Source URL above is something else — a page this story was adapted from.)"
       - {label: "Body", name: "body", widget: "markdown"}
 
   - name: "media"

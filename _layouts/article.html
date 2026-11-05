@@ -101,6 +101,28 @@ layout: default
         {% endfor %}
       </div>
     </div>
+    {% comment %}
+      Journal block: the journal, the original paper's title and a link to the paper. Each part shows
+      only if its field is filled in, and the block is left out when none are. The journal name links
+      to its entry on the Journals page. A link typed without http(s):// gets https:// in front.
+      (Variables aj_ - an assign on this page is visible to the includes below it.)
+    {% endcomment %}
+    {% assign aj_journal = page.journal | default: '' | strip %}
+    {% assign aj_title = page.journal_article_title | default: '' | strip %}
+    {% assign aj_url = page.journal_url | default: '' | strip %}
+    {% assign aj_href = '' %}
+    {% unless aj_url == '' %}
+      {% assign aj_start = aj_url | slice: 0, 4 | downcase %}
+      {% if aj_start == 'http' %}{% assign aj_href = aj_url %}{% else %}{% assign aj_href = 'https://' | append: aj_url %}{% endif %}
+    {% endunless %}
+    {% if aj_journal != '' or aj_title != '' or aj_href != '' %}
+    <div class="sidebar-block sidebar-journal">
+      <h4>Journal</h4>
+      {% unless aj_journal == '' %}<p class="sj-journal"><a href="{{ '/journals/' | relative_url }}#{{ aj_journal | slugify }}">{{ aj_journal | escape }}</a></p>{% endunless %}
+      {% unless aj_title == '' %}<p class="sj-title">{{ aj_title | escape }}</p>{% endunless %}
+      {% unless aj_href == '' %}<p class="sj-link"><a href="{{ aj_href | escape }}" target="_blank" rel="noopener noreferrer">Read the journal article <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens in a new tab)</span></a></p>{% endunless %}
+    </div>
+    {% endif %}
     {% if page.source_url %}
     <div class="sidebar-block">
       <h4>Source</h4>
