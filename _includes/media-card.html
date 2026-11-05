@@ -5,7 +5,9 @@
   than to a staff writer.
 {%- endcomment -%}
 {% assign media = include.media %}
-{% assign topic_data = site.data.topics | where: 'slug', media.topic | first %}
+{% comment %} The video's topics (main one, then up to two more), as links. Blank when it has none. Variables here start mk_. {% endcomment %}
+{% capture mk_topics %}{% include topic-links.html article=media %}{% endcapture %}
+{% assign mk_topics = mk_topics | strip %}
 <article class="card media-card" data-topic="{{ media.topic }}">
   <a href="{{ media.url | relative_url }}" class="card-link media-thumb-wrap">
     {% if media.thumbnail %}
@@ -18,7 +20,7 @@
     </span>
   </a>
   <div class="eyebrow" style="--topic-color:var(--ku-blue)">
-    <span class="dot"></span>Video{% if topic_data %}&nbsp;·&nbsp;<a href="{{ '/topics/' | append: media.topic | append: '/' | relative_url }}">{{ topic_data.name }}</a>{% endif %}
+    <span class="dot"></span>Video{% unless mk_topics == '' %}&nbsp;·&nbsp;{{ mk_topics }}{% endunless %}
   </div>
   <a href="{{ media.url | relative_url }}" class="card-link"><h3>{{ media.title }}</h3></a>
   <p class="dek">{{ media.dek }}</p>

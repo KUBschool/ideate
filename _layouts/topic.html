@@ -9,6 +9,13 @@ layout: default
     3. Latest research - the next 4 articles, as cards (one row on desktop),
                          each with a "Read the story" link and, when the article has
                          one, a link to the journal article
+    SMALL TOPICS: a topic with 4 stories or fewer (counting those that list it under
+    "Also relates to") is laid out differently, because the layout above would leave it
+    nearly empty. The featured story runs full width and centered, and every other story
+    goes straight into the Latest research cards (3 at most). The stats call-out, if the
+    topic has one, sits under the featured story; the "three articles beside it" choice
+    does not apply, since those stories are in the cards. Bigger topics are unchanged.
+
     4. Video / spotlight - the topic's newest video; if a faculty member is
                          spotlighted, they take 2/3 width and the video 1/3
     5. More in <topic> - the remaining articles as a list, first batch shown,
@@ -54,6 +61,10 @@ layout: default
 {% endfor %}
 {% assign pool = pool | sort: 'date' | reverse %}
 
+{% comment %} ---- small topic: 4 stories or fewer get the centered layout (see the notes at the top) ---- {% endcomment %}
+{% assign small_topic = false %}
+{% if pool.size > 0 and pool.size <= 4 %}{% assign small_topic = true %}{% endif %}
+
 {% comment %} ---- section header settings ---- {% endcomment %}
 {% assign hero_sub = tp.subhead | default: topic_data.description %}
 {% assign hero_tone = tp.header_tone | default: 'steam' %}
@@ -91,7 +102,7 @@ layout: default
 {% if feature %}{% assign pool_rest = pool | where_exp: 'a', 'a.url != feature.url' %}{% endif %}
 
 {% assign side_articles = '' | split: ',' %}
-{% if feature and side_mode == 'articles' %}
+{% if feature and side_mode == 'articles' and small_topic == false %}
   {% for t in tp.side_articles %}
     {% assign picked = pool_rest | where: 'title', t | first %}
     {% if picked and side_articles.size < 3 %}{% assign side_articles = side_articles | push: picked %}{% endif %}
@@ -116,7 +127,24 @@ layout: default
 {% assign list_extra = list_all | slice: list_limit, 999 %}
 
 {% comment %} ---- video + faculty spotlight ---- {% endcomment %}
-{% assign video = site.media | where: 'topic', page.topic | sort: 'date' | reverse | first %}
+{% comment %}
+  The topic's video: the newest one whose main topic is this one, or that lists it under "Also relates to"
+  (checked with topic-links.html, so a video is filed under exactly the topics it shows - never more than three).
+{% endcomment %}
+{% assign vid_main = site.media | where: 'topic', page.topic %}
+{% assign vid_also = site.media | where_exp: 'm', 'm.also_topics contains page.topic' %}
+{% assign vid_pool = '' | split: ',' %}
+{% for vd_m in vid_main %}
+  {% assign vid_pool = vid_pool | push: vd_m %}
+{% endfor %}
+{% for vd_m in vid_also %}
+  {% unless vd_m.topic == page.topic %}
+    {% capture vd_slug_list %}{% include topic-links.html article=vd_m slugs=true %}{% endcapture %}
+    {% assign vd_slugs = vd_slug_list | split: ',' %}
+    {% if vd_slugs contains page.topic %}{% assign vid_pool = vid_pool | push: vd_m %}{% endif %}
+  {% endunless %}
+{% endfor %}
+{% assign video = vid_pool | sort: 'date' | reverse | first %}
 {% assign spotlight = nil %}
 {% if tp.spotlight and tp.spotlight != '' %}
   {% assign spotlight = site.faculty | where: 'slug', tp.spotlight | first %}
@@ -145,7 +173,7 @@ layout: default
 {% comment %} ================= 2. FEATURED STORY (+ stats or 3 articles) ================= {% endcomment %}
 {% if feature %}
 <section class="hero-section">
-  <div class="wrap hero-grid{% unless show_side %} hero-grid-solo{% endunless %}">
+  <div class="wrap hero-grid{% unless show_side %} hero-grid-solo{% endunless %}{% if small_topic %} hero-grid-center{% endif %}">
     <article class="hero-feature">
       <a href="{{ feature.url | relative_url }}">
         {% if feature.image %}
@@ -208,7 +236,7 @@ layout: default
   <div class="section-head">
     <h2>Latest research</h2>
   </div>
-  <div class="card-grid card-grid-4">
+  <div class="card-grid card-grid-4{% if small_topic %} card-grid-auto{% endif %}">
     {% for a in card_articles %}
       {% include card.html article=a links=true %}
     {% endfor %}

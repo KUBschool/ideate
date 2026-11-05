@@ -155,7 +155,26 @@ collections:
           - {label: "AI", value: "ai"}
           - {label: "Policy", value: "policy"}
         required: false
-        hint: "Optional. If set, this video becomes the featured video spotlighted on that topic's page. Leave blank for a general-interest video that only shows up on the homepage and the Videos hub."
+        hint: "Optional. The topic this video mainly belongs to; it is listed first. If set, this video can be the featured video spotlighted on that topic's page (the newest video for a topic is the one shown). Leave blank for a general-interest video that only shows up on the homepage and the Videos hub. If the video also fits other topics, add them in \"Also relates to\" just below."
+      - label: "Also relates to"
+        name: "also_topics"
+        widget: "select"
+        multiple: true
+        max: 2
+        required: false
+        hint: "Optional. Up to two more topics this video also belongs to (so three topics at most, counting the Research area above). The video then also shows these topic names on its cards and page, and can be the featured video on those topic pages too. Don't repeat the Research area."
+        options:
+          - {label: "Accounting", value: "accounting"}
+          - {label: "Finance", value: "finance"}
+          - {label: "Supply Chain", value: "supply-chain"}
+          - {label: "Marketing", value: "marketing"}
+          - {label: "Information Systems", value: "information-systems"}
+          - {label: "Analytics", value: "analytics"}
+          - {label: "Entrepreneurship", value: "entrepreneurship"}
+          - {label: "Management", value: "management"}
+          - {label: "Business Law", value: "business-law"}
+          - {label: "AI", value: "ai"}
+          - {label: "Policy", value: "policy"}
       - label: "Faculty featured"
         name: "faculty"
         widget: "relation"

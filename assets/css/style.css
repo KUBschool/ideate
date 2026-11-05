@@ -2306,3 +2306,55 @@ blockquote{
   .service-grid{ grid-template-columns: 1fr; }
   .tab-bar{ margin-bottom: 28px; }
 }
+
+/* ---------- topic pages with 4 stories or fewer ----------
+   The featured story runs the full width of the page, centered, and every other story goes
+   straight into the Latest research cards. Bigger topics keep the two-column layout. (topic.html) */
+.hero-grid.hero-grid-center{
+  grid-template-columns: minmax(0, 1fr);
+  max-width: var(--max-width);   /* the page width again (the solo layout's 760px cap does not apply) */
+  gap: 40px;
+}
+.hero-grid-center .hero-feature{ text-align: center; }
+.hero-grid-center .hero-feature .photo.hero-art,
+.hero-grid-center .hero-feature .img-placeholder.hero-art{
+  aspect-ratio: 2 / 1;
+  margin-bottom: 28px;
+}
+.hero-grid-center .hero-feature .eyebrow{ font-size: 14px; margin-bottom: 12px; }
+.hero-grid-center .hero-feature h2{
+  font-size: 42px;
+  line-height: 1.12;
+  max-width: 22em;
+  margin: 0 auto 16px;
+}
+.hero-grid-center .hero-feature .dek{
+  font-size: 20px;
+  max-width: 40em;
+  margin: 0 auto 16px;
+}
+.hero-grid-center .hero-feature .faculty-chips{ justify-content: center; }
+/* a stats call-out, if the topic has one, sits under the story */
+.hero-grid-center .hero-list{
+  border-left: none;
+  padding-left: 0;
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+}
+/* the cards share the row between them: 3 stories make 3 columns, 2 make 2 (4 across would leave a gap) */
+.card-grid.card-grid-4.card-grid-auto{ grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.card-grid-auto > .card:only-child{ max-width: 520px; justify-self: center; }
+@media (max-width: 900px){
+  .hero-grid-center .hero-feature h2{ font-size: 34px; }
+  .hero-grid-center .hero-feature .dek{ font-size: 18px; }
+  .hero-grid-center .hero-feature .photo.hero-art,
+  .hero-grid-center .hero-feature .img-placeholder.hero-art{ aspect-ratio: 16 / 9; }
+}
+@media (max-width: 620px){
+  .hero-grid.hero-grid-center{ gap: 28px; }
+  .hero-grid-center .hero-feature h2{ font-size: 28px; }
+  .hero-grid-center .hero-feature .dek{ font-size: 17px; }
+  .hero-grid-center .hero-feature .photo.hero-art,
+  .hero-grid-center .hero-feature .img-placeholder.hero-art{ margin-bottom: 20px; }
+}

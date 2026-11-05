@@ -1,7 +1,14 @@
 ---
 layout: default
 ---
-{% assign topic_data = site.data.topics | where: 'slug', page.topic | first %}
+{% comment %}
+  The video's topics: its main topic (optional) and up to two "Also relates to" topics, as links
+  (md_topics) and as slugs (md_slugs). Which topics count is decided in _includes/topic-links.html.
+{% endcomment %}
+{% capture md_topics %}{% include topic-links.html article=page %}{% endcapture %}
+{% assign md_topics = md_topics | strip %}
+{% capture md_slug_list %}{% include topic-links.html article=page slugs=true %}{% endcapture %}
+{% assign md_slugs = md_slug_list | split: ',' %}
 
 {% comment %}
   Accepts whatever plain YouTube link someone pastes into the CMS —
@@ -38,7 +45,7 @@ layout: default
 <div class="wrap article-header">
   <div class="eyebrow" style="--topic-color:var(--ku-blue)">
     <span class="dot"></span>
-    {% if topic_data %}<a href="{{ '/topics/' | append: page.topic | append: '/' | relative_url }}">{{ topic_data.name }}</a>&nbsp;·&nbsp;{% endif %}
+    {% unless md_topics == '' %}{{ md_topics }}&nbsp;·&nbsp;{% endunless %}
     Video
   </div>
   <h1>{{ page.title }}</h1>
@@ -81,11 +88,14 @@ layout: default
     </div>
     {% endif %}
 
-    {% if topic_data %}
+    {% if md_slugs.size > 0 %}
     <div class="sidebar-block">
-      <h4>Topic</h4>
+      <h4>{% if md_slugs.size > 1 %}Topics{% else %}Topic{% endif %}</h4>
       <div class="faculty-chips">
-        <a href="{{ '/topics/' | append: page.topic | append: '/' | relative_url }}" class="faculty-chip">{{ topic_data.name }}</a>
+        {% for md_slug in md_slugs %}
+        {% assign md_t = site.data.topics | where: 'slug', md_slug | first %}
+        <a href="{{ '/topics/' | append: md_slug | append: '/' | relative_url }}" class="faculty-chip">{{ md_t.name }}</a>
+        {% endfor %}
       </div>
     </div>
     {% endif %}

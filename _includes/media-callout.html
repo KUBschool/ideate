@@ -15,7 +15,9 @@
 {%- endcomment -%}
 {% assign mc = include.media %}
 {% if mc %}
-{% assign mc_topic = site.data.topics | where: 'slug', mc.topic | first %}
+{% comment %} The video's topic names (main one, then up to two more), as plain text. Blank when it has none. {% endcomment %}
+{% capture mc_topics %}{% include topic-links.html article=mc plain=true %}{% endcapture %}
+{% assign mc_topics = mc_topics | strip %}
 {% if include.compact %}
 <aside class="media-callout media-callout-compact">
   <a href="{{ mc.url | relative_url }}" class="media-callout-thumb" aria-label="Watch: {{ mc.title }}">
@@ -30,7 +32,7 @@
   </a>
   <div class="media-callout-text">
     <div class="media-callout-kicker">
-      <span class="dot"></span>Watch{% if mc_topic %}&nbsp;·&nbsp;{{ mc_topic.name }}{% endif %}
+      <span class="dot"></span>Watch{% unless mc_topics == '' %}&nbsp;·&nbsp;{{ mc_topics }}{% endunless %}
     </div>
     <a href="{{ mc.url | relative_url }}"><h2>{{ mc.title }}</h2></a>
     <p class="media-callout-dek">{{ mc.dek }}</p>
@@ -52,7 +54,7 @@
     </a>
     <div class="media-callout-text">
       <div class="media-callout-kicker">
-        <span class="dot"></span>Watch{% if mc_topic %}&nbsp;·&nbsp;{{ mc_topic.name }}{% endif %}
+        <span class="dot"></span>Watch{% unless mc_topics == '' %}&nbsp;·&nbsp;{{ mc_topics }}{% endunless %}
       </div>
       <a href="{{ mc.url | relative_url }}"><h2>{{ mc.title }}</h2></a>
       <p class="media-callout-dek">{{ mc.dek }}</p>
