@@ -31,7 +31,24 @@
       {% endif %}
       <span class="tagline">{{ site.data.header.tagline }}</span>
     </div>
-    <nav class="primary-nav">
+    <nav class="primary-nav" aria-label="Main">
+      {%- comment -%}
+        On a phone or tablet (900px and narrower) the links fold away behind this button; app.js opens
+        and closes the menu. It comes before the links so the keyboard Tab order goes button, then links.
+        Without JavaScript the button stays hidden and the links simply wrap under the logo.
+      {%- endcomment -%}
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
+          <g class="nav-toggle-open" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3.5" y1="6.5" x2="20.5" y2="6.5"/><line x1="3.5" y1="12" x2="20.5" y2="12"/><line x1="3.5" y1="17.5" x2="20.5" y2="17.5"/>
+          </g>
+          <g class="nav-toggle-close" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="5.5" y1="5.5" x2="18.5" y2="18.5"/><line x1="18.5" y1="5.5" x2="5.5" y2="18.5"/>
+          </g>
+        </svg>
+      </button>
+
+      <div class="nav-links" id="nav-links">
       <a href="{{ '/' | relative_url }}">Articles</a>
       <a href="{{ '/faculty/' | relative_url }}">Faculty</a>
       <a href="{{ '/journals/' | relative_url }}">Journals</a>
@@ -49,6 +66,9 @@
       {% endif %}
 
       <a href="{{ '/about/' | relative_url }}">About</a>
+
+      <a href="{{ '/subscribe/' | relative_url }}" class="btn-subscribe nav-menu-subscribe">Subscribe</a>
+      </div>
 
       <div class="nav-search" id="nav-search" data-index-url="{{ '/search.json' | relative_url }}">
         <button type="button" class="nav-search-toggle" id="nav-search-toggle" aria-label="Search" aria-expanded="false" aria-controls="nav-search-input">

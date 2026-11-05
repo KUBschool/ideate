@@ -1432,7 +1432,6 @@ blockquote{
   .footer-top{ grid-template-columns: 1fr 1fr; }
   .article-body{ grid-template-columns: 1fr; }
   .newsletter-grid{ grid-template-columns: 1fr; text-align: left; }
-  .primary-nav a:not(.btn-subscribe){ display: none; }
   .nav-search.is-open .nav-search-input{ width: 130px; }
   .nav-search-results{ width: 260px; }
   .media-callout-grid{ grid-template-columns: 1fr; padding: 32px 24px; }
@@ -1541,6 +1540,129 @@ blockquote{
   .ku-bar-logo img{ height: 19px; }
   .ku-bar-title{ font-size: 14px; padding-left: 9px; }
   .ku-bar .btn-subscribe{ padding: 5px 10px; font-size: 12px; }
+}
+
+/* ---------- mobile menu ----------
+   Wide screens: the links sit in a row, as they always did, and the button is not shown.
+   900px and narrower (phones and tablets): the links fold into a panel that drops down from the
+   header bar, opened by the hamburger button (app.js toggles .menu-open on .site-header).
+   The <script> in default.html adds .js to <html>, so a browser with JavaScript off never gets a
+   button it cannot use: there the links just wrap onto a row of their own under the logo. */
+.nav-links{ display: flex; align-items: center; gap: 28px; }
+.nav-toggle{ display: none; }
+.nav-menu-subscribe{ display: none; }
+
+@keyframes nav-menu-in{
+  from{ opacity: 0; transform: translateY(-6px); }
+  to{ opacity: 1; transform: none; }
+}
+
+@media (max-width: 900px){
+  /* no JavaScript: logo on the first line, the links (and search icon) wrapping below it */
+  html:not(.js) .site-header .wrap{ flex-wrap: wrap; }
+  html:not(.js) .primary-nav{ width: 100%; flex-wrap: wrap; gap: 10px 22px; }
+  html:not(.js) .nav-links{ flex-wrap: wrap; gap: 10px 22px; }
+
+  /* with JavaScript: search icon, (Subscribe once scrolled), then the hamburger at the right edge */
+  .js .primary-nav{ gap: 14px; }
+  .js .nav-search{ order: 1; position: static; }
+  .js .nav-subscribe{ order: 2; }
+  .js .nav-toggle{
+    order: 3;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;                 /* 44px square tap target around the 24px icon */
+    margin: -10px -10px -10px 0;   /* ...without making the bar taller, and the icon lines up with the page margin */
+    background: none;
+    border: none;
+    border-radius: 6px;
+    color: var(--ku-gray-text);
+    cursor: pointer;
+  }
+  .js .nav-toggle:hover{ color: var(--ku-blue); }
+  .js .nav-toggle .nav-toggle-close{ display: none; }
+  .js .nav-toggle[aria-expanded="true"] .nav-toggle-open{ display: none; }
+  .js .nav-toggle[aria-expanded="true"] .nav-toggle-close{ display: inline; }
+  .js .site-header.is-scrolled .nav-toggle{ color: var(--white); }
+  .js .site-header.is-scrolled .nav-toggle:hover{ color: var(--ku-sky); }
+  .js .site-header.is-scrolled .nav-toggle:focus-visible{ outline-color: var(--ku-sky); }
+
+  /* the panel */
+  .js .nav-links{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 4px 24px 22px;
+    background: var(--white);
+    border-top: 1px solid #e7e7e2;
+    box-shadow: 0 16px 28px rgba(0,0,0,.14);
+    max-height: calc(100vh - 64px);
+    max-height: calc(100dvh - 64px);
+    overflow-y: auto;
+  }
+  .js .site-header.menu-open .nav-links{ display: flex; animation: nav-menu-in .16s ease-out; }
+  /* link colours: the pinned header turns dark and makes its links white, but the panel stays white */
+  .js .site-header .primary-nav .nav-links a,
+  .js .site-header.is-scrolled .primary-nav .nav-links a{
+    padding: 15px 0;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ku-night);
+    border-bottom: 1px solid #eeede7;
+  }
+  .js .site-header .primary-nav .nav-links a:hover,
+  .js .site-header.is-scrolled .primary-nav .nav-links a:hover{ color: var(--ku-blue); }
+  .js .site-header .primary-nav .nav-links a.nav-menu-subscribe{
+    display: block;
+    margin-top: 18px;
+    padding: 13px 16px;
+    text-align: center;
+    font-size: 15px;
+    color: var(--white) !important;
+    border-bottom: none;
+  }
+
+  /* search: the icon stays in the bar, results drop down full-width under the header */
+  .nav-search-results{
+    left: 12px;
+    right: 12px;
+    width: auto;
+    margin-top: 0;
+    max-height: calc(100vh - 140px);
+    max-height: calc(100dvh - 140px);
+  }
+}
+@media (max-width: 380px){
+  .js .primary-nav{ gap: 10px; }
+}
+/* Phones: there is no room beside the logo for an open search box, so while it is open the box
+   takes over the bar (the logo, Subscribe and menu button step aside; the magnifier stays at the
+   right edge and closes it again). app.js puts .search-open on the header while the box is open. */
+@media (max-width: 620px){
+  .site-header.search-open .brand{ visibility: hidden; }   /* hidden, not removed, so the bar keeps its height */
+  .js .site-header.search-open .nav-toggle,
+  .js .site-header.search-open .nav-subscribe{ display: none; }
+  .site-header.search-open .primary-nav{ margin-left: auto; }
+  .js .nav-search.is-open .nav-search-input{
+    position: absolute;
+    top: 50%;
+    left: 24px;
+    right: 62px;                   /* leaves room for the magnifier (30px + 8px) */
+    width: auto;
+    margin: 0;
+    transform: translateY(-50%);
+    font-size: 16px;               /* 16px stops iPhones zooming the page when the box is focused */
+  }
+  .js .site-header.is-scrolled .nav-search.is-open .nav-search-input{ right: 56px; }   /* the pinned bar's magnifier is 24px wide */
+}
+@media (prefers-reduced-motion: reduce){
+  .js .site-header.menu-open .nav-links{ animation: none; }
 }
 
 

@@ -44,6 +44,71 @@ document.addEventListener('DOMContentLoaded', () => {
     applyScrollState(); // handles a page that loads already scrolled down
   }
 
+  // Mobile menu — on phones and tablets (900px and narrower) the nav links
+  // sit in a panel under the header bar, opened by the hamburger button.
+  // This only flips the .menu-open class and the button's aria-expanded;
+  // the look of it all is in style.css ("mobile menu"). It closes on a tap
+  // anywhere else, on Escape, when keyboard focus leaves it, when the window
+  // grows back to desktop width, and when the page is restored from the
+  // browser's back/forward cache.
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+  if (header && navToggle && navLinks) {
+    const isMenuOpen = () => header.classList.contains('menu-open');
+
+    // A short screen (a phone held sideways) may not have room for the whole panel under the
+    // header, so while it is open its height is capped to the space that is really left, and the
+    // panel scrolls inside itself. Re-measured as the page scrolls, because the header shrinks
+    // and moves to the top of the screen.
+    function sizeMenu() {
+      if (!isMenuOpen()) { navLinks.style.maxHeight = ''; return; }
+      const room = window.innerHeight - header.getBoundingClientRect().bottom - 8;
+      navLinks.style.maxHeight = Math.max(room, 120) + 'px';
+    }
+
+    function setMenu(open) {
+      header.classList.toggle('menu-open', open);
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      sizeMenu();
+    }
+
+    navToggle.addEventListener('click', () => setMenu(!isMenuOpen()));
+
+    document.addEventListener('click', (e) => {
+      if (isMenuOpen() && !navLinks.contains(e.target) && !navToggle.contains(e.target)) setMenu(false);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isMenuOpen()) {
+        setMenu(false);
+        navToggle.focus();
+      }
+    });
+
+    header.addEventListener('focusout', (e) => {
+      const next = e.relatedTarget;
+      if (isMenuOpen() && next && !navLinks.contains(next) && next !== navToggle) setMenu(false);
+    });
+
+    window.addEventListener('pageshow', () => setMenu(false));
+
+    let menuTicking = false;
+    function onMenuViewChange() {
+      if (!isMenuOpen() || menuTicking) return;
+      menuTicking = true;
+      window.requestAnimationFrame(() => { menuTicking = false; sizeMenu(); });
+    }
+    window.addEventListener('scroll', onMenuViewChange, { passive: true });
+    window.addEventListener('resize', onMenuViewChange);
+
+    if (window.matchMedia) {
+      const desktop = window.matchMedia('(min-width: 901px)');
+      const onChange = (e) => { if (e.matches) setMenu(false); };
+      if (desktop.addEventListener) desktop.addEventListener('change', onChange);
+      else if (desktop.addListener) desktop.addListener(onChange);
+    }
+  }
+
   // Header search — expand/collapse the icon into an input, and search a
   // JSON index built at Jekyll build time (/search.json — see that file
   // for how it's generated). Fully client-side: no external service, no
@@ -131,6 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function openSearch() {
       searchWrap.classList.add('is-open');
+      if (header) header.classList.add('search-open');   // lets the phone layout give the bar over to the search box
       searchToggle.setAttribute('aria-expanded', 'true');
       loadIndex();
       window.setTimeout(() => searchInput.focus(), 50);
@@ -138,6 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function closeSearch() {
       searchWrap.classList.remove('is-open');
+      if (header) header.classList.remove('search-open');
       searchToggle.setAttribute('aria-expanded', 'false');
       searchInput.value = '';
       clearResults();
